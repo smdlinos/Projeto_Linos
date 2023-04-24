@@ -1,5 +1,5 @@
 # Projeto_Linos
-<h1>Repositório dos arquivos da aplicação desenvolvida em Projeto I</h1>
+<h2>Repositório dos arquivos da aplicação desenvolvida em Projeto I</h2>
 
 <h2>Descrição do Projeto</h2>
 
@@ -8,14 +8,16 @@
 <h2>Status do Projeto</h2>
   Projeto em Construção
 
-<h2>Funcionalidades e Demonstração da Aplicação</h2>
-  -Fazer cadastro do usuário
-  -Entrar como visitante 
-  -Fazer login de usuário 
-  -Recuperar senha 
-  -Visualizar feed de questionários disponíveis 
-  -Acessar perfil do usuário
-  
+<h2>Funcionalidades e Demonstração da Aplicação</h2
+  <ul>
+   <li>Fazer cadastro do usuário</li>
+   <li>Entrar como visitante</li>
+   <li>Fazer login de usuário</li>
+   <li>Recuperar senha</li>
+   <li>Visualizar feed de questionários disponíveis</li>
+   <li>Acessar perfil do usuário</li>
+  </ul>
+ 
 <h2>Tecnologias utilizadas</h2>
   JavaScript: A linguagem base a ser usada no projeto é JavaScript, por se tratar de uma ferramenta web e “Client-side”, envolvendo a linguagem de marcação HTML, além do mecanismo de estilos web CSS, vimos que a mesma seria de fácil manuseio para a criação da aplicação no site inicialmente.
 
@@ -29,13 +31,15 @@
   MySQL:  Escolhemos essa tecnologia para banco de dados pois o PHP e MySQL possuem total compatibilidade, e funcionam muito bem juntos. Outros fatores são a implementação leve que proporciona maior velocidade de uso e a sua facilidade de integração entre servidor Web e linguagens de programação.
 
 <h2>Pessoas Desenvolvedoras do Projeto</h2>
-  Equipe Linos - linosdesingsmd@gmail.com
-    - [github.com/](https://github.com/claraolvrx)
-    - [github.com/](https://github.com/mickael-castro)
-    - [github.com/](https://github.com/letinepo)
-    - [github.com/](https://github.com/victor280504)
-    - [github.com/](https://github.com/LUISGSFILHO)
-    - [github.com/](https://github.com/vitoriajessicapr)
+  Equipe Linos - linosdesingsmd@gmail.com 
+    <ul>
+    <li><a href="https://github.com/claraolvrx">Maria Clara</a></li>
+    <li><a href="https://github.com/mickael-castro">Mickael Castro</a></li>
+    <li><a href="https://github.com/letinepo">Maria Letícia</a></li>
+    <li><a href="https://github.com/victor280504">Victor Emanuel</a></li>
+    <li><a href="https://github.com/LUISGSFILHO">Maria Clara</a></li>
+    <li><a href="https://github.com/vitoriajessicapr">Vitoria Jessica</a></li>
+    </ul>
     
 <h2>Licença</h2>
-  Licença GPL-3.0 [#LICENSE]
+  <a href="https://github.com/smdlinos/Projeto_Linos/blob/main/LICENSE">Licença GPL-3.0</a>

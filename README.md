@@ -37,7 +37,7 @@
     <li><a href="https://github.com/mickael-castro">Mickael Castro</a></li>
     <li><a href="https://github.com/letinepo">Maria Letícia</a></li>
     <li><a href="https://github.com/victor280504">Victor Emanuel</a></li>
-    <li><a href="https://github.com/LUISGSFILHO">Maria Clara</a></li>
+    <li><a href="https://github.com/LUISGSFILHO">Luiz Gonzaga</a></li>
     <li><a href="https://github.com/vitoriajessicapr">Vitoria Jessica</a></li>
     </ul>
     

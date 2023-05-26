@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  position: relative;
+}
+.formu {
+  text-align: center;
+  mix-blend-mode: normal;
+}
+.titulo {
+  font-family: Roboto;
+}
+form {
+  background-color: white;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.body {
+  
+  background-size: cover;
+}

@@ -6,10 +6,16 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    '08553373174aed5b2079e6334c2d2257' => $baseDir . '/app/functions/custom.php',
-    '1a034cec71159224725114f89a820cf1' => $baseDir . '/app/functions/validate.php',
-    '0c48edfd83033889f779790f8f59dd48' => $baseDir . '/app/functions/pages.php',
-    '06e2cc845cd457b9c47e81e7c59d160b' => $baseDir . '/app/functions/flash.php',
-    '832debbbcfeab8700db6cef00613e4fc' => $baseDir . '/app/functions/email.php',
-    '65c0c55b3706b128c0fd18b53f51385b' => $baseDir . '/app/functions/database.php',
+    '9222f251be1582617f46f3bd695924a0' => $baseDir . '/app/helpers/constantes.php',
+    '49a1795c6f26253d4aaec3e227475fed' => $baseDir . '/app/router/router.php',
+    '21bb9dd0946c9b36e29934f0ed976d74' => $baseDir . '/app/core/controller.php',
+    '96b71b006251e32266edca01e89e2047' => $baseDir . '/app/controllers/Home.php',
+    '38c20e01c06597646a02c77cad7a51a6' => $baseDir . '/app/controllers/User.php',
+    'd9968996cab60cbceeec7b8d37e5f277' => $baseDir . '/app/database/connect.php',
+    'c508c13e2911d73c6b8718e9ba78df95' => $baseDir . '/app/database/fetch.php',
+    '5905922fe2480f3bf9ed1c3d005715ba' => $baseDir . '/app/helpers/redirect.php',
+    '817a80cc20cbc0cdc420592d7adb7e8d' => $baseDir . '/app/helpers/flash.php',
+    '0a04ae146f606c6b1fc4f09e125aff9a' => $baseDir . '/app/helpers/sessions.php',
+    'cdea25de11fa90277f8cdb3f4531063a' => $baseDir . '/app/helpers/validate.php',
+    'c06f4ddb3c229026f66bbe3224bdd1ed' => $baseDir . '/app/database/create.php',
 );

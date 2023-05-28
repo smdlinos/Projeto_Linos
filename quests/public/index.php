@@ -1,28 +1,32 @@
-<?php require "../bootstrap.php";?>
+<?php 
 
-<!DOCTYPE html>
-<html lang="pt-br">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Curso de php devclass</title>
-		<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-	</head>
-	<body>
-		<div class="container">
-			<?php 
+require 'bootstrap.php';
 
-			try{
+try {
+    $data = router();
+    if(!isset($data['data'])){
+        throw new Exeption('O índice data está faltando');
+    }
 
-			 require load(); 
+    if(!isset($data['data']['title'])){
+        throw new Exeption('O Títle está faltando');
+    }
 
-			} catch (Exeption $e){
+    if(!isset($data['view'])){
+        throw new Exeption('O índice view está faltando');
+    }
+    if(!file_exists(VIEWS.$data['view'])){
+        throw new Exception("Essa view {$data['view']} não existe ");
+        
+    }
 
-				echo $e->getMessage();
+    extract($data['data']);
 
-			}
+    $view = $data['view'];
 
-			?>
-		</div>
-	</body>
-</html>
+    require VIEWS.'master.php';
+}catch(Exeption $e){
+
+    var_dump($e->getMessage());
+
+}

@@ -4,48 +4,50 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit2a2d16f87e506a2fba6457f53aa79de7
+class ComposerStaticInita33902112c497e121bf1cc9d089584dd
 {
     public static $files = array (
-        '08553373174aed5b2079e6334c2d2257' => __DIR__ . '/../..' . '/app/functions/custom.php',
-        '1a034cec71159224725114f89a820cf1' => __DIR__ . '/../..' . '/app/functions/validate.php',
-        '0c48edfd83033889f779790f8f59dd48' => __DIR__ . '/../..' . '/app/functions/pages.php',
-        '06e2cc845cd457b9c47e81e7c59d160b' => __DIR__ . '/../..' . '/app/functions/flash.php',
-        '832debbbcfeab8700db6cef00613e4fc' => __DIR__ . '/../..' . '/app/functions/email.php',
-        '65c0c55b3706b128c0fd18b53f51385b' => __DIR__ . '/../..' . '/app/functions/database.php',
+        '9222f251be1582617f46f3bd695924a0' => __DIR__ . '/../..' . '/app/helpers/constantes.php',
+        '49a1795c6f26253d4aaec3e227475fed' => __DIR__ . '/../..' . '/app/router/router.php',
+        '21bb9dd0946c9b36e29934f0ed976d74' => __DIR__ . '/../..' . '/app/core/controller.php',
+        '96b71b006251e32266edca01e89e2047' => __DIR__ . '/../..' . '/app/controllers/Home.php',
+        '38c20e01c06597646a02c77cad7a51a6' => __DIR__ . '/../..' . '/app/controllers/User.php',
+        'd9968996cab60cbceeec7b8d37e5f277' => __DIR__ . '/../..' . '/app/database/connect.php',
+        'c508c13e2911d73c6b8718e9ba78df95' => __DIR__ . '/../..' . '/app/database/fetch.php',
+        '5905922fe2480f3bf9ed1c3d005715ba' => __DIR__ . '/../..' . '/app/helpers/redirect.php',
+        '817a80cc20cbc0cdc420592d7adb7e8d' => __DIR__ . '/../..' . '/app/helpers/flash.php',
+        '0a04ae146f606c6b1fc4f09e125aff9a' => __DIR__ . '/../..' . '/app/helpers/sessions.php',
+        'cdea25de11fa90277f8cdb3f4531063a' => __DIR__ . '/../..' . '/app/helpers/validate.php',
+        'c06f4ddb3c229026f66bbe3224bdd1ed' => __DIR__ . '/../..' . '/app/database/create.php',
     );
 
     public static $prefixLengthsPsr4 = array (
-        'P' => 
+        'a' => 
         array (
-            'PHPMailer\\PHPMailer\\' => 20,
+            'app\\' => 4,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'PHPMailer\\PHPMailer\\' => 
+        'app\\' => 
         array (
-            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+            0 => __DIR__ . '/../..' . '/app',
         ),
     );
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
-        'PHPMailer\\PHPMailer\\DSNConfigurator' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/DSNConfigurator.php',
-        'PHPMailer\\PHPMailer\\Exception' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/Exception.php',
-        'PHPMailer\\PHPMailer\\OAuth' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/OAuth.php',
-        'PHPMailer\\PHPMailer\\OAuthTokenProvider' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/OAuthTokenProvider.php',
-        'PHPMailer\\PHPMailer\\PHPMailer' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/PHPMailer.php',
-        'PHPMailer\\PHPMailer\\POP3' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/POP3.php',
-        'PHPMailer\\PHPMailer\\SMTP' => __DIR__ . '/..' . '/phpmailer/phpmailer/src/SMTP.php',
+        'app\\controllers\\Home' => __DIR__ . '/../..' . '/app/controllers/Home.php',
+        'app\\controllers\\Login' => __DIR__ . '/../..' . '/app/controllers/Login.php',
+        'app\\controllers\\User' => __DIR__ . '/../..' . '/app/controllers/User.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit2a2d16f87e506a2fba6457f53aa79de7::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit2a2d16f87e506a2fba6457f53aa79de7::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit2a2d16f87e506a2fba6457f53aa79de7::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInita33902112c497e121bf1cc9d089584dd::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInita33902112c497e121bf1cc9d089584dd::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInita33902112c497e121bf1cc9d089584dd::$classMap;
 
         }, null, ClassLoader::class);
     }

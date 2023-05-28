@@ -33,7 +33,7 @@
   MySQL:  Escolhemos essa tecnologia para banco de dados pois o PHP e MySQL possuem total compatibilidade, e funcionam muito bem juntos. Outros fatores são a implementação leve que proporciona maior velocidade de uso e a sua facilidade de integração entre servidor Web e linguagens de programação.
   
   <h3>Como Rodar o Front: </h3>
-  Abra o terminal, na pasta do código do seu editor, e digite os seguintes comandos: <br>
+  Abra o terminal, na pasta do código do seu editor, e digite os seguintes comandos: 
   
   npm install react-scripts --save
 

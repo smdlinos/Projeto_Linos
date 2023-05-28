@@ -1,19 +1,42 @@
 import "./styles.css";
 import "bootstrap/dist/css/bootstrap.css";
-import Header from "./componentes/Header";
-import Login from "./componentes/section_login";
-import Footer from "./componentes/footer";
+import Home from "./pages/home"
+import Contato from "./pages/contato"
+import Cadastro from "./pages/cadastro"
+import Header from "./componentes/Header"
+import Redefinir from "./pages/redefinir_senha"
+
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 export default function App() {
   return (
-    <div className="App">
-      <div className="body">
-      <Header />
-      <main>
-        <Login />
-        <Footer />
-      </main>
-    </div>
+    <div className="App">    
+
+        <Router>
+         
+          <Routes>
+            <Route exact path = "/home" element = {<Home/>}>
+            </Route>
+            <Route path = "/contato" element = {<Contato/>}>     
+            </Route>
+            <Route path = "/cadastro" element = {<Cadastro/>}>     
+            </Route>
+            <Route path = "/redefinir" element = {<Redefinir/>}>     
+            </Route>
+          </Routes>
+          <br/>
+            
+              
+          <ul>
+            <li>
+              
+              <Link to="/home">Home</Link>
+              <Link to="/contato">Contato</Link>
+              <Link to="/cadastro">Cadastro</Link>
+              <Link to="/redefinir">Redefinir</Link>
+            </li>
+          </ul>
+        </Router>
     </div>
   );
 }

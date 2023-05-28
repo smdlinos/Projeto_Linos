@@ -2,34 +2,69 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 export default function Section_login() {
+
+  function cadastroUsuário(e){
+    e.preventDefault()
+    console.log(`Usuário: ${email} Senha: ${password}`)
+  }
+
+  const [email, setEmail] = useState()
+  const [password, setPassword] = useState()
+
+
   return (
     <div>
-      <Row className="justify-content-sm-center">
+         <br/>
+           
+         <Row className="justify-content-sm-center">
         <Col sm="auto" none="">
-          <Form className="mb-4 rounded p-5 mx-3">
+          <Form className="mb-4 rounded p-5 mx-3" onSubmit={cadastroUsuário} method="Post">
             <h2>Seja bem vindo</h2>
-            <Form.Group className="mb-2" controlId="formBasicEmail">
-              <Form.Label>Login</Form.Label>
-              <Form.Control type="email" placeholder="E-mail" className="" />
+            <Form.Group className="mb-2">
+              <Form.Label htmlFor="email">Login</Form.Label>
+              <Form.Control 
+              type="email" 
+              placeholder="E-mail" 
+              className="" 
+              name = "email"
+              onChange={(e)=> setEmail(e.target.value)}
+              />
             </Form.Group>
 
-            <Form.Group className="mb-2" controlId="formBasicPassword">
-              <Form.Label>Senha</Form.Label>
-              <Form.Control type="password" placeholder="Sua senha" />
+            <Form.Group className="mb-2">
+              <Form.Label htmlFor="password">Senha</Form.Label>
+              <Form.Control 
+              type="password" 
+              placeholder="Sua senha" 
+              name = "password" 
+              onChange={(e)=> setPassword(e.target.value)}
+              />
             </Form.Group>
+            
                 
             <a href="#" className="text-muted"><small>Esqueci a senha</small></a>
+            <br/>
             
             <Button variant="primary" type="submit" className="px-5 mb-3 mt-3">
               Login
             </Button>
             <br />
-            <a href="#"> Ou entre como visitante</a>
+            <Link to="#">Ou entre como visitante</Link>
           </Form>
+          <div>
+      <p className="pt-5">Não tem conta?<a href="#">Cadastre-se</a></p>
+      </div>
+
         </Col>
       </Row>
+
+
+
+      
     </div>
   );
 }

@@ -5,10 +5,10 @@ import Col from "react-bootstrap/Col";
 export default function header() {
   return (
     <div>
-      <Container className="mb-4">
+      <Container className="mb-4 ">
         <Row className="justify-content-md-center">
           <Col className="mt-4 titulo">
-            <h1>Quests</h1>
+            <h1 className="mt-4">QUESTS</h1>
           </Col>
         </Row>
       </Container>

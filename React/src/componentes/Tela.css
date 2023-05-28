@@ -1,0 +1,47 @@
+
+
+.itens{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+
+}
+.perfil{
+    width: 36px;
+    height: 36px;
+    margin-bottom: 10px;
+}
+.estrela{
+    width: 16px;
+    height: 16px;
+    margin-bottom: 10px;
+}
+.lupa{
+    margin-top: 10px;
+}
+.tabuleiro{
+    border-radius: 10px;
+}
+.estrelinha{
+    padding-right: 5px;
+    padding-bottom: 3px;
+}
+.card{
+    background-color:#1F1F1F;
+    color: aliceblue
+    ;
+    border-radius: 15px;
+}
+
+.background{
+    background-image: url(./imagens/background.svg);
+}
+.Footer{
+    
+    padding-bottom: 50px;
+}
+.espaco{
+    padding-bottom: 100%;
+}

@@ -1,11 +1,10 @@
+import "/Users/mickaelcastro/Downloads/React/src/componentes/Tela.css"
+
 export default function Footer() {
   return (
   <div>
-    <div>
-      <p>Não tem conta?<a href="#">Cadastre-se</a></p>
-      </div>
-
-      <div>
+    
+      <div className="Footer">
       <p><small>Lorem Ipsum is simply dummy 
         <br/> text of the printing and typesetting industry.</small></p>
       </div>

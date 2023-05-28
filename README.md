@@ -23,12 +23,24 @@
 
   <h3>Front-end</h3>  
   React: Escolhemos react por se tratar de uma biblioteca JavaScript para criação de interfaces de usuários, possibilitando a reutilização de código e acelerando o processo de desenvolvimento, além de reduzir custos de produção. Outrossim, o framework foi uma sugestão do cliente, tanto na forma de organização e criação da aplicação.
+  Bootstrap: Um framework front-end que fornece estruturas de CSS para a criação de sites e aplicações responsivas.
+  React-Bootstrap: O react-bootstrap é uma biblioteca que nos oferece os componentes Bootstrap construídos em React.
 
   <h3>Back-end</h3>
   PHP: como um ambiente de desenvolvimento voltado aos servidores, o PHP foi escolhido por ter grande compatibilidade e afinidade com o software de banco de dados a ser usado na aplicação, o MySQL. Para além disso, o mesmo possui grande afinidade também com o próprio JavaScript e Html, os meios base da aplicação em um geral.
 
   <h3>Banco de dados</h3>
   MySQL:  Escolhemos essa tecnologia para banco de dados pois o PHP e MySQL possuem total compatibilidade, e funcionam muito bem juntos. Outros fatores são a implementação leve que proporciona maior velocidade de uso e a sua facilidade de integração entre servidor Web e linguagens de programação.
+  
+  <h3>Como Rodar o Front: </h3>
+  Abra o terminal, na pasta do código do seu editor, e digite os seguintes comandos: <br>
+  
+  npm install react-scripts --save
+
+  cd React
+
+  npm start
+  
 
 <h2>Pessoas Desenvolvedoras do Projeto</h2>
   Equipe Linos - linosdesingsmd@gmail.com 

@@ -21,7 +21,7 @@ function Quests(){
            
             <Card       
                     style={{ width: '23rem' }}
-                    className="mb-2 m-auto card"
+                    className="mb-2 m-auto card bg-dark"
                     
                     >
                 
@@ -42,7 +42,7 @@ function Quests(){
             <Carousel.Item>
             <Card       
                     style={{ width: '23rem' }}
-                    className="mb-2 m-auto"
+                    className="mb-2 m-auto bg-dark"
                     >
                 
                 <Card.Body>
@@ -63,7 +63,7 @@ function Quests(){
             <Carousel.Item>
             <Card       
                     style={{ width: '23rem' }}
-                    className="mb-2 m-auto"
+                    className="mb-2 m-auto bg-dark card"
                     >
                
                 <Card.Body>

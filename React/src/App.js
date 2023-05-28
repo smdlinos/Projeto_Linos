@@ -1,10 +1,8 @@
 import "./styles.css";
-import Off_canvas from "./componentes/off_canvas"
 import "bootstrap/dist/css/bootstrap.css";
 import Home from "./pages/home"
 import Contato from "./pages/contato"
 import Cadastro from "./pages/cadastro"
-import Header from "./componentes/Header"
 import Redefinir from "./pages/redefinir_senha"
 
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
@@ -13,7 +11,6 @@ export default function App() {
   return (
     <div className="App">   
       
-    
         <Router>
          
           <Routes>

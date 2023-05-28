@@ -1,4 +1,4 @@
-
+import "../componentes/Tela.css"
 import Header2 from "../componentes/Header2";
 import Quests from "../componentes/Quests";
 import Tabuleiro from "../componentes/tabuleiro";
@@ -15,7 +15,7 @@ function Home (){
                 <h5 className='pb-3 pt-5'>
                 Todos os Questionários
                 </h5>
-                <Quests/>
+                <Quests />
             </main>
             
             

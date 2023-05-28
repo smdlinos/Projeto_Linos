@@ -2,9 +2,9 @@ import Card from 'react-bootstrap/Card';
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import "/Users/mickaelcastro/Downloads/React/src/componentes/Tela.css"
+import "../componentes/Tela.css"
 import Carousel from 'react-bootstrap/Carousel';
-import estrela from "/Users/mickaelcastro/Downloads/React/src/componentes/imagens/estrela.svg";
+import estrela from "../componentes/imagens/estrela.svg";
 
 
 

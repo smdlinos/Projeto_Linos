@@ -1,8 +1,8 @@
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Tabuleiro from '/Users/mickaelcastro/Downloads/React/src/componentes/imagens/tabuleiro_1.svg';
-import "/Users/mickaelcastro/Downloads/React/src/componentes/Tela.css"
+import Tabuleiro from '../componentes/imagens/tabuleiro_1.svg';
+import "../componentes/Tela.css"
 function tabuleiro(){
     return(
         <div>

@@ -3,9 +3,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./Tela.css"
 import Stack from 'react-bootstrap/Stack';
-import lupa from "/Users/mickaelcastro/Downloads/React/src/componentes/imagens/lupaa.svg";
-import perfil from "/Users/mickaelcastro/Downloads/React/src/componentes/imagens/noto_lion.png";
-import estrela from "/Users/mickaelcastro/Downloads/React/src/componentes/imagens/estrela.svg";
+import lupa from "../componentes/imagens/lupaa.svg";
+import perfil from "../componentes/imagens/noto_lion.png";
+import estrela from "../componentes/imagens/estrela.svg";
 
 export default function Header2() {
   return (

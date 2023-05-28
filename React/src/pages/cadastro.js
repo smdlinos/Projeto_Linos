@@ -2,13 +2,10 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import "/Users/mickaelcastro/Downloads/React/src/componentes/Tela.css"
-import background from "/Users/mickaelcastro/Downloads/React/src/componentes/imagens/background.svg"
-import Footer from "/Users/mickaelcastro/Downloads/React/src/componentes/footer.js";
-import FloatingLabel from 'react-bootstrap/FloatingLabel';
-import Header from "/Users/mickaelcastro/Downloads/React/src/componentes/Header.js"
+import "../componentes/Tela.css"
+import Footer from "../componentes/footer";
+import Header from "../componentes/Header"
 import { useState } from "react";
-import Cadastro_ from "/Users/mickaelcastro/Downloads/React/src/componentes/formulario_g.js"
 
 
 export default function Cadastro() {

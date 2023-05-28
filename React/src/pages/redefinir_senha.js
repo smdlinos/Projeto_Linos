@@ -3,8 +3,8 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { useState } from "react";
-import "/Users/mickaelcastro/Downloads/React/src/componentes/Tela.css"
-import Header from "/Users/mickaelcastro/Downloads/React/src/componentes/Header.js";
+import "../componentes/Tela.css"
+import Header from "../componentes/Header.js";
 
 export default function Redefinir() {
 

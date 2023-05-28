@@ -1,4 +1,4 @@
-import "/Users/mickaelcastro/Downloads/React/src/componentes/Tela.css"
+import "../componentes/Tela.css"
 
 export default function Footer() {
   return (

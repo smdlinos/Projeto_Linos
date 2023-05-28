@@ -1,6 +1,5 @@
-import Header from "/Users/mickaelcastro/Downloads/React/src/componentes/Header.js";
+
 import Header2 from "../componentes/Header2";
-import Footer from "../componentes/footer";
 import Quests from "../componentes/Quests";
 import Tabuleiro from "../componentes/tabuleiro";
 function Home (){

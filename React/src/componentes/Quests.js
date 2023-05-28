@@ -15,7 +15,7 @@ function Quests(){
                 <Row className=''>
                     
             
-            <Carousel>
+            <Carousel >
             <Carousel.Item>
 
            

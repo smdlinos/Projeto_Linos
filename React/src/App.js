@@ -1,4 +1,5 @@
 import "./styles.css";
+import Off_canvas from "./componentes/off_canvas"
 import "bootstrap/dist/css/bootstrap.css";
 import Home from "./pages/home"
 import Contato from "./pages/contato"
@@ -10,8 +11,9 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 export default function App() {
   return (
-    <div className="App">    
-
+    <div className="App">   
+      
+    
         <Router>
          
           <Routes>

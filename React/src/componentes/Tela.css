@@ -6,20 +6,23 @@
     align-items: center;
     justify-content: space-evenly;
     text-align: center;
+    padding-left: 14px;
 
 }
 .perfil{
     width: 36px;
     height: 36px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 .estrela{
     width: 16px;
     height: 16px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    
 }
 .lupa{
     margin-top: 10px;
+    width: 20px;
 }
 .tabuleiro{
     border-radius: 10px;
@@ -44,4 +47,22 @@
 }
 .espaco{
     padding-bottom: 100%;
+}
+.pontos{
+    padding-bottom: 8px;
+}
+.perfil_g{
+    
+    width: 270px;
+}
+.estrela_p{
+    width: 20px;
+}
+.pontos_p{
+    display: flex;
+    flex-direction: row;
+}
+.titulo{
+    font-size: 30px;
+    
 }

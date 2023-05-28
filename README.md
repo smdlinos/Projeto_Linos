@@ -35,6 +35,7 @@
   <h3>Como Rodar o Front: </h3>
   Abra o terminal, na pasta do código do seu editor, e digite os seguintes comandos: 
   
+  
   npm install react-scripts --save
 
   cd React

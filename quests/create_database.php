@@ -2,22 +2,24 @@
 
 $servidor = "localhost";
 $user = "root";
-$password = "batata2103";
+$password = "";
 $db= "quests";
 
 $conexao = mysqli_connect($servidor, $user, $password, $db);
 
-$query = "CREATE TABLE usuarios(
-	id_usuario int not null auto_increment primary key,
-	nome varchar(255) not null,
-	nickname varchar(30) not null,
-	email varchar(50) not null,
-	senha varchar(30) not null,
-	data_nascimento date,
-	genero enum('M', 'F', 'O'),
-	escolaridade enum('Ensino Fundamental II Completo','Ensino Médio Incompleto','Ensino Médio Completo','Ensino Superior Completo', 'Ensino Superior Incompleto', 'Pós-Graduação'),
-	pontos int,
-	posicao int not null
+$query = "CREATE DATABASE `quests`";
+
+$query = "CREATE TABLE `quests`.`usuarios`(
+	`id_usuario` int not null auto_increment primary key,
+	`name` varchar(255) not null,
+	`nickname` varchar(30) not null,
+	`email` varchar(50) not null,
+	`password` varchar(255) not null,
+	`data_nascimento` varchar(30),
+	`genero` varchar(20),
+	`escolaridade` varchar(255),
+	`pontos` int,
+	`posicao` int not null
 	)";
 
 $query = "CREATE TABLE `quests`.`pesquisa` (

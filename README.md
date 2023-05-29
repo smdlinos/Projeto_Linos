@@ -55,7 +55,7 @@
   
   https://localhost/quests/home para ser redirecionado para a view inicial.
 
-  (Para gerenciar o banco de dados com mais eficiência o xampp permite utilizar o phpmyadmin que fornece uma interface de SDBD mais facilmente)
+  (Para gerenciar o banco de dados com mais eficiência o xampp permite utilizar o phpmyadmin que fornece uma interface de SGBD mais facilmente)
 <h2>Responsáveis pelo Projeto</h2>
   Equipe Linos - linosdesingsmd@gmail.com <br>
 

@@ -43,8 +43,7 @@
 
   npm start
 
-  <h2>Como rodar o Back-end: </h2>
-  <h3>
+  <h3>Como rodar o Back-end: </h3>
   Como o backend ainda não foi integrado com o front, e nem com o futuro serividor de hospedagem, precisa-se utilizar um servidor (Apache) na máquina local para poder rodar o protótipo do backend. Atualmente utilizamos o XAMPP no ambiente de desenvolvimento.
 
   Com o servidor rodando, caso haja a necessidade de configurar o banco de dados, as informações do mesmo devem ser alteradas em '/quests/app/database/connect.php'. No arquivo citado você pode alterar as informações nos argumentos de instanciamento da função connect de acordo com os atributos.  
@@ -57,7 +56,6 @@
   https://localhost/quests/home para ser redirecionado para a view inicial.
 
   (Para gerenciar o banco de dados com mais eficiência o xampp permite utilizar o phpmyadmin que fornece uma interface de SDBD mais facilmente)
-</h3>
 <h2>Responsáveis pelo Projeto</h2>
   Equipe Linos - linosdesingsmd@gmail.com <br>
 

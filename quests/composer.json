@@ -12,7 +12,9 @@
             "email": "victoremanuel.vet8@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "phpmailer/phpmailer": "^6.8"
+    },
     "autoload": {
         "files": [
             "app/helpers/constantes.php",
@@ -26,8 +28,10 @@
             "app/helpers/flash.php",
             "app/helpers/sessions.php",
             "app/helpers/validate.php",
-            "app/database/create.php"
-
+            "app/database/create.php",
+            "app/database/edit.php",
+            "app/helpers/getDataToChangePassword.php",
+            "app/helpers/send.php"
             ],       
             "psr-4": {
                 "app\\":"app" 

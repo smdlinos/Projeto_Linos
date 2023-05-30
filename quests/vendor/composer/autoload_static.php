@@ -19,12 +19,19 @@ class ComposerStaticInita33902112c497e121bf1cc9d089584dd
         '0a04ae146f606c6b1fc4f09e125aff9a' => __DIR__ . '/../..' . '/app/helpers/sessions.php',
         'cdea25de11fa90277f8cdb3f4531063a' => __DIR__ . '/../..' . '/app/helpers/validate.php',
         'c06f4ddb3c229026f66bbe3224bdd1ed' => __DIR__ . '/../..' . '/app/database/create.php',
+        'cd7a2ed4429b0c229edab8fc07546622' => __DIR__ . '/../..' . '/app/database/edit.php',
+        '1ae73d89af97fa0f988d4435095f0341' => __DIR__ . '/../..' . '/app/helpers/getDataToChangePassword.php',
+        'f72aae0591cd7d51905a62ab1467e589' => __DIR__ . '/../..' . '/app/helpers/send.php',
     );
 
     public static $prefixLengthsPsr4 = array (
         'a' => 
         array (
             'app\\' => 4,
+        ),
+        'P' => 
+        array (
+            'PHPMailer\\PHPMailer\\' => 20,
         ),
     );
 
@@ -33,13 +40,14 @@ class ComposerStaticInita33902112c497e121bf1cc9d089584dd
         array (
             0 => __DIR__ . '/../..' . '/app',
         ),
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+        ),
     );
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
-        'app\\controllers\\Home' => __DIR__ . '/../..' . '/app/controllers/Home.php',
-        'app\\controllers\\Login' => __DIR__ . '/../..' . '/app/controllers/Login.php',
-        'app\\controllers\\User' => __DIR__ . '/../..' . '/app/controllers/User.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

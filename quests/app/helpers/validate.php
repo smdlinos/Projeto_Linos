@@ -18,7 +18,6 @@ function validate(array $validations)
 			singleValidation($validate, $field, $param):
 			multipleValidations($validate, $field, $param);
 	}
-	
 
 	if(in_array(false, $result)){
 		return false;
@@ -61,7 +60,8 @@ function required($field)
 
 
 function email($field)
-{
+{	
+
 	$emailIsValide = filter_input(INPUT_POST, $field, FILTER_VALIDATE_EMAIL);
 	if(!$emailIsValide){
 		setFlash($field, 'O campo tem que ser um email válido');
@@ -76,10 +76,13 @@ function unique($field, $param)
 	$user =  findBy($param, $field, $data);
 
 	if($user){
+		if ($_SESSION[CHANGE]){
+		return $data;
+		} else {
 		setFlash($field,"Esse valor já existe");
 		return false;
+		}
 	}
-
 	return $data;
 }
 

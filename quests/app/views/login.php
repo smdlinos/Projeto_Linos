@@ -12,3 +12,4 @@
 
 	<input type="submit"  value="Login">
 </form>
+<a href="/quests/changePassword">Esqueceu a senha?</a>

@@ -18,4 +18,7 @@ return array(
     '0a04ae146f606c6b1fc4f09e125aff9a' => $baseDir . '/app/helpers/sessions.php',
     'cdea25de11fa90277f8cdb3f4531063a' => $baseDir . '/app/helpers/validate.php',
     'c06f4ddb3c229026f66bbe3224bdd1ed' => $baseDir . '/app/database/create.php',
+    'cd7a2ed4429b0c229edab8fc07546622' => $baseDir . '/app/database/edit.php',
+    '1ae73d89af97fa0f988d4435095f0341' => $baseDir . '/app/helpers/getDataToChangePassword.php',
+    'f72aae0591cd7d51905a62ab1467e589' => $baseDir . '/app/helpers/send.php',
 );

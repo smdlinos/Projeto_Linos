@@ -66,17 +66,22 @@ class Login
 
   public function vefifyCode()
   {
-    $getKey = $_SESSION[CHANGE]->mesagem;
-    $validate = [
-      'code' => 'required'
-    ];
+    $getKey = $_SESSION[CHANGE]['mensagem'];
+    $validate = validate([
+      'codigo' => 'required'
+    ]);
 
-    $code = $validate['code'];
+    $code = $validate['codigo'];
 
     if($getKey != $code){
-      return setMessageAndRedirect('message', 'código incorreto', 'changePassword');
+      return setMessageAndRedirect('message', 'Código incorreto', 'changePassword');
     }
 
+    return setMessageAndRedirect('message', 'Usuário verificado', 'chageConfirmation');
+  }
+
+  public function redirectChange()
+  {
     return [
       'view' => 'change.php',
       'data' => ['title'=> 'Change Password']
@@ -84,35 +89,40 @@ class Login
   }
 
   public function changePassword(){
-    $validate = [
+    $validate = validate([
       'password' => 'required',
       'password1' => 'required'
-    ];
-
-    if($validate->password != $validate->password1){
-      return setMessageAndRedirect('message', 'Senhas diferentes', 'change');
+    ]);
+    $password = $validate['password'];
+    $password1 = $validate['password1'];
+   
+    if($password !== $password1){
+      return setMessageAndRedirect('message', 'Senhas Diferentes', 'chageConfirmation');
     }
 
-    $email = $_SESSION[CHANGE]->email;
-    $user = findBy('usuarios', 'email', $email);
+    $email = [
+      'email' => "{$_SESSION[CHANGE]['quem']}"
+    ];
+    $user = findBy('usuarios', 'email', $email['email']);
 
      if(!$user){
-      return setMessageAndRedirect('message', 'Usuário não inexistente', 'login');
+      return setMessageAndRedirect('message', 'Usuário inexistente', 'login');
     }
 
     $data = [
-      'password' => "$validate->password",
-      'email' => "$email"
+      'password' => "{$password}"
     ];
 
-    updatePassword($data);
+    $update = update('usuarios', $data, $email);
 
-    if(!updatePassword($data)){
-      return setMessageAndRedirect('message', 'Erro ao atualizar', 'login');
+
+    if(!$update){
+      return setMessageAndRedirect('message', 'Erro ao atualizar', 'change');
     }
-    
 
-    return setMessageAndRedirect('message', 'Senha redefinida com sucesso', 'login');
+    unset($_SESSION[CHANGE]);
+    
+    return setMessageAndRedirect('message', 'Atualizado com sucesso', 'login');
   }
 
 }

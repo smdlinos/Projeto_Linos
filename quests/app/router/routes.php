@@ -15,7 +15,8 @@ return [
 		'/quests/login' => 'Login@index',
 		'/quests/logout' => 'Login@destroy',
 		'/quests/codeVerification' => 'Login@redirectVerify',
-		'/quests/changePassword' => 'Login@change'
+		'/quests/changePassword' => 'Login@change',
+		'/quests/chageConfirmation' => 'Login@redirectChange'
 	#'/quests/user/[0-9]+/name/[a-z]+' => 'User@create'
 	]
 

@@ -1,5 +1,5 @@
+<?php if(!logged()): ?>
 <h2>Login</h2>
-<br>
 <?php echo getFlash('message');?>
 <form action="/quests/login" method="post" >
 
@@ -13,3 +13,6 @@
 	<input type="submit"  value="Login">
 </form>
 <a href="/quests/changePassword">Esqueceu a senha?</a>
+<?php else: ?>
+<h2>Usuário já está logado</h2>
+<?php endif; ?>

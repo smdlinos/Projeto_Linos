@@ -21,4 +21,8 @@ return array(
     'cd7a2ed4429b0c229edab8fc07546622' => $baseDir . '/app/database/edit.php',
     '1ae73d89af97fa0f988d4435095f0341' => $baseDir . '/app/helpers/getDataToChangePassword.php',
     'f72aae0591cd7d51905a62ab1467e589' => $baseDir . '/app/helpers/send.php',
+    '47028e37013f80baee6e1be626bc8648' => $baseDir . '/app/helpers/validations.php',
+    '4e213d0aa20ab09981efbe8f40ee2657' => $baseDir . '/app/helpers/helpers.php',
+    '6e89e2768230d192302ad44845d41060' => $baseDir . '/app/database/delete.php',
+    '0e7b4a72361f4ea9f68846965a7f9c6b' => $baseDir . '/app/database/update.php',
 );

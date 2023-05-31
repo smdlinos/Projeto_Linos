@@ -31,7 +31,11 @@
             "app/database/create.php",
             "app/database/edit.php",
             "app/helpers/getDataToChangePassword.php",
-            "app/helpers/send.php"
+            "app/helpers/send.php",
+            "app/helpers/validations.php",
+            "app/helpers/helpers.php",
+            "app/database/delete.php",
+            "app/database/update.php"
             ],       
             "psr-4": {
                 "app\\":"app" 

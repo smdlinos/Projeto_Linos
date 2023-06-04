@@ -10,3 +10,10 @@ function user()
 function logged(){
     return isset( $_SESSION[LOGGED]);
 }
+
+
+function chage(){
+    if(isset($_SESSION[CHANGE])){
+        return $_SESSION[CHANGE];
+    }
+}

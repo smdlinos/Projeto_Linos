@@ -6,10 +6,16 @@ class User
 {
 	public function show($params)
 	{
+
 		if(!isset($params['user'])){
 			redirect('home');
 		}
 		$user = findBy('usuarios', 'id_usuario' , $params['user']);
+
+		return [
+			'view' => 'perfil.php',
+			'data' => ['title'=> 'Perfil', 'user' => $user]
+		];
 	}
 
 	public function create($params){

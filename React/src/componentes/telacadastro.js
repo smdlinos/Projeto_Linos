@@ -1,5 +1,5 @@
 import Header from "./Header";
-import Login from "./section_login";
+import Login from "./Section_login";
 import Footer from "./footer";
 
 function telacadastro(){

@@ -46,17 +46,17 @@ export default function Section_login() {
             </Form.Group>
             
                 
-            <a href="#" className="text-muted"><small>Esqueci a senha</small></a>
+            <a href="/redefinir" className="text-muted"><small>Esqueci a senha</small></a>
             <br/>
             
             <Button variant="primary" type="submit" className="px-5 mb-3 mt-3">
               Login
             </Button>
             <br />
-            <Link to="#">Ou entre como visitante</Link>
+            <Link to="/home">Ou entre como visitante</Link>
           </Form>
           <div>
-      <p className="pt-5">Não tem conta?<a href="#">Cadastre-se</a></p>
+      <p className="pt-5">Não tem conta?<a href="/cadastro">Cadastre-se</a></p>
       </div>
 
         </Col>

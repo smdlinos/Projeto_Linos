@@ -3,17 +3,29 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import {useNavigate} from 'react-router-dom';
 import "../componentes/Tela.css"
 import Header from "../componentes/Header.js";
 
 export default function Redefinir() {
 
+  const [password, setPassword] = useState()
+  const [password1, setPassword1] = useState()
+  const [redirect, setRedirect] = useState(false);
+  const navigate = useNavigate();
+
   function cadastroUsuário(e){
     e.preventDefault()
-    console.log(`Senha: ${password}`)
+    if(password1 === password){
+      console.log(`Senha: ${password}`)
+      setRedirect(true);
+    } else {
+      console.log("Senhas diferentes")
+    }
   }
 
-  const [password, setPassword] = useState()
+  
 
 
   return (
@@ -30,7 +42,7 @@ export default function Redefinir() {
               type="password" 
               placeholder="Insira aqui" 
               className="" 
-              name = "password-nova"
+              name = "password"
               onChange={(e)=> setPassword(e.target.value)}
               />
             </Form.Group>
@@ -40,8 +52,8 @@ export default function Redefinir() {
               <Form.Control 
               type="password" 
               placeholder="Insira aqui" 
-              name = "password" 
-              onChange={(e)=> setPassword(e.target.value)}
+              name = "password1" 
+              onChange={(e)=> setPassword1(e.target.value)}
               />
             </Form.Group>
             
@@ -56,6 +68,7 @@ export default function Redefinir() {
 
         </Col>
       </Row>
+      {redirect && navigate("/login")}
     </div>
   );
 }

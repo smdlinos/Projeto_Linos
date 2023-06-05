@@ -2,6 +2,7 @@ import "../componentes/Tela.css"
 import Header2 from "../componentes/Header2";
 import Quests from "../componentes/Quests";
 import Tabuleiro from "../componentes/tabuleiro";
+import SearchForm from "../componentes/SearchForm";
 function Home (){
     return(
         <div>

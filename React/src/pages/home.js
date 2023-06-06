@@ -1,14 +1,16 @@
 import "../componentes/Tela.css"
-import Header2 from "../componentes/Header2";
 import Quests from "../componentes/Quests";
-import Tabuleiro from "../componentes/tabuleiro";
+import Tabletop from "../componentes/Tabletop";
 import SearchForm from "../componentes/SearchForm";
+import HeaderHome from "../componentes/HeaderHome";
+
 function Home (){
     return(
         <div>
-            <Header2/>
+
+            <HeaderHome/>
             <main>
-                <Tabuleiro/>
+                <Tabletop/>
                 <h5 className='pb-3'>
                 Questionários Recomendados
                 </h5>

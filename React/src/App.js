@@ -8,7 +8,7 @@ import Redefinir from "./pages/redefinir_senha"
 import { BrowserRouter as Router, Routes, Route, Link, useHref } from "react-router-dom";
 import Search from "./pages/Search";
 import LandPage from "./componentes/LandPage";
-
+import { ScrollRestoration } from "react-router-dom";
 export default function App() {
   return (
     <div className="App">   

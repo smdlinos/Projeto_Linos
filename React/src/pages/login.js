@@ -1,14 +1,14 @@
 import "../componentes/Tela.css"
-import SectionLogin from "../componentes/Section_login";
+import SessionLogin from "../componentes/Login";
 import Header from "../componentes/Header"
-import Footer from "../componentes/footer";
+import Footer from "../componentes/Footer";
 
 function Login (){
     return(
         <div className="background">
     <Header />
     <main>
-    <SectionLogin />
+    <SessionLogin />
     <Footer />
     </main>
            

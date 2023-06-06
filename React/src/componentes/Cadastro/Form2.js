@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "../Tela.css"
-import Footer from "../footer";
+import Footer from "../Footer";
 import Header from "../Header"
 import { useState } from "react";
 

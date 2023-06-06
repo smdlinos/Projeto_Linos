@@ -5,7 +5,7 @@ import Login from "./pages/login"
 import Cadastro from "./pages/cadastro"
 import Redefinir from "./pages/redefinir_senha"
 
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, useHref } from "react-router-dom";
 import Search from "./pages/Search";
 import LandPage from "./componentes/LandPage";
 
@@ -21,7 +21,7 @@ export default function App() {
             </Route>
             <Route path = "/login" element = {<Login/>}>     
             </Route>
-            <Route path = "/cadastro" element = {<Cadastro/>}/>     
+            <Route path = "/cadastro" element = {<Cadastro />}/>     
 
             <Route path = "/search" element = {<Search/>}/>     
        
@@ -35,7 +35,7 @@ export default function App() {
             <li>
               <Link to="/home">Home</Link>
               <Link to="/login">Login</Link>
-              <Link to="/cadastro">Cadastro</Link>
+              <Link to="/cadastro"><a href="#start">Cadastro</a></Link>
               <Link to="/redefinir">Redefinir</Link>
             </li>
           </ul>

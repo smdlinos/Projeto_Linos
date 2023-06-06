@@ -8,7 +8,7 @@ export default function header() {
       <Container className="mb-4 ">
         <Row className="justify-content-md-center">
           <Col className="mt-4 titulo">
-            <h1 className="mt-4">QUESTS</h1>
+            <h1 className="mt-4" name="start">QUESTS</h1>
           </Col>
         </Row>
       </Container>

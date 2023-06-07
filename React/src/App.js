@@ -1,14 +1,15 @@
 import "./styles.css";
 import "bootstrap/dist/css/bootstrap.css";
-import Home from "./pages/home"
-import Login from "./pages/login"
-import Cadastro from "./pages/cadastro"
-import Redefinir from "./pages/redefinir_senha"
-
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Reset from "./pages/Reset";
+import Register from "./pages/Register"
 import { BrowserRouter as Router, Routes, Route, Link, useHref } from "react-router-dom";
 import Search from "./pages/Search";
 import LandPage from "./componentes/LandPage";
 import { ScrollRestoration } from "react-router-dom";
+
+
 export default function App() {
   return (
     <div className="App">   
@@ -16,17 +17,18 @@ export default function App() {
         <Router>
          
           <Routes>
-            <Route path = "/" element = {<LandPage/>}/>     
-            <Route exact path = "/home" element = {<Home/>}>
-            </Route>
-            <Route path = "/login" element = {<Login/>}>     
-            </Route>
-            <Route path = "/cadastro" element = {<Cadastro />}/>     
+            <Route path = "/" element = {<LandPage/>}/>  
+
+            <Route path = "/login" element = {<Login/>}/>     
+
+            <Route exact path = "/home" element = {<Home/>}/>
+ 
+            <Route path = "/register" element = {<Register/>}/>     
 
             <Route path = "/search" element = {<Search/>}/>     
        
-            <Route path = "/redefinir" element = {<Redefinir/>}>     
-            </Route>
+            <Route path = "/reset" element = {<Reset/>}/>     
+
           </Routes>
           <br/>
             
@@ -35,8 +37,8 @@ export default function App() {
             <li>
               <Link to="/home">Home</Link>
               <Link to="/login">Login</Link>
-              <Link to="/cadastro"><a href="#start">Cadastro</a></Link>
-              <Link to="/redefinir">Redefinir</Link>
+              <Link to="/register">Cadastro</Link>
+              <Link to="/reset">Redefinir</Link>
             </li>
           </ul>
         </Router>

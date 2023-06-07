@@ -1,10 +1,10 @@
 import "../componentes/Tela.css"
-import Quests from "../componentes/Quests";
+import Forms from "../componentes/Forms";
 import Tabletop from "../componentes/Tabletop";
 import SearchForm from "../componentes/SearchForm";
 import HeaderHome from "../componentes/HeaderHome";
 
-function Home (){
+export default function Home(){
     return(
         <div>
 
@@ -14,16 +14,14 @@ function Home (){
                 <h5 className='pb-3'>
                 Questionários Recomendados
                 </h5>
-                <Quests/>
+                <Forms/>
                 <h5 className='pb-3 pt-5'>
                 Todos os Questionários
                 </h5>
-                <Quests />
+                <Forms />
             </main>
             
             
         </div>
     )
 }
-
-export default Home

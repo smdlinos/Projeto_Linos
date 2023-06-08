@@ -30,6 +30,6 @@ export default function Reset() {
 
 
   return (
-    <Reset3 cadastro={cadastroUsuário} redirect={redirect}/>
+    <Reset3 cadastro={cadastroUsuário} redirect={redirect} navigate={navigate}/>
   );
 }

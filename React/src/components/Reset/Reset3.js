@@ -2,9 +2,6 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import {useNavigate} from 'react-router-dom';
 import "../Tela.css"
 import Header from "../Header.js";
 
@@ -48,6 +45,6 @@ export default function Reset3 (props){
 
     </Col>
   </Row>
-  {props.redirect && navigate("/login")}
+  {props.redirect && props.navigate("/login")}
 </div>
 }

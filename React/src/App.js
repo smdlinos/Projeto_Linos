@@ -6,7 +6,7 @@ import Reset from "./pages/Reset";
 import Register from "./pages/Register"
 import { BrowserRouter as Router, Routes, Route, Link, useHref } from "react-router-dom";
 import Search from "./pages/Search";
-import LandPage from "./componentes/LandPage";
+import LandPage from "./components/LandPage";
 import { ScrollRestoration } from "react-router-dom";
 
 

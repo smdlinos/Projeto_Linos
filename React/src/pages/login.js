@@ -1,7 +1,7 @@
-import "../componentes/Tela.css"
-import SessionLogin from "../componentes/SessionLogin";
-import Header from "../componentes/Header"
-import Footer from "../componentes/Footer";
+import "../components/Tela.css"
+import SessionLogin from "../components/SessionLogin";
+import Header from "../components/Header"
+import Footer from "../components/Footer";
 
 function Login (){
     return(

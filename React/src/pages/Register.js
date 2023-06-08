@@ -2,12 +2,12 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import "../componentes/Tela.css"
-import Footer from "../componentes/Footer";
-import Header from "../componentes/Header"
+import "../components/Tela.css"
+import Footer from "../components/Footer";
+import Header from "../components/Header"
 import { useEffect, useState } from "react";
-import Form1 from "../componentes/Cadastro/Form1";
-import Form2 from "../componentes/Cadastro/Form2";
+import Form1 from "../components/Cadastro/Form1";
+import Form2 from "../components/Cadastro/Form2";
 
 
 

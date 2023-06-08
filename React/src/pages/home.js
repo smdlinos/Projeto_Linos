@@ -1,8 +1,8 @@
-import "../componentes/Tela.css"
-import Forms from "../componentes/Forms";
-import Tabletop from "../componentes/Tabletop";
-import SearchForm from "../componentes/SearchForm";
-import HeaderHome from "../componentes/HeaderHome";
+import "../components/Tela.css"
+import Forms from "../components/Forms";
+import Tabletop from "../components/Tabletop";
+import SearchForm from "../components/SearchForm";
+import HeaderHome from "../components/HeaderHome";
 
 export default function Home(){
     return(

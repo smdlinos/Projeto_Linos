@@ -8,23 +8,93 @@ import Header from "../components/Header"
 import { useEffect, useState } from "react";
 import Form1 from "../components/Cadastro/Form1";
 import Form2 from "../components/Cadastro/Form2";
-
-
+const urlGet = "http://localhost/quests/temas";
+const urlPost = "";
+import {useFetch} from "../hooks/useFetch";
 
 export default function Register() {
 
 
+  const { data:temas} = useFetch(urlGet);
+  const { data:user, httpConfig, loading, error} = useFetch(urlPost);
+
   function registerUsuario(e){
     e.preventDefault()
-    console.log(`Usuário: ${email} Senha: ${password}`)
+
+    // if(password1 == password2){
+    //   setPassword(password1);
+    //   console.log('Senhas Iguais', password1, password2, password);
+    // } else {
+    //   console.log('Senhas Diferentes')
+    // }
+
+    const user = {
+      name,  
+      nickname, 
+      email, 
+      password, 
+      data_nascimento, 
+      genero, 
+      escolaridade,
+      interesses
+    }
+    console.log(user);
   }
 
-  const [email, setEmail] = useState()
-  const [password, setPassword] = useState()
-   // verifica as requisições e atualiza
-  const [form, setForm] = useState(1);
+  
  
-  console.log(form);
+  const [password, setPassword] = useState();
+  
+  const [nickname, setNickname] = useState();
+  const [email, setEmail] = useState();
+  const [name, setName] = useState();
+  const [genero, setGenero] = useState();
+  const [escolaridade, setEscolaridade] = useState();
+  const [data_nascimento, setDataNascimento] = useState();
+  const [interesses, setInteresses] = useState([]);
+  
+
+  const [form, setForm] = useState(2);
+
+  
+
+  
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const user = {
+      name,  
+      nickname, 
+      email, 
+      password, 
+      data_nascimento, 
+      genero, 
+      escolaridade,
+      interesses
+    }
+    console.log(user);
+    httpConfig(user, "POST");
+
+
+    setName('');
+    setNickname('');
+    setEmail('');
+    setPassword('');
+    setDataNascimento('');
+    setGenero('');
+    setEscolaridade('');
+    setInteresses('');
+  
+  };
+
+
+
+
+
+
+  
+
 
   return (
     <div className="background">
@@ -33,7 +103,18 @@ export default function Register() {
       <Row className="justify-content-sm-center">
         <Col sm="auto" none="">
           <Form className="mb-4 rounded p-5 mx-3" onSubmit={registerUsuario} method="Post">
-          {form === 1 ? <Form1 email={(e)=> setEmail(e.target.value)} password={(e)=> setPassword(e.target.value)} form={setForm}/> : <Form2 />}
+          {form === 1 ? <Form1 
+          nickname = {(e)=> setNickname(e.target.value)}
+          name = {(e)=> setName(e.target.value)}
+          email={(e)=> setEmail(e.target.value)}
+          password={setPassword}
+          data_nascimento = {(e)=> setDataNascimento(e.target.value)} 
+          genero = {(e)=> setGenero(e.target.value)}
+          escolaridade = {(e)=> setEscolaridade(e.target.value)}
+          form={setForm}/> : <Form2 
+          temas={temas}
+          interesses = {setInteresses}
+          />}
           </Form>
             <Footer/>
         </Col>

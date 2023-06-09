@@ -3,13 +3,10 @@ import {useState, useEffect} from 'react';
 
 export const useFetch = (url) => {
     const [data, setData] = useState(null);
-
     const [config, setConfig] = useState(null);
     const [method, setMethod] = useState(null);
     const [callFetch, setCallFetch] = useState(false);
-
     const [loading, setLoading] = useState(false);
-
     const [error,setError] = useState(null);
 
     const httpConfig = (data, method) => {

@@ -1,26 +1,27 @@
-import "../componentes/Tela.css"
-import Header2 from "../componentes/Header2";
-import Quests from "../componentes/Quests";
-import Tabuleiro from "../componentes/tabuleiro";
-function Home (){
+import "../components/Tela.css"
+import Forms from "../components/Forms";
+import Tabletop from "../components/Tabletop";
+import SearchForm from "../components/SearchForm";
+import HeaderHome from "../components/HeaderHome";
+
+export default function Home(){
     return(
         <div>
-            <Header2/>
+
+            <HeaderHome/>
             <main>
-                <Tabuleiro/>
+                <Tabletop/>
                 <h5 className='pb-3'>
                 Questionários Recomendados
                 </h5>
-                <Quests/>
+                <Forms/>
                 <h5 className='pb-3 pt-5'>
                 Todos os Questionários
                 </h5>
-                <Quests />
+                <Forms />
             </main>
             
             
         </div>
     )
 }
-
-export default Home

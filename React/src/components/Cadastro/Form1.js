@@ -2,22 +2,22 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "../Tela.css";
 import { useEffect, useState } from "react";
-
+import { useFetch } from "../../hooks/useFetch"
 
 const Form1 = (props) => {
 
-    const [password1, setPassword1] = useState(1);
+    //const [password1, setPassword1] = useState(1);
     const [password2, setPassword2] = useState(2);
-
-
-    const alteraForm = () => {
-        props.password(password1);
-        props.form(2);
-    }
 
     const senhasDiferentes = () =>{
         alert('senhas diferemtes');
     }
+
+    const alteraForm = (e) => {
+        e.preventDefault();
+        props.validate();
+   }
+
 
     return <>
                     <h2>Realize seu Cadastro</h2>
@@ -49,7 +49,7 @@ const Form1 = (props) => {
                     type="password" 
                     placeholder="Sua senha" 
                     name = "password1" 
-                    onChange={(e) => setPassword1(e.target.value)}
+                    onChange={props.password}
                     />
                     </Form.Group>
 
@@ -132,7 +132,7 @@ const Form1 = (props) => {
                     </Form.Group>
 
                     <br/>
-                    {password1 === password2 ? <Button variant="primary" type="button"  onClick={alteraForm} className="px-5 mb-3 mt-3">
+                    {props.passwordValue === password2 ? <Button variant="primary" type="button" onClick={alteraForm} className="px-5 mb-3 mt-3">
                     Próximo
                     </Button>: <Button variant="primary" type="button"  onClick={senhasDiferentes} className="px-5 mb-3 mt-3">
                     Próximo

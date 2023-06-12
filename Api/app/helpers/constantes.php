@@ -4,3 +4,4 @@ define('CONTROLER_PATH', "app\\controllers\\");
 define('VIEWS', ROOT.'/app/views/');
 define('LOGGED', 'LOGGED');
 define('CHANGE', 'CHANGE');
+define('VERIFY', 'VERIFY');

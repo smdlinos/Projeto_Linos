@@ -46,6 +46,7 @@ export default function Register() {
   
   const handleSubmit = async (e) =>{
     e.preventDefault();
+
     try{
       const response = await axios.post(urlPost, {
         name,  
@@ -57,29 +58,27 @@ export default function Register() {
         escolaridade,
         interesses
       }).then(function (response) {
-          if (response.data) {
-            setName('');
-            setNickname('');
-            setEmail('');
-            setPassword('');
-            setDataNascimento('');
-            setGenero('');
-            setEscolaridade('');
-            setInteresses('');
 
-            navigate("/home");
-
-            console.log('Cadastrado Com Sucesso');
-          }else {
-            console.log("Houve um erro ao cadastrar");
-            navigate("/");
-          }
-
+        if (response.data) {
+          setName('');
+          setNickname('');
+          setEmail('');
+          setPassword('');
+          setDataNascimento('');
+          setGenero('');
+          setEscolaridade('');
+          setInteresses('');
+  
+          console.log('Cadastrado Com Sucesso');
+          navigate("/home");
+        }else {
+          console.log("Houve um erro ao cadastrar");
+          navigate("/");
+        }
       }).catch(function (error) {
         console.log(error);
       });
 
-      console.log(response);
     } catch(error){
       console.log(error);
     }
@@ -107,8 +106,6 @@ export default function Register() {
         console.log(error);
 
       });
-
-      console.log(response);
     } catch(error){
       console.log(error);
     }

@@ -8,7 +8,7 @@ function Tabletop(){
         <div>
             <div>
                 <Row>
-                    <Col justify-content-start>
+                    <Col className='justify-content-start'>
                     <h5>
                     Meu tabuleiro
                  </h5>

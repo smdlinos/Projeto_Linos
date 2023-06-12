@@ -6,6 +6,7 @@ class Home
 {
 	public function index($params)
 	{
+
 		$users = all('usuarios');
 		return [
 			'view' => 'home.php',

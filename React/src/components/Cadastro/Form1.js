@@ -117,8 +117,8 @@ const Form1 = (props) => {
                         <option value="Ensino Fundamental Completo">Ensino Fundamental Completo</option>
                         <option value="Ensino Médio Icompleto">Ensino Médio Icompleto</option>
                         <option value="Ensino Médio Completo">Ensino Médio Completo</option>
-                        <option value="Ensino Supeior Incompleto">Ensino Supeior Incompleto</option>
-                        <option value="Ensino Supeior Completo">Ensino Supeior Completo</option>
+                        <option value="Ensino Superior Incompleto">Ensino Superior Incompleto</option>
+                        <option value="Ensino Superior Completo">Ensino Superior Completo</option>
                         <option value="Pós-Graduação">Pós-Graduação</option>
                     </Form.Select>
                     </Form.Group>

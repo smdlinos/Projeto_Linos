@@ -6,11 +6,13 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    '320cde22f66dd4f5d3fd621d3e88b98f' => $vendorDir . '/symfony/polyfill-ctype/bootstrap.php',
     '9222f251be1582617f46f3bd695924a0' => $baseDir . '/app/helpers/constantes.php',
     '49a1795c6f26253d4aaec3e227475fed' => $baseDir . '/app/router/router.php',
     '21bb9dd0946c9b36e29934f0ed976d74' => $baseDir . '/app/core/controller.php',
     '96b71b006251e32266edca01e89e2047' => $baseDir . '/app/controllers/Home.php',
     '38c20e01c06597646a02c77cad7a51a6' => $baseDir . '/app/controllers/User.php',
+    '29f2e0321e6960b0708510a3a748e1bf' => $baseDir . '/app/controllers/Login.php',
     'd9968996cab60cbceeec7b8d37e5f277' => $baseDir . '/app/database/connect.php',
     'c508c13e2911d73c6b8718e9ba78df95' => $baseDir . '/app/database/fetch.php',
     '5905922fe2480f3bf9ed1c3d005715ba' => $baseDir . '/app/helpers/redirect.php',
@@ -24,4 +26,5 @@ return array(
     '4e213d0aa20ab09981efbe8f40ee2657' => $baseDir . '/app/helpers/helpers.php',
     '6e89e2768230d192302ad44845d41060' => $baseDir . '/app/database/delete.php',
     '0e7b4a72361f4ea9f68846965a7f9c6b' => $baseDir . '/app/database/update.php',
+    'dc49153e41532737d32dab88a5e3233e' => $baseDir . '/app/endpoints/createUser.php',
 );

@@ -4,9 +4,15 @@ require 'bootstrap.php';
 
 try {
     $data = router();
+
+
     if(!isset($data['data'])){
+        if($_SERVER['REQUEST_METHOD'] === 'GET' || $_SERVER['REQUEST_METHOD'] === 'POST'){
+            die();
+        }
         throw new Exception('O índice data está faltando');
     }
+    
 
     if(!isset($data['data']['title'])){
         throw new Exception('O Títle está faltando');

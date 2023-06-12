@@ -2,12 +2,14 @@
 
 
 
-function validate(array $validations)
+function validate(array $validations, $body)
 {
 	$result = [];
 	$param = '';
 
-	if (!function_exists('str_contains')) {
+	$content = $body;
+
+	if (!function_exists('str_contains')) { // verifica o str contains
 		function str_contains($haystack, $needle) {
 			return $needle !== '' && mb_strpos($haystack, $needle) !== false;
 		}
@@ -15,8 +17,8 @@ function validate(array $validations)
 
 	foreach($validations as $field => $validate){
 		$result[$field] = (!str_contains($validate, '|'))?
-			singleValidation($validate, $field, $param):
-			multipleValidations($validate, $field, $param);
+			singleValidation($validate, $field, $param, $content):
+			multipleValidations($validate, $field, $param, $content);
 	}
 
 	if(in_array(false, $result)){
@@ -26,16 +28,18 @@ function validate(array $validations)
 	return $result;
 }
 
-function singleValidation($validate, $field, $param)
+function singleValidation($validate, $field, $param, $content)
 {
+
 	if(str_contains($validate, ':')){
 		List($validate, $param) = explode(':', $validate);
 	}
-	return $validate($field, $param);
+
+	return $validate($field, $content, $param);
 }
 
 
-function multipleValidations($validate,$field, $param)
+function multipleValidations($validate,$field, $param, $content)
 {
 	$result = [];
 	$explodePipeValidate = explode('|' , $validate);
@@ -44,7 +48,7 @@ function multipleValidations($validate,$field, $param)
 			List($validate, $param) = explode(':', $validate);
 		}
 
-		$result[$field] = $validate($field,$param);
+		$result[$field] = $validate($field,$content,$param);
 		if (isset($result[$field]) and $result[$field] === false) {
 			break;
 		}

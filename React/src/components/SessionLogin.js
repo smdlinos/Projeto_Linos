@@ -5,15 +5,46 @@ import Col from "react-bootstrap/Col";
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
+import axios from 'axios';
+
+const url = "http://localhost/quests/login";
+
+import React, { useContext } from 'react';
+
+import { Context } from '../context/AuthContext';
+
+
 export default function SessionLogin() {
 
-  function cadastroUsuário(e){
-    e.preventDefault()
-    console.log(`Usuário: ${email} Senha: ${password}`)
-  }
+  const { authenticated, handleLogin, setPassword, setEmail } = useContext(Context);
 
-  const [email, setEmail] = useState()
-  const [password, setPassword] = useState()
+  console.log('Login', authenticated);
+
+
+
+
+  // const verify = async (e) =>{
+  //   e.preventDefault();
+  //   try{
+  //     const response = await axios.post(url, {
+  //       email, 
+  //       password, 
+  //     }).then(function (response) {
+       
+  //       console.log(response.data);
+
+  //     }).catch(function (error) {
+
+  //       console.log(error);
+
+  //     });
+
+  //   } catch(error){
+  //     console.log(error);
+  //   }
+  
+  // }
+
 
 
   return (
@@ -21,8 +52,8 @@ export default function SessionLogin() {
          <br/>
            
          <Row className="justify-content-sm-center">
-        <Col sm="auto" none="">
-          <Form className="mb-4 rounded p-5 mx-3" onSubmit={cadastroUsuário} method="Post">
+          <Col sm="auto" none="">
+          <Form className="mb-4 rounded p-5 mx-3" onSubmit={handleLogin} method="Post">
             <h2>Seja bem vindo</h2>
             <Form.Group className="mb-2">
               <Form.Label htmlFor="email">Login</Form.Label>

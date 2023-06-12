@@ -13,7 +13,9 @@
         }
     ],
     "require": {
-        "phpmailer/phpmailer": "^6.8"
+        "phpmailer/phpmailer": "^6.8",
+        "firebase/php-jwt": "^6.0",
+        "vlucas/phpdotenv": "^4.3"
     },
     "autoload": {
         "files": [
@@ -22,6 +24,7 @@
             "app/core/controller.php",
             "app/controllers/Home.php",
             "app/controllers/User.php",
+            "app/controllers/Login.php",
             "app/database/connect.php",
             "app/database/fetch.php",
             "app/helpers/redirect.php",
@@ -34,7 +37,8 @@
             "app/helpers/validations.php",
             "app/helpers/helpers.php",
             "app/database/delete.php",
-            "app/database/update.php"
+            "app/database/update.php",
+            "app/endpoints/createUser.php"
             ],       
             "psr-4": {
                 "app\\":"app" 

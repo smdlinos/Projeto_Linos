@@ -40,6 +40,8 @@ function AuthProvider({ children }){
 	       		localStorage.setItem('token', JSON.stringify(token));
 				axios.defaults.headers.Authorization = `Bearer ${token}`;
 				setAuthenticated(true);
+				setEmail('');
+				setPassword('');
 				navigate('/home');
 	    	}
 	       	

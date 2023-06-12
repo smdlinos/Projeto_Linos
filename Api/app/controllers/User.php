@@ -109,6 +109,13 @@ class User
 				}
 			}
 
+			if(sizeof($cadastrar) < 7){
+				$valida = false;
+				echo json_encode($valida);
+				http_response_code(200);
+				die();
+			}
+
 			foreach ($cadastrar as $key => $value) {
 				$_POST[$key] = $value;
 			}
@@ -126,9 +133,13 @@ class User
 			if($validate){
 				$valida = true;
 				echo json_encode($valida);
+				http_response_code(200);
+				die();
 			} else {
 				$valida = false;
 				echo json_encode($valida);
+				http_response_code(401);
+				die();
 			}
 			http_response_code(200);
 		}

@@ -41,6 +41,8 @@ export default function Register() {
   const [data_nascimento, setDataNascimento] = useState();
   const [interesses, setInteresses] = useState([]);
   
+  //caso queira descobrir o campo específico setar o useState dos campos como "", para que ele reconheça o envio e
+  // no backend fazer as mudanças cabíveis
 
   const [form, setForm] = useState(1);
   
@@ -97,9 +99,8 @@ export default function Register() {
         genero, 
         escolaridade
       }).then(function (response) {
-
+        
         chageForm(response.data);
-        console.log(response.data);
 
       }).catch(function (error) {
 

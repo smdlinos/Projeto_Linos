@@ -11,7 +11,7 @@ function Tabletop(){
                     <Col className='justify-content-start'>
                     <h5>
                     Meu tabuleiro
-                 </h5>
+                    </h5>
                     </Col>
                 
                 </Row>

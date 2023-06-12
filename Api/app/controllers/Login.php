@@ -12,7 +12,7 @@ class Login
   public function store()
   {  // endpoint
     
-    $dotenv = Dotenv\Dotenv::createImmutable('D:/XAMPP/htdocs/quests');
+    $dotenv = Dotenv\Dotenv::createImmutable('C:/xampp/htdocs/quests');
     $dotenv->load();
 
     header("Access-Control-Allow-Origin: *");
@@ -123,7 +123,7 @@ class Login
 
   public function verifyUser()
   {
-    $dotenv = Dotenv\Dotenv::createImmutable('D:/XAMPP/htdocs/quests');
+    $dotenv = Dotenv\Dotenv::createImmutable('C:/xampp/htdocs/quests');
     $dotenv->load();
 
     header("Access-Control-Allow-Origin: *");

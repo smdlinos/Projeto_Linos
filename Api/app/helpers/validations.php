@@ -8,7 +8,7 @@ function required($field, $content)
 	// }
 
 
-	if( $_POST[$field] === ''){
+	if( $_POST[$field] === '' || $_POST[$field] == undefined || $field == undefined ){
 		setFlash($field, 'O campo é obrigatório');
 		return false;
 	}
@@ -19,6 +19,11 @@ function required($field, $content)
 
 function email($field, $content)
 {	
+	
+	if( $_POST[$field] === '' || $_POST[$field] == undefined || $field == undefined ){
+		setFlash($field, 'O campo é obrigatório');
+		return false;
+	}
 
 	$emailIsValide = filter_var($_POST[$field], FILTER_VALIDATE_EMAIL);
 
@@ -31,6 +36,12 @@ function email($field, $content)
 
 function unique($field, $content, $param)
 {	
+
+	
+	if( $_POST[$field] === '' || $_POST[$field] == undefined || $field == undefined ){
+		setFlash($field, 'O campo é obrigatório');
+		return false;
+	}
 
 	$data = filter_var($_POST[$field], FILTER_SANITIZE_STRING);
 	$user =  findBy($param, $field, $data);
@@ -48,6 +59,12 @@ function unique($field, $content, $param)
 
 function maxlen($field, $content, $param)
 {
+	
+	if( $_POST[$field] === '' || $_POST[$field] == undefined  || $field == undefined ){
+		setFlash($field, 'O campo é obrigatório');
+		return false;
+	}
+
 	$data = filter_var($_POST[$field], FILTER_SANITIZE_STRING);
 	if(strlen($data) > $param){
 		setFlash($field,"Esse campo não pode passar {$param} caracteres.");

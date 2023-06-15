@@ -2,7 +2,11 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Cad from "./imagens/cadeado.svg"
+import Tela from "./Tela.css"
+
 import { useState } from "react";
+
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 import axios from 'axios';
@@ -54,40 +58,41 @@ export default function SessionLogin() {
          <Row className="justify-content-sm-center">
           <Col sm="auto" none="">
           <Form className="mb-4 rounded p-5 mx-3" onSubmit={handleLogin} method="Post">
-            <h2>Seja bem vindo</h2>
-            <Form.Group className="mb-2">
-              <Form.Label htmlFor="email">Login</Form.Label>
+            <h2 className="titulo_login mb-4">Seja bem vindo!</h2>
+            <Form.Group className="mb-3">
+              <Form.Label htmlFor="email" className="fonte_login login_espacamento">Nickname</Form.Label>
               <Form.Control 
               type="email" 
               placeholder="E-mail" 
-              className="" 
+              className="email" 
               name = "email"
               onChange={(e)=> setEmail(e.target.value)}
               />
             </Form.Group>
 
             <Form.Group className="mb-2">
-              <Form.Label htmlFor="password">Senha</Form.Label>
+              <Form.Label htmlFor="password" className="fonte_login login_espacamento_s">Senha</Form.Label>
               <Form.Control 
               type="password" 
               placeholder="Sua senha" 
               name = "password" 
+              className="senha"
               onChange={(e)=> setPassword(e.target.value)}
               />
             </Form.Group>
             
                 
-            <a href="/reset" className="text-muted"><small>Esqueci a senha</small></a>
+            <a href="/reset" className="text-muted fonte_login espacamento_esqueci"><small>Esqueci a senha</small></a>
             <br/>
             
-            <Button variant="primary" type="submit" className="px-5 mb-3 mt-3">
-              Login
+            <Button type="submit" className="px-5 mb-3 mt-4 botao">
+              ENTRAR
             </Button>
             <br />
-            <Link to="/home">Ou entre como visitante</Link>
+            <Link to="/home" className="fonte_login">Ou entre como visitante</Link>
           </Form>
           <div>
-      <p className="pt-5">Não tem conta?<a href="/register">Cadastre-se</a></p>
+      <p className="pt-4 mb-5 fonte_login">Não tem uma conta?<a href="/register">Cadastre-se</a></p>
       </div>
 
         </Col>

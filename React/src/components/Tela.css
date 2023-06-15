@@ -1,5 +1,4 @@
 
-
 .itens{
     display: flex;
     flex-direction: row;
@@ -39,7 +38,9 @@
 }
 
 .background{
-    background-image: url(./imagens/background.svg);
+    background-image: url(./imagens/background1.svg);
+    
+    
 }
 .Footer{
     
@@ -69,4 +70,82 @@
 
 li{
     list-style-type: none;
+}
+
+.quest_logo{
+    height: 70px;
+}
+
+.titulo_login{
+    font-family: "Chubbo", sans-serif;
+    font-weight: 700;
+    color: #08394D;
+}
+
+.tamanho{
+    
+    
+}
+
+.botao{
+background: #BE2C53;
+    width: 100%;
+    font-family: "Supreme", sans-serif;
+    font-weight: 700;
+}
+
+.fonte_login{
+    font-family: "Supreme", sans-serif;
+    font-weight: 400;
+    color:#08394D;
+    
+    
+}
+
+.login_espacamento{
+    justify-content: left;
+    padding-right: 83%;
+}
+
+.login_espacamento_s{
+    justify-content: left;
+    padding-right: 315px;
+}
+
+.senha{
+    background: url(./imagens/cadeado.svg) #fff no-repeat;
+    background-position: 10px;
+    padding-left: 32px;
+}
+
+.email{
+    background: url(./imagens/smile.svg) #fff no-repeat;
+    background-position: 10px;
+    padding-left: 33px;
+}
+
+.espacamento_esqueci{
+    padding-left: 60%;
+    
+}
+
+.nickname{
+    text-align: right;
+    padding-right: 100%;
+}
+
+.senha_cadastro{
+    padding-right: 100%;
+}
+
+.espacamento_grande{
+    padding-right: 55%;
+}
+
+.data{
+    padding-right: 46%;
+}
+
+.nome_c{
+    padding-right: 58%;
 }

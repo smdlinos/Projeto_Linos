@@ -128,7 +128,7 @@ export default function Register() {
         <Header/>
       <Row className="justify-content-sm-center">
       <Col sm="auto" none="">
-          <Form className="mb-4 rounded p-5 mx-3" onSubmit={handleSubmit} method="Post">
+          <Form className="mb-4 rounded p-5 mx-4" onSubmit={handleSubmit} method="Post">
           {form === 1 ? <Form1 
           nickname = {(e)=> setNickname(e.target.value)}
           name = {(e)=> setName(e.target.value)}

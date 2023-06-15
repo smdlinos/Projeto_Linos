@@ -20,9 +20,10 @@ const Form1 = (props) => {
 
 
     return <>
-                    <h2>Realize seu Cadastro</h2>
+                <div className="fonte_login">
+                    <h2 className="titulo_login mb-4">Realize seu Cadastro</h2>
                     <Form.Group className="mb-2">
-                    <Form.Label htmlFor="nickname">Username</Form.Label>
+                    <Form.Label htmlFor="nickname" className="nickname tamanho">Nickname</Form.Label>
                     <Form.Control 
                     type="text" 
                     placeholder="Seu username" 
@@ -33,7 +34,7 @@ const Form1 = (props) => {
                     </Form.Group>
 
                     <Form.Group className="mb-2">
-                    <Form.Label htmlFor="email">E-mail</Form.Label>
+                    <Form.Label htmlFor="email" className="login_espacamento pt-2 tamanho">E-mail</Form.Label>
                     <Form.Control 
                     type="email" 
                     placeholder="email@example.com" 
@@ -44,7 +45,7 @@ const Form1 = (props) => {
                     </Form.Group>
 
                     <Form.Group className="mb-2">
-                    <Form.Label htmlFor="password1">Senha</Form.Label>
+                    <Form.Label htmlFor="password1" className="senha_cadastro pt-2">Senha</Form.Label>
                     <Form.Control 
                     type="password" 
                     placeholder="Sua senha" 
@@ -54,7 +55,7 @@ const Form1 = (props) => {
                     </Form.Group>
 
                     <Form.Group className="mb-2">
-                    <Form.Label htmlFor="password2">Repita sua senha</Form.Label>
+                    <Form.Label htmlFor="password2" className="espacamento_grande pt-2">Repita sua senha</Form.Label>
                     <Form.Control 
                     type="password" 
                     placeholder="Repita sua senha" 
@@ -64,7 +65,7 @@ const Form1 = (props) => {
                     </Form.Group>
 
                     <Form.Group className="mb-2">
-                    <Form.Label htmlFor="name">Nome Completo</Form.Label>
+                    <Form.Label htmlFor="name" className="nome_c pt-2">Nome Completo</Form.Label>
                     <Form.Control 
                     type="text" 
                     placeholder="Insira seu Nome (Nome para o certificado)" 
@@ -76,7 +77,7 @@ const Form1 = (props) => {
 
 
                     <Form.Group className="mb-2" onChange={props.genero}>
-                    <Form.Label htmlFor="genero">Gênero:</Form.Label>
+                    <Form.Label htmlFor="genero" className="nickname pt-2">Gênero:</Form.Label>
                     {['radio'].map((type) => (
                     <div key={`inline-${type}`} className="mb-3">
 
@@ -110,7 +111,7 @@ const Form1 = (props) => {
 
 
                     <Form.Group>
-                    <Form.Label htmlFor="Escolaridade" >Escolaridade</Form.Label>
+                    <Form.Label htmlFor="Escolaridade" className="nickname pt-2">Escolaridade</Form.Label>
                     <Form.Select aria-label="Floating label select example" onChange={props.escolaridade}>
                         <option value="Sem escolaridade">Sem escolaridade</option>
                         <option value="Ensino Fundamental Incompleto">Ensino Fundamental Incompleto</option>
@@ -124,7 +125,7 @@ const Form1 = (props) => {
                     </Form.Group>
                     <br/>
                     <Form.Group>
-                    <Form.Label htmlFor="date" >Data de Nascimento:</Form.Label>
+                    <Form.Label htmlFor="date" className="data pt-2">Data de Nascimento:</Form.Label>
                     <Form.Control 
                     onChange={props.data_nascimento}
                     type="date" id="date" 
@@ -132,11 +133,12 @@ const Form1 = (props) => {
                     </Form.Group>
 
                     <br/>
-                    {props.passwordValue === password2 ? <Button variant="primary" type="button" onClick={alteraForm} className="px-5 mb-3 mt-3">
+                    {props.passwordValue === password2 ? <Button variant="primary" type="button" onClick={alteraForm} className="px-5 mb-3 mt-3 botao">
                     Próximo
-                    </Button>: <Button variant="primary" type="button"  onClick={senhasDiferentes} className="px-5 mb-3 mt-3">
+                    </Button>: <Button variant="primary" type="button"  onClick={senhasDiferentes} className="px-5 mb-3 mt-3 botao">
                     Próximo
                     </Button>}
+                    </div>
                     
     </>
 }

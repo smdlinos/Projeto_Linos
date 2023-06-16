@@ -98,12 +98,13 @@ export default function Register() {
         escolaridade
       }).then(function (response) {
 
-        chageForm(response.data);
         console.log(response.data);
+        chageForm(response.data);
 
-      }).catch(function (error) {
+      }).catch(function (error) { // feedback deve ser inserido aqui
 
-        console.log(error);
+        console.log("Dados Inválidos, tente novamente")
+        // console.log(error);
 
       });
     } catch(error){

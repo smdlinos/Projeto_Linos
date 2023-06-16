@@ -60,10 +60,10 @@ export default function SessionLogin() {
           <Form className="mb-4 rounded p-5 mx-3" onSubmit={handleLogin} method="Post">
             <h2 className="titulo_login mb-4">Seja bem vindo!</h2>
             <Form.Group className="mb-3">
-              <Form.Label htmlFor="email" className="fonte_login login_espacamento">Nickname</Form.Label>
+              <Form.Label htmlFor="email" className="fonte_login login_espacamento">Login</Form.Label>
               <Form.Control 
               type="email" 
-              placeholder="E-mail" 
+              placeholder="Nome de usuário ou Email" 
               className="email" 
               name = "email"
               onChange={(e)=> setEmail(e.target.value)}

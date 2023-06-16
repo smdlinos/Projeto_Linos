@@ -28,8 +28,9 @@ export default function App() {
             <Route path = "/" element = {<LandPage/>}/>  
 
             <Route path = "/login" element = {<Login/>}/>     
-
-            <Route path = "/home" element = { authenticated ? <Home/>: <Navigate to="/login"/>}/>
+{/* 
+            <Route path = "/home" element = { authenticated ? <Home/>: <Navigate to="/login"/>}/> */}
+            <Route path = "/home" element = { <Home/>}/>
  
             <Route path = "/register" element = {<Register/>}/>  
 

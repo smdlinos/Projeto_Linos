@@ -62,7 +62,7 @@ export default function SessionLogin() {
             <Form.Group className="mb-3">
               <Form.Label htmlFor="email" className="fonte_login login_espacamento">Login</Form.Label>
               <Form.Control 
-              type="email" 
+              type="text" 
               placeholder="Nome de usuário ou Email" 
               className="email" 
               name = "email"

@@ -5,6 +5,8 @@ import Col from "react-bootstrap/Col";
 import "../Tela.css"
 import Header from "../Header.js";
 
+import { useState } from 'react';
+
 export default function ChangePassword (props){
 
     const [password2, setPassword2] = useState(2);
@@ -24,7 +26,7 @@ export default function ChangePassword (props){
           placeholder="Insira aqui" 
           className="" 
           name = "password"
-          onChange={props.password}
+          onChange={props.setPassword}
           />
         </Form.Group>
 

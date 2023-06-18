@@ -29,22 +29,18 @@ export default function Reset() {
   const navigate = useNavigate();
   const [page, setPage] = useState(1);
 
-  async function handleReset(e){ // Falta fazer o onSubmit do form, verificar a recepção da api e se a função vai ser no Context
+  async function handleReset(e){
     e.preventDefault();
-    let token;
-    const response = await axios.post(url, {
-          email, 
-          password, 
+
+    const response = await axios.post(urlChange, {
+          email,
+          password
       }).then(function (response) {
         if(response.data){
-          token = response.data;
-            console.log(response, response.data);
-            localStorage.setItem('token', JSON.stringify(token));
-        axios.defaults.headers.Authorization = `Bearer ${token}`;
-        setAuthenticated(true);
-        navigate('/home');
-        }
-          
+          localStorage.removeItem('token_code');
+          console.log('Senha alterada com sucesso');
+          navigate('/login');
+        } 
         }).catch(function (error) {
 
           console.log(error);
@@ -77,12 +73,16 @@ export default function Reset() {
 
 
   const sendCode = async (e) => { 
+    e.preventDefault();
+
     const token = localStorage.getItem('token_code');
 
       const response = await axios.post(urlConfirm, {
           token,
           code
       }).then(function (response) {
+
+        console.log(response.data);
 
         if(response.data){
           setter3(response.data);
@@ -113,11 +113,11 @@ export default function Reset() {
         <Header/>
         <Row className="justify-content-sm-center">
           <Col sm="auto" none="">
-            <Form className="mb-5 rounded p-5 mx-3" >
+            <Form className="mb-5 rounded p-5 mx-3" onSubmit ={handleReset}>
 
               {page == 1 ? <SendEmail email={(e) => setEmail(e.target.value)} send={sendEmail}/> :
-              page == 2 ? <ConfirmCode send={sendCode} code={(e)=> setCode(e.target.value)} /> : 
-              <ChangePassword password={(e)=> setPassword(e.target.value)}/>}
+              page == 2 ? <ConfirmCode send={(e) => sendCode(e)} code={(e)=> setCode(e.target.value)} /> : 
+              <ChangePassword setPassword={(e)=> setPassword(e.target.value)} password={password}/>}
 
             </Form>
             <div className="espaco">

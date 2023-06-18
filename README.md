@@ -29,52 +29,39 @@
   <a name="equipe"><img title="'Linos'" src="./assets/logo.png" style="width: 60px;" /></a>
 </div>
 
-### Design
 <div align="center">
-  <ul  style="list-style-type: none;">
-    <li style="list-style-type: none;">
+
+  ### Design
+  <div style="display: flex; flex-direction: column;">
       <div name='letinepo' style='display:grid;'>
         <img title="lion" src="./assets/noto_lion.png" style="width: 50px;" />
         <a href="https://github.com/letinepo">Maria Letícia Barros Nepomuceno</a>
       </div>
-    </li>
-    <li style="list-style-type: none;">
       <div name='vitorinha'style='display:grid;'>
         <img title="avie" src="./assets/noto-v1_bird.png" style="width: 50px;" />
         <a href="https://github.com/vitoriajessicapr"> Vitória Jessica Vasconcelos dos Santos</a>
       </div>
-    </li>
-    <li style="list-style-type: none;">
       <div name='luizao' style='display:grid;'>
         <img title="Linos" src="./assets/noto_bear.png" style="width: 50px;" />
         <a href="https://github.com/LUISGSFILHO">Luiz Gonzaga dos Santos Filho</a>
       </div>
-    </li>
-</ul>
-
+  </div>
 
 ### Sistemas
-<ul  style="list-style-type: none;">
-    <li style="list-style-type: none;">
+ <div style="display: flex; flex-direction: column;">
       <div name='vitao' style='display:grid;'>
         <img title="pinguim" src="./assets/noto_penguin.png" style="width: 50px;" />
         <a href="https://github.com/victor280504">Victor Emanuel Tomaz das Neves</a>
       </div>
-    </li>
-    <li style="list-style-type: none;">
       <div name='macla' style='display:grid;' >
         <img title="avie" src="./assets/noto_tiger-face.png" style="width: 50px;" />
         <a href="https://github.com/claraolvrx"> Maria Clara de Oliveira Alexandre</a>
       </div>
-    </li>
-    <li style="list-style-type: none;">
       <div name='mickas' style='display:grid;'>
         <img title="'Linos'" src="./assets/twemoji_koala.png" style="width: 50px;" />
         <a href="https://github.com/mickael-castro">Mickael Pereira Castro</a>
       </div>
-    </li>
-
-  </ul>
+   </div>
 </div>
 
 

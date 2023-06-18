@@ -1,11 +1,13 @@
 # Quests
 <div align="center" name="inicio">
   <a href="*"><img title="Quests" src="./assets/logoQuestsOficial.svg" style="width: 300px;" /></a>
+
+  ###### Keywords: Projeto Integrado I - Linos - Sistemas e Mídias Digitais - Universidade Federal do Ceará
 </div>
 
-###### Keywords: Projeto Integrado I - Linos - Sistemas e Mídias Digitais - Universidade Federal do Ceará
 
-<h4>Sumário:</h4>
+
+## :page_with_curl: Sumário:
 <ul>
  <a href="#sobre"><li>Sobre</li></a> 
  <a href="#equipe"><li>Equipe</li></a> 
@@ -24,9 +26,12 @@
 </p>
 
 
+<a name="equipe"></a>
+
 ## :busts_in_silhouette: Equipe Linos - linosdesingsmd@gmail.com 
+
 <div align="center">
-  <a name="equipe"><img title="'Linos'" src="./assets/logo.png" style="width: 60px;" /></a>
+  <img title="'Linos'" src="./assets/logo.png" style="width: 60px;" />
 </div>
 
 <div align="center">
@@ -72,6 +77,7 @@
 
 
 <a name="requisitos"></a>
+
 ## :dart: Requisitos funcionais
   
 Projeto em Construção - Funcionalidades atuais da Aplicação
@@ -98,9 +104,10 @@ Projeto em Construção - Funcionalidades atuais da Aplicação
 
 <a name="tecnologias"></a>
 
-## :dart: Tecnologias Utilizadas
+## :mag: Tecnologias Utilizadas
 
-  JavaScript: A linguagem base a ser usada no projeto é JavaScript, por se tratar de uma ferramenta web e “Client-side”, envolvendo a linguagem de marcação HTML, além do mecanismo de estilos web CSS, vimos que a mesma seria de fácil manuseio para a criação da aplicação no site inicialmente.
+  ### JavaScript: 
+  A linguagem base a ser usada no projeto é JavaScript, por se tratar de uma ferramenta web e “Client-side”, envolvendo a linguagem de marcação HTML, além do mecanismo de estilos web CSS, vimos que a mesma seria de fácil manuseio para a criação da aplicação no site inicialmente.
 
   <h3>Front-end</h3>  
   React: Escolhemos react por se tratar de uma biblioteca JavaScript para criação de interfaces de usuários, possibilitando a reutilização de código e acelerando o processo de desenvolvimento, além de reduzir custos de produção. Outrossim, o framework foi uma sugestão do cliente, tanto na forma de organização e criação da aplicação.

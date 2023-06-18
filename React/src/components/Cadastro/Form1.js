@@ -7,17 +7,14 @@ import { useFetch } from "../../hooks/useFetch"
 const Form1 = (props) => {
 
     //const [password1, setPassword1] = useState(1);
-    const [password2, setPassword2] = useState(2);
+    
 
-    const senhasDiferentes = () =>{
-        alert('senhas diferemtes');
-    }
+    
 
     const alteraForm = (e) => {
         e.preventDefault();
         props.validate();
    }
-
 
     return <>
                 <div className="fonte_login">
@@ -43,26 +40,18 @@ const Form1 = (props) => {
                     onChange={props.email}
                     />
                     </Form.Group>
-
                     <Form.Group className="mb-2">
                     <Form.Label htmlFor="password1" className="senha_cadastro pt-2">Senha</Form.Label>
                     <Form.Control 
                     type="password" 
                     placeholder="Sua senha" 
-                    name = "password1" 
+                    name = "password1"
+                    id="passaword" 
                     onChange={props.password}
                     />
                     </Form.Group>
 
-                    <Form.Group className="mb-2">
-                    <Form.Label htmlFor="password2" className="espacamento_grande pt-2">Repita sua senha</Form.Label>
-                    <Form.Control 
-                    type="password" 
-                    placeholder="Repita sua senha" 
-                    name = "password2" 
-                    onChange={(e) => setPassword2(e.target.value)}
-                    />
-                    </Form.Group>
+                    
 
                     <Form.Group className="mb-2">
                     <Form.Label htmlFor="name" className="nome_c pt-2">Nome Completo</Form.Label>
@@ -133,11 +122,9 @@ const Form1 = (props) => {
                     </Form.Group>
 
                     <br/>
-                    {props.passwordValue === password2 ? <Button variant="primary" type="button" onClick={alteraForm} className="px-5 mb-3 mt-3 botao">
+                    <Button variant="primary" type="button" onClick={alteraForm} className="px-5 mb-3 mt-3 botao">
                     Próximo
-                    </Button>: <Button variant="primary" type="button"  onClick={senhasDiferentes} className="px-5 mb-3 mt-3 botao">
-                    Próximo
-                    </Button>}
+                    </Button>
                     </div>
                     
     </>

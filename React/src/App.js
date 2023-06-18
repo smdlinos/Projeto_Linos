@@ -3,12 +3,13 @@ import "bootstrap/dist/css/bootstrap.css";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Reset from "./pages/Reset";
-import Register from "./pages/Register"
+import Register from "./pages/Register";
+import Quest_D from "./pages/Quest_Detail";
 
 import React, { useContext } from 'react';
 import {Context} from './context/AuthContext'
 import {Redirect} from 'react-router';
-import { BrowserRouter , Routes, Route, Link, Swithc , useNavigate, Navigate} from "react-router-dom";
+import { BrowserRouter , Routes, Route, Link, useNavigate, Navigate} from "react-router-dom";
 
 import Search from "./pages/Search";
 import LandPage from "./components/LandPage";
@@ -37,6 +38,8 @@ export default function App() {
             <Route path = "/search" element = {<Search/>}/>
        
             <Route path = "/reset" element = {<Reset/>}/>
+
+            <Route path = "/quest_d" element = {<Quest_D/>}/>
 
             <Route path="/home/:id" element= {<Home/>}/>
 

@@ -14,7 +14,7 @@ function Login (){
 
     
     return(
-        <div className="background">
+        <div>
     <Header />
     <main>
     <SessionLogin />

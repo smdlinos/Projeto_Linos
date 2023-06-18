@@ -19,9 +19,9 @@ export default function Home(){
   
     console.log(authenticated);
     return(
-        <div>
+        <div className="background">
             <HeaderHome/>
-            <main>
+            <main className="">
                 <Tabletop/>
                 <h5 className='pb-3'>
                 Questionários Recomendados

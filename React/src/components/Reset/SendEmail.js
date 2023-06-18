@@ -9,11 +9,12 @@ export default function SendEmail (props){
 
 
     return  <>           
-            <h2 className="text-muted">Digite seu email para sabermos quem é você</h2>
-            <br/>
+            <h1 className="titulo_login">Esqueceu sua senha?</h1>
+            <p>Insira seu email para defeinir sua senha.</p>
+          
 
-            <Form.Group className="mb-2">
-              <Form.Label htmlFor="email">Email</Form.Label>
+            <Form.Group className="mb-2 pt-2">
+              <Form.Label htmlFor="email" className="nickname">Email</Form.Label>
               <Form.Control 
               type="email" 
               placeholder="Insira aqui" 
@@ -23,9 +24,10 @@ export default function SendEmail (props){
               />
             </Form.Group>
 
-          <Button variant="primary" type="button" onClick={props.send} className="px-5 mb-3 mt-3">
-            Verificar
+          <Button variant="primary" type="button" onClick={props.send} className="px-5 mb-4 mt-3 botao">
+            Próximo
           </Button>
            <br />
+           <a href="/login" className="text-muted">Ou faça login</a>
            </>
 }

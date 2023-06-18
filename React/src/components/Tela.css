@@ -1,4 +1,8 @@
-
+body{
+    background-image: url(./imagens/background_login.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .itens{
     display: flex;
     flex-direction: row;
@@ -7,6 +11,10 @@
     text-align: center;
     padding-left: 14px;
 
+}
+.background{
+    background-color: aliceblue;
+    background-size: cover;
 }
 .perfil{
     width: 36px;
@@ -37,11 +45,6 @@
     border-radius: 15px;
 }
 
-.background{
-    background-image: url(./imagens/background1.svg);
-    
-    
-}
 .Footer{
     
     padding-bottom: 50px;
@@ -76,16 +79,16 @@ li{
     height: 70px;
 }
 
+.quest_logo_q{
+    height: 50px;
+}
+
 .titulo_login{
     font-family: "Chubbo", sans-serif;
     font-weight: 700;
     color: #08394D;
 }
 
-.tamanho{
-    
-    
-}
 
 .botao{
 background: #BE2C53;
@@ -100,6 +103,12 @@ background: #BE2C53;
     color:#08394D;
     
     
+}
+
+.font_titulo_q{
+    font-family: "Supreme", sans-serif;
+    font-weight: 700;
+    color:#08394D;
 }
 
 .login_espacamento{
@@ -148,4 +157,7 @@ background: #BE2C53;
 
 .nome_c{
     padding-right: 58%;
+}
+.star{
+    
 }

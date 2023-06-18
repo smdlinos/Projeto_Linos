@@ -19,6 +19,7 @@ const urlConfirm = "http://localhost/quests/codeConfirmation";
 const urlChange = "http://localhost/quests/changePassword";
 
 import axios from 'axios';
+import Footer from "../components/Footer";
 
 export default function Reset() {
 // essa página deve possuir 3 componentes dinâmicos, confirmar email => confirmar código => mudar a senha
@@ -109,21 +110,23 @@ export default function Reset() {
   }
 
   return ( 
-      <div className="background">
+      <div className="">
         <Header/>
-        <Row className="justify-content-sm-center">
+        <Row className="justify-content-sm-center pt-3">
           <Col sm="auto" none="">
-            <Form className="mb-5 rounded p-5 mx-3" >
+            <Form className="mb-5 rounded p-5 mx-3 fonte_login" >
 
               {page == 1 ? <SendEmail email={(e) => setEmail(e.target.value)} send={sendEmail}/> :
               page == 2 ? <ConfirmCode send={sendCode} code={(e)=> setCode(e.target.value)} /> : 
               <ChangePassword password={(e)=> setPassword(e.target.value)}/>}
 
             </Form>
+            <Footer/>
             <div className="espaco">
             </div>
           </Col>
         </Row>
+        
       </div>
     )
 

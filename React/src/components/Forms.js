@@ -5,10 +5,16 @@ import Col from "react-bootstrap/Col";
 import "../components/Tela.css"
 import Carousel from 'react-bootstrap/Carousel';
 import estrela from "../components/imagens/estrela.svg";
+import { BrowserRouter , Routes, Route, Link, useNavigate, Navigate} from "react-router-dom";
 
 
 
 function Forms(){
+    const navegate = useNavigate();
+    function acttion(e){
+        e.preventDefault();
+        navegate("/quest_d");
+    }
     return(
         <div>
             <Container>
@@ -19,13 +25,14 @@ function Forms(){
             <Carousel.Item>
 
            
-            <Card       
+            <Card    
+                    onClick={(e)=>acttion(e)}
                     style={{ width: '23rem' }}
                     className="mb-2 m-auto card bg-dark"
                     
                     >
                 
-                <Card.Body>
+                <Card.Body >
                     <Card.Title>Título do Questionário</Card.Title>
                     <Card.Text>
                         <small>Nome do autor</small><br/>

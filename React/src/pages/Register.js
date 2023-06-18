@@ -125,7 +125,7 @@ export default function Register() {
 
 
   return (
-    <div className="background">
+    <div className="">
         <Header/>
       <Row className="justify-content-sm-center">
       <Col sm="auto" none="">

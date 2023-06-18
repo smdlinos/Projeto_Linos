@@ -2,6 +2,7 @@
 <div align="center" name="inicio">
   <a href="*"><img title="Quests" src="./assets/logoQuestsOficial.svg" style="width: 300px;" /></a>
 </div>
+
 ###### Keywords: Projeto Integrado I - Linos - Sistemas e Mídias Digitais - Universidade Federal do Ceará
 
 <h4>Sumário:</h4>
@@ -14,52 +15,57 @@
  <a href="#license"><li>Licença</li></a>
 </ul>
 
-<a name='sobre'>
-  <h2>Descrição do Projeto</h2>
-</a>
+<a name='sobre'></a>
+
+## :speech_balloon: Descrição do Projeto
+
 <p>
   Quests é uma aplicação Web que está sendo desenvolvida para a professora do curso de Sistema e Mídias Digitais - UFC, Ticianne Darin, para atender a demanda de questionários do grupo de pesquisa Célula Multimídia pelo qual é responsável. A aplicação tem por finalidade divulgar questionários e aumentar a adesão e o engajamento de respondentes através de um sistema de recompensas. O público-alvo da plataforma são os pesquisadores, pessoas responsáveis por coletar dados por meio de questionários, e respondentes, pessoas interessadas em responder questionários tendo, assim, dois perfis de usuário, os quais podem se combinar: o pesquisador, que vai utilizar a plataforma para divulgar o link do seu questionário; e o respondente que por intermédio da plataforma vai acessar ao link do formulário, preenchê-lo e acumular recompensas no seu perfil.
 </p>
 
-<a name="equipe"><img title="'Linos'" src="./assets/logo.png" style="width: 300px;" /></a>
-## :busts_in_silhouette: Equipe Linos - linosdesingsmd@gmail.com
 
-<ul>
-    <h3>Design</h3>
+## :busts_in_silhouette: Equipe Linos - linosdesingsmd@gmail.com 
+<a name="equipe"><img title="'Linos'" src="./assets/logo.png" style="width: 100px;" /></a>
+
+### Design
+  <ul>
     <li>
-      <div name='letinepo'>
-        <img title="lion" src="./assets/noto_lion.png" style="width: 300px;" />
+      <div name='letinepo' style='display: inline-flex;'>
+        <img title="lion" src="./assets/noto_lion.png" style="width: 50px;" />
         <a href="https://github.com/letinepo">Maria Letícia Barros Nepomuceno</a>
       </div>
     </li>
     <li>
-      <div name='vitorinha'>
-        <img title="avie" src="./assets/noto-v1_bird.png" style="width: 300px;" />
+      <div name='vitorinha' style='display: inline-flex;'>
+        <img title="avie" src="./assets/noto-v1_bird.png" style="width: 50px;" />
         <a href="https://github.com/vitoriajessicapr"> Vitória Jessica Vasconcelos dos Santos</a>
       </div>
     </li>
     <li>
       <div name='luizao'>
-        <img title="'Linos'" src="./assets/noto_lion.png" style="width: 300px;" />
+        <img title="'Linos'" src="./assets/noto_bear.png" style="width: 50px;" />
         <a href="https://github.com/LUISGSFILHO">Maria Letícia Barros Nepomuceno</a>
       </div>
     </li>
-    <h3>Sistemas</h3>
+</ul>
+
+### Sistemas
+<ul>
     <li>
       <div name='vitao'>
-        <img title="pinguim" src="./assets/noto_penguin.png" style="width: 300px;" />
+        <img title="pinguim" src="./assets/noto_penguin.png" style="width: 50px;" />
         <a href="https://github.com/victor280504">Victor Emanuel Tomaz das Neves</a>
       </div>
     </li>
     <li>
       <div name='macla'>
-        <img title="avie" src="./assets/noto_tiger-face.png" style="width: 300px;" />
+        <img title="avie" src="./assets/noto_tiger-face.png" style="width: 50px;" />
         <a href="https://github.com/claraolvrx"> Maria Clara de Oliveira Alexandre</a>
       </div>
     </li>
     <li>
       <div name='mickas'>
-        <img title="'Linos'" src="./assets/noto_lion.png" style="width: 300px;" />
+        <img title="'Linos'" src="./assets/twemoji_koala.png" style="width: 50px;" />
         <a href="https://github.com/mickael-castro">Mickael Pereira Castro</a>
       </div>
     </li>
@@ -110,7 +116,7 @@ Projeto em Construção - Funcionalidades atuais da Aplicação
 
 <a name="como-rodar"></a>
 
-## :grey_question: Como rodar
+## :computer: Como rodar
 
 ### Clonando o repositório
 

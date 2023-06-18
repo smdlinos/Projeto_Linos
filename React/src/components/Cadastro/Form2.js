@@ -18,7 +18,7 @@ const Form2 = (props) => {
                 <div className="form-check">
                     <ul>
                     {props.temas && props.temas.map((tema) => (
-                        <li key={tema.id_tema}>
+                        <li className='list-interesses' key={tema.id_tema}>
                             <input className="form-check-input"
                             name={tema.tema}
                             value={tema.id_tema}

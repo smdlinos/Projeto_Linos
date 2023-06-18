@@ -16,28 +16,28 @@ import CustomRoute from '../CustomRoute';
 
 export default function Home(){
 
-    const { authenticated, handleLogout} = useContext(Context);
+    const { authenticated, handleLogout, loading} = useContext(Context);
     
+    if(authenticated){
+        useEffect(() =>{
 
-    useEffect(() =>{
+        const token = localStorage.getItem('token');
+         const teste = async () => {
+             const response = await axios.get(urlTest, {
+            }).then(function (response) {
+            if(response.data){
+              console.log(response.data);
+            } 
+            }).catch(function (error) {
 
-    const token = localStorage.getItem('token');
-     const teste = async () => {
-         const response = await axios.get(urlTest, {
-      }).then(function (response) {
-        if(response.data){
-          console.log(response.data);
-        } 
-        }).catch(function (error) {
+              console.log(error);
 
-          console.log(error);
-
-        });
-     }
-     teste();
-   
-    },[]);
-
+            });
+         }
+         teste();
+        },[]);
+    }
+    
     console.log(authenticated);
     return(
         <div className="background">

@@ -7,6 +7,9 @@ import { useEffect, useState } from "react";
 import {useFetch} from "../hooks/useFetch";
 import axios from 'axios';
 
+import React, { useContext } from 'react';
+import {Context} from '../context/AuthContext'
+
 //Components
 import Footer from "../components/Footer";
 import Header from "../components/Header"
@@ -26,6 +29,7 @@ const urlValidate = "http://localhost/quests/user/create/validate";
 
 export default function Register() {
 
+  const { authenticated, setAuthenticated } = useContext(Context);
 
   const { data:temas} = useFetch(urlGet);
  
@@ -59,7 +63,7 @@ export default function Register() {
         interesses
       }).then(function (response) {
 
-        if (response.data) {
+        if (response.data.register) {
           setName('');
           setNickname('');
           setEmail('');
@@ -68,9 +72,14 @@ export default function Register() {
           setGenero('');
           setEscolaridade('');
           setInteresses('');
-  
+    
           console.log('Cadastrado Com Sucesso');
-          navigate("/home");
+          const token = response.data.token;
+          localStorage.setItem('token', JSON.stringify(token));
+          axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+          setAuthenticated(true);
+
+          navigate(`/home/${token}`);
         }else {
           console.log("Houve um erro ao cadastrar");
           navigate("/");

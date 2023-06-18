@@ -19,7 +19,7 @@ function AuthProvider({ children }){
   		const token = localStorage.getItem('token');
  
   		if(token && token != 'undefined' && token != undefined){
-  			axios.defaults.headers.Authorization = `Bearer ${JSON.parse(token)}`;
+  			axios.defaults.headers.common['Authorization'] = `Bearer ${JSON.parse(token)}`;
   			setAuthenticated(true);
   		}
 
@@ -38,7 +38,7 @@ function AuthProvider({ children }){
 	    		token = response.data;
 	       		console.log(response, response.data);
 	       		localStorage.setItem('token', JSON.stringify(token));
-				axios.defaults.headers.Authorization = `Bearer ${token}`;
+				axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 				setAuthenticated(true);
 				navigate('/home');
 	    	}
@@ -53,7 +53,7 @@ function AuthProvider({ children }){
 	function handleLogout(e){
 		e.preventDefault();
 		localStorage.removeItem('token');
-		axios.defaults.headers.Authorization = undefined;
+		axios.defaults.headers.common['Authorization'] = undefined;
 		setAuthenticated(false);
 		navigate('/login');
 	}

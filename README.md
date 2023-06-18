@@ -32,42 +32,42 @@
 ### Design
 <div align="center">
   <ul  style="list-style: none;">
-    <li>
-      <div name='letinepo' style='display:flex; justify-content: center;'>
+    <li style="list-style-type: none;">
+      <div name='letinepo' style='display:block'>
         <img title="lion" src="./assets/noto_lion.png" style="width: 50px;" />
         <a href="https://github.com/letinepo">Maria Letícia Barros Nepomuceno</a>
       </div>
     </li>
-    <li>
-      <div name='vitorinha' style='display:flex; justify-items: center;'>
+    <li style="list-style-type: none;">
+      <div name='vitorinha' style='display:flex; flex-direction: column; justify-items: center;'>
         <img title="avie" src="./assets/noto-v1_bird.png" style="width: 50px;" />
         <a href="https://github.com/vitoriajessicapr"> Vitória Jessica Vasconcelos dos Santos</a>
       </div>
     </li>
-    <li>
+    <li style="list-style-type: none;">
       <div name='luizao' style='display:flex; flex-direction: column; align-items: center;'>
         <img title="Linos" src="./assets/noto_bear.png" style="width: 50px;" />
         <a href="https://github.com/LUISGSFILHO">Maria Letícia Barros Nepomuceno</a>
       </div>
     </li>
 </ul>
-</div>
+
 
 ### Sistemas
 <ul  style="list-style: none;">
-    <li>
+    <li style="list-style-type: none;">
       <div name='vitao'>
         <img title="pinguim" src="./assets/noto_penguin.png" style="width: 50px;" />
         <a href="https://github.com/victor280504">Victor Emanuel Tomaz das Neves</a>
       </div>
     </li>
-    <li>
+    <li style="list-style-type: none;">
       <div name='macla'>
         <img title="avie" src="./assets/noto_tiger-face.png" style="width: 50px;" />
         <a href="https://github.com/claraolvrx"> Maria Clara de Oliveira Alexandre</a>
       </div>
     </li>
-    <li>
+    <li style="list-style-type: none;">
       <div name='mickas'>
         <img title="'Linos'" src="./assets/twemoji_koala.png" style="width: 50px;" />
         <a href="https://github.com/mickael-castro">Mickael Pereira Castro</a>
@@ -75,6 +75,8 @@
     </li>
 
   </ul>
+</div>
+
 
 <a name="requisitos"></a>
 ## :dart: Requisitos funcionais

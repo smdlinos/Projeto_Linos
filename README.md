@@ -33,34 +33,40 @@
 
   ### Design
   <div style="display: flex; flex-direction: column;">
+      <img title="lion" src="./assets/noto_lion.png" style="width: 50px;" />
       <div name='letinepo' style='display:grid;'>
-        <img title="lion" src="./assets/noto_lion.png" style="width: 50px;" />
         <a href="https://github.com/letinepo">Maria Letícia Barros Nepomuceno</a>
       </div>
+      <br>
+      <img title="avie" src="./assets/noto-v1_bird.png" style="width: 50px;" />
       <div name='vitorinha'style='display:grid;'>
-        <img title="avie" src="./assets/noto-v1_bird.png" style="width: 50px;" />
         <a href="https://github.com/vitoriajessicapr"> Vitória Jessica Vasconcelos dos Santos</a>
       </div>
+      <br>
+      <img title="Linos" src="./assets/noto_bear.png" style="width: 50px;" />
       <div name='luizao' style='display:grid;'>
-        <img title="Linos" src="./assets/noto_bear.png" style="width: 50px;" />
         <a href="https://github.com/LUISGSFILHO">Luiz Gonzaga dos Santos Filho</a>
       </div>
+      <br>
   </div>
 
 ### Sistemas
  <div style="display: flex; flex-direction: column;">
+      <img title="pinguim" src="./assets/noto_penguin.png" style="width: 50px;" />
       <div name='vitao' style='display:grid;'>
-        <img title="pinguim" src="./assets/noto_penguin.png" style="width: 50px;" />
         <a href="https://github.com/victor280504">Victor Emanuel Tomaz das Neves</a>
       </div>
+      <br>
+      <img title="avie" src="./assets/noto_tiger-face.png" style="width: 50px;" />
       <div name='macla' style='display:grid;' >
-        <img title="avie" src="./assets/noto_tiger-face.png" style="width: 50px;" />
         <a href="https://github.com/claraolvrx"> Maria Clara de Oliveira Alexandre</a>
       </div>
+      <br>
+      <img title="'Linos'" src="./assets/twemoji_koala.png" style="width: 50px;" />
       <div name='mickas' style='display:grid;'>
-        <img title="'Linos'" src="./assets/twemoji_koala.png" style="width: 50px;" />
         <a href="https://github.com/mickael-castro">Mickael Pereira Castro</a>
       </div>
+      <br>
    </div>
 </div>
 

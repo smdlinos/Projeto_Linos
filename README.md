@@ -25,32 +25,36 @@
 
 
 ## :busts_in_silhouette: Equipe Linos - linosdesingsmd@gmail.com 
-<a name="equipe"><img title="'Linos'" src="./assets/logo.png" style="width: 100px;" /></a>
+<div align="center">
+  <a name="equipe"><img title="'Linos'" src="./assets/logo.png" style="width: 60px;" /></a>
+</div>
 
 ### Design
-  <ul>
+<div align="center">
+  <ul  style="list-style: none;">
     <li>
-      <div name='letinepo' style='display: inline-flex;'>
+      <div name='letinepo' style='display:flex; justify-content: center;'>
         <img title="lion" src="./assets/noto_lion.png" style="width: 50px;" />
         <a href="https://github.com/letinepo">Maria Letícia Barros Nepomuceno</a>
       </div>
     </li>
     <li>
-      <div name='vitorinha' style='display: inline-flex;'>
+      <div name='vitorinha' style='display:flex; justify-items: center;'>
         <img title="avie" src="./assets/noto-v1_bird.png" style="width: 50px;" />
         <a href="https://github.com/vitoriajessicapr"> Vitória Jessica Vasconcelos dos Santos</a>
       </div>
     </li>
     <li>
-      <div name='luizao'>
-        <img title="'Linos'" src="./assets/noto_bear.png" style="width: 50px;" />
+      <div name='luizao' style='display:flex; flex-direction: column; align-items: center;>
+        <img title="Linos" src="./assets/noto_bear.png" style="width: 50px;" />
         <a href="https://github.com/LUISGSFILHO">Maria Letícia Barros Nepomuceno</a>
       </div>
     </li>
 </ul>
+</div>
 
 ### Sistemas
-<ul>
+<ul  style="list-style: none;">
     <li>
       <div name='vitao'>
         <img title="pinguim" src="./assets/noto_penguin.png" style="width: 50px;" />

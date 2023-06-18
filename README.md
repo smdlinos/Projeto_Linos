@@ -45,7 +45,7 @@
       </div>
     </li>
     <li>
-      <div name='luizao' style='display:flex; flex-direction: column; align-items: center;>
+      <div name='luizao' style='display:flex; flex-direction: column; align-items: center;'>
         <img title="Linos" src="./assets/noto_bear.png" style="width: 50px;" />
         <a href="https://github.com/LUISGSFILHO">Maria Letícia Barros Nepomuceno</a>
       </div>

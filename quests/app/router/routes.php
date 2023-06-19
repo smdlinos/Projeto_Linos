@@ -8,7 +8,9 @@ return [
 		'/quests/login/auth' => 'Login@auth',
 		'/quests/reset' => 'Login@verifyUser',
 		'/quests/codeConfirmation' => 'Login@vefifyCode',
-		'/quests/changePassword' => 'Login@changePassword'
+		'/quests/changePassword' => 'Login@changePassword',
+		'/quests/quest' => 'User@getQuests',
+		'/quests/user/interesses' => 'User@getInteresses'
 	],
 	'POST' => [
 		'quests/user/create/validate' => 'User@valida',
@@ -19,7 +21,8 @@ return [
 		'/quests/user/create' => 'User@create',
 		'/quests/reset' => 'Login@verifyUser',
 		'/quests/codeConfirmation' => 'Login@vefifyCode',
-		'/quests/changePassword' => 'Login@changePassword'
+		'/quests/changePassword' => 'Login@changePassword',
+		'/quests/quest' => 'User@getQuests'
 	],
 	'GET' => [
 		'quests/user/create/validate' => 'User@valida',
@@ -33,7 +36,9 @@ return [
 		'/quests/logout' => 'Login@destroy',
 		'/quests/reset' => 'Login@verifyUser',
 		'/quests/changePassword' => 'Login@changePassword',
-		'/quests/codeConfirmation' => 'Login@vefifyCode'
+		'/quests/codeConfirmation' => 'Login@vefifyCode',
+		'/quests/user/interesses' => 'User@getInteresses',
+		'/quests/users/quests' => 'Users@quests',
 	#'/quests/user/[0-9]+/name/[a-z]+' => 'User@create'
 	]
 

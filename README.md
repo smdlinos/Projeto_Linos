@@ -92,15 +92,14 @@ Projeto em Construção - Funcionalidades atuais da Aplicação
 |  RF0006     |  Acessar perfil do usuário  | FEITO     |
 |  RF0007     |  Cadastrar/Atualizar informações do perfil  | EM DESENVOLVIMENTO  |
 |  RF0008     |  Visualizar registro de recompensas  |EM DESENVOLVIMENTO  |
-|  RF0009     |  Visualizar progresso das conquistas  |EM DESENVOLVIMENTO  |
-|  RF0010     |  Visualizar progresso no tabuleiro  | FEITO  |
-|  RF0011     |  Gerar certificado de horas complementares  | EM DESENVOLVIMENTO |
-|  RF0012     |  Buscar um questionário  | FEITO  |
-|  RF0013     |  Receber feedbacks de progresso no tabuleiro  | EM DESENVOLVIMENTO  |
+|  RF0009     |  Visualizar progresso no tabuleiro  |FEITO  |
+|  RF0010     |   Gerar certificado de horas complementares  | EM DESENVOLVIMENTO  |
+|  RF0011     |  Buscar um questionário  | FEITO  |
+|  RF0012     |  Acessar link para responder questionário  | FEITO |
+|  RF0013     |  Receber feedbacks de progresso no tabuleiro  | FEITO  |
 |  RF0014     |  Gerar recomendações de questionário | FEITO  |
-|  RF0015     |  Acessar link para responder questionário  | EM DESENVOLVIMENTO  |
-|  RF0016     |  Customização do personagem  | EM DESENVOLVIMENTO  |
-|  RF0017     |  Land Page Inicial  | EM DESENVOLVIMENTO  |
+|  RF0015     |  Customização do personagem  | EM DESENVOLVIMENTO  |
+|  RF0016     |  Acessar Landing Page  | EM DESENVOLVIMENTO  |
 
 <a name="tecnologias"></a>
 

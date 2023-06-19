@@ -55,7 +55,7 @@ function AuthProvider({ children }){
 		localStorage.removeItem('token');
 		axios.defaults.headers.common['Authorization'] = undefined;
 		setAuthenticated(false);
-		navigate('/login');
+		navigate('/');
 	}
 
 	if (loading) {

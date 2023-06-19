@@ -2,9 +2,9 @@
 -- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Tempo de geração: 12/06/2023 às 17:21
--- Versão do servidor: 5.6.51-log
+-- Host: 127.0.0.1:3308
+-- Tempo de geração: 19/06/2023 às 09:05
+-- Versão do servidor: 10.1.21-MariaDB
 -- Versão do PHP: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -37,29 +37,34 @@ CREATE TABLE `interesses` (
 --
 
 INSERT INTO `interesses` (`id_interesse`, `id_usuario`, `id_tema`) VALUES
-(1, 14, 1),
-(2, 14, 2),
-(3, 14, 7),
-(4, 32, 5),
-(5, 32, 6),
-(6, 32, 7),
-(7, 32, 8),
-(8, 32, 10),
-(9, 33, 6),
-(10, 33, 7);
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `login`
---
-
-CREATE TABLE `login` (
-  `id_login` int(11) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `senha` varchar(30) NOT NULL,
-  `usuario` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+(1, 1, 1),
+(2, 2, 10),
+(3, 3, 3),
+(4, 1, 5),
+(6, 6, 9),
+(7, 14, 1),
+(8, 14, 2),
+(9, 14, 3),
+(10, 14, 4),
+(11, 14, 5),
+(12, 14, 6),
+(13, 14, 7),
+(14, 15, 1),
+(15, 15, 2),
+(16, 15, 3),
+(17, 15, 4),
+(18, 15, 5),
+(19, 16, 1),
+(20, 16, 2),
+(21, 16, 3),
+(22, 16, 4),
+(23, 16, 5),
+(24, 17, 1),
+(25, 17, 2),
+(26, 17, 3),
+(27, 18, 7),
+(28, 18, 8),
+(29, 18, 9);
 
 -- --------------------------------------------------------
 
@@ -72,7 +77,7 @@ CREATE TABLE `pesquisas` (
   `data_inicio` date NOT NULL,
   `data_final` date NOT NULL,
   `titulo` varchar(45) NOT NULL,
-  `intituicao` varchar(45) DEFAULT NULL,
+  `instituicao` varchar(45) DEFAULT NULL,
   `id_usuario` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -80,8 +85,9 @@ CREATE TABLE `pesquisas` (
 -- Fazendo dump de dados para tabela `pesquisas`
 --
 
-INSERT INTO `pesquisas` (`id_pesquisa`, `data_inicio`, `data_final`, `titulo`, `intituicao`, `id_usuario`) VALUES
-(1, '2023-05-22', '2023-05-28', 'Pesquisa de Usabilidade', 'UFC', 1);
+INSERT INTO `pesquisas` (`id_pesquisa`, `data_inicio`, `data_final`, `titulo`, `instituicao`, `id_usuario`) VALUES
+(1, '2023-05-22', '2023-05-28', 'Pesquisa de Usabilidade', 'UFC', 1),
+(2, '2023-06-09', '2023-06-22', 'Pesquisa de Satisfação', 'UFC', 2);
 
 -- --------------------------------------------------------
 
@@ -92,6 +98,8 @@ INSERT INTO `pesquisas` (`id_pesquisa`, `data_inicio`, `data_final`, `titulo`, `
 CREATE TABLE `questionarios` (
   `id_questionario` int(11) NOT NULL,
   `titulo` varchar(45) NOT NULL,
+  `autor` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `instituicao` varchar(255) NOT NULL,
   `data_inicio` date NOT NULL,
   `data_final` date NOT NULL,
   `descricao` varchar(255) NOT NULL,
@@ -99,6 +107,16 @@ CREATE TABLE `questionarios` (
   `pontuacao` int(11) NOT NULL,
   `id_pesquisa` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Fazendo dump de dados para tabela `questionarios`
+--
+
+INSERT INTO `questionarios` (`id_questionario`, `titulo`, `autor`, `instituicao`, `data_inicio`, `data_final`, `descricao`, `link`, `pontuacao`, `id_pesquisa`) VALUES
+(1, 'UX Resarch Quests', 'Linos Design da Silva', 'UFC', '2023-05-22', '2023-05-28', 'ABBSBBABBABBA', 'aaaaaaa.com.br', 10, 1),
+(2, 'Análise de Necessidades Quests', 'Teste Bittencourt', 'UFC', '2023-05-23', '2023-05-31', 'WWIJIJDJDI', 'aaaaaaaaaa.com.br', 20, 1),
+(3, 'Nível de Satisfação RU', 'Vitorinha do Papoco', 'UFC', '2023-06-09', '2023-06-19', 'KDEMPJEPOJF', 'bbbbbb.com.br', 15, 2),
+(4, 'Teste de Usabilidade', 'Luiz Gonzaga', 'UFC', '2023-06-07', '2023-06-30', 'Testar os negócio lá de uso', 'askdmalskd.com', 20, 1);
 
 -- --------------------------------------------------------
 
@@ -111,6 +129,19 @@ CREATE TABLE `recompensas` (
   `recompensa` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Fazendo dump de dados para tabela `recompensas`
+--
+
+INSERT INTO `recompensas` (`id_recompensa`, `recompensa`) VALUES
+(1, 'Hora de Atividade Complementar'),
+(2, 'koala'),
+(3, 'urso'),
+(4, 'passarinho'),
+(5, 'tigre'),
+(6, 'leão'),
+(7, 'pinguim');
+
 -- --------------------------------------------------------
 
 --
@@ -122,11 +153,41 @@ CREATE TABLE `respostas` (
   `data_resposta` date NOT NULL,
   `hora_resposta` time NOT NULL,
   `pontuacao` int(11) NOT NULL,
-  `titulo_pesquisa` varchar(45) NOT NULL,
   `pesquisa` int(11) NOT NULL,
   `questionario` int(11) NOT NULL,
   `usuario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Fazendo dump de dados para tabela `respostas`
+--
+
+INSERT INTO `respostas` (`id_resposta`, `data_resposta`, `hora_resposta`, `pontuacao`, `pesquisa`, `questionario`, `usuario`) VALUES
+(2, '2023-05-20', '00:00:00', 15, 2, 3, 1),
+(3, '2023-05-20', '10:25:00', 15, 2, 3, 1),
+(4, '2023-05-21', '10:30:15', 15, 2, 3, 2),
+(5, '2023-05-21', '11:59:00', 20, 1, 1, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `tabletop`
+--
+
+CREATE TABLE `tabletop` (
+  `íd_tabletop` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `posicao` int(11) NOT NULL DEFAULT '0',
+  `ch` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Fazendo dump de dados para tabela `tabletop`
+--
+
+INSERT INTO `tabletop` (`íd_tabletop`, `id_usuario`, `posicao`, `ch`) VALUES
+(1, 17, 0, 0),
+(2, 18, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -167,6 +228,22 @@ CREATE TABLE `temas_questionario` (
   `id_tema` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Fazendo dump de dados para tabela `temas_questionario`
+--
+
+INSERT INTO `temas_questionario` (`id_tema_quest`, `id_questionario`, `id_tema`) VALUES
+(1, 1, 2),
+(2, 1, 3),
+(3, 1, 10),
+(4, 2, 1),
+(5, 2, 3),
+(6, 2, 5),
+(7, 3, 9),
+(8, 4, 1),
+(9, 4, 2),
+(10, 4, 3);
+
 -- --------------------------------------------------------
 
 --
@@ -202,26 +279,11 @@ INSERT INTO `usuarios` (`id_usuario`, `name`, `nickname`, `email`, `password`, `
 (11, 'Victor', 'Emanuel', 'emanuel@gmail.com', '12345', '2023-05-25', '2', '4', 0, 0),
 (12, 'Maria', 'Clara', 'mariaclara@gmail.com', '12345', '2004-08-04', '2', '3', 0, 0),
 (13, 'Júlia Menezes', 'JulinhaPVP', 'julinha@gmail.com', '$2y$10$I0ldwAUuuz8e.peGG99niuChJHPRiR55pJobGGpRu7frlXrIXbehy', '2023-01-12', '2', '5', 0, 0),
-(14, 'Victor Emanuel Tomaz', 'Victor', 'victoremanuel.vet8@gmail.com', '$2y$10$RlirWPa4G4Tu3s2agomAD.OBaD5F2YKaInlKSIVjQVySAqPphbQ96', '2004-05-28', 'Masculino', 'Ensino Supeior Incompleto', 0, 0),
-(15, 'Layna Tomaz', 'Layna', 'layna2506@gmail.com', '$2y$10$.UTXVC1vsMvKGdEOCeCKce0vNygmtriF5ZVMUt01FQZyV1casshNq', '2000-06-25', 'Feminino', 'Ensino Supeior Incompleto', 0, 0),
-(16, 'UserTest Victor', 'UserTest', 'usertest@gmail.com', '$2y$10$h4ItOZKC85AywhhXJwI5j.cG1kx5f6XBt6dWibsUbEohJNwv55q/y', '2004-05-28', 'Outro', 'Ensino Supeior Completo', 0, 0),
-(17, 'Lucas Cabuloso', 'Luquinhas', 'lucas@gmail.com', '$2y$10$tNdsCYRpgazvrqSYGHsYRORJAHzWF5RxK7OoZRAxUamutTUdfKSni', '2004-05-28', 'Masculino', 'Ensino Médio Icompleto', 0, 0),
-(18, 'Laravel da Silva', 'Laravel', 'laravel@gmail.com', '$2y$10$GEf.s4nn..mUCtKtr91jUeT5wj933T3ZLYpKHoqyLN01.WG78SuxG', '1980-04-30', 'Masculino', 'Ensino Médio Icompleto', 0, 0),
-(19, 'João da Silva', 'João', 'joazinho@gmail.com', '$2y$10$NAZX.jQnq4Ay8bw1FfS09.YUtmGE7vM8pu9zKTQ.jnjleEJ6n16kq', '1990-07-21', 'Masculino', 'Ensino Supeior Incompleto', 0, 0),
-(20, 'Linos Design da Silva', 'Linos', 'linos@gmail.com', '$2y$10$EpQWDYCt9EpVe6k4xlBeNuOMdV0x8g9QQeEsFal3bcmWNNPMUuJli', '2023-03-21', 'Outro', 'Pós-Graduação', 0, 0),
-(21, 'Renato Góis', 'Renato', 'renatinho@gmail.com', '$2y$10$t0UkmzPqqiLdmcOcZol6neLaE9/Yp88NlPG.uQywTGiJuGV/cCtEy', '1970-12-31', 'Masculino', 'Ensino Médio Completo', 0, 0),
-(22, '', '', '', '$2y$10$AVvMjRu5BQKxSPmrgnCBF.6NXLZSWzSgXfHTMoPHLkVsdf3gdnyRu', NULL, NULL, NULL, 0, 0),
-(23, 'Marcos Damasceno', 'Marcos', 'marcos@gmail.com', '$2y$10$Y1wBfc.uYVXIN72rXjusoOqHKt7YzDgY5ikqd0eMbruqfD70VqkT.', '2008-02-27', 'Masculino', 'Ensino Fundamental Completo', 0, 0),
-(24, 'Júlia Mendes', 'Júlia', 'laflaks@gmail.com', '$2y$10$9YuMaNeHafOaGarCNle3e.L9wVWKARfjlgVYJDw5MHJ1hrgCYN8cy', '2005-12-25', 'Feminino', 'Ensino Supeior Incompleto', 0, 0),
-(25, 'Carlão do Papoco', 'Carlos', 'carlaoj@gmail.com', '$2y$10$0RzFiSBWmzNYmQRaIxrfK.J.9OARNscjk0rpNlRbc/jdgpcSs9xli', '1999-04-09', 'Outro', 'Ensino Fundamental Completo', 0, 0),
-(26, 'Ramiro Costa', 'Ramiro', 'ramirimad@gmail.com', '$2y$10$7pIlhzEbgLzA70P/0LagLuguSaQh1GvchMR41sHdzkHEdk5uOL2nG', '2007-03-25', 'Masculino', 'Ensino Fundamental Completo', 0, 0),
-(27, 'Victor Emanuel Tomaz', 'maninca', 'manica@gmail.com', '$2y$10$Qs7dRxRhNtOds9ArijEnoeXEThLog/cATROmN389SNjDvUN2dT8j6', '2009-02-25', 'Masculino', 'Ensino Fundamental Completo', 0, 0),
-(28, 'Camilo Santana', 'Camilo', 'casifjads@gmail.com', '$2y$10$vxRO1lz/Okzb5t8ePVmpaOOchMdQV3jlaboVwDFJyIAEt39G4z0Au', '1970-08-24', 'Masculino', 'Ensino Supeior Completo', 0, 0),
-(29, 'Pâmela Sales', 'Pamela', 'padasdsas@gmail.com', '$2y$10$fagxq7cSSZ0zFwyGYU0O8ei39euzySH.aaQ57TZTYVpcM8kSpf4dq', '2003-08-02', 'Feminino', 'Ensino Supeior Completo', 0, 0),
-(30, 'Larissa Anitta', 'Larissa', 'lariasdoa@gmail.com', '$2y$10$nKthkkxCIsMdbHyMwA0JXeZ7PHyXPYxfokjwbM8jwIyI5uMIkgU.6', '2004-09-05', 'Feminino', 'Ensino Fundamental Incompleto', 0, 0),
-(31, 'Kauã Maia', 'Kaua', 'kauasdas@gmail.com', '$2y$10$gfFvP.pJ5ypexzUSso3lsO.4OmqcxjeUtlGT6AtPoE/lJdNp4wImG', '1998-01-27', 'Masculino', 'Ensino Supeior Incompleto', 0, 0),
-(32, 'Natanzin Vasconcelos', 'Natan', 'natanzin@gmail.com', '$2y$10$uffYnun9Yv5TKdq1BszGYuYRygSfSfgmDH9q77UsPY7lX1z6Z.4Wq', '2002-06-12', 'Masculino', 'Ensino Médio Icompleto', 0, 0),
-(33, 'Vitória Jessica V. Dos Santos', 'avie', 'vitorinhadopapoco2@gmail.com', '$2y$10$ShmTFx0eDpZGzTEre7U5HehRzGqGGAER387Qxs3iOLOC7UQEdbLcu', '2002-07-16', 'Feminino', 'Ensino Supeior Incompleto', 0, 0);
+(14, 'Victor Emanuel Tomaz das Neves', 'Victor', 'victoremanuel.vet8@gmail.com', '$2y$10$/vOJia8706dBxHlTTcp3y.nRHTM2kIzlK2/NzzuvoQ6rIAkF8Uj7O', '2004-05-28', 'Masculino', 'Ensino Superior Incompleto', 0, 0),
+(15, 'Luiz Gonzaga Santos Filho', 'Bradock_3105', 'luisgonzaga@alu.ufc.br', '$2y$10$jb3lJP0bLNC1ljW2CLk7OeNLL.l5SFK/hl/6fXCIHCcdBAv2ptSBe', '1995-05-31', 'Masculino', 'Pós-Graduação', 0, 0),
+(16, 'Luiz Gonzaga dos Santos Filho', 'Bradock3105', 'luizgonzaga@alu.ufc.br', '$2y$10$YEmwR9qA7StEVDrrPpxpgOgFUturaJuGt0898LnXYCkbsJuH32tIK', '1995-05-31', 'Masculino', 'Pós-Graduação', 0, 0),
+(17, 'Maria Leticia Barros Nepomuceno', 'Letinepo', 'letinepo@gmail.com', '$2y$10$ZK4eHuUA/dDfTrrokhUAyuomQQRVv/EUzZDnnfS5ba0RbkSxYzjJe', '2003-12-31', 'Feminino', 'Ensino Superior Incompleto', 0, 0),
+(18, 'Victor Emanuel Silva', 'Vitao', 'victoremanuel.vet6@gmail.com', '$2y$10$c2dg1GV9v96SHwfG19L/FOhct6i.8F9yYTwpY7.xHonEUwP.XZTIe', '2006-03-31', 'Masculino', 'Ensino Superior Incompleto', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -236,6 +298,15 @@ CREATE TABLE `usuario_recompensa` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Fazendo dump de dados para tabela `usuario_recompensa`
+--
+
+INSERT INTO `usuario_recompensa` (`id_usuario_recompensa`, `id_usuario`, `id_recompensa`) VALUES
+(1, 1, 1),
+(2, 1, 2),
+(3, 2, 1);
+
+--
 -- Índices de tabelas apagadas
 --
 
@@ -248,25 +319,21 @@ ALTER TABLE `interesses`
   ADD KEY `id_tema_idx` (`id_tema`);
 
 --
--- Índices de tabela `login`
---
-ALTER TABLE `login`
-  ADD PRIMARY KEY (`id_login`),
-  ADD KEY `id_usuario_idx` (`usuario`);
-
---
 -- Índices de tabela `pesquisas`
 --
 ALTER TABLE `pesquisas`
   ADD PRIMARY KEY (`id_pesquisa`),
-  ADD KEY `id_usuario_idx` (`id_usuario`);
+  ADD KEY `id_usuario_idx` (`id_usuario`),
+  ADD KEY `instituicao` (`instituicao`),
+  ADD KEY `instituicao_2` (`instituicao`);
 
 --
 -- Índices de tabela `questionarios`
 --
 ALTER TABLE `questionarios`
   ADD PRIMARY KEY (`id_questionario`),
-  ADD KEY `id_pesquisa_idx` (`id_pesquisa`);
+  ADD KEY `id_pesquisa_idx` (`id_pesquisa`),
+  ADD KEY `instituicao` (`instituicao`);
 
 --
 -- Índices de tabela `recompensas`
@@ -282,6 +349,13 @@ ALTER TABLE `respostas`
   ADD KEY `id_usuario_idx` (`usuario`),
   ADD KEY `id_questionario_idx` (`questionario`),
   ADD KEY `fk_id_pesquisa_idx` (`pesquisa`);
+
+--
+-- Índices de tabela `tabletop`
+--
+ALTER TABLE `tabletop`
+  ADD PRIMARY KEY (`íd_tabletop`),
+  ADD KEY `id_user` (`id_usuario`);
 
 --
 -- Índices de tabela `temas`
@@ -301,7 +375,9 @@ ALTER TABLE `temas_questionario`
 -- Índices de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id_usuario`);
+  ADD PRIMARY KEY (`id_usuario`),
+  ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `email_2` (`email`);
 
 --
 -- Índices de tabela `usuario_recompensa`
@@ -319,32 +395,32 @@ ALTER TABLE `usuario_recompensa`
 -- AUTO_INCREMENT de tabela `interesses`
 --
 ALTER TABLE `interesses`
-  MODIFY `id_interesse` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
---
--- AUTO_INCREMENT de tabela `login`
---
-ALTER TABLE `login`
-  MODIFY `id_login` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_interesse` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 --
 -- AUTO_INCREMENT de tabela `pesquisas`
 --
 ALTER TABLE `pesquisas`
-  MODIFY `id_pesquisa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_pesquisa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de tabela `questionarios`
 --
 ALTER TABLE `questionarios`
-  MODIFY `id_questionario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_questionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de tabela `recompensas`
 --
 ALTER TABLE `recompensas`
-  MODIFY `id_recompensa` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_recompensa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de tabela `respostas`
 --
 ALTER TABLE `respostas`
-  MODIFY `id_resposta` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_resposta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT de tabela `tabletop`
+--
+ALTER TABLE `tabletop`
+  MODIFY `íd_tabletop` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de tabela `temas`
 --
@@ -354,17 +430,17 @@ ALTER TABLE `temas`
 -- AUTO_INCREMENT de tabela `temas_questionario`
 --
 ALTER TABLE `temas_questionario`
-  MODIFY `id_tema_quest` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_tema_quest` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT de tabela `usuario_recompensa`
 --
 ALTER TABLE `usuario_recompensa`
-  MODIFY `id_usuario_recompensa` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_usuario_recompensa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- Restrições para dumps de tabelas
 --
@@ -373,48 +449,42 @@ ALTER TABLE `usuario_recompensa`
 -- Restrições para tabelas `interesses`
 --
 ALTER TABLE `interesses`
-  ADD CONSTRAINT `fk_id_usuario_tema` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `id_tema_usuario` FOREIGN KEY (`id_tema`) REFERENCES `temas` (`id_tema`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Restrições para tabelas `login`
---
-ALTER TABLE `login`
-  ADD CONSTRAINT `fk_id_usuario_login` FOREIGN KEY (`usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_id_usuario_tema` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`),
+  ADD CONSTRAINT `id_tema_usuario` FOREIGN KEY (`id_tema`) REFERENCES `temas` (`id_tema`);
 
 --
 -- Restrições para tabelas `pesquisas`
 --
 ALTER TABLE `pesquisas`
-  ADD CONSTRAINT `id_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Restrições para tabelas `questionarios`
---
-ALTER TABLE `questionarios`
-  ADD CONSTRAINT `id_pesquisa` FOREIGN KEY (`id_pesquisa`) REFERENCES `pesquisas` (`id_pesquisa`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `id_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`);
 
 --
 -- Restrições para tabelas `respostas`
 --
 ALTER TABLE `respostas`
-  ADD CONSTRAINT `fk_id_pesquisa` FOREIGN KEY (`pesquisa`) REFERENCES `pesquisas` (`id_pesquisa`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_id_questionario` FOREIGN KEY (`questionario`) REFERENCES `questionarios` (`id_questionario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_id_usuario` FOREIGN KEY (`usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_id_pesquisa` FOREIGN KEY (`pesquisa`) REFERENCES `pesquisas` (`id_pesquisa`),
+  ADD CONSTRAINT `fk_id_questionario` FOREIGN KEY (`questionario`) REFERENCES `questionarios` (`id_questionario`),
+  ADD CONSTRAINT `fk_id_usuario` FOREIGN KEY (`usuario`) REFERENCES `usuarios` (`id_usuario`);
+
+--
+-- Restrições para tabelas `tabletop`
+--
+ALTER TABLE `tabletop`
+  ADD CONSTRAINT `id_user` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`);
 
 --
 -- Restrições para tabelas `temas_questionario`
 --
 ALTER TABLE `temas_questionario`
-  ADD CONSTRAINT `fk_id_questionario_tema` FOREIGN KEY (`id_questionario`) REFERENCES `questionarios` (`id_questionario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `id_tema` FOREIGN KEY (`id_tema`) REFERENCES `temas` (`id_tema`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_id_questionario_tema` FOREIGN KEY (`id_questionario`) REFERENCES `questionarios` (`id_questionario`),
+  ADD CONSTRAINT `id_tema` FOREIGN KEY (`id_tema`) REFERENCES `temas` (`id_tema`);
 
 --
 -- Restrições para tabelas `usuario_recompensa`
 --
 ALTER TABLE `usuario_recompensa`
-  ADD CONSTRAINT `fk_id_usuario_recompensa` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `id_recompensa` FOREIGN KEY (`id_recompensa`) REFERENCES `recompensas` (`id_recompensa`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_id_usuario_recompensa` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`),
+  ADD CONSTRAINT `id_recompensa` FOREIGN KEY (`id_recompensa`) REFERENCES `recompensas` (`id_recompensa`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

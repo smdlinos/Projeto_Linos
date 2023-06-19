@@ -6,6 +6,7 @@ import HeaderHome from "../components/HeaderHome";
 import Button from "react-bootstrap/Button";
 import axios from 'axios';
 const urlTest = "http://localhost/quests/login/auth";
+const urlQ = "http://localhost/quests/users/quests";
 import {useNavigate} from 'react-router-dom';
 
 import React, { useContext, useEffect, useState } from 'react';
@@ -55,6 +56,24 @@ export default function Home(){
          teste();
         },[]);
 
+    } else  {
+    useEffect(() =>{
+
+        const token = localStorage.getItem('token');
+         const teste = async () => {
+             const response = await axios.get(urlQ, {
+            }).then(function (response) {
+            if(response.data){
+                setQuests(response.data)
+            };
+            }).catch(function (error) {
+
+              console.log(error);
+
+            });
+         }
+         teste();
+    },[]);
     }
 
     return(
@@ -65,7 +84,7 @@ export default function Home(){
                 <h5 className='pb-3'>
                 Questionários Recomendados
                 </h5>
-                    <Forms quests={recomendados} /> 
+                   {authenticated && <Forms quests={recomendados} />}
                 <h5 className='pb-3 pt-5'>
                 Todos os Questionários
                 </h5>

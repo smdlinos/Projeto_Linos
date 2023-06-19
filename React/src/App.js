@@ -27,7 +27,8 @@ export default function App() {
           <Routes>
             <Route path = "/" element = {<LandPage/>}/>  
 
-            <Route path = "/login" element = { authenticated ? <Navigate to={'/home/'+localStorage.getItem('token').replace(/["]/g, '')}/> : <Login/>}/>     
+            {/*<Route path = "/login" element = { authenticated ? <Navigate to={'/home/'+localStorage.getItem('token').replace(/["]/g, '')}/> : <Login/>}/>   */}
+            <Route path = "/login" element ={<Login/>}/>       
 {/* 
             <Route path = "/home" element = { authenticated ? <Home/>: <Navigate to="/login"/>}/> */}
             <Route path = "/home" element = { <Home/>}/>
@@ -38,7 +39,7 @@ export default function App() {
        
             <Route path = "/reset" element = {<Reset/>}/>
 
-            <Route path = "/quest_d" element = {<Quest_D/>}/>
+            <Route path = "/quest_d/:id" element = {<Quest_D/>}/>
 
             <Route path="/home/:id" element= {<Home/>}/>
 

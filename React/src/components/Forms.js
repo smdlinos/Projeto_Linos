@@ -11,10 +11,12 @@ import { BrowserRouter , Routes, Route, Link, useNavigate, Navigate} from "react
 
 function Forms(props){
     const navigate = useNavigate();
+    
     function acttion(e){
         e.preventDefault();
-        navigate("/quest_d");
+        navigate("/quest_d/"+e.target.id);
     }
+
     return(
         <div>
             <Container>
@@ -24,7 +26,8 @@ function Forms(props){
                         {props.quests && props.quests.map((quest) => (
                             <Carousel.Item key={quest.id_questionario}>
                                 <Card    
-                                    onClick={(e)=>acttion(e)}
+                                    onClick={(e)=>navigate("/quest_d/"+quest.id_questionario)}
+                                    id = {quest.id_questionario}
                                     style={{ width: '23rem' }}
                                     className="mb-2 m-auto card bg-dark"
                                 >

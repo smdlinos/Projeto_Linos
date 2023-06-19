@@ -4,7 +4,7 @@ import Col from "react-bootstrap/Col";
 import Tela from "../components/Tela.css"
 import Logo from "../components/imagens/quest_logo.png"
 
-export default function header_q() {
+export default function Header_q() {
   return (
     <div>
       <Container className="mb-4 ">

@@ -40,7 +40,7 @@ function AuthProvider({ children }){
 	       		localStorage.setItem('token', JSON.stringify(token));
 				axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 				setAuthenticated(true);
-				navigate('/home');
+				navigate('/home/'+token);
 	    	}
 	       	
 	      }).catch(function (error) {

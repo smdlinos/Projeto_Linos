@@ -6,7 +6,7 @@ import Reset from "./pages/Reset";
 import Register from "./pages/Register";
 import Quest_D from "./pages/Quest_Detail";
 
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import {Context} from './context/AuthContext'
 import {Redirect} from 'react-router';
 import { BrowserRouter , Routes, Route, Link, useNavigate, Navigate} from "react-router-dom";
@@ -18,9 +18,8 @@ import { AuthProvider } from './context/AuthContext';
 
 
 export default function App() {
-
+  
   const { authenticated } = useContext(Context);
-
 
   return (
     
@@ -28,7 +27,7 @@ export default function App() {
           <Routes>
             <Route path = "/" element = {<LandPage/>}/>  
 
-            <Route path = "/login" element = {<Login/>}/>     
+            <Route path = "/login" element = { authenticated ? <Navigate to={'/home/'+localStorage.getItem('token').replace(/["]/g, '')}/> : <Login/>}/>     
 {/* 
             <Route path = "/home" element = { authenticated ? <Home/>: <Navigate to="/login"/>}/> */}
             <Route path = "/home" element = { <Home/>}/>

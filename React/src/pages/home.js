@@ -12,12 +12,29 @@ import React, { useContext, useEffect, useState } from 'react';
 
 import { Context } from '../context/AuthContext';
 
-import CustomRoute from '../CustomRoute';
-
 export default function Home(){
 
     const { authenticated, handleLogout, loading} = useContext(Context);
     
+
+    const [recomendados, setRecomendados] = useState();
+    const [quests, setQuests] = useState();
+
+    //Fake api - comenta os dois estados acima e as linhas 46 e 47 beijos
+
+//     const recomendados = [
+// {id_questionario: '1', titulo: 'UX Resarch Quests', autor: 'Linos Design da Silva', instituicao: 'UFC', data_inicio: '2023-05-22', …},
+// {id_questionario: '2', titulo: 'Análise de Necessidades Quests', autor: 'Teste Bittencourt', instituicao: 'UFC', data_inicio: '2023-05-23', …}, 
+// {id_questionario: '4', titulo: 'Teste de Usabilidade', autor: 'Luiz Gonzaga', instituicao: 'UFC', data_inicio: '2023-06-07', …}
+//  ]
+
+//     const quests = [
+//         {id_questionario: '1', titulo: 'UX Resarch Quests', autor: 'Linos Design da Silva', instituicao: 'UFC', data_inicio: '2023-05-22', …},
+// {id_questionario: '2', titulo: 'Análise de Necessidades Quests', autor: 'Teste Bittencourt', instituicao: 'UFC', data_inicio: '2023-05-23', …},
+// {id_questionario: '3', titulo: 'Nível de Satisfação RU', autor: 'Vitorinha do Papoco', instituicao: 'UFC', data_inicio: '2023-06-09', …}, 
+// {id_questionario: '4', titulo: 'Teste de Usabilidade', autor: 'Luiz Gonzaga', instituicao: 'UFC', data_inicio: '2023-06-07', …}
+//   ]
+
     if(authenticated){
         useEffect(() =>{
 
@@ -26,8 +43,9 @@ export default function Home(){
              const response = await axios.get(urlTest, {
             }).then(function (response) {
             if(response.data){
-              console.log(response.data);
-            } 
+                setRecomendados(response.data.recomendacoes[2]);
+                setQuests(response.data.recomendacoes[1])
+            };
             }).catch(function (error) {
 
               console.log(error);
@@ -36,9 +54,9 @@ export default function Home(){
          }
          teste();
         },[]);
+
     }
-    
-    console.log(authenticated);
+
     return(
         <div className="background">
             <HeaderHome/>
@@ -47,14 +65,15 @@ export default function Home(){
                 <h5 className='pb-3'>
                 Questionários Recomendados
                 </h5>
-                <Forms/>
+                    <Forms quests={recomendados} /> 
                 <h5 className='pb-3 pt-5'>
                 Todos os Questionários
                 </h5>
-                <Forms />
-                <Button variant="primary" type="button"  onClick={handleLogout} className="px-5 mb-3 mt-3">
+                 <Forms quests={quests}/>
+                {authenticated && <Button variant="primary" type="button"  onClick={handleLogout} className="px-5 mb-3 mt-3">
                     Logout
                 </Button>
+                }
             </main>
         </div> 
     )

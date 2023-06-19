@@ -8,7 +8,13 @@ import perfil from "../components/imagens/noto_lion.png";
 import estrela from "../components/imagens/estrela.svg";
 import OverlayPerfil from "./OverlayPerfil";
 
+import React, { useContext} from 'react';
+
+import { Context } from '../context/AuthContext';
+ 
 export default function HeaderHome() {
+
+  const { authenticated} = useContext(Context);
   return (
     <div>
       <Container className="mb-4">
@@ -22,14 +28,15 @@ export default function HeaderHome() {
           <h1 className="text-muted titulo">QUESTS</h1>
           </Col>
           <Col className="mt-3 itens ">
-          <Stack direction="horizontal" gap={1}>
+          {authenticated && <Stack direction="horizontal" gap={1}>
             
             <img src={estrela} alt="estrela" className="estrela"/>
             <p className="pt-1 pontos ">50</p>
             
             <OverlayPerfil/>
-          </Stack>
             
+          </Stack>
+            }
           </Col>
           
         </Row>

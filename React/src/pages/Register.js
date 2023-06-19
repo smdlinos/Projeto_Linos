@@ -32,9 +32,8 @@ export default function Register() {
   const { authenticated, setAuthenticated } = useContext(Context);
 
   const { data:temas} = useFetch(urlGet);
- 
 
-  
+
   const navigate = useNavigate();
   const [password, setPassword] = useState();
   const [nickname, setNickname] = useState();

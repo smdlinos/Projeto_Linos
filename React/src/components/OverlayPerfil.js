@@ -5,10 +5,10 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import Perfil from "./imagens/noto_lion.png";
-import perfil_g from "./imagens/perfil_g.svg";
+import Perfil from "./imagens/koala.svg";
+import perfil_g from "./imagens/koala_p.svg";
 import "../components/Tela.css";
-import estrela from "../components/imagens/estrela.svg";
+import estrela from "../components/imagens/estrela2.svg";
 
 
 
@@ -22,21 +22,20 @@ function OverlayPerfil() {
               <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}` } className='ms-auto'>
                 <img src={Perfil} alt='perfil' ></img></Navbar.Toggle>
               <Navbar.Offcanvas
-                bg="dark"
                 id={`offcanvasNavbar-expand-${expand}`}
                 aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
                 placement="end"
               >
-                <Offcanvas.Header closeButton>
+                <Offcanvas.Header className='background_header' closeButton>
                   <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
                    
                   </Offcanvas.Title>
                 </Offcanvas.Header>
-                <Offcanvas.Body>
+                <Offcanvas.Body className="background_header">
                   <Nav className="justify-content-end flex-grow-1 pe-3">
-                    <div className='m-auto pontos_p'>
-                    <img src={estrela} alt='estrelinha' className='estrela_p '/>
-                    <p className='my-1 mx-1'><strong>60</strong></p>
+                    <div className='m-auto pontos_p mb-3'>
+                    <img src={estrela} alt='estrelinha' className='estrela_p'/>
+                    <p className='my-1 mx-1 font_p'>60</p>
                     </div>
                     <img src={perfil_g} alt='perfil_g' className=' mx-5 perfil_g'/>
                     <h3 className='pt-3'><center>@koal_castro</center></h3>
@@ -44,15 +43,9 @@ function OverlayPerfil() {
                     <Nav.Link href="#action2">Recompensas</Nav.Link>
                     <Nav.Link href="#action3" className='pb-5'>Certificados</Nav.Link>
                   </Nav>
-                  <Form className="d-flex">
-                    <Form.Control
-                      type="search"
-                      placeholder="Pesquise no Quests"
-                      className="me-2"
-                      aria-label="Search"
-                    />
-                    <Button variant="outline-success">Buscar</Button>
-                  </Form>
+                  <Button variant="primary" type="button"  className="px-5 mb-3 mt-3">
+                    Logout
+                </Button>
                 </Offcanvas.Body>
               </Navbar.Offcanvas>
             </Container>

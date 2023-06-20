@@ -2,7 +2,7 @@
 import "../components/Tela.css"
 
 //hooks
-import { BrowserRouter as Router, Routes, Route, Link, useNavigate} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate, json} from "react-router-dom";
 import { useEffect, useState } from "react";
 import {useFetch} from "../hooks/useFetch";
 import axios from 'axios';
@@ -31,9 +31,19 @@ export default function Register() {
 
   const { authenticated, setAuthenticated } = useContext(Context);
 
-  const { data:temas} = useFetch(urlGet);
- 
-
+  //const { data:temas} = useFetch(urlGet);
+  
+  const temas = [{id_tema: '1', tema: 'Design'},
+                  {id_tema: '2', tema: 'Experiência do Usuário'},
+                  {id_tema: '3', tema: 'Usabilidade'}, 
+                  {id_tema: '4', tema: 'Dispositivos Inteligentes'},
+                  {id_tema: '5', tema: 'Design Centrado no Usuário'},
+                  {id_tema: '6', tema: 'Audiovisual'},
+                  {id_tema: '7', tema: 'Jogos'},
+                  {id_tema: '8', tema: 'Inteligência Artificial'},
+                  {id_tema: '9', tema: 'Motivação'},
+                  {id_tema: '10', tema: 'Interfaces'}
+]
   
   const navigate = useNavigate();
   const [password, setPassword] = useState();
@@ -46,7 +56,7 @@ export default function Register() {
   const [interesses, setInteresses] = useState([]);
   
 
-  const [form, setForm] = useState(1);
+  const [form, setForm] = useState(2);
   
   const handleSubmit = async (e) =>{
     e.preventDefault();

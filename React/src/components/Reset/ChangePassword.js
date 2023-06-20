@@ -17,10 +17,10 @@ export default function ChangePassword (props){
 
 
     return <>
-        <h2 className="text-muted">Crie uma nova senha</h2>
+        <h1 className="titulo_login">Crie uma nova senha</h1>
         <br/>
         <Form.Group className="mb-2">
-          <Form.Label htmlFor="senha">Escolher nova senha</Form.Label>
+          <Form.Label htmlFor="senha" className="text-muted">Escolher nova senha</Form.Label>
           <Form.Control 
           type="password" 
           placeholder="Insira aqui" 
@@ -30,21 +30,9 @@ export default function ChangePassword (props){
           />
         </Form.Group>
 
-        <Form.Group className="mb-2">
-          <Form.Label htmlFor="password">Confirmar</Form.Label>
-          <Form.Control 
-          type="password" 
-          placeholder="Insira aqui" 
-          name = "password1" 
-          onChange={(e)=> setPassword2(e.target.value)}
-          />
-        </Form.Group>
-        {props.password === password2 ? <Button variant="primary" type="submit" className="px-5 mb-3 mt-3">
-        Próximo
-        </Button>: 
-        <Button variant="primary" type="button"  onClick={senhasDiferentes} className="px-5 mb-3 mt-3">
+        <Button variant="primary" type="button" onClick={senhasDiferentes} className="px-5 mb-3 mt-3 botao">
         Criar nova Senha
-        </Button>}
+        </Button>
         <br />
       </>
 }

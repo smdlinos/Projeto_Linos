@@ -1,7 +1,7 @@
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Tabuleiro from '../components/imagens/tabuleiro_1.svg';
+import Tabuleiro from '../components/imagens/tabuleiro2.svg';
 import "../components/Tela.css"
 function Tabletop(){
     return(
@@ -9,9 +9,9 @@ function Tabletop(){
             <div>
                 <Row>
                     <Col className='justify-content-start'>
-                    <h5>
+                    {/* <h3 className="titulo_login">
                     Meu tabuleiro
-                 </h5>
+                 </h3> */}
                     </Col>
                 
                 </Row>

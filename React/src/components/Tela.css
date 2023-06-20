@@ -60,7 +60,7 @@ body{
     width: 270px;
 }
 .estrela_p{
-    width: 20px;
+    width: 35px;
 }
 .pontos_p{
     display: flex;
@@ -160,4 +160,25 @@ background: #BE2C53;
 }
 .star{
     
+}
+
+.espacamento_c{
+    padding-right: 39%;
+}
+
+.text_align{
+    text-align: right;
+
+}
+
+.background_header{
+    background-color: #56B6DC;
+    ;
+}
+
+.font_p{
+    font-family: "Supreme", sans-serif;
+    font-weight: 700;
+    color: #08394D;
+    font-size: 20px;
 }

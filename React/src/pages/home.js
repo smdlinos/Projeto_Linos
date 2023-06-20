@@ -42,15 +42,15 @@ export default function Home(){
     return(
         <div className="background">
             <HeaderHome/>
-            <main className="">
+            <main className="fonte_login">
                 <Tabletop/>
-                <h5 className='pb-3'>
+                <h3 className='pb-3 titulo_login'>
                 Questionários Recomendados
-                </h5>
+                </h3>
                 <Forms/>
-                <h5 className='pb-3 pt-5'>
+                <h3 className='pb-3 pt-5 titulo_login'>
                 Todos os Questionários
-                </h5>
+                </h3>
                 <Forms />
                 <Button variant="primary" type="button"  onClick={handleLogout} className="px-5 mb-3 mt-3">
                     Logout

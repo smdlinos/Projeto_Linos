@@ -45,6 +45,9 @@ export default function Register() {
                   {id_tema: '10', tema: 'Interfaces'}
 ]
   
+  const { data:temas} = useFetch(urlGet);
+
+
   const navigate = useNavigate();
   const [password, setPassword] = useState();
   const [nickname, setNickname] = useState();

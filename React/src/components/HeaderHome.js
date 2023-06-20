@@ -9,7 +9,13 @@ import estrela from "../components/imagens/estrela2.svg";
 import OverlayPerfil from "./OverlayPerfil";
 import logo from "../components/imagens/logo_oficial.svg";
 
+import React, { useContext} from 'react';
+
+import { Context } from '../context/AuthContext';
+ 
 export default function HeaderHome() {
+
+  const { authenticated} = useContext(Context);
   return (
     <div>
       <Container className="mb-4 background_header">
@@ -23,14 +29,15 @@ export default function HeaderHome() {
           <img src={logo} alt="logo" className="mt-4 quest_logo_q"/>
           </Col>
           <Col className="mt-3 itens ">
-          <Stack direction="horizontal" gap={1}>
+          {authenticated && <Stack direction="horizontal" gap={1}>
             
             <img src={estrela} alt="estrela" className="estrela"/>
             <p className="pt-1 pontos ">50</p>
             
             <OverlayPerfil/>
-          </Stack>
             
+          </Stack>
+            }
           </Col>
           
         </Row>

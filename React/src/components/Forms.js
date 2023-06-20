@@ -32,7 +32,7 @@ function Forms(props){
                                     className="mb-2 m-auto card bg-dark"
                                 >
                                 <Card.Body >
-                                    <Card.Title>{quest.titulo}</Card.Title>
+                                    <Card.Title >{quest.titulo}</Card.Title>
                                     <Card.Text>
                                         <small>{quest.autor}</small><br/>
                                         <small>{quest.instituicao}</small><br/>

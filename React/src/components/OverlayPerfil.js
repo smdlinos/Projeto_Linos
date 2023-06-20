@@ -10,9 +10,12 @@ import perfil_g from "./imagens/koala_p.svg";
 import "../components/Tela.css";
 import estrela from "../components/imagens/estrela2.svg";
 
+import React, { useContext, useEffect, useState } from 'react';
 
+import { Context } from '../context/AuthContext';
 
-function OverlayPerfil() {
+function OverlayPerfil({user}) {
+  const { authenticated, handleLogout, loading} = useContext(Context);
     return (
       <>
         {[false].map((expand) => (
@@ -43,9 +46,10 @@ function OverlayPerfil() {
                     <Nav.Link href="#action2">Recompensas</Nav.Link>
                     <Nav.Link href="#action3" className='pb-5'>Certificados</Nav.Link>
                   </Nav>
-                  <Button variant="primary" type="button"  className="px-5 mb-3 mt-3">
+                  {authenticated && <Button variant="primary" type="button"  onClick={handleLogout} className="px-5 mb-3 mt-3">
                     Logout
-                </Button>
+                </Button> 
+                }
                 </Offcanvas.Body>
               </Navbar.Offcanvas>
             </Container>

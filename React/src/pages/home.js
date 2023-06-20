@@ -82,16 +82,13 @@ export default function Home(){
             <main className="fonte_login">
                 <Tabletop/>
                 <h3 className='pb-3 titulo_login'>
-                {authenticated && <Forms quests={recomendados} />}
+                    Questionários Recomendados
                 </h3>
+                {authenticated && <Forms quests={recomendados} />}
                 <h3 className='pb-3 pt-5 titulo_login'>
                 Todos os Questionários
                 </h3>
                  <Forms quests={quests}/>
-                {authenticated && <Button variant="primary" type="button"  onClick={handleLogout} className="px-5 mb-3 mt-3">
-                    Logout
-                </Button>
-                }
             </main>
         </div> 
     )

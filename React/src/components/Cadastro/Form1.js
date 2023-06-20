@@ -102,6 +102,7 @@ const Form1 = (props) => {
                     <Form.Group>
                     <Form.Label htmlFor="Escolaridade" className="nickname pt-2">Escolaridade</Form.Label>
                     <Form.Select aria-label="Floating label select example" onChange={props.escolaridade}>
+                        <option value="default">Escolha sua escolaridade</option>
                         <option value="Sem escolaridade">Sem escolaridade</option>
                         <option value="Ensino Fundamental Incompleto">Ensino Fundamental Incompleto</option>
                         <option value="Ensino Fundamental Completo">Ensino Fundamental Completo</option>

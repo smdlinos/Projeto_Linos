@@ -28,7 +28,7 @@ export default function Reset() {
   const [email, setEmail] = useState();
   const [code, setCode] = useState();
   const navigate = useNavigate();
-  const [page, setPage] = useState(3);
+  const [page, setPage] = useState(1);
 
   async function handleReset(e){
     e.preventDefault();

@@ -27,11 +27,11 @@ export default function App() {
           <Routes>
             <Route path = "/" element = {<LandPage/>}/>  
 
-            {/*<Route path = "/login" element = { authenticated ? <Navigate to={'/home/'+localStorage.getItem('token').replace(/["]/g, '')}/> : <Login/>}/>   */}
-            <Route path = "/login" element ={<Login/>}/>       
-{/* 
-            <Route path = "/home" element = { authenticated ? <Home/>: <Navigate to="/login"/>}/> */}
-            <Route path = "/home" element = { <Home/>}/>
+          <Route path = "/login" element = { authenticated ? <Navigate to={'/home/'+localStorage.getItem('token').replace(/["]/g, '')}/> : <Login/>}/> 
+         {/*    <Route path = "/login" element ={<Login/>}/>       */}
+
+            <Route path = "/home" element = { authenticated ? <Navigate to={'/home/'+localStorage.getItem('token').replace(/["]/g, '')}/> : <Home/>}/> 
+            {/* <Route path = "/home" element = { <Home/>}/> */}
  
             <Route path = "/register" element = {<Register/>}/>  
 

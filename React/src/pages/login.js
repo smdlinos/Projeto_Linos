@@ -8,10 +8,6 @@ import Logo from "../components/imagens/quest_logo.png"
 
 
 function Login (){
-
-
-
-
     
     return(
         <div>

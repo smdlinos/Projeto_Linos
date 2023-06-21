@@ -18,10 +18,37 @@ class User
 		}
 		$user = findBy('usuarios', 'id_usuario' , $params['user']);
 
-		return [
-			'view' => 'perfil.php',
-			'data' => ['title'=> 'Perfil', 'user' => $user]
+		$interesses	= all('interesses');
+
+		foreach ($interesses as $key => $value) {
+			if ($value->id_usuario == $params['user']) {
+				$id_tema[] = $value->id_tema;
+			}
+		}
+
+		$temas = all('temas');
+
+		foreach ($temas as $key => $value) {
+
+			foreach ($id_tema as $id) {
+				if ($value->id_tema == $id) {
+					$user_interesses[] = $value;
+				}
+			}
+		}
+
+		$data= [
+			'user' => $user,
+			'interesses' => $user_interesses,
+			'historico' => '',
+			'pesquisas' => '',
+			'certificados' => '',
+			'horas' => '',
+			'tabletop' => ''
 		];
+
+		echo json_encode($data,true);
+		http_response_code(200);
 	}
 
 
@@ -227,7 +254,7 @@ class User
 			$temas_quest = all('temas_questionario');
 
 			foreach ($temas_quest as $key => $value) {
-				if($value->id_questionario == 4){
+				if($value->id_questionario == $body['id']){
 			  	$temas[] = $value->id_tema;
 				}
 			}

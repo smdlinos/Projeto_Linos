@@ -182,3 +182,8 @@ background: #BE2C53;
     color: #08394D;
     font-size: 20px;
 }
+
+
+.alert{
+    color: rgb(255, 0, 0);
+}

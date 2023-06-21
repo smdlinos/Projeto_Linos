@@ -81,10 +81,14 @@ export default function Home(){
             <HeaderHome/>
             <main className="fonte_login">
                 <Tabletop/>
+                {authenticated &&
+                <>
                 <h3 className='pb-3 titulo_login'>
                     Questionários Recomendados
                 </h3>
-                {authenticated && <Forms quests={recomendados} />}
+                 <Forms quests={recomendados} />
+                </>
+                }
                 <h3 className='pb-3 pt-5 titulo_login'>
                 Todos os Questionários
                 </h3>

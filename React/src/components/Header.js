@@ -10,8 +10,7 @@ export default function header() {
       <Container className="mb-4 ">
         <Row className="justify-content-md-center">
           <Col className="mt-4 titulo">
-            <a href="/"><img src={Logo} alt="logo" className="mt-4 quest_logo"/></a>
-            
+            <a href="/"><img src={Logo} alt="logo" className="mt-4 quest_logo"/></a>          
           </Col>
         </Row>
       </Container>

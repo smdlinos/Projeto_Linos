@@ -16,6 +16,10 @@ export default function Body_q({quest , auth}) {
 
   const [interesses,setInteresses] = useState();
   const [loading, setLoading] = useState(true);
+
+
+  const [matches, setMatches] = useState([]);
+
   if(auth){
         useEffect(() =>{
         const token = localStorage.getItem('token');
@@ -39,10 +43,36 @@ export default function Body_q({quest , auth}) {
     
      useEffect((e) => {
         if(interesses != undefined){
+        setMatches(match(quest.temas,interesses));
         setLoading(false);
         }
     }, [interesses])
-     console.log(interesses);
+    // console.log(interesses);
+
+
+  const match = (temas, interesses) => {
+     let matches = [];
+
+     for (var i = 0; i < temas.length; i++) {
+      for (var j = 0; j < interesses.length; j++) {
+        if(temas[i].id_tema == interesses[j].id_tema){
+         matches[i] = temas[i].id_tema
+        }
+      }
+    }
+
+     return matches;
+  }
+
+
+  const verifyMatch = ( id ,matches) => {
+    for (var i = 0 ; i < matches.length; i++) {
+      if (id == matches[i]) {
+        return 'alert';
+      }
+    }
+  }
+
   return (
     <div>
       <Container className="mb-4 fonte_login">
@@ -72,28 +102,13 @@ export default function Body_q({quest , auth}) {
                 <h5>Tags</h5>
                 <ul>
                   {quest.temas.map((e) => (
-                    <li key={e.id_tema}>
+                    <li key={e.id_tema} className={verifyMatch(e.id_tema, matches)}>
                       {e.tema}
                     </li>
                   ))}
                 </ul>
               </Col>
-              <Col>
-              <h5>
-                  Matchs
-              </h5>
-              <ul>
-              {interesses != undefined &&
-              <>
-                  {interesses.map((t) => ( 
-                    <li key={t.id_tema}>
-                      {t.tema}
-                    </li>
-                  ))}
-              </>
-              }
-              </ul>
-              </Col>
+
           </Row>
           <Row>
               <Col xs={12}className="">

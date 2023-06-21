@@ -6,11 +6,33 @@ class Users
 {
 	public function index()
 	{   
-		getRequest();
+		//getRequest();
     	// $users = all('usuarios', 'id_usuario, email, nickname');
 		// var_dump($users);
         // echo json_encode($users);
 
+			$quest = findBy('questionarios', 'id_questionario', 3);
+			$get_temas = all('temas');
+			$temas_quest = all('temas_questionario');
+
+			foreach ($temas_quest as $key => $value) {
+				if($value->id_questionario == 4){
+			  	$temas[] = $value->id_tema;
+				}
+			}
+			foreach ($temas as $key => $value){
+				$value = findBy('temas', 'id_tema', $value);
+				$temas[$key] = $value;
+			}
+
+			$quest->temas = $temas;
+
+			if(!$quest){
+				http_response_code(401);
+			}
+
+       		echo json_encode($quest);
+			http_response_code(200);
 		
 	}
 

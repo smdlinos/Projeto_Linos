@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import Reset from "./pages/Reset";
 import Register from "./pages/Register";
 import Quest_D from "./pages/Quest_Detail";
+import Certificado from "./pages/Certificado";
 
 import React, { useContext, useState, useEffect } from 'react';
 import {Context} from './context/AuthContext'
@@ -38,6 +39,8 @@ export default function App() {
             <Route path = "/search" element = {<Search/>}/>
        
             <Route path = "/reset" element = {<Reset/>}/>
+
+            <Route path = "/certificado" element = {<Certificado/>}/>
 
             <Route path = "/quest_d/:id" element = {<Quest_D/>}/>
 

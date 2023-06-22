@@ -55,7 +55,7 @@ export default function SessionLogin() {
     <div>
          <br/>
            
-         <Row className="justify-content-sm-center">
+         <Row className="justify-content-sm-center mb-5">
           <Col sm="auto" none="">
           <Form className="mb-4 rounded p-5 mx-3" onSubmit={handleLogin} method="Post">
             <h2 className="titulo_login mb-4">Seja bem vindo!</h2>
@@ -91,7 +91,7 @@ export default function SessionLogin() {
             <br />
             <Link to="/home" className="fonte_login">Ou entre como visitante</Link>
           </Form>
-          <div>
+          <div className="pb-5">
       <p className="pt-4 mb-5 fonte_login">Não tem uma conta?<a href="/register">Cadastre-se</a></p>
       </div>
 

@@ -31,8 +31,9 @@ export default function ChangePassword (props){
         </Form.Group>
 
         <Button variant="primary" type="button" onClick={senhasDiferentes} className="px-5 mb-3 mt-3 botao">
-        Criar nova Senha
+        REDEFINIR SENHA
         </Button>
         <br />
+        <a href="/login" className="text-muted alinhamento"><p>Ou faça login</p></a>
       </>
 }

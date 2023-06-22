@@ -77,7 +77,7 @@ export default function Home(){
     }
 
     return(
-        <div className="background">
+        <div className="background alinhamento">
             <HeaderHome/>
             <main className="fonte_login">
                 <Tabletop/>

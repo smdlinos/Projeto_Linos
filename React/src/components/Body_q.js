@@ -43,7 +43,9 @@ export default function Body_q({quest , auth}) {
     
      useEffect((e) => {
         if(interesses != undefined){
-        setMatches(match(quest.temas,interesses));
+          if(quest.temas != undefined){
+            setMatches(match(quest.temas,interesses));
+          }
         setLoading(false);
         }
     }, [interesses])
@@ -101,11 +103,15 @@ export default function Body_q({quest , auth}) {
               <Col xs={12}>
                 <h5>Tags</h5>
                 <ul>
+                {(quest.temas !=undefined || quest.temas !=null) && loading == false  &&
+                <>
                   {quest.temas.map((e) => (
                     <li key={e.id_tema} className={verifyMatch(e.id_tema, matches)}>
                       {e.tema}
                     </li>
                   ))}
+                  </>
+                }
                 </ul>
               </Col>
 

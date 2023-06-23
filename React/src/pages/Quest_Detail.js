@@ -25,7 +25,7 @@ function Quest_D (){
 
 
     useEffect(() =>{
-        const teste = async () => {
+        const teste = async () => { // customizar id de busca pra deixar o código mais leve
             const response = await axios.post(url, {
                 id
             }).then(function (response) {

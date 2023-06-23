@@ -28,10 +28,9 @@ class Interesses
 
 	public function registerInteresse()
 	{
-
 		$obDatabase = new Database('interesses');
 
-		$this->id_interesse = $obDatabase->insert([
+		$this->id_interesse = $obDatabase->create([
 			'id_usuario' 	  => $this->id_usuario,
 			'id_tema' 	  	  => $this->id_tema
 		]);

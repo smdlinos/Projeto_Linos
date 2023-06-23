@@ -113,7 +113,7 @@ class User
 					'id_usuario' => $user->id_usuario,
 					'posicao' => $user->posicao,
 					'ch' => 0
-				];
+				]; 
 
 				$createTabletop = create('tabletop', $dataTabletop);
 

@@ -27,11 +27,11 @@ class Tabletop
 	{	
 
 		$tabletop = new EntityTabletop();
-		$tabletop->id_usuario = $data['id_usuario'];
-		$tabletop->posicao    = $data['posicao'];
-		$tabletop->ch   	  = $data['ch'];
+		$tabletop->id_usuario 	= $data['id_usuario'];
+		$tabletop->posicao 		= $data['posicao'];
+		$tabletop->ch      		= $data['ch'];
 
-		$tabletop->registerTabletop()
+		$tabletop->createTabletop();
 
 		if(!$tabletop->id_tabletop){
 			echo json_encode(false);
@@ -41,7 +41,6 @@ class Tabletop
 
 		echo json_encode(true);
 		http_response_code(200);
-		exit;
 	}
 
 }

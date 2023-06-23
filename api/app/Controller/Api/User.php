@@ -104,15 +104,14 @@ class User
 		}
 
 		self::auth($user);
-		exit;
 	}
 
 
-	public function setDependences($user, $interesses)
+	public static function setDependences($user, array $interesses)
 	{
 
 		Interesses::setInteresses($user->id_usuario, $interesses);
-	
+		
 		$dataTabletop = [
 			'id_usuario'  => $user->id_usuario,
 			'posicao' 	  => $user->posicao,
@@ -125,8 +124,9 @@ class User
 	}
 
 
-	private function auth($user){
-
+	public static function auth($user)
+	{
+		Api::setHeaders();
 		$payload = [
           "exp" => time()+ ((3600*24)*7),
           "iat" => time(),
@@ -141,7 +141,7 @@ class User
         ];
 
         echo json_encode($data);
-		http_response_code(200);		
+		http_response_code(200);
 		exit;
 	} 
 	

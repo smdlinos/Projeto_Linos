@@ -50,21 +50,19 @@ class Interesses
 	    // array interesses
 	    // id  user
 
-	    $allThemes = Temas::getTemas(); //array
-	    
+	    $allThemes = Temas::getTemas(null, null, null); //array
 		foreach ($allThemes as $key => $value) {
 
 			for($i = 0 ; $i< sizeof($interesses) ; $i++){
-
+				
 				if($allThemes[$key]->tema == $interesses[$i]){
 					$obInteresse = new EntityInteresses();
-					$obInteresse->id_usuario = $user->id_usuario;
-					$obInteresse->id_tema = $interesses[$i];
+					$obInteresse->id_usuario = $user;
+					$obInteresse->id_tema = $allThemes[$key]->id_tema;
 					$obInteresse->registerInteresse();
 				}
 			}
-
-						
+		
 		}
 
 		return $obInteresse;

@@ -82,7 +82,8 @@ class Database
 		foreach ($values as $field => $value) {
 			$prepare->bindValue(":{$field}", $value);
 		}
-
+		// var_dump($sql, $prepare);
+		// exit;
 		$prepare->execute();
 
 		return $this->connection->lastInsertId();
@@ -126,6 +127,27 @@ class Database
 	    }
 	}
 
+
+	public function create(array $data)
+	{
+		try{
+			$connect = $this->connection;
+	
+			$sql = "insert into {$this->table} (";
+			$sql .= implode(',', array_keys($data)).") values(";
+			$sql .= ':'. implode(',:', array_keys($data)).")";
+	
+			$prepare = $connect->prepare($sql);	
+
+			$prepare->execute($data);
+			
+
+			return $this->connection->lastInsertId();
+
+			} catch(PDOException $e){
+				var_dump($e->getMessage());
+			}
+	}
 
 
 	public function select($where = null, $order = null, $limit = null, $fields = '*')

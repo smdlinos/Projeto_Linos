@@ -5,6 +5,7 @@ use  \App\Controller\Api;
 use  \App\Controller\Api\Interesses;
 use  \App\Controller\Api\User;
 use  \App\Controller\Api\Tabletop;
+use  \App\Model\Entity\Temas;
 
 $obRouter->get('/user/auth/{id}', [
 	function($id)
@@ -14,29 +15,23 @@ $obRouter->get('/user/auth/{id}', [
 ]);
 
 
-$obRouter->get('/user/interesses', [
+$obRouter->get('/user/interesses', [ 
 	function($request)
 	{
 		return new Response(200, Interesses::getInteresses($request));
 	}
 ]);
 
-$obRouter->post('/user/register', [
+$obRouter->post('/user/register', [ // rota funcionando
 	function($request)
 	{
 		return new Response(200, User::setUser($request));
 	}
 ]);
 
-$obRouter->get('/user/testeSend', [
+$obRouter->get('/user/testeSend', [ // rota de teste
 	function()
 	{
-		$data = [
-			'id_usuario'  => 20,
-			'posicao' 	  => 0,
-			'ch' 		  => 0
-		];
-
-		return new Response(200, Api\Tabletop::setTabletop($data));
+		return new Response(200, Temas::getTemas());
 	}
 ]);

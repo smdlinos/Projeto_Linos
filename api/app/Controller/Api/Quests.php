@@ -37,4 +37,10 @@ class Quests
 	}
 
 
+	public static function getRecomendedQuests()
+	{
+
+	}
+
+
 }

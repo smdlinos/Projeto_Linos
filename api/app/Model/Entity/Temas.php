@@ -22,7 +22,7 @@ class Temas
 		return (new Database('temas'))->select('id_tema = '.$id)->fetchObject(self::class);
   	}
 
-  	public function getTemas($where = null, $order = null, $limit = null)
+  	public static function getTemas($where = null, $order = null, $limit = null)
 	{
 		return (new Database('temas'))->select($where, $order, $limit)->fetchAll(PDO::FETCH_CLASS, self::class);
 	}

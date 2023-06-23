@@ -9,7 +9,7 @@ use \PDO;
  * 
  */
 class Quests
-{	
+{
 
 	public $id_questionario;
 

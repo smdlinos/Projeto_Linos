@@ -7,13 +7,13 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 /**
- * 
+ * TRANSFORMAR O NICKNAME EM UNICO
  */
 class Api
 {
 
 	public static function setHeaders(){	
-		$dotenv = Dotenv::createImmutable('D:/XAMPP/htdocs/quests');
+		$dotenv = Dotenv::createImmutable(dirname(__FILE__, 4));
 		$dotenv->load();
 	    header("Access-Control-Allow-Origin: *");
 	    header("Access-Control-Allow-Headers: *");

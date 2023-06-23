@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import Reset from "./pages/Reset";
 import Register from "./pages/Register";
 import Quest_D from "./pages/Quest_Detail";
+import Config from "./pages/Config";
 import Certificado from "./pages/Certificado";
 
 import React, { useContext, useState, useEffect } from 'react';
@@ -34,7 +35,9 @@ export default function App() {
             <Route path = "/home" element = { authenticated ? <Navigate to={'/home/'+localStorage.getItem('token').replace(/["]/g, '')}/> : <Home/>}/> 
             {/* <Route path = "/home" element = { <Home/>}/> */}
  
-            <Route path = "/register" element = {<Register/>}/>  
+            <Route path = "/register" element = {<Register/>}/> 
+
+            <Route path = "/config" element = {<Config/>}/> 
 
             <Route path = "/search" element = {<Search/>}/>
        

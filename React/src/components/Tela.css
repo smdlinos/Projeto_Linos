@@ -12,6 +12,11 @@ body{
     padding-left: 14px;
 
 }
+
+.alinhamento{
+    text-align: center;
+}
+
 .background{
     background-color: aliceblue;
     background-size: cover;
@@ -186,4 +191,13 @@ background: #BE2C53;
 
 .alert{
     color: rgb(255, 0, 0);
+}
+
+.botao_voltar{
+    padding-top: 0.5rem;
+}
+
+.horas{
+   width: 21rem;
+   box-sizing: border-box;
 }

@@ -147,7 +147,7 @@ export default function Register() {
 
 
   return (
-    <div className="">
+    <div className="alinhamento">
         <Header/>
       <Row className="justify-content-sm-center">
       <Col sm="auto" none="">

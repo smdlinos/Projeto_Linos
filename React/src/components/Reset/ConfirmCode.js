@@ -24,7 +24,7 @@ export default function ConfirmCode (props){
           PRÓXIMO
         </Button>
         <br />
-        <a href="/login" className="text-muted">Ou faça login</a>
+        <a href="/login" className="text-muted alinhamento"><p>Ou faça login</p></a>
         </>
       )
 }

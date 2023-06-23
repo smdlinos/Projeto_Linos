@@ -1,0 +1,391 @@
+[33mcommit 0c80f59cce21490ef4cabf5eee628ba52f684050[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Victor Emanuel Tomaz das Neves <victoremanuel.vet8@gmail.com>
+Date:   Wed Jun 21 13:29:03 2023 -0300
+
+    Atualização de tags de questionário
+    
+    Feedback de match implementado
+
+[33mcommit 9463d7dbb532dabfc5b9b3252c47cf3c8530547e[m
+Author: Victor Emanuel Tomaz das Neves <81826405+Victor280504@users.noreply.github.com>
+Date:   Tue Jun 20 15:58:10 2023 -0300
+
+    Atualizações da aula
+
+[33mcommit 73ea0a7a324ab125150ebc1c5e206581beff07f1[m
+Author: Victor Emanuel Tomaz das Neves <victoremanuel.vet8@gmail.com>
+Date:   Tue Jun 20 12:49:08 2023 -0300
+
+    Ajustes de teste
+
+[33mcommit c9d8604752e0c5206fdcc7960ff277b0605b515c[m
+Author: Mickael Castro <mickaelcastro15@gmail.com>
+Date:   Tue Jun 20 12:14:49 2023 -0300
+
+    Restore archives
+
+[33mcommit 21967bae36f8c9ede62908d32af615ab2a6ab398[m
+Author: Mickael Castro <mickaelcastro15@gmail.com>
+Date:   Tue Jun 20 12:13:50 2023 -0300
+
+    Algumas alterações ai
+
+[33mcommit 69f6c8341f06017e3c5735cd7badcf204f647ee7[m
+Merge: 381f2745 c16e8aa7
+Author: Mickael Castro <mickaelcastro15@gmail.com>
+Date:   Tue Jun 20 12:13:34 2023 -0300
+
+    Merge branch 'main' of https://github.com/smdlinos/Projeto_Linos
+
+[33mcommit 381f27452ebd91984c07072ce48fde6be445c500[m
+Author: Mickael Castro <mickaelcastro15@gmail.com>
+Date:   Tue Jun 20 12:00:25 2023 -0300
+
+    alterações de front
+    
+    Novas telas implementadas
+
+[33mcommit c16e8aa7418b6f92b05813db03da85efba25cd1c[m
+Author: Victor Emanuel Tomaz das Neves <victoremanuel.vet8@gmail.com>
+Date:   Mon Jun 19 04:17:25 2023 -0300
+
+    Resolução de Bugs com requisições
+
+[33mcommit d1434e5f7acf4bdf7e95596433ac247a8ac6ac4d[m
+Author: Victor Emanuel Tomaz das Neves <victoremanuel.vet8@gmail.com>
+Date:   Sun Jun 18 22:44:22 2023 -0300
+
+    Integração das Recomendações
+
+[33mcommit 19725c4616cd34cd8bf30d2412ee13097b783225[m
+Author: Victor Emanuel Tomaz das Neves <victoremanuel.vet8@gmail.com>
+Date:   Sun Jun 18 17:58:15 2023 -0300
+
+    Foi
+
+[33mcommit 61155e8176816f3d3a8b20b59fe33feebabfe6b0[m
+Author: Victor Emanuel Tomaz das Neves <victoremanuel.vet8@gmail.com>
+Date:   Sun Jun 18 17:51:28 2023 -0300
+
+    agora vai
+
+[33mcommit 86e0353bfd3d4d5247ab7fb0d002d176ac1107b7[m
+Author: Victor Emanuel Tomaz das Neves <victoremanuel.vet8@gmail.com>
+Date:   Sun Jun 18 17:47:21 2023 -0300
+
+    teste
+
+[33mcommit 21c823594c8fa3fc78154e2ca999a50ccb920279[m
+Author: Victor Emanuel Tomaz das Neves <victoremanuel.vet8@gmail.com>
+Date:   Sun Jun 18 17:42:01 2023 -0300
+
+    Quase lá
+
+[33mcommit 2dd3665de90420cee367be4cea14fb7166a3b328[m
+Author: Victor Emanuel Tomaz das Neves <victoremanuel.vet8@gmail.com>
+Date:   Sun Jun 18 17:34:06 2023 -0300
+
+    alinhando...
+
+[33mcommit d92b754d8551e31b56be53a56eb11a841de3c5f0[m
+Author: Victor Emanuel Tomaz das Neves <victoremanuel.vet8@gmail.com>
+Date:   Sun Jun 18 17:29:48 2023 -0300
+
+    auste
+
+[33mcommit 94b57c9986d079c64c825573941895a1a97385eb[m
+Author: Victor Emanuel Tomaz das Neves <victoremanuel.vet8@gmail.com>
+Date:   Sun Jun 18 17:27:57 2023 -0300
+
+    Teste alinhamento
+
+[33mcommit c5b38c36e0ae6a21784cdc415e52c7395a86d301[m
+Author: Victor Emanuel Tomaz das Neves <victoremanuel.vet8@gmail.com>
+Date:   Sun Jun 18 17:21:28 2023 -0300
+
+    Ajustes
+
+[33mcommit d679ab8264b09e163675b9492d887ba8728d2949[m
+Author: Victor Emanuel Tomaz das Neves <victoremanuel.vet8@gmail.com>
+Date:   Sun Jun 18 17:05:17 2023 -0300
+
+    Atualização Readme
+
+[33mcommit 10b173c16beb84d4e19f7976476c4515f82674b8[m
+Author: Victor Emanuel Tomaz das Neves <victoremanuel.vet8@gmail.com>
+Date:   Sun Jun 18 13:50:44 2023 -0300
+
+    Commit emergencial
+
+[33mcommit 9197dd77946bdc9d0067cc5715f8787634ddb621[m
+Author: Mickael Castro <mickaelcastro15@gmail.com>
+Date:   Sun Jun 18 00:12:18 2023 -0300
+
+    Nem sei mais
+
+[33mcommit 97f5b73fa48787bf0d33b0473ff52c051a585458[m
+Merge: 1da24a40 83d7eedd
+Author: Mickael Castro <mickaelcastro15@gmail.com>
+Date:   Sun Jun 18 00:12:04 2023 -0300
+
+    Merge branch 'main' of https://github.com/smdlinos/Projeto_Linos
+
+[33mcommit 1da24a4011f9c8f6b0cb9a41bf164d5adc96832a[m
+Author: Mickael Castro <mickaelcastro15@gmail.com>
+Date:   Sat Jun 17 23:38:46 2023 -0300
+
+    stashed
+
+[33mcommit 728463c8cefbb1dafb8b5084b9925f44c6a308bc[m
+Author: Mickael Castro <mickaelcastro15@gmail.com>
+Date:   Sat Jun 17 23:37:57 2023 -0300
+
+    Criação do Corpo Quest
+
+[33mcommit 83d7eedd4c419c4a8c6c9f67f03fca65d39251d9[m
+Author: Victor Emanuel Tomaz das Neves <victoremanuel.vet8@gmail.com>
+Date:   Sat Jun 17 22:00:59 2023 -0300
+
+    Atualizações de verificações
+
+[33mcommit 036064bfbb0b92eb329363d22f1cca667c9a3b77[m
+Author: Victor280504 <81826405+Victor280504@users.noreply.github.com>
+Date:   Fri Jun 16 13:18:06 2023 -0300
+
+    Alterações de Teste
+
+[33mcommit 808ebb84b186eafb09e8519be0124077cc23db26[m
+Author: Victor280504 <81826405+Victor280504@users.noreply.github.com>
+Date:   Fri Jun 16 12:47:16 2023 -0300
+
+    Ajustes de Teste
+
+[33mcommit 686bf9caecd7b44273b81b96e0b1f53a20171637[m
+Author: Mickael Castro <mickaelcastro15@gmail.com>
+Date:   Thu Jun 15 17:57:10 2023 -0300
+
+    Initial commit
+
+[33mcommit 6f3d6eff7ace79d4373d117c620a5c86181584e4[m
+Author: Victor Emanuel Tomaz das Neves <victoremanuel.vet8@gmail.com>
+Date:   Mon Jun 12 12:29:50 2023 -0300
+
+    Organização de endpoints
+    
+    Login integrado, início da integração do redefinir senha
+
+[33mcommit 4875fe8dcf467cf5cd1ffa218526417ca48fb53a[m
+Author: Victor Emanuel Tomaz das Neves <victoremanuel.vet8@gmail.com>
+Date:   Sat Jun 10 20:44:33 2023 -0300
+
+    Cadastro de usuário integrado
+    
+    Cadastro de usuário enviando interesses e dados do usuário para o banco de dados finalizado
+
+[33mcommit 43da561e5643d9daa7d321d388b53bf281be81fa[m
+Author: Victor Emanuel Tomaz das Neves <victoremanuel.vet8@gmail.com>
+Date:   Fri Jun 9 00:43:13 2023 -0300
+
+    Inicio da Integração do CRUD
+    
+    Inicio da integração da Sessão de cadastro, configuração de envio da requisição.
+
+[33mcommit e9e4a32675e7124e236ba1e3b566eb4b9eec163e[m
+Author: Victor Emanuel Tomaz das Neves <victoremanuel.vet8@gmail.com>
+Date:   Thu Jun 8 11:21:04 2023 -0300
+
+    Correção de escopo reset
+
+[33mcommit c4a44925a000dfe93772d4724387586127cd0325[m
+Author: Victor Emanuel Tomaz das Neves <victoremanuel.vet8@gmail.com>
+Date:   Thu Jun 8 01:53:52 2023 -0300
+
+    Organizando arquivos
+
+[33mcommit d40f844b0a49aa59df261516b06c551ae30959f2[m
+Author: Victor Emanuel Tomaz das Neves <victoremanuel.vet8@gmail.com>
+Date:   Wed Jun 7 12:32:51 2023 -0300
+
+    Padronização do nome dos arquivos
+
+[33mcommit 05ee5962ddc4053f10c066440dfa5d00918fe4ee[m
+Author: Victor Emanuel Tomaz das Neves <victoremanuel.vet8@gmail.com>
+Date:   Tue Jun 6 12:12:40 2023 -0300
+
+    Organização de Componentes I
+
+[33mcommit d41d95c77fa888a74a4e83e9d3048290c8f7dae6[m
+Author: Victor Emanuel Tomaz das Neves <victoremanuel.vet8@gmail.com>
+Date:   Tue Jun 6 02:16:41 2023 -0300
+
+    Atualização de componente de cadastro
+
+[33mcommit be4b17d1b035a22a6641066aec99678d7a443890[m
+Author: Victor Emanuel Tomaz das Neves <victoremanuel.vet8@gmail.com>
+Date:   Mon Jun 5 11:52:10 2023 -0300
+
+    Inicio da integração
+    
+    Hook de integração com o backend adicionada
+
+[33mcommit 660caa1ff9f036e41c33c85322a7899d4dbdb5e0[m
+Author: Victor Emanuel Tomaz das Neves <victoremanuel.vet8@gmail.com>
+Date:   Sun Jun 4 20:25:42 2023 -0300
+
+    Atualização da main - backend
+    
+    Trazendo as alterações do backend pra main código a ser programado com a integraçãoi
+
+[33mcommit 7dc1794701aaf07535752824ea5123060052f9d1[m
+Author: Linos <131498146+smdlinos@users.noreply.github.com>
+Date:   Sun May 28 23:44:47 2023 -0300
+
+    Update README.md
+
+[33mcommit 1f48fa425e43a350d1af2566e6c966e6987c58c5[m
+Author: Victor Emanuel Tomaz das Neves <victoremanuel.vet8@gmail.com>
+Date:   Sun May 28 21:37:49 2023 -0300
+
+    Update README.md
+
+[33mcommit 4352929b74681df5c3f9c5349fe5c6394dbe5902[m
+Author: Victor Emanuel Tomaz das Neves <victoremanuel.vet8@gmail.com>
+Date:   Sun May 28 21:36:13 2023 -0300
+
+    Update README.md
+
+[33mcommit edb7c5f90d5a5ebd809f3a5d58deac8e512db104[m
+Author: Victor Emanuel Tomaz das Neves <victoremanuel.vet8@gmail.com>
+Date:   Sun May 28 21:34:18 2023 -0300
+
+    Atualização README.md
+    
+    Atualização com tutorial do backend
+
+[33mcommit 591e7991830f1a7fb9a490b4772d0cefa71aecb7[m
+Author: Victor Emanuel Tomaz das Neves <victoremanuel.vet8@gmail.com>
+Date:   Sun May 28 20:50:32 2023 -0300
+
+    Atualização back-end
+    
+    Código do protótipo com cadastro e login funcionais com o banco de dados, sem integração com o front
+
+[33mcommit dcb9ed1aead9c363fbfdd5f166162aa41259254e[m
+Author: Mickael Castro <123514551+mickael-castro@users.noreply.github.com>
+Date:   Sun May 28 19:02:13 2023 -0300
+
+    Update README.md
+
+[33mcommit 6cb3a3e680f876f4d355692ba810e0dd13ea14c6[m
+Author: Mickael Castro <123514551+mickael-castro@users.noreply.github.com>
+Date:   Sun May 28 18:54:53 2023 -0300
+
+    Update README.md
+
+[33mcommit 516df1900849b76c62b80f79fb72983bdeaf3afe[m
+Author: Mickael Castro <123514551+mickael-castro@users.noreply.github.com>
+Date:   Sun May 28 18:54:31 2023 -0300
+
+    Update README.md
+
+[33mcommit 838dcc6df218993d5f4e65cbb33137f078905f40[m
+Author: Mickael Castro <mickaelcastro15@gmail.com>
+Date:   Sun May 28 18:45:04 2023 -0300
+
+    Merge na Principal
+    
+    Merge na Principal de Front
+
+[33mcommit 8566bf6b82170c842019f66d288225c006d3b2fd[m
+Author: Mickael Castro <mickaelcastro15@gmail.com>
+Date:   Sun May 28 18:33:39 2023 -0300
+
+    Arquivo Final
+
+[33mcommit d05a07e392efbe3feb426b71e5c0dac19fb14bd9[m
+Author: Mickael Castro <mickaelcastro15@gmail.com>
+Date:   Sun May 28 17:45:28 2023 -0300
+
+    Detalhes finais do Front
+    
+    A finalização do detalhamento de telas do front-end
+
+[33mcommit 6cb6215469eb24a59b3c2a853f797e026893057e[m
+Author: Mickael Castro <mickaelcastro15@gmail.com>
+Date:   Sun May 28 14:42:33 2023 -0300
+
+    Desbug de links
+    
+    Desbug de links que estavam com url errada
+
+[33mcommit cf2281cdc10816a254b32fb7c53a9c4b3815f64a[m
+Author: Mickael Castro <mickaelcastro15@gmail.com>
+Date:   Sun May 28 07:48:06 2023 -0300
+
+    Criação das telas de navegação
+    
+    Telas gráficas de protoripação criadas
+
+[33mcommit 82336c887f48ea4e805ff62680dc4f40607c5afd[m
+Author: Mickael Castro <mickaelcastro15@gmail.com>
+Date:   Sun May 28 07:30:40 2023 -0300
+
+    Telas
+    
+    As telas que vão ser usadas(ainda vai ter alteração)
+
+[33mcommit 36a47b6527a26f66d8dd1b79b82c03a442b5da91[m
+Author: Mickael Castro <mickaelcastro15@gmail.com>
+Date:   Fri May 26 17:34:50 2023 -0300
+
+    Atualização Pre-Integração
+    
+    Pre integração dos arquivos de tecnologias de back e front. Inicialização da codificação dos requisitos.
+
+[33mcommit 7944bb3361eaf398e336cbf7cb46150c88e71f29[m
+Author: Mickael Castro <mickaelcastro15@gmail.com>
+Date:   Fri Apr 28 18:06:38 2023 -0300
+
+    Update index.html
+    
+    mudei faça login galeris
+
+[33mcommit aa96bf1904d6701b048191b1833df7c410176c57[m
+Author: Victor Emanuel Tomaz das Neves <victoremanuel.vet8@gmail.com>
+Date:   Fri Apr 28 00:54:26 2023 -0300
+
+    Update README.md
+
+[33mcommit 9754ab82918fa29bc4732a7f199bce1b10ead2f9[m
+Author: Linos <131498146+smdlinos@users.noreply.github.com>
+Date:   Sun Apr 23 22:48:44 2023 -0300
+
+    Update README.md
+
+[33mcommit 00e6f5b03195f293a56e9d6bc1b6b0a32c7ee49d[m
+Author: Linos <131498146+smdlinos@users.noreply.github.com>
+Date:   Sun Apr 23 22:45:09 2023 -0300
+
+    Update README.md
+
+[33mcommit c22c6d9a9234bba5f7f5528b7218f2a2dc2856c7[m
+Author: Linos <131498146+smdlinos@users.noreply.github.com>
+Date:   Sun Apr 23 22:33:57 2023 -0300
+
+    Update README.md
+    
+    Adição de informações sobre o projeto
+
+[33mcommit b3bc54bc519a642d3f0b2082f275180c2742dfe2[m
+Author: Linos <131498146+smdlinos@users.noreply.github.com>
+Date:   Sun Apr 23 21:24:44 2023 -0300
+
+    Arquivo.md
+    
+    Exemplo de funcionalidade para demonstração de tecnologia
+
+[33mcommit 3d9e6948f07c8800b13ae859f9843a5a1862457a[m
+Author: Linos <131498146+smdlinos@users.noreply.github.com>
+Date:   Sun Apr 23 20:30:26 2023 -0300
+
+    Initial commit

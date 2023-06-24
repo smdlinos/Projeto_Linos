@@ -1,12 +1,13 @@
 import "./styles.css";
 import "bootstrap/dist/css/bootstrap.css";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
+import Home from "./pages/home";
+import Login from "./pages/login";
 import Reset from "./pages/Reset";
 import Register from "./pages/Register";
 import Quest_D from "./pages/Quest_Detail";
 import Config from "./pages/Config";
 import Certificado from "./pages/Certificado";
+import Tabletop from "./pages/Tabletop";
 
 import React, { useContext, useState, useEffect } from 'react';
 import {Context} from './context/AuthContext'
@@ -48,6 +49,8 @@ export default function App() {
             <Route path = "/quest_d/:id" element = {<Quest_D/>}/>
 
             <Route path="/home/:id" element= {<Home/>}/>
+
+            <Route path="/tabletop" element={<Tabletop/>}/>
 
           </Routes>
           <br/>

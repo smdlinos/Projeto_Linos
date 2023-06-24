@@ -80,7 +80,7 @@ export default function Home(){
         <div className="background alinhamento">
             <HeaderHome/>
             <main className="fonte_login">
-                <Tabletop/>
+                <a href="/tabletop"><Tabletop/></a>
                 {authenticated &&
                 <>
                 <h3 className='pb-3 titulo_login'>

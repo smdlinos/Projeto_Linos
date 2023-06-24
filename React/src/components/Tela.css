@@ -206,3 +206,7 @@ background: #BE2C53;
     width: 12rem;
     
 }
+
+.background_gradient{
+    background: linear-gradient(180deg, rgba(187, 222, 86, 0.50) 0%, rgba(68, 144, 94, 0.50) 100%), #7AD786;
+}

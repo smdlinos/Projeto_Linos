@@ -81,7 +81,7 @@ class Quests
 
 	public static function getQuest($id)
 	{
-		return (new Database('questionarios'))->select('id_questionario = '.$id['id'], null, null)->fetchObject(self::class);
+		return (new Database('questionarios'))->select('id_questionario = '.$id, null, null)->fetchObject(self::class);
 	}
 
 	public function deleteQuest($value='')

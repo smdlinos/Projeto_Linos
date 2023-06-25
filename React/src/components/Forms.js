@@ -12,10 +12,7 @@ import { BrowserRouter , Routes, Route, Link, useNavigate, Navigate} from "react
 function Forms(props){
     const navigate = useNavigate();
     
-    function acttion(e){
-        e.preventDefault();
-        navigate("/quest_d/"+e.target.id);
-    }
+
 
     return(
         <div>

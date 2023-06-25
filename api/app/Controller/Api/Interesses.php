@@ -19,7 +19,8 @@ class Interesses
 	public static function getInteresses($request)
 	{
 		Api::setHeaders();
-	  	$token = $request['request']->getHeaders()['Authorization'];
+	  $token = $request['request']->getHeaders()['Authorization'];
+	  $token = str_replace('Bearer ', '', $token);
 
     	try {
 
@@ -45,12 +46,12 @@ class Interesses
 
   	}
 
-  	public static function setInteresses($user, $interesses)
+  public static function setInteresses($user, $interesses)
 	{
 	    // array interesses
 	    // id  user
 
-	    $allThemes = Temas::getTemas(null, null, null); //array
+	  $allThemes = Temas::getTemas(null, null, null); //array
 		foreach ($allThemes as $key => $value) {
 
 			for($i = 0 ; $i< sizeof($interesses) ; $i++){
@@ -71,28 +72,28 @@ class Interesses
 	public function filtraInteresses($user)
 	{
 		if(!$user instanceof EntityUser){ // verifica o usuário
-	        	echo json_encode(false);
-	        	http_response_code(401);
-	        	exit;
-	        }
+    	echo json_encode(false);
+    	http_response_code(401);
+    	exit;
+    }
 
-        $getInteresses = EntityInteresses::getInteresses(); // pesquisa todos os interesses
+    $getInteresses = EntityInteresses::getInteresses(); // pesquisa todos os interesses
 
-        foreach ($getInteresses as $key => $value) { // filtra os interesses e pega somente os temas do usuário 
-          if($getInteresses[$key]->id_usuario == $user->id_usuario){
-           $interesses[] = $value->id_tema;
-          }
-        }
+    foreach ($getInteresses as $key => $value) { // filtra os interesses e pega somente os temas do usuário 
+      if($getInteresses[$key]->id_usuario == $user->id_usuario){
+       $interesses[] = $value->id_tema;
+      }
+    }
 
-        foreach ($interesses as $key => $value) {
-        	$interesses[$key] = Temas::getTema($value);
-        }
-        
-        $data = [
-          'interesses' => $interesses
-        ];
+    foreach ($interesses as $key => $value) {
+    	$interesses[$key] = Temas::getTema($value);
+    }
+    
+    $data = [
+      'interesses' => $interesses
+    ];
 
-        return $data;
+    return $data;
 	}
 
 }

@@ -11,8 +11,6 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 import axios from 'axios';
 
-const url = "http://localhost/quests/login";
-
 import React, { useContext } from 'react';
 
 import { Context } from '../context/AuthContext';
@@ -20,35 +18,9 @@ import { Context } from '../context/AuthContext';
 
 export default function SessionLogin() {
 
-  const { authenticated, handleLogin, setPassword, setEmail } = useContext(Context);
+  const { authenticated, handleLogin, setPassword, setLogin } = useContext(Context);
 
   console.log('Login', authenticated);
-
-
-
-
-  // const verify = async (e) =>{
-  //   e.preventDefault();
-  //   try{
-  //     const response = await axios.post(url, {
-  //       email, 
-  //       password, 
-  //     }).then(function (response) {
-       
-  //       console.log(response.data);
-
-  //     }).catch(function (error) {
-
-  //       console.log(error);
-
-  //     });
-
-  //   } catch(error){
-  //     console.log(error);
-  //   }
-  
-  // }
-
 
 
   return (
@@ -66,7 +38,7 @@ export default function SessionLogin() {
               placeholder="Nome de usuário ou Email" 
               className="email" 
               name = "email"
-              onChange={(e)=> setEmail(e.target.value)}
+              onChange={(e)=> setLogin(e.target.value)}
               />
             </Form.Group>
 

@@ -6,7 +6,8 @@ import Logo from "../components/imagens/quest_logo.png"
 import Button from 'react-bootstrap/Button';
 import Star from "./imagens/Start_Point.svg"
 import axios from 'axios';
-const urlI = 'http://localhost/quests/user/interesses'
+
+const urlI = 'http://localhost/api/user/interesses'
 
 import React, { useContext, useEffect, useState } from 'react';
 
@@ -27,7 +28,7 @@ export default function Body_q({quest , auth}) {
              const response = await axios.get(urlI, {
             }).then(function (response) {
             if(response.data){
-                setInteresses(response.data.interesse);
+                setInteresses(response.data.interesses);
             };
             }).catch(function (error) {
 
@@ -39,6 +40,15 @@ export default function Body_q({quest , auth}) {
          setLoading(false);
         },[]);
 
+    } else {
+
+      useEffect((e) => {
+        if (quest != undefined) {
+          setLoading(false);
+        }
+
+      }, []);
+
     }
     
      useEffect((e) => {
@@ -49,7 +59,6 @@ export default function Body_q({quest , auth}) {
         setLoading(false);
         }
     }, [interesses])
-    // console.log(interesses);
 
 
   const match = (temas, interesses) => {

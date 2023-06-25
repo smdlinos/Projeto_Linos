@@ -22,28 +22,14 @@ import Col from "react-bootstrap/Col";
 
 
 //endpoints
-const urlGet = "http://localhost/quests/temas";
-const urlPost = "http://localhost/quests/user/create";
-const urlValidate = "http://localhost/quests/user/create/validate";
+const urlGet = "http://localhost/api/temas";
+const urlPost = "http://localhost/api/user/register";
+const urlValidate = "http://localhost/api/register/validate";
 
 
 export default function Register() {
 
   const { authenticated, setAuthenticated } = useContext(Context);
-
-  //const { data:temas} = useFetch(urlGet);
-  
-//   const temas = [{id_tema: '1', tema: 'Design'},
-//                   {id_tema: '2', tema: 'Experiência do Usuário'},
-//                   {id_tema: '3', tema: 'Usabilidade'}, 
-//                   {id_tema: '4', tema: 'Dispositivos Inteligentes'},
-//                   {id_tema: '5', tema: 'Design Centrado no Usuário'},
-//                   {id_tema: '6', tema: 'Audiovisual'},
-//                   {id_tema: '7', tema: 'Jogos'},
-//                   {id_tema: '8', tema: 'Inteligência Artificial'},
-//                   {id_tema: '9', tema: 'Motivação'},
-//                   {id_tema: '10', tema: 'Interfaces'}
-// ]
   
   const { data:temas} = useFetch(urlGet);
 

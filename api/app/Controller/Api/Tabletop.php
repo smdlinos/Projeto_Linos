@@ -10,17 +10,18 @@ use App\Model\Entity\Tabletop as EntityTabletop;
 class Tabletop
 {
 	
-	public static function getTabletop($request) // não finalizei ainda
+	public static function getTabletop($request, $id)
 	{	
-		$allQuests = EntityTabletop::getTabletop();
 
-		if (!$allQuests instanceof EntityQuests) {
+		$tabletop = EntityTabletop::getTabletop($id);
+
+		if (!$tabletop) {
 			echo json_encode(false);
            	http_response_code(404);
            	exit;
 		}
 
-		return $allQuests;
+		return $tabletop;
 	}
 
 	public static function setTabletop($data)
@@ -39,8 +40,7 @@ class Tabletop
 			exit;
 		}
 
-		echo json_encode(true);
-		http_response_code(200);
+		return $tabletop;
 	}
 
 }

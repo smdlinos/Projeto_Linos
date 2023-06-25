@@ -1,9 +1,14 @@
 <?php 
 
+#Quests - Projeto I - Universidade Federal do Ceará - Sistemas e Mídias Digitais - @Linos
 
 //Configs 
 
 require __DIR__.'/vendor/autoload.php';
+
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: *");
+header("Content-Type: application/json; charset=UTF-8");
 
 use Dotenv\Dotenv;
 use  \App\HTTP\Router;
@@ -12,7 +17,6 @@ use \App\HTTP\Middleware\Queue;
 
 $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
-
 
 Database::config(
 	$_ENV['DB_HOST'],

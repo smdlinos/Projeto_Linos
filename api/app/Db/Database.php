@@ -163,18 +163,31 @@ class Database
 	}
 
 
-	public function update($where, $values)
+	public function update($where, $fields)
 	{
 
-		$fields = array_keys($values);
+		$connect = $this->connection;
+
+		$sql = "update {$this->table} set ";
+
+		foreach (array_keys($fields) as $field) {
+			$sql .="$field = :{$field}, ";
+		}
+
+		$sql = trim($sql, ', ');
 
 
-		$query = 'UPDATE '.$this->table.' SET '.implode('=?,', $fields).'=? WHERE '.$where;
+		$sql.= " where {$where}";
 
+		$prepare = $connect->prepare($sql);	
 
-		$this->execute($query, array_values($values));
+		foreach ($fields as $field => $value) {
+			$prepare->bindValue(":{$field}", $value);
+		}
 
-		return true;
+		$prepare->execute();
+
+		return $prepare->rowCount();
 	}
 
 

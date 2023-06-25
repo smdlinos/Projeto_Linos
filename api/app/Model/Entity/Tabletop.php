@@ -28,22 +28,6 @@ class Tabletop
 		]);
 	}
 
-
-	// public function registerTabletop() //verificar
-	// {
-
-	// 	$obDatabase = new Database('tabletop');
-
-	// 	$this->id_tabletop = $obDatabase->insert([
-	// 		'id_usuario' 	  => $this->id_usuario,
-	// 		'posicao' 	  	  => $this->posicao,
-	// 		'ch' 			  => $this->ch
-
-	// 	]);
-
-	// 	return true;
-	// }
-
 	public function createTabletop()
 	{	
 		$obDatabase = new Database('tabletop');
@@ -53,7 +37,7 @@ class Tabletop
 			'posicao' 	  => $this->posicao,
 			'ch' 		  => $this->ch
 		]);
-
+		
 		return true;
 	}
 

@@ -30,7 +30,7 @@ export default function ChangePassword (props){
           />
         </Form.Group>
 
-        <Button variant="primary" type="button" onClick={senhasDiferentes} className="px-5 mb-3 mt-3 botao">
+        <Button variant="primary" type="submit" className="px-5 mb-3 mt-3 botao">
         REDEFINIR SENHA
         </Button>
         <br />

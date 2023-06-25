@@ -84,4 +84,113 @@ class Login
 	{	
 		return 'Oi, eu não retorno nada :) (não via GET bobão, mas sem autenticação tu não passas)';
 	}
+
+
+  public function verifyUser($request)
+  {
+    Api::setHeaders();
+    
+    $post_body = $request['request']->getBody();
+    $post_body = json_decode($post_body, true);
+
+    $_POST['email'] = $post_body['email'];
+
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_STRING);
+      
+    if(!$post_body){
+      echo json_encode(false);
+      http_response_code(401);
+      exit;
+    }
+      
+    if(empty($email)){
+      echo json_encode(false);
+      http_response_code(401);
+      exit;
+    }
+
+    $user = User::getUserByEmail($email);
+
+    if(!$user){
+     echo json_encode(false);
+     http_response_code(401);
+     exit;
+    }
+    
+    $codigo = substr(uniqid(rand()), 0, 6);
+
+    $data = [
+      'quem' => $email,
+      'mensagem' => $codigo,
+      'nome' => $user->nickname
+    ];
+
+    Api::sendEmail($data);
+
+    $payload = [
+      "exp" => time()+300,
+      "iat" => time(),
+      "email" => $email,
+      "code" => $codigo
+    ];
+
+    $jwt = JWT::encode($payload, $_ENV['KEY'], 'HS256');
+
+    echo json_encode([true,$jwt]);
+    http_response_code(200); 
+    exit;
+  }
+
+  public static function vefifyCode($request){
+    
+    Api::setHeaders();
+
+
+    $post_body = $request['request']->getBody();
+    $post_body = json_decode($post_body, true);
+    $token = $request['request']->getHeaders()['Reset'];
+    $token = str_replace('Bearer ', '', $token);
+
+    if (!$post_body) {
+     echo json_encode(false);
+     http_response_code(401);
+     exit;
+    }
+
+    try {
+
+      $decoded = JWT::decode($token, new Key($_SERVER['KEY'], 'HS256'));
+
+      $code = $post_body['code'];
+
+      $key = $decoded->code;
+
+      if(empty($code)){
+         echo json_encode(false);
+         http_response_code(401);
+         exit;
+      }
+
+      if($key != $code){
+         echo json_encode(false);
+         http_response_code(401);
+         exit;
+      }else{
+        echo json_encode(true);
+        http_response_code(200); 
+        exit;
+      }
+
+    } catch (Throwable $e) {
+
+      if($e->getMessage() === 'Expired token'){
+        http_response_code(401);
+        die('EXPIRED');
+      }
+
+    }
+    
+
+  }
+
 }

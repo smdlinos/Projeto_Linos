@@ -1,19 +1,27 @@
 <?php
 
 use  \App\HTTP\Response;
-use  \App\Controller\Api;
+use  \App\Controller\Api; 
 
-$obRouter->get('/api/login', [ 
-	// deixar aqui pra fazer a verificação de testes
-	function($request)
-	{
-		return new Response(200, Api\Login::getLogin($request));
-	}]
-); 
-
-$obRouter->post('/api/login', [
+$obRouter->post('/login', [  //Login do usuário -> retorna o token de autenticação
 	function($request)
 	{
 		return new Response(200, Api\Login::setLogin($request));
 	}]
 );
+
+
+$obRouter->post('/login/reset', [  //Verifica se o usuário existe -> retorna o token com código e envia email
+	function($request)
+	{
+		return new Response(200, Api\Login::verifyUser($request));
+	}]
+);
+
+$obRouter->post('/reset/code', [  //verifica o codigo enviado pelo email 
+	function($request)
+	{
+		return new Response(200, Api\Login::vefifyCode($request));
+	}]
+);
+

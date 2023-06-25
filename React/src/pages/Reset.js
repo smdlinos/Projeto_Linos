@@ -12,33 +12,33 @@ import ConfirmCode from "../components/Reset/ConfirmCode";
 
 
 
-const ulrVerify = 'http://localhost/quests/reset';
+const ulrVerify = 'http://localhost/api/login/reset';
 
-const urlConfirm = "http://localhost/quests/codeConfirmation";
+const urlConfirm = "http://localhost/api/reset/code";
 
-const urlChange = "http://localhost/quests/changePassword";
+const urlChange = "http://localhost/api/user/password";
 
 import axios from 'axios';
 import Footer from "../components/Footer";
 
 export default function Reset() {
-// essa página deve possuir 3 componentes dinâmicos, confirmar email => confirmar código => mudar a senha
+
   const [password, setPassword] = useState()
 
   const [email, setEmail] = useState();
   const [code, setCode] = useState();
   const navigate = useNavigate();
-  const [page, setPage] = useState(3);
+  const [page, setPage] = useState(1);
 
   async function handleReset(e){
     e.preventDefault();
 
     const response = await axios.post(urlChange, {
-          email,
           password
       }).then(function (response) {
         if(response.data){
           localStorage.removeItem('token_code');
+          axios.defaults.headers.common['Reset'] = undefined;
           console.log('Senha alterada com sucesso');
           navigate('/login');
         } 
@@ -59,8 +59,8 @@ export default function Reset() {
 
         if(response.data[0]){
           token = response.data[1];
-          console.log(token, response.data);
           localStorage.setItem('token_code', JSON.stringify(token));
+          axios.defaults.headers.common['Reset'] = `Bearer ${token}`;
           setter2(response.data[0]);
 
         }
@@ -77,9 +77,7 @@ export default function Reset() {
     e.preventDefault();
 
     const token = localStorage.getItem('token_code');
-
       const response = await axios.post(urlConfirm, {
-          token,
           code
       }).then(function (response) {
 

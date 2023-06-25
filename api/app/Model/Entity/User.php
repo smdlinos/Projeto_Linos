@@ -48,6 +48,13 @@ class User
 		]);
 	}
 
+	public function updateUserPassword($email)
+	{
+
+		return (new Database('usuarios'))->update('email = "'.$email.'"',[
+			'password' 		  => $this->password
+		]);
+	}
 
 	public function registerUser()
 	{

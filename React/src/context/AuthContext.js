@@ -1,6 +1,8 @@
 import axios from 'axios';
-const url = "http://localhost/quests/login";
+const url = "http://localhost/api/login";
+
 const Context = createContext();
+
 import { useNavigate} from "react-router-dom";
 
 import React, { createContext, useState, useEffect } from 'react';
@@ -9,7 +11,7 @@ import React, { createContext, useState, useEffect } from 'react';
 function AuthProvider({ children }){
 
 	const [authenticated, setAuthenticated] = useState(false);
-	const [email, setEmail] = useState();
+	const [login, setLogin] = useState();
   	const [password, setPassword] = useState();
   	const [loading, setLoading] = useState(true);
 	const [user , setUSer] = useState(null);
@@ -31,12 +33,11 @@ function AuthProvider({ children }){
 		e.preventDefault();
 		let token;
 		const response = await axios.post(url, {
-	        email, 
+	        login, 
 	        password, 
 	    }).then(function (response) {
 	    	if(response.data){
 	    		token = response.data;
-	       		console.log(response, response.data);
 	       		localStorage.setItem('token', JSON.stringify(token));
 				axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 				setAuthenticated(true);
@@ -67,7 +68,7 @@ function AuthProvider({ children }){
 
 
 	return(
-		<Context.Provider value={{ authenticated, handleLogin, setEmail, setPassword, handleLogout, setAuthenticated}}>
+		<Context.Provider value={{ authenticated, handleLogin, setLogin, setPassword, handleLogout, setAuthenticated}}>
 			{children}
 		</Context.Provider>
 		);

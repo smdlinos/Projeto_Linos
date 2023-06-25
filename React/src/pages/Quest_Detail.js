@@ -12,7 +12,6 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { Context } from '../context/AuthContext';
 
-const url = 'http://localhost/quests/quest';
 
 function Quest_D (){
 
@@ -23,11 +22,11 @@ function Quest_D (){
     const [quest, setQuest] = useState();
     const [loading, setLoading] = useState(true);
 
+    const url = 'http://localhost/api/quests/'+id;
 
     useEffect(() =>{
-        const teste = async () => { // customizar id de busca pra deixar o código mais leve
-            const response = await axios.post(url, {
-                id
+        const getQuest = async () => { 
+            const response = await axios.get(url, {
             }).then(function (response) {
             if(response.data){
                 setQuest(response.data);
@@ -35,11 +34,10 @@ function Quest_D (){
             }).catch(function (error) {
 
               console.log(error);
-              navigate('/login');
 
             });
          }
-        teste();
+        getQuest();
          
     },[]);
 
@@ -49,8 +47,6 @@ function Quest_D (){
         }
     }, [quest])
 
-
-    console.log(quest);
     return(
         <div className="background">
             <Header_q/>

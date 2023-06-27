@@ -121,38 +121,54 @@ background: #BE2C53;
     line-height: 150%;
 }
 
-.container{
+.btn{
+    border-radius: 8px;
+}
 
+.navbar{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Supreme", sans-serif;
+    font-weight: 700;
+    --bs-navbar-color: #08394D;
+    --bs-navbar-hover-color: #BE2C53;
+    --bs-navbar-active-color: #BE2C53;
+    --bs-navbar-active-font-weight: 700;
+
+}
+
+.btn-primary {
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #FF668F ;
+    --bs-btn-active-border-color: none;
+}
+
+.btn:hover {
+    color: #fff;
+    background-color: #FF668F;
+    border-color: none;
+}
+
+.nav-link{
+    width: fit-content;
+    height: fit-content;
+    padding: 0;
 }
 
 .font_titulo_q{
     font-family: "Supreme", sans-serif;
     font-weight: 700;
-    color:#08394D;
-}
-
-.itens_nav{
-    width: auto;
-    height: auto;
-}
-
-.itens_nav :hover{
-    transition: 0.5s all;
-    font-weight: 700;
-    color: #fff;
-}
-
-.itens_nav :active{
-    transition: 0.5s all;
-    font-weight: 700;
-    color: #08394C;
+    color: #08394D;
 }
 
 .espacamento_nav{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    gap: 50px;
+    gap: 40px;
 }
 
 .login_espacamento{

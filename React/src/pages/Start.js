@@ -9,7 +9,10 @@ function Start(){
     return(
         <div className="background_land">
             <NavScrollExample/>
-            <Inicio/>
+            <Container fluid>
+                <Inicio/>
+            </Container>
+
         </div>
     )
 

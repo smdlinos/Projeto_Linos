@@ -11,21 +11,17 @@ function NavScrollExample() {
   return (
     <Navbar expand="lg" className='bg-body-tertiary'>
       <Container fluid>
-        <Row>
-          <Col className='ps-5'>
           <Navbar.Brand href="#">
           <img
                 src={logo}
-                className="d-inline-block align-top"
+                className="d-inline-block align-top ps-5"
                 alt="React Bootstrap logo"
               />
           </Navbar.Brand>
-          </Col>
-          <Col xs={6} className='px-4'>
         <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
+        <Navbar.Collapse id="navbarScroll" className=''>
           <Nav
-            className="ms-auto font_nav espacamento_nav itens_nav"
+            className="ms-auto font_nav espacamento_nav itens_nav pe-5"
             style={{ maxHeight: '70px' }}
             navbarScroll
           >
@@ -36,11 +32,10 @@ function NavScrollExample() {
             <Nav.Link href="#action5">Contato</Nav.Link>   
           </Nav>
         </Navbar.Collapse>
-        </Col>
-        <Col className='pe-4'>
-        <Button className="px-1 botao" href="/login">FAZER LOGIN</Button>
-        </Col>
-        </Row>
+        <div className='pe-5'>
+        <Button className="botao" href="/login">FAZER LOGIN</Button>
+        </div>
+        
       </Container>
     </Navbar>
   );

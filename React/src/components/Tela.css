@@ -181,6 +181,14 @@ background: #BE2C53;
     ;
 }
 
+.background_land{
+    background-color: #fff;
+}
+
+.bg-body-tertiary{
+    background-color: #56B6DC;
+}
+
 .font_p{
     font-family: "Supreme", sans-serif;
     font-weight: 700;

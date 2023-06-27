@@ -15,7 +15,7 @@ import { Context } from '../context/AuthContext';
  
 export default function HeaderHome() {
 
-  const { authenticated} = useContext(Context);
+  const { authenticated, user} = useContext(Context);
   return (
     <div>
       <Container className="mb-4 background_header">
@@ -32,7 +32,7 @@ export default function HeaderHome() {
           {authenticated && 
             <Stack direction="horizontal" gap={1}>  
               <img src={estrela} alt="estrela" className="estrela"/>
-              <p className="pt-1 pontos ">50</p> 
+           {user && <p className="pt-1 pontos ">{user.user.pontos}</p> }
               <OverlayPerfil/>
             </Stack>
             }

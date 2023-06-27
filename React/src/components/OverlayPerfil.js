@@ -14,8 +14,11 @@ import React, { useContext, useEffect, useState } from 'react';
 
 import { Context } from '../context/AuthContext';
 
-function OverlayPerfil({user}) {
-  const { authenticated, handleLogout, loading} = useContext(Context);
+function OverlayPerfil() {
+  const { authenticated, handleLogout, loading, user} = useContext(Context);
+
+
+  console.log(user);
     return (
       <>
         {[false].map((expand) => (
@@ -38,10 +41,10 @@ function OverlayPerfil({user}) {
                   <Nav className="justify-content-end flex-grow-1 pe-3">
                     <div className='m-auto pontos_p mb-3'>
                     <img src={estrela} alt='estrelinha' className='estrela_p'/>
-                    <p className='my-1 mx-1 font_p'>60</p>
+                    {user && <p className='my-1 mx-1 font_p'>{user.user.pontos}</p>}
                     </div>
                     <img src={perfil_g} alt='perfil_g' className=' mx-5 perfil_g'/>
-                    <h3 className='pt-3'><center>@koal_castro</center></h3>
+                    {user && <h3 className='pt-3'><center>@{user.user.nickname}</center></h3>}
                     <Nav.Link href="#action1">Histórico</Nav.Link>
                     <Nav.Link href="#action2">Recompensas</Nav.Link>
                     <Nav.Link href="#action3" className='pb-5'>Certificados</Nav.Link>

@@ -12,7 +12,7 @@ import ConfirmCode from "../components/Reset/ConfirmCode";
 
 
 
-const ulrVerify = 'http://localhost/api/login/reset';
+const ulrVerify = 'http://localhost/login/reset';
 
 const urlConfirm = "http://localhost/api/reset/code";
 

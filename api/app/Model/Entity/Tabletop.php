@@ -33,7 +33,7 @@ class Tabletop
 		$obDatabase = new Database('tabletop');
 
 		$this->id_tabletop = $obDatabase->create([
-			'id_usuario' 	  => $this->id_usuario,
+			'id_usuario'  => $this->id_usuario,
 			'posicao' 	  => $this->posicao,
 			'ch' 		  => $this->ch
 		]);

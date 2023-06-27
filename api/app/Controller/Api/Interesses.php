@@ -69,7 +69,7 @@ class Interesses
 		return $obInteresse;
 	}
 
-	public function filtraInteresses($user)
+	public static function filtraInteresses($user)
 	{
 		if(!$user instanceof EntityUser){ // verifica o usuário
     	echo json_encode(false);

@@ -38,12 +38,20 @@ class User
 	public static function getUser($request)
 	{
 		Api::setHeaders();
-	  	$token = $request['request']->getHeaders()['Authorization'];
+
+	  	@$token = $request['request']->getHeaders()['Authorization'];
+
+	  	if (!$token) {
+	  		echo json_encode(false);
+	    	http_response_code(401);
+	    	exit;
+	  	}
+
 	  	$token = str_replace('Bearer ', '', $token);
 
     	try {
 
-	        $decoded = JWT::decode($token, new Key($_SERVER['KEY'], 'HS256'));
+	        $decoded = JWT::decode($token, new Key($_ENV['KEY'], 'HS256'));
 
 	        $user = EntityUser::getUserByEmail($decoded->email); // busca o usuario
 

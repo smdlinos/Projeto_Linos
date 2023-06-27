@@ -24,7 +24,7 @@ class Interesses
 
     	try {
 
-	        $decoded = JWT::decode($token, new Key($_SERVER['KEY'], 'HS256'));
+	        $decoded = JWT::decode($token, new Key(KEY, 'HS256'));
 
 	        $user = EntityUser::getUserByEmail($decoded->email); // busca o usuario
 

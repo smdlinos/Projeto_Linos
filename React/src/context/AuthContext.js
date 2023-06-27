@@ -1,5 +1,6 @@
 import axios from 'axios';
 const url = "http://localhost/api/login";
+import {useFetch} from "../hooks/useFetch";
 
 const Context = createContext();
 
@@ -7,8 +8,11 @@ import { useNavigate} from "react-router-dom";
 
 import React, { createContext, useState, useEffect } from 'react';
 
-
 function AuthProvider({ children }){
+
+
+
+	//const { data:temas} = useFetch(url);	
 
 	const [authenticated, setAuthenticated] = useState(false);
 	const [login, setLogin] = useState();
@@ -50,6 +54,30 @@ function AuthProvider({ children }){
 
 	      });
 	}
+
+
+	// async function handleLogin(e){
+	// 	e.preventDefault();
+	// 	let token; 
+
+	//  	fetch(url, {
+	// 		  method: 'POST',
+	// 		  headers: {
+	// 		    'Content-Type': 'application/json'
+	// 		  },
+	// 		  body: JSON.stringify({
+	// 		    login,
+	// 		    password
+	// 		  })
+	// 		}).then(response => {
+	// 		  	response.json()
+	// 		  	console.log(response);
+	// 		  }).catch(error => {
+	// 		    // Lidar com erros
+	// 		    console.error(error);
+	// 		  });
+
+	// }
 
 	function handleLogout(e){
 		e.preventDefault();

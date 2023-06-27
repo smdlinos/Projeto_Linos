@@ -7,9 +7,13 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Controller\\Api\\Api' => $baseDir . '/app/Controller/Api/Api.php',
+    'App\\Controller\\Api\\Home' => $baseDir . '/app/Controller/Api/Home.php',
     'App\\Controller\\Api\\Interesses' => $baseDir . '/app/Controller/Api/Interesses.php',
     'App\\Controller\\Api\\Login' => $baseDir . '/app/Controller/Api/Login.php',
     'App\\Controller\\Api\\Quests' => $baseDir . '/app/Controller/Api/Quests.php',
+    'App\\Controller\\Api\\Tabletop' => $baseDir . '/app/Controller/Api/Tabletop.php',
+    'App\\Controller\\Api\\Temas' => $baseDir . '/app/Controller/Api/Temas.php',
+    'App\\Controller\\Api\\TemasQuests' => $baseDir . '/app/Controller/Api/TemasQuests.php',
     'App\\Controller\\Api\\User' => $baseDir . '/app/Controller/Api/User.php',
     'App\\Db\\Database' => $baseDir . '/app/Db/Database.php',
     'App\\HTTP\\Middleware\\Maintenance' => $baseDir . '/app/HTTP/Middleware/Maintenance.php',
@@ -20,7 +24,9 @@ return array(
     'App\\Model\\Entity\\Example' => $baseDir . '/app/Model/Entity/Example.php',
     'App\\Model\\Entity\\Interesses' => $baseDir . '/app/Model/Entity/Interesses.php',
     'App\\Model\\Entity\\Quests' => $baseDir . '/app/Model/Entity/Quests.php',
+    'App\\Model\\Entity\\Tabletop' => $baseDir . '/app/Model/Entity/Tabletop.php',
     'App\\Model\\Entity\\Temas' => $baseDir . '/app/Model/Entity/Temas.php',
+    'App\\Model\\Entity\\TemasQuests' => $baseDir . '/app/Model/Entity/TemasQuests.php',
     'App\\Model\\Entity\\User' => $baseDir . '/app/Model/Entity/User.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Dotenv\\Dotenv' => $vendorDir . '/vlucas/phpdotenv/src/Dotenv.php',

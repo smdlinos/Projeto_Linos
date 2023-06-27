@@ -42,7 +42,7 @@ class Login
 		$obUserEmail = User::getUserByEmail($login);
 		$obUserName  = USer::getUserByName($login);
 
-		if(!$obUserEmail instanceof User && !$obUserName instanceof User){
+		if(!$obUserEmail && !$obUserName ){
          echo json_encode(false);
          http_response_code(401);
          exit;
@@ -86,7 +86,7 @@ class Login
 	}
 
 
-  public function verifyUser($request)
+  public static function verifyUser($request)
   {
     Api::setHeaders();
     
@@ -159,7 +159,7 @@ class Login
 
     try {
 
-      $decoded = JWT::decode($token, new Key($_SERVER['KEY'], 'HS256'));
+      $decoded = JWT::decode($token, new Key($_ENV['KEY'], 'HS256'));
 
       $code = $post_body['code'];
 

@@ -28,9 +28,18 @@ Database::config(
 
 define('URL', $_ENV['URL']);
 
+// Database::config(
+// 	DB_HOST,
+// 	DB_NAME,
+// 	DB_USER,
+// 	DB_PASS,
+// 	DB_PORT
+// );
+
 Queue::setMap([
 	'maintenance' => \App\HTTP\Middleware\Maintenance::class,
 ]);
+
 Queue::setDefault([
 	'maintenance'
 ]);

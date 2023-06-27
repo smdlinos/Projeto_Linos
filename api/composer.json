@@ -18,7 +18,8 @@
 		"files": [
             "app/helpers/validate.php",
             "app/helpers/validations.php",
-            "app/helpers/helpers.php"
+            "app/helpers/helpers.php",
+            "app/helpers/config.php"
 		 ]
 	}
 }

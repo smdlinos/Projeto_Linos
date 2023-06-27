@@ -11,6 +11,7 @@ class ComposerStaticInit507d26963c1f3710811a25110442869e
         '7a8fce531046d66c075cac2faf988a72' => __DIR__ . '/../..' . '/app/helpers/validate.php',
         'fbe1b41498fab4c221003c558d639108' => __DIR__ . '/../..' . '/app/helpers/validations.php',
         '7197b576051f28a76986151b9daac431' => __DIR__ . '/../..' . '/app/helpers/helpers.php',
+        'c43a2d4c4583008b7979d78a5274aaed' => __DIR__ . '/../..' . '/app/helpers/config.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -66,9 +67,13 @@ class ComposerStaticInit507d26963c1f3710811a25110442869e
 
     public static $classMap = array (
         'App\\Controller\\Api\\Api' => __DIR__ . '/../..' . '/app/Controller/Api/Api.php',
+        'App\\Controller\\Api\\Home' => __DIR__ . '/../..' . '/app/Controller/Api/Home.php',
         'App\\Controller\\Api\\Interesses' => __DIR__ . '/../..' . '/app/Controller/Api/Interesses.php',
         'App\\Controller\\Api\\Login' => __DIR__ . '/../..' . '/app/Controller/Api/Login.php',
         'App\\Controller\\Api\\Quests' => __DIR__ . '/../..' . '/app/Controller/Api/Quests.php',
+        'App\\Controller\\Api\\Tabletop' => __DIR__ . '/../..' . '/app/Controller/Api/Tabletop.php',
+        'App\\Controller\\Api\\Temas' => __DIR__ . '/../..' . '/app/Controller/Api/Temas.php',
+        'App\\Controller\\Api\\TemasQuests' => __DIR__ . '/../..' . '/app/Controller/Api/TemasQuests.php',
         'App\\Controller\\Api\\User' => __DIR__ . '/../..' . '/app/Controller/Api/User.php',
         'App\\Db\\Database' => __DIR__ . '/../..' . '/app/Db/Database.php',
         'App\\HTTP\\Middleware\\Maintenance' => __DIR__ . '/../..' . '/app/HTTP/Middleware/Maintenance.php',
@@ -79,7 +84,9 @@ class ComposerStaticInit507d26963c1f3710811a25110442869e
         'App\\Model\\Entity\\Example' => __DIR__ . '/../..' . '/app/Model/Entity/Example.php',
         'App\\Model\\Entity\\Interesses' => __DIR__ . '/../..' . '/app/Model/Entity/Interesses.php',
         'App\\Model\\Entity\\Quests' => __DIR__ . '/../..' . '/app/Model/Entity/Quests.php',
+        'App\\Model\\Entity\\Tabletop' => __DIR__ . '/../..' . '/app/Model/Entity/Tabletop.php',
         'App\\Model\\Entity\\Temas' => __DIR__ . '/../..' . '/app/Model/Entity/Temas.php',
+        'App\\Model\\Entity\\TemasQuests' => __DIR__ . '/../..' . '/app/Model/Entity/TemasQuests.php',
         'App\\Model\\Entity\\User' => __DIR__ . '/../..' . '/app/Model/Entity/User.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Dotenv\\Dotenv' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Dotenv.php',

@@ -16,7 +16,6 @@ import {Redirect} from 'react-router';
 import { BrowserRouter , Routes, Route, Link, useNavigate, Navigate} from "react-router-dom";
 
 import Search from "./pages/Search";
-import LandPage from "./components/LandPage";
 
 import { AuthProvider } from './context/AuthContext';
 

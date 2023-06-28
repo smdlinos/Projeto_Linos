@@ -16,7 +16,7 @@ function AuthProvider({ children }){
 
 	//const { data:temas} = useFetch(url);	
 
-	const [authenticated, setAuthenticated] = useState(false);
+	const [authenticated, setAuthenticated] = useState(true);
 	const [login, setLogin] = useState();
   	const [password, setPassword] = useState();
   	const [loading, setLoading] = useState(true);

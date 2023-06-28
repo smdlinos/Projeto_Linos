@@ -39,16 +39,18 @@ export default function App() {
 
             <Route path = "/reset" element = {<Reset/>}/>
 
-            <Route path = "/login" element = { authenticated ? <Navigate to={'/home/'+localStorage.getItem('token').replace(/["]/g, '')}/> : <Login/>}/> 
+            <Route path = "/login" element =  {<Login/>} /> 
+            {/* <Route path = "/login" element = { authenticated ? <Navigate to={'/home/'+localStorage.getItem('token').replace(/["]/g, '')}/> : <Login/>}/>  */}
 
-            <Route path = "/home" element = { authenticated ? <Navigate to={'/home/'+localStorage.getItem('token').replace(/["]/g, '')}/> : <Home/>}/> 
+            <Route path = "/home" element = { <Home/>}/> 
+            {/* <Route path = "/home" element = { authenticated ? <Navigate to={'/home/'+localStorage.getItem('token').replace(/["]/g, '')}/> : <Home/>}/>  */}
  
             <Route path = "/home/:id" element= {<Home/>}/>
 
             <Route path = "/config/:id" element = {<Config/>}/> 
 
-            <Route path = "/certificado/:id" element = {<Certificado/>}/> // id do certificado vai ser relacionado ao id do usuário no bd, logo
-            //não precisa do token, só do id do certificado -> no estilo do quests_d
+            <Route path = "/certificado/:id" element = {<Certificado/>}/> {/*id do certificado vai ser relacionado ao id do usuário no bd, logo
+            //não precisa do token, só do id do certificado -> no estilo do quests_d */} 
             <Route path = "/user/:id/historic" element = {<Search/>}/> // o histórico vai puxar um conjunto de infos
 
             <Route path = "/responses/:id" element = {<Search/>}/> //mesmo esquema do quests_d // rota provisória
@@ -57,7 +59,7 @@ export default function App() {
        
             <Route path = "/quest_d/:id" element = {<Quest_D/>}/>
 
-            <Route path = "/tabletop/:id" element={<Tabletop/>}/> //mesmo esquema do quests_d -> as infos só chegam com o header Authenticated
+            <Route path = "/tabletop/:id" element={<Tabletop/>}/> {/*mesmo esquema do quests_d -> as infos só chegam com o header Authenticated*/}
 
           </Routes>
           <br/>

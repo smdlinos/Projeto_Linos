@@ -8,6 +8,11 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import "../Tela.css";
 import estrela from "../imagens/estrela2.svg";
+import Icon_P from "../imagens/historico_icon.svg"
+import Icon_H from "../imagens/certificado_icon.svg"
+import Icon_C from "../imagens/config_icon.svg"
+import Logout_Icon from "../imagens/logout_icone.svg"
+
 
 import Perfil from "../imagens/koala.svg";
 import perfil_g from "../imagens/koala_p.svg";
@@ -48,12 +53,17 @@ function OverlayPerfil() {
                     </div>
                     <img src={perfil_g} alt='perfil_g' className=' mx-5 perfil_g'/>
                     {user && <h3 className='pt-3'><center>@{user.user.nickname}</center></h3>}
-                    <Nav.Link href="#action1">Histórico</Nav.Link>
-                    <Nav.Link href="#action2">Recompensas</Nav.Link>
-                    <Nav.Link href="#action3" className='pb-5'>Certificados</Nav.Link>
+                    <Nav.Link href="#action1"><Button className='botao_overlay' size='lg'><img src={Icon_P} alt='icone' className='px-2 icones'></img>HISTÓRICO</Button></Nav.Link>
+                    <Nav.Link href="/certificado"><Button className='botao_overlay' size='lg'><img src={Icon_H} alt='icone' className='px-2 icones' ></img>CERTIFICADOS</Button></Nav.Link>
+                    <Nav.Link href="/config" className=''><Button className='botao_overlay' size='lg'><img src={Icon_C} alt='icone' className='px-2 icones'></img>CONFIGURAÇÕES</Button></Nav.Link>
                   </Nav>
-                  {authenticated && <Button variant="primary" type="button"  onClick={handleLogout} className="px-5 mb-3 mt-3">
-                    Logout
+                  {authenticated && <Button variant="link" type="button"  onClick={handleLogout} className=" mb-3 mt-5 pt-5 link ps-5" size='lg'>
+                    <div className='ps-5 ms-4 pt-5 mt-5'>
+                    <img src={Logout_Icon} alt="icone_sair" className=' icones_l'></img><b>SAIR</b>
+                    </div>
+                    
+                    
+                    
                 </Button> 
                 }
                 </Offcanvas.Body>

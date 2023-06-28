@@ -26,10 +26,10 @@ export default function SessionLogin() {
     <div>
          <br/>
            
-         <Row className="justify-content-sm-center mb-5">
+         <Row className="mb-5" className="agrupar">
           <Col sm="auto" none="">
           <Form className="mb-4 rounded p-5 mx-3" onSubmit={handleLogin} method="Post">
-            <h2 className="titulo_login mb-4">Seja bem vindo!</h2>
+            <h2 className="titulo_login mb-4 alinhamento">Seja bem vindo!</h2>
             <Form.Group className="mb-3">
               <Form.Label htmlFor="email" className="fonte_login login_espacamento">Login</Form.Label>
               <Form.Control 
@@ -60,10 +60,10 @@ export default function SessionLogin() {
               ENTRAR
             </Button>
             <br />
-            <Link to="/home" className="fonte_login">Ou entre como visitante</Link>
+            <Link to="/home" className="fonte_login ms-5 ps-3">Ou entre como visitante</Link>
           </Form>
           <div className="pb-5">
-      <p className="pt-4 mb-5 fonte_login">Não tem uma conta?<a href="/register">Cadastre-se</a></p>
+      <p className="pt-4 mb-5 fonte_login alinhamento">Não tem uma conta?<a href="/register">Cadastre-se</a></p>
       </div>
 
         </Col>

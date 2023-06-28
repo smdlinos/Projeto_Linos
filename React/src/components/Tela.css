@@ -171,6 +171,10 @@ background: #BE2C53;
     gap: 40px;
 }
 
+.itens_nav{
+    white-space: nowrap;
+}
+
 .login_espacamento{
     justify-content: left;
     padding-right: 83%;
@@ -217,9 +221,6 @@ background: #BE2C53;
 
 .nome_c{
     padding-right: 58%;
-}
-.star{
-    
 }
 
 .espacamento_c{

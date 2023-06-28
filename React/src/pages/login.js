@@ -13,7 +13,7 @@ import Footer from "../components/Global/Footer";
 function Login (){
     
     return(
-        <div className="alinhamento">
+        <div className="">
 
             <Header />
             

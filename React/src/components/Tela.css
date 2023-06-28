@@ -1,5 +1,5 @@
 body{
-    background-image: url(./imagens/background_login.svg);
+    background-image: url(./imagens/background_.svg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -162,7 +162,7 @@ background: #BE2C53;
 
 .login_espacamento{
     justify-content: left;
-    padding-right: 83%;
+    padding-right: 86%;
 }
 
 .login_espacamento_s{
@@ -258,4 +258,39 @@ background: #BE2C53;
 
 .background_gradient{
     background: linear-gradient(180deg, rgba(187, 222, 86, 0.50) 0%, rgba(68, 144, 94, 0.50) 100%), #7AD786;
+}
+
+.agrupar{
+    justify-content: center;
+}
+
+.botao_overlay{
+    background: #FFFF;
+    text-align: start;
+    width: 240px;
+    color: #08394C;
+    width: 100%;
+    font-family: "Supreme", sans-serif;
+    font-weight: 700;
+    border-radius: 8px;
+    border: none;
+}
+
+.icones{
+    width: 3rem;
+}
+.icones_l{
+    width: 40px;
+    
+}
+
+.link{
+    color: #08394C;
+    text-decoration: none;
+}
+
+.logout{
+    display: flex;
+    flex-direction: row;
+    
 }

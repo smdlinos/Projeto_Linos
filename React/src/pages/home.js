@@ -1,21 +1,24 @@
+//Sty;es
 import "../components/Tela.css"
-import Forms from "../components/Forms";
-import Tabletop from "../components/Tabletop";
-import SearchForm from "../components/SearchForm";
-import HeaderHome from "../components/HeaderHome";
 import Button from "react-bootstrap/Button";
+
+//Components
+import Forms from "../components/Home/Forms";
+import Tabletop from "../components/Home/Tabletop";
+import SearchForm from "../components/Home/SearchForm";
+import HeaderHome from "../components/Home/HeaderHome";
+
+//Dependences
 import axios from 'axios';
+import {useNavigate} from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import { Context } from '../context/AuthContext';
 
+//Endpoints
 const urlRecomendedQuests = "http://localhost/api/quests/recomended";
-
 const urlAllQuests = "http://localhost/api/quests";
 
 
-import {useNavigate} from 'react-router-dom';
-
-import React, { useContext, useEffect, useState } from 'react';
-
-import { Context } from '../context/AuthContext';
 
 export default function Home(){
 

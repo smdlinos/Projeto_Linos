@@ -1,10 +1,15 @@
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-import {useFetch} from "../../hooks/useFetch";
+//Styles
 import "../Tela.css"
-import { useState , useEffect } from "react";
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+
+//Dependences
+import {useFetch} from "../../hooks/useFetch";
+import { useState , useEffect } from "react";
+
+
 
 const Form2 = (props) => {   
 

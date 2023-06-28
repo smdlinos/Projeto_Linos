@@ -1,23 +1,20 @@
+//Styles
 import "../components/Tela.css"
-import SessionLogin from "../components/SessionLogin";
-import Header from "../components/Header"
-import Footer from "../components/Footer";
-import Body_c from "../components/body_certificado";
-import Logo from "../components/imagens/quest_logo.png"
-import Header_q from "../components/Header_q"
-import Body_config from "../components/body_config"
+import Logo from "../components/imagens/quest_logo.png";
 
-
+//Components
+import Footer from "../components/Global/Footer";
+import Header_q from "../components/Quests/Header_q";
+import BodyConfig from "../components/Config/BodyConfig";
 
 
 function Config (){
     
     return(
         <div>
-    <Header_q />
-    <Body_config/>
-    
-    <Footer />        
+            <Header_q />
+            <BodyConfig/>
+            <Footer />        
         </div>
     )
 }

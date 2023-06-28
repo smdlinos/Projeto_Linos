@@ -1,13 +1,14 @@
+//Dependences
 import axios from 'axios';
-const url = "http://localhost/api/login";
-const urlUser = "http://localhost/api/user/auth";
 import {useFetch} from "../hooks/useFetch";
-
+import { useNavigate} from "react-router-dom";
+import React, { createContext, useState, useEffect } from 'react';
 const Context = createContext();
 
-import { useNavigate} from "react-router-dom";
+//Endpoints
+const url = "http://localhost/api/login";
+const urlUser = "http://localhost/api/user/auth";
 
-import React, { createContext, useState, useEffect } from 'react';
 
 function AuthProvider({ children }){
 

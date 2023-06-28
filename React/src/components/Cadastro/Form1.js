@@ -1,15 +1,18 @@
+
+//Styles
+import "../Tela.css";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import "../Tela.css";
+
+
+//Dependences
 import { useEffect, useState } from "react";
 import { useFetch } from "../../hooks/useFetch"
+
 
 const Form1 = (props) => {
 
     //const [password1, setPassword1] = useState(1);
-    
-
-    
 
     const alteraForm = (e) => {
         e.preventDefault();

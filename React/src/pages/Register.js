@@ -1,27 +1,25 @@
-//CSS
+//Styles
 import "../components/Tela.css"
-
-//hooks
-import { BrowserRouter as Router, Routes, Route, Link, useNavigate, json} from "react-router-dom";
-import { useEffect, useState } from "react";
-import {useFetch} from "../hooks/useFetch";
-import axios from 'axios';
-
-import React, { useContext } from 'react';
-import {Context} from '../context/AuthContext'
-
-//Components
-import Footer from "../components/Footer";
-import Header from "../components/Header"
-import Form1 from "../components/Cadastro/Form1";
-import Form2 from "../components/Cadastro/Form2";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
+//Components
+import Footer from "../components/Global/Footer";
+import Header from "../components/Global/Header"
+import Form1 from "../components/Cadastro/Form1";
+import Form2 from "../components/Cadastro/Form2";
 
-//endpoints
+//hooks
+import axios from 'axios';
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate, json} from "react-router-dom";
+import { useEffect, useState } from "react";
+import {useFetch} from "../hooks/useFetch";
+import React, { useContext } from 'react';
+import {Context} from '../context/AuthContext'
+
+//Endpoints
 const urlGet = "http://localhost/api/temas";
 const urlPost = "http://localhost/api/user/register";
 const urlValidate = "http://localhost/api/register/validate";

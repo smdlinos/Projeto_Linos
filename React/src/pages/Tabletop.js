@@ -1,8 +1,12 @@
+//Styles
 import "../components/Tela.css"
-import Header_q from "../components/Header_q"
-import Footer from "../components/Footer";
 import Container from "react-bootstrap/esm/Container";
 import FundoTabletop from "../components/imagens/FundoTabletop.png"
+
+//Components
+import Header_q from "../components/Quests/Header_q"
+import Footer from "../components/Global/Footer";
+
 
 function Tabletop(){
     return(

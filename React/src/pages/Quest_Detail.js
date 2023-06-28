@@ -1,12 +1,15 @@
+//Styles
 import "../components/Tela.css"
-import SessionLogin from "../components/SessionLogin";
-import Header from "../components/Header"
-import Footer from "../components/Footer";
-import Logo from "../components/imagens/quest_logo.png";
-import Titulo_q from "../components/Titulo_q";
-import Body_q from "../components/Body_q";
-import Header_q from "../components/Header_q";
 
+
+//Components
+import Footer from "../components/Global/Footer";
+import Logo from "../components/imagens/quest_logo.png";
+import Titulo_q from "../components/Quests/Titulo_q";
+import Body_q from "../components/Quests/Body_q";
+import Header_q from "../components/Quests/Header_q";
+
+//Dependences
 import { useParams } from "react-router-dom";
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';

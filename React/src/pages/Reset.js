@@ -1,25 +1,27 @@
+//Styles
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Link, useNavigate} from "react-router-dom";
 import "../components/Tela.css"
-import Header from "../components/Header.js";
+
+//Components
+import Footer from "../components/Global/Footer";
+import Header from "../components/Global/Header.js";
 import ChangePassword from "../components/Reset/ChangePassword";
 import SendEmail from "../components/Reset/SendEmail";
 import ConfirmCode from "../components/Reset/ConfirmCode";
 
+//Dependencias
+import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate} from "react-router-dom";
+import axios from 'axios';
 
-
+//Endpoints
 const ulrVerify = 'http://localhost/login/reset';
-
 const urlConfirm = "http://localhost/api/reset/code";
-
 const urlChange = "http://localhost/api/user/password";
 
-import axios from 'axios';
-import Footer from "../components/Footer";
 
 export default function Reset() {
 
@@ -109,9 +111,12 @@ export default function Reset() {
 
   return ( 
       <div className="">
+
         <Header/>
+
         <Row className="justify-content-sm-center pt-3">
           <Col sm="auto" none="">
+
             <Form className="mb-5 rounded p-5 mx-3 fonte_login" onSubmit ={handleReset}>
 
               {page == 1 ? <SendEmail email={(e) => setEmail(e.target.value)} send={sendEmail}/> :
@@ -119,9 +124,9 @@ export default function Reset() {
               <ChangePassword setPassword={(e)=> setPassword(e.target.value)} password={password}/>}
 
             </Form>
+            
             <Footer/>
-            <div className="espaco">
-            </div>
+
           </Col>
         </Row>
         

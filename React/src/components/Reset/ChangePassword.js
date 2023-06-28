@@ -1,10 +1,11 @@
+//Styles
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "../Tela.css"
-import Header from "../Header.js";
 
+//Dependences
 import { useState } from 'react';
 
 export default function ChangePassword (props){

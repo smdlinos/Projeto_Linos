@@ -99,6 +99,7 @@ background: #BE2C53;
     width: 100%;
     font-family: "Supreme", sans-serif;
     font-weight: 700;
+    border-radius: 8px;
     border: none;
 }
 
@@ -121,10 +122,6 @@ background: #BE2C53;
     line-height: 150%;
 }
 
-.btn{
-    border-radius: 8px;
-}
-
 .navbar{
     margin: 0;
     border: 0;
@@ -140,22 +137,10 @@ background: #BE2C53;
 
 }
 
-.btn-primary {
-    --bs-btn-active-color: #fff;
-    --bs-btn-active-bg: #FF668F ;
-    --bs-btn-active-border-color: none;
-}
-
 .btn:hover {
     color: #fff;
     background-color: #FF668F;
     border-color: none;
-}
-
-.nav-link{
-    width: fit-content;
-    height: fit-content;
-    padding: 0;
 }
 
 .font_titulo_q{

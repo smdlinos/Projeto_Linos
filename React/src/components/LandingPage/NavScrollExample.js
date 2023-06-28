@@ -11,7 +11,7 @@ import Stack from 'react-bootstrap/Stack';
 function NavScrollExample() {
   return (
       <>
-        <Navbar className='bg-body-tertiary ps-5'>
+        <Navbar className='bg-body-tertiary ps-5 pe-5'>
           <Container fluid>
           <Navbar.Brand href="#">
             <img

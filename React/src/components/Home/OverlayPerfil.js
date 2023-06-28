@@ -20,9 +20,7 @@ import { Context } from '../../context/AuthContext';
 function OverlayPerfil() {
   const { authenticated, handleLogout, loading, user} = useContext(Context);
 
-
-  console.log(user);
-    return (
+  return (
       <>
         {[false].map((expand) => (
           <Navbar key={expand} expand={expand} className="mb-3">

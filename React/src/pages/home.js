@@ -16,9 +16,9 @@ import { Context } from '../context/AuthContext';
 
 //Endpoints
 const urlRecomendedQuests = "http://localhost/api/quests/recomended";
-const urlAllQuests = "http://localhost/api/quests";
+const urlAllQuests        = "http://localhost/api/quests";
 
-
+import { api } from '../services/api';
 
 export default function Home(){
 
@@ -31,7 +31,7 @@ export default function Home(){
     if(authenticated){
         useEffect(() =>{
 
-        const token = localStorage.getItem('token');
+         const token = localStorage.getItem('token');
          const teste = async () => {
              const response = await axios.get(urlRecomendedQuests, {
             }).then(function (response) {

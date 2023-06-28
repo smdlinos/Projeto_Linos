@@ -4,11 +4,10 @@ import {useFetch} from "../hooks/useFetch";
 import { useNavigate} from "react-router-dom";
 import React, { createContext, useState, useEffect } from 'react';
 const Context = createContext();
+import { api } from '../services/api';
 
 //Endpoints
-const url = "http://localhost/api/login";
-const urlUser = "http://localhost/api/user/auth";
-
+const urlUser = 'http://localhost/api/user/auth';
 
 function AuthProvider({ children }){
 
@@ -31,31 +30,32 @@ function AuthProvider({ children }){
   			setAuthenticated(true);
 			getUser();
   		}
+
   		setLoading(false);
   	},[]);
 
-	async function handleLogin(e){
-		e.preventDefault();
-		let token;
-		const response = await axios.post(url, {
-	        login, 
-	        password, 
-	    }).then(function (response) {
-	    	if(response.data){
-	    		token = response.data;
-	       		localStorage.setItem('token', JSON.stringify(token));
-				axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-				setAuthenticated(true);
-				getUser();
-				navigate('/home/'+token);
-	    	}
+	// async function handleLogin(e){
+	// 	e.preventDefault();
+	// 	let token;
+	// 	const response = await api.post('/login', {
+	//         login, 
+	//         password, 
+	//     }).then(function (response) {
+	//     	if(response.data){
+	//     		token = response.data;
+	//        		localStorage.setItem('token', JSON.stringify(token));
+	// 			axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+	// 			setAuthenticated(true);
+	// 			getUser();
+	// 			navigate('/home/'+token);
+	//     	}
 	       	
-	      }).catch(function (error) {
+	//       }).catch(function (error) {
 
-	        console.log(error);
+	//         console.log(error);
 
-	      });
-	}
+	//       })
+	// }
 
 	async function getUser(){
 		const token = localStorage.getItem('token');
@@ -68,7 +68,9 @@ function AuthProvider({ children }){
 
 	        console.log(error);
 
-	      });
+	      }).finally(function () {
+    		setLoading(false);
+  		  });
 	}
 
 	// async function handleLogin(e){
@@ -93,6 +95,24 @@ function AuthProvider({ children }){
 	// 		  });
 
 	// }
+
+	async function handleLogin(e) { // esse teste possivelmente deu certo
+	  e.preventDefault();
+
+	  fetch('http://smdlinos.000webhostapp.com/api/login', {
+	    method: 'post',
+	    body: JSON.stringify({
+		    login,
+		    password
+		})
+	  }).then(function(response) {
+	    return response.json();
+	  }).catch(error => {
+	    // Lidar com erros
+	    console.error(error);
+	  });
+
+	}
 
 	function handleLogout(e){
 		e.preventDefault();

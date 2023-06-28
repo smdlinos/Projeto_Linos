@@ -11,7 +11,7 @@ import Stack from 'react-bootstrap/Stack';
 function NavScrollExample() {
   return (
       <>
-        <Navbar className='bg-body-tertiary'>
+        <Navbar className='bg-body-tertiary ps-5'>
           <Container fluid>
           <Navbar.Brand href="#">
             <img
@@ -25,12 +25,22 @@ function NavScrollExample() {
               style={{ maxHeight: '70px' }}
               navbarScroll
             >
-              <Nav.Link href="#action1">Início</Nav.Link>
-              <Nav.Link href="#action2">Aventure-se</Nav.Link>
-              <Nav.Link href="#action3">Origem</Nav.Link>
-              <Nav.Link href="#action4">Sobre nós</Nav.Link>
-              <Nav.Link href="#action5">Contato</Nav.Link>
-              <Button className="botao" href="/login">FAZER LOGIN</Button>   
+                <Nav.Link href="#action1">Início</Nav.Link>
+                
+                <Nav.Link href="#action2">Aventure-se</Nav.Link>
+                
+                <Nav.Link href="#action3">Origem</Nav.Link>
+                
+                <Nav.Link href="#action4">Sobre nós</Nav.Link>
+                
+                
+                <Nav.Link href="#action5">Contato</Nav.Link>
+                
+              
+              <Button className="botao" href="/login">FAZER LOGIN</Button>  
+              
+              
+              
             </Nav>
           </Container>
           </Navbar>

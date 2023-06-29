@@ -18,9 +18,7 @@ import Search from "./pages/Search";
 //Hooks
 import React, { useContext, useState, useEffect } from 'react';
 import {Context} from './context/AuthContext'
-import {Redirect} from 'react-router';
-import { BrowserRouter , Routes, Route, Link, useNavigate, Navigate} from "react-router-dom";
-import { AuthProvider } from './context/AuthContext';
+import { Routes, Route, Link, useNavigate, Navigate} from "react-router-dom";
 
 
 
@@ -39,11 +37,9 @@ export default function App() {
 
             <Route path = "/reset" element = {<Reset/>}/>
 
-            <Route path = "/login" element =  {<Login/>} /> 
-            {/* <Route path = "/login" element = { authenticated ? <Navigate to={'/home/'+localStorage.getItem('token').replace(/["]/g, '')}/> : <Login/>}/>  */}
+            <Route path = "/login" element = { authenticated ? <Navigate to={'/home/'+localStorage.getItem('token').replace(/["]/g, '')}/> : <Login/>}/> 
 
-            <Route path = "/home" element = { <Home/>}/> 
-            {/* <Route path = "/home" element = { authenticated ? <Navigate to={'/home/'+localStorage.getItem('token').replace(/["]/g, '')}/> : <Home/>}/>  */}
+            <Route path = "/home" element = { authenticated ? <Navigate to={'/home/'+localStorage.getItem('token').replace(/["]/g, '')}/> : <Home/>}/> 
  
             <Route path = "/home/:id" element= {<Home/>}/>
 

@@ -25,24 +25,26 @@ function Quest_D (){
     const [quest, setQuest] = useState();
     const [loading, setLoading] = useState(true);
 
-    const url = 'http://localhost/api/quests/'+id;
+    const url = 'https://smdquests.000webhostapp.com/api/quests/'+id;
 
     useEffect(() =>{
-        const getQuest = async () => { 
-            const response = await axios.get(url, {
-            }).then(function (response) {
-            if(response.data){
-                setQuest(response.data);
-            };
-            }).catch(function (error) {
-
-              console.log(error);
-
-            });
+        async function getQuest() { // esse teste possivelmente deu certo
+ 
+           fetch(url, {
+             method: 'get'
+           }).then(function(response) {
+                 return response.json();
+           }).then(data => {
+                 setQuest(data)
+           }).catch(error => {
+                 // Lidar com erros
+                 console.error(error);
+           });
+ 
          }
-        getQuest();
-         
-    },[]);
+         getQuest();
+          
+     },[]);
 
     useEffect((e) => {
         if(quest != undefined){

@@ -20,9 +20,9 @@ import React, { useContext } from 'react';
 import {Context} from '../context/AuthContext'
 
 //Endpoints
-const urlGet = "http://localhost/api/temas";
-const urlPost = "http://localhost/api/user/register";
-const urlValidate = "http://localhost/api/register/validate";
+const urlGet = "https://smdquests.000webhostapp.com/api/temas";
+const urlPost = "https://smdquests.000webhostapp.com/api/user/register";
+const urlValidate = "https://smdquests.000webhostapp.com/api/register/validate";
 
 
 export default function Register() {
@@ -45,11 +45,11 @@ export default function Register() {
 
   const [form, setForm] = useState(1);
   
-  const handleSubmit = async (e) =>{
-    e.preventDefault();
+  const handleSubmit = async (e) => { // esse teste possivelmente deu certo
 
-    try{
-      const response = await axios.post(urlPost, {
+    fetch(urlPost, {
+      method: 'post',
+      body: JSON.stringify({
         name,  
         nickname, 
         email, 
@@ -58,43 +58,44 @@ export default function Register() {
         genero, 
         escolaridade,
         interesses
-      }).then(function (response) {
+     })
+    }).then(function(response) {
+        return response.json();
+    }).then(data => {
 
-        if (response.data.register) {
-          setName('');
-          setNickname('');
-          setEmail('');
-          setPassword('');
-          setDataNascimento('');
-          setGenero('');
-          setEscolaridade('');
-          setInteresses('');
-    
-          console.log('Cadastrado Com Sucesso');
-          const token = response.data.token;
-          localStorage.setItem('token', JSON.stringify(token));
-          axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-          setAuthenticated(true);
+          if (data.register) {
+              setName('');
+              setNickname('');
+              setEmail('');
+              setPassword('');
+              setDataNascimento('');
+              setGenero('');
+              setEscolaridade('');
+              setInteresses('');
+        
+              console.log('Cadastrado Com Sucesso');
+              const token = data.token;
+              localStorage.setItem('token', JSON.stringify(token));
+              axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+              setAuthenticated(true);
+              navigate(`/home/${token}`);
 
-          navigate(`/home/${token}`);
-        }else {
-          console.log("Houve um erro ao cadastrar");
-          navigate("/");
-        }
-      }).catch(function (error) {
-        console.log(error);
-      });
+          } else {
+              console.log("Houve um erro ao cadastrar");
+              navigate("/");
+          }
 
-    } catch(error){
-      console.log(error);
-    }
-  
+      }).catch(error => {
+        // Lidar com erros
+        console.error(error);
+    });
+
   }
 
-
-   const validate = async () =>{
-    try{
-      const response = await axios.post(urlValidate, {
+  const validate = async () => { // esse teste possivelmente deu certo
+    fetch(urlValidate, {
+      method: 'post',
+      body: JSON.stringify({
         name,  
         nickname, 
         email, 
@@ -102,22 +103,20 @@ export default function Register() {
         data_nascimento, 
         genero, 
         escolaridade
-      }).then(function (response) {
+     })
+    }).then(function(response) {
+        return response.json();
+    }).then(data => {
 
-        console.log(response.data);
-        chageForm(response.data);
+          chageForm(data);
 
-      }).catch(function (error) { // feedback deve ser inserido aqui
+      }).catch(error => {
+        // Lidar com erros
+        console.error(error, "Dados Inválidos, tente novamente");
+    });
 
-        console.log("Dados Inválidos, tente novamente")
-        // console.log(error);
-
-      });
-    } catch(error){
-      console.log(error);
-    }
-  
   }
+
 
 
    const chageForm = (response) =>{ // verifica a resposta da validação e muda de form

@@ -13,7 +13,7 @@ import React, { useContext, useEffect, useState } from 'react';
 
 
 //Endpoints
-const urlI = 'http://localhost/api/user/interesses'
+const urlI = 'https://smdquests.000webhostapp.com/api/user/interesses';
 
 
 export default function Body_q({quest , auth}) {
@@ -26,23 +26,31 @@ export default function Body_q({quest , auth}) {
   const [matches, setMatches] = useState([]);
 
   if(auth){
-        useEffect(() =>{
-        const token = localStorage.getItem('token');
-         const teste = async () => {
-             const response = await axios.get(urlI, {
-            }).then(function (response) {
-            if(response.data){
-                setInteresses(response.data.interesses);
-            };
-            }).catch(function (error) {
+        
+    useEffect(() => {
+      async function getInteresses() { // esse teste possivelmente deu certo
 
-              console.log(error);
+          const token = localStorage.getItem('token').replace(/["]/g, '');
 
-            });
-         }
-         teste();
-         setLoading(false);
-        },[]);
+          fetch(urlI, {
+            method: 'post',
+            body: JSON.stringify({
+              token
+          })
+          }).then(function(response) {
+              return response.json();
+          }).then(data => {
+              setInteresses(data.interesses);
+            }).catch(error => {
+              // Lidar com erros
+              console.error(error);
+          });
+
+      }
+
+      getInteresses();
+      setLoading(false);
+    }, [])
 
     } else {
 

@@ -1,132 +1,99 @@
 //Dependences
 import axios from 'axios';
-import {useFetch} from "../hooks/useFetch";
-import { useNavigate} from "react-router-dom";
+import { useNavigate, useLocation} from "react-router-dom";
 import React, { createContext, useState, useEffect } from 'react';
 const Context = createContext();
-import { api } from '../services/api';
 
 //Endpoints
-const urlUser = 'http://localhost/api/user/auth';
+const urlUser  = 'https://smdquests.000webhostapp.com/api/user/auth';
+const urlLogin = 'https://smdquests.000webhostapp.com/api/login';
 
 function AuthProvider({ children }){
 
-
-
 	//const { data:temas} = useFetch(url);	
 
-	const [authenticated, setAuthenticated] = useState(true);
+	const [authenticated, setAuthenticated] = useState(false);
 	const [login, setLogin] = useState();
   	const [password, setPassword] = useState();
   	const [loading, setLoading] = useState(true);
 	const [user , setUser] = useState(null);
   	const navigate = useNavigate();
-
+	const location = useLocation();
   	useEffect(() =>{
-  		const token = localStorage.getItem('token');
- 
-  		if(token && token != 'undefined' && token != undefined){
-  			axios.defaults.headers.common['Authorization'] = `Bearer ${JSON.parse(token)}`;
-  			setAuthenticated(true);
-			getUser();
-  		}
-
-  		setLoading(false);
-  	},[]);
-
-	// async function handleLogin(e){
-	// 	e.preventDefault();
-	// 	let token;
-	// 	const response = await api.post('/login', {
-	//         login, 
-	//         password, 
-	//     }).then(function (response) {
-	//     	if(response.data){
-	//     		token = response.data;
-	//        		localStorage.setItem('token', JSON.stringify(token));
-	// 			axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-	// 			setAuthenticated(true);
-	// 			getUser();
-	// 			navigate('/home/'+token);
-	//     	}
-	       	
-	//       }).catch(function (error) {
-
-	//         console.log(error);
-
-	//       })
-	// }
-
-	async function getUser(){
 		const token = localStorage.getItem('token');
-		const response = await axios.get(urlUser, {
-	    }).then(function (response) {
-	    	if(response.data){
-	    		setUser(response.data);
-	    	}
-	      }).catch(function (error) {
+		
+		if(token && token != 'undefined' && token != undefined){
+			axios.defaults.headers.common['Authorization'] = `Bearer ${JSON.parse(token)}`;
+			setAuthenticated(true);
+			handleUser();
+		}
 
-	        console.log(error);
+		setLoading(false);
+		
+	},[location.key]);
 
-	      }).finally(function () {
-    		setLoading(false);
-  		  });
-	}
+	
 
-	// async function handleLogin(e){
-	// 	e.preventDefault();
-	// 	let token; 
+	async function handleUser() { // esse teste possivelmente deu certo
+	
+	const token = localStorage.getItem('token').replace(/["]/g, '');
 
-	//  	fetch(url, {
-	// 		  method: 'POST',
-	// 		  headers: {
-	// 		    'Content-Type': 'application/json'
-	// 		  },
-	// 		  body: JSON.stringify({
-	// 		    login,
-	// 		    password
-	// 		  })
-	// 		}).then(response => {
-	// 		  	response.json()
-	// 		  	console.log(response);
-	// 		  }).catch(error => {
-	// 		    // Lidar com erros
-	// 		    console.error(error);
-	// 		  });
+		fetch(urlUser, {
+		method: 'post',
+		body: JSON.stringify({
+			token
+		})
+		}).then(function(response) {
+			return response.json();
+		}).then(data => {
+				setUser(data);
+		}).catch(error => {
+			// Lidar com erros
+			console.error(error);
+		});
 
-	// }
+ 	}
 
 	async function handleLogin(e) { // esse teste possivelmente deu certo
-	  e.preventDefault();
-
-	  fetch('http://smdlinos.000webhostapp.com/api/login', {
-	    method: 'post',
-	    body: JSON.stringify({
-		    login,
-		    password
-		})
-	  }).then(function(response) {
-	    return response.json();
-	  }).catch(error => {
-	    // Lidar com erros
-	    console.error(error);
-	  });
-
-	}
-
-	function handleLogout(e){
 		e.preventDefault();
-		localStorage.removeItem('token');
-		axios.defaults.headers.common['Authorization'] = undefined;
-		setUser(null);
-		setAuthenticated(false);
-		navigate('/');
-	}
+		fetch(urlLogin, {
+		method: 'post',
+		body: JSON.stringify({
+			login,
+			password
+		})
+		}).then(function(response) {
+			return response.json();
+		}).then(data => {
+			const token = data;
+			localStorage.setItem('token', JSON.stringify(token));
+			axios.defaults.headers.common['Authorization'] = token;
+			setAuthenticated(true);
+			someFunction('home/'+token);
+		}).catch(error => {
+			// Lidar com erros
+			console.error(error);
+		});
 
-	if (loading) {
-		return <h1>loading.....</h1>;
-	}
+  }
 
+  function handleLogout(e){
+	  e.preventDefault();
+	  localStorage.removeItem('token');
+	  axios.defaults.headers.common['Authorization'] = undefined;
+	  setAuthenticated(false);
+	  setUser(null);
+	  someFunction('');
+  }
+
+  const someFunction = (key) => {{
+    navigate("/"+key, { replace: true });
+    navigate("/"+key);
+  }}
+
+  if (loading) {
+	  return <h1>loading.....</h1>;
+  }
 
 
 

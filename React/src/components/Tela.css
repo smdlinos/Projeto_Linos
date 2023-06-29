@@ -183,7 +183,8 @@ background: #BE2C53;
 }
 
 .espacamento_esqueci{
-    padding-left: 60%;
+    display: flex;
+    justify-content: flex-end;
     
 }
 
@@ -199,7 +200,10 @@ background: #BE2C53;
 .espacamento_grande{
     padding-right: 55%;
 }
-
+.espacamento_visitante{
+    display: flex;
+    justify-content:center;
+}
 .data{
     padding-right: 46%;
 }
@@ -312,4 +316,11 @@ background: #BE2C53;
     display: flex;
     flex-direction: row;
     
+    
 }
+
+.logout:hover{
+    background-color:#FF668F
+    
+}
+

@@ -26,7 +26,7 @@ export default function SessionLogin() {
     <div>
          <br/>
            
-         <Row className="mb-5" className="agrupar">
+         <Row className="mb-5 agrupar">
           <Col sm="auto" none="">
           <Form className="mb-4 rounded p-5 mx-3" onSubmit={handleLogin} method="Post">
             <h2 className="titulo_login mb-4 alinhamento">Seja bem vindo!</h2>
@@ -56,11 +56,11 @@ export default function SessionLogin() {
             <a href="/reset" className="text-muted fonte_login espacamento_esqueci"><small>Esqueci a senha</small></a>
             <br/>
             
-            <Button type="submit" className="px-5 mb-3 mt-4 botao">
+            <Button type="submit" className="px-5 mb-3  botao">
               ENTRAR
             </Button>
             <br />
-            <Link to="/home" className="fonte_login ms-5 ps-3">Ou entre como visitante</Link>
+            <Link to="/home" className="fonte_login espacamento_visitante">Ou entre como visitante</Link>
           </Form>
           <div className="pb-5">
       <p className="pt-4 mb-5 fonte_login alinhamento">Não tem uma conta?<a href="/register">Cadastre-se</a></p>

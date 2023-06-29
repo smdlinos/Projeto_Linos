@@ -44,7 +44,7 @@ function OverlayPerfil() {
                   </Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body className="background_header">
-                  <Nav className="justify-content-end flex-grow-1 pe-3">
+                  <Nav className="justify-content-end flex-grow-1 pe-3 mb-5 pb-5">
                     <div className='m-auto pontos_p mb-3'>
                     <img src={estrela} alt='estrelinha' className='estrela_p'/>
                     {user && <p className='my-1 mx-1 font_p'>{user.user.pontos}</p>}
@@ -55,10 +55,10 @@ function OverlayPerfil() {
                     <Nav.Link href="/certificado"><Button className='botao_overlay' size='lg'><img src={Icon_H} alt='icone' className='px-2 icones' ></img>CERTIFICADOS</Button></Nav.Link>
                     <Nav.Link href="/config" className=''><Button className='botao_overlay' size='lg'><img src={Icon_C} alt='icone' className='px-2 icones'></img>CONFIGURAÇÕES</Button></Nav.Link>
                   </Nav>
-                  {authenticated && <Button variant="link" type="button"  onClick={handleLogout} className=" mb-3 mt-5 pt-5 link ps-5" size='lg'>
-                    <div className='ps-5 ms-4 pt-5 mt-5'>
-                    <img src={Logout_Icon} alt="icone_sair" className=' icones_l'></img><b>SAIR</b>
-                    </div>
+                  {authenticated && <Button variant="link" type="button"  onClick={handleLogout} className="link m-auto logout" size='lg'>
+                    
+                    <img src={Logout_Icon} alt="icone_sair" className='icones_l'></img><b>SAIR</b>
+                    
                     
                     
                     

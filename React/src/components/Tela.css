@@ -324,3 +324,25 @@ background: #BE2C53;
     
 }
 
+.pontos_quest{
+    display: flex;
+    flex-direction: row;
+     
+    justify-content: flex-end;
+    color: #F1C22E;
+    width: 1rem;
+    
+}
+
+.estrela_quest{
+    width: 2rem;
+    font-size: 20px;
+    font-family: "Supreme", sans-serif;
+    font-weight: 700;
+    align-self: center;
+}
+
+.botao_modal{
+    text-decoration: none;
+}
+

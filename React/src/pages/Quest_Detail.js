@@ -5,7 +5,7 @@ import "../components/Tela.css"
 //Components
 import Footer from "../components/Global/Footer";
 import Logo from "../components/imagens/quest_logo.png";
-import Titulo_q from "../components/Quests/Titulo_q";
+import Titulo_q from "../components/Quests/Modal_q";
 import Body_q from "../components/Quests/Body_q";
 import Header_q from "../components/Quests/Header_q";
 

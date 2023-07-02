@@ -10,7 +10,9 @@ const Inicio = () => {
         <Row className='pt-5 pb-3'>
             <Col className='pt-5 pb-3'>
                 <h1 className='pt-5 pb-3 titulo_land'>A melhor maneira de responder questionários</h1>
-                <p className='text_land'>Lorem Ipsum is simply dummy text of the prin and typesetting industry. Lorem Ipsum hais be the industry's standard dummy text.</p>
+                <p className='text_land'>
+                    Já pensou se fosse possível receber <strong>horas complementares</strong> ao responder questionários online? Com o <strong>Quests</strong>, isso acaba de se tornar realidade!
+                </p>
                 <Button className="botao" href="/login">CADASTRE-SE JÁ</Button>
             </Col>
             <Col className='pb-5'>

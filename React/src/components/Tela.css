@@ -156,6 +156,10 @@ background: #BE2C53;
     gap: 40px;
 }
 
+.sobreposicao_desc{
+    background: url(./imagens/fundo_desc.svg);
+}
+
 .itens_nav{
     white-space: nowrap;
 }

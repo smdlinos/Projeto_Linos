@@ -14,12 +14,14 @@ function AuthProvider({ children }){
 
 	const [authenticated, setAuthenticated] = useState(false);
 	const [login, setLogin] = useState();
-  	const [password, setPassword] = useState();
-  	const [loading, setLoading] = useState(true);
+  const [password, setPassword] = useState();
+  const [loading, setLoading] = useState(true);
 	const [user , setUser] = useState(null);
-  	const navigate = useNavigate();
+  const navigate = useNavigate();
 	const location = useLocation();
-  	useEffect(() =>{
+
+
+  useEffect(() =>{
 		const token = localStorage.getItem('token');
 		
 		if(token && token != 'undefined' && token != undefined){
@@ -65,11 +67,15 @@ function AuthProvider({ children }){
 		}).then(function(response) {
 			return response.json();
 		}).then(data => {
-			const token = data;
-			localStorage.setItem('token', JSON.stringify(token));
-			axios.defaults.headers.common['Authorization'] = token;
-			setAuthenticated(true);
-			someFunction('home/'+token);
+			if (data != false) {
+				const token = data;
+				localStorage.setItem('token', JSON.stringify(token));
+				axios.defaults.headers.common['Authorization'] = token;
+				setAuthenticated(true);
+				someFunction('home/'+token);
+			}else{
+				alert('Email e/ou senha incorretos');
+			}
 		}).catch(error => {
 			// Lidar com erros
 			console.error(error);

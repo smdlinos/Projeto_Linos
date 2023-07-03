@@ -1,10 +1,7 @@
-import fundo_desc from "../imagens/fundo_desc.svg"; 
 import lina_desc from "../imagens/lina_desc.svg"; 
 import fala_lina_desc from "../imagens/fala_lina_desc.svg"; 
 import Row from 'react-bootstrap/esm/Row';
 import Col from 'react-bootstrap/esm/Col';
-import Stack from 'react-bootstrap/Stack';
-import Button from 'react-bootstrap/Button';
 
 const Descricao = () => {
     return (

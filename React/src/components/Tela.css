@@ -10,7 +10,6 @@ body{
     justify-content: space-evenly;
     text-align: center;
     padding-left: 14px;
-
 }
 
 .alinhamento{
@@ -154,6 +153,10 @@ background: #BE2C53;
     justify-content: space-evenly;
     align-items: center;
     gap: 40px;
+}
+
+.sobreposicao_desc{
+    background: url(./imagens/fundo_desc.svg);
 }
 
 .itens_nav{

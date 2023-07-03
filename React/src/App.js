@@ -43,9 +43,11 @@ export default function App() {
  
             <Route path = "/home/:id" element= {<Home/>}/>
 
-            <Route path = "/config/:id" element = {<Config/>}/> 
+            <Route path = "/config" element = { authenticated && <Navigate to={'/config/'+localStorage.getItem('token').replace(/["]/g, '')}/>} /> 
+            
+            <Route path = "/config/:id" element= {<Config/>}/>
 
-            <Route path = "/certificado/:id" element = {<Certificado/>}/> {/*id do certificado vai ser relacionado ao id do usuário no bd, logo
+            <Route path = "/certificado" element = {<Certificado/>}/> {/*id do certificado vai ser relacionado ao id do usuário no bd, logo
             //não precisa do token, só do id do certificado -> no estilo do quests_d */} 
             <Route path = "/user/:id/historic" element = {<Search/>}/> // o histórico vai puxar um conjunto de infos
 

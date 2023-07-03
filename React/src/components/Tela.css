@@ -260,6 +260,13 @@ background: #BE2C53;
     font-size: 20px;
 }
 
+.font_t{
+    font-family: "Supreme", sans-serif;
+    font-weight: 700;
+    color: #08394D;
+    font-size: 16px;
+}
+
 
 .alert{
     color: rgb(255, 0, 0);
@@ -268,10 +275,23 @@ background: #BE2C53;
 .botao_voltar{
     padding-top: 0.5rem;
 }
-
+.div_horas{
+    float: center;
+    position: relative;
+}
 .horas{
    width: 21rem;
    box-sizing: border-box;
+}
+
+.texto_horas{
+    position: absolute;
+   top: 5rem;
+   left: 8.5rem;
+   /*cor apenas para exmplo*/
+   color: #08394D;
+   font-family: "Supreme", sans-serif;
+    font-weight: 700;
 }
 
 .perfil_koala{
@@ -346,3 +366,32 @@ background: #BE2C53;
     text-decoration: none;
 }
 
+.recomendado{
+    font-family: "Supreme", sans-serif;
+    font-weight: 700;
+    border-radius: 600px;
+    width: 22rem;
+    text-align: start;
+    color: #08394D;
+    background-color: #fff;
+    border-color: #F1C22E;
+    box-shadow: none;
+    outline:none; 
+}
+
+.nao-recomendado{
+    font-family: "Supreme", sans-serif;
+    font-weight: 700;
+    background-color: #fff;
+    border-radius: 200px;
+    width: 22rem;
+    text-align: start;
+    color: #08394D;
+    border-color: #08394D;
+    box-shadow: none;
+    outline:none; 
+}
+.tags{
+    
+    align-self: center;
+}

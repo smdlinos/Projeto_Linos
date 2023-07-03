@@ -28,9 +28,10 @@ export default function BodyCertificado() {
             </p>
             </Col>
         </Row>
-        <Row>
-            <Col className="">
-            <img src={horas} alt="logo" className=" rounded mx-auto d-block horas"/>
+        <Row className="div_horas">
+          <img src={horas} alt="logo" className="rounded mx-auto d-block horas"/>
+            <Col className="texto_horas">
+            <p><b>X Horas Complementares</b></p>
             </Col>
         </Row>
         <Row className="mt-5 pb-3">

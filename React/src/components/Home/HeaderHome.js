@@ -7,7 +7,7 @@ import Stack from 'react-bootstrap/Stack';
 import lupa from "../imagens/lupa2.svg";
 import perfil from "../imagens/noto_lion.png";
 import estrela from "../imagens/estrela2.svg";
-import logo from "../imagens/logo_oficial.svg";
+import logo from "../imagens/logo_quest.svg";
 
 import OverlayPerfil from "./OverlayPerfil";
 
@@ -24,7 +24,6 @@ export default function HeaderHome() {
     <div>
       <Container className="mb-4 background_header">
         <Row className="justify-content-center mt-3">
-       
           <Col className="mt-4">
             <img src={lupa}
             alt="lupa" className="pt-2 pe-5"/>
@@ -34,7 +33,7 @@ export default function HeaderHome() {
           </Col>
           <Col className="mt-3 itens ">
           {authenticated && 
-            <Stack direction="horizontal" gap={1}>  
+            <Stack direction="horizontal" gap={1} className="pt-1">  
               <img src={estrela} alt="estrela" className="estrela"/>
            {user && <p className="pt-1 pontos ">{user.user.pontos}</p> }
               <OverlayPerfil/>

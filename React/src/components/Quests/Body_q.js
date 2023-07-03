@@ -12,6 +12,7 @@ import User from "../imagens/user.svg";
 import House from "../imagens/home.svg"
 import Modal from 'react-bootstrap/Modal';
 import Modal_Icon from '../imagens/modal_icon.svg';
+import etiqueta from "../imagens/etiqueta.svg";
 
 
 //Dependences
@@ -99,17 +100,20 @@ export default function Body_q({quest , auth}) {
   const verifyMatch = ( id ,matches) => {
     for (var i = 0 ; i < matches.length; i++) {
       if (id == matches[i]) {
-        return 'alert';
+        return 'recomendado';
+        } 
       }
+      return "";
     }
-  }
+
+
 
 
   return (
-    <div className="mx-3">
+    <div className="mx-3 font_t">
       <Container className=" ">
         <Row className="">
-          <Col className="mt-4 titulo">
+          <Col className="mt-4 titulo" xs={10}>
             <h2 className="titulo_login">
              {quest.titulo}
             </h2>
@@ -166,17 +170,23 @@ export default function Body_q({quest , auth}) {
                 onHide={() => setModalShow(false)}
               />
 
-              <ul>
+              <div className="tags">
               {(quest.temas !=undefined || quest.temas !=null) && loading == false  &&
               <>
                 {quest.temas.map((e) => (
-                  <li key={e.id_tema} className={verifyMatch(e.id_tema, matches)}>
-                    {e.tema}
-                  </li>
+                  
+                  <button key={e.id_tema} className={verifyMatch(e.id_tema, matches) != "" ? 
+                  verifyMatch(e.id_tema, matches):"nao-recomendado"
+                } >
+                    <img src={etiqueta} alt="etiqueta_icon" className="pe-2"></img>{e.tema}
+                  </button>
                 ))}
                 </>
               }
-              </ul>
+
+              </div>
+              
+              
             </Col>
         </Row>
         <Row>

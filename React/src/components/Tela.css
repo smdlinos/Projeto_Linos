@@ -230,7 +230,7 @@ background: #BE2C53;
 }
 
 .background_land{
-    background-color: #E7F1F5;
+    background-color: #FFFF;
 }
 
 .titulo_land{
@@ -290,7 +290,7 @@ background: #BE2C53;
 .texto_horas{
     position: absolute;
    top: 5rem;
-   left: 8.5rem;
+   left: 10rem;
    /*cor apenas para exmplo*/
    color: #08394D;
    font-family: "Supreme", sans-serif;

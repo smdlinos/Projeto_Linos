@@ -12,7 +12,7 @@ import Header_q from "../components/Quests/Header_q";
 function Certificado(){
     
     return(
-        <div>
+        <div className="background_land">
             <Header_q />
             <BodyCertificado />
             <Footer />        

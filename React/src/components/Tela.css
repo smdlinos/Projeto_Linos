@@ -398,3 +398,24 @@ background: #BE2C53;
     
     align-self: center;
 }
+
+.background_config{
+    background-color: #fff;
+}
+
+.imagem_perfil{
+    float: center;
+    position: relative;
+}
+
+.botao_editar{
+    position: absolute;
+   top: 0rem;
+   left: 14rem;
+}
+
+.senha_config{
+    text-align: end;
+    color: #08394D;
+    
+}

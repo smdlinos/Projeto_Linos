@@ -10,24 +10,28 @@ import Form from "react-bootstrap/Form";
 import "../Tela.css";
 import Perfil_k from "../imagens/Perfil_k.svg"
 import Editar from "../imagens/editar_perfil.svg"
+import Form_config from "./FormConfig";
+
+
 
 
 
 export default function BodyConfig() {
   return (
-    <div className="bg-light">
-      <Container className="mb-4 px-4 fonte_login alinhamento">
+    <div className="">
+      <Container className="mb-4 px-4 fonte_login">
         <Row>
             <Col>
-                <h3 className="titulo_login  pt-4">Configurações</h3>
+                <h3 className="titulo_login alinhamento pt-4">Configurações</h3>
             </Col>
         </Row>
-        <Row>
+        <Row className="imagem_perfil">
         <img src={Perfil_k} alt="perfil_koala" className="perfil_koala m-auto pt-3"></img>
-        <img src={Editar} alt="editar" className=" m-auto pt-3"></img>
-        
-            
+        <Col className="botao_editar">
+        <img src={Editar} alt="editar" className=" m-auto pt-3 "></img>
+        </Col>
         </Row>
+        <Form_config></Form_config>
       </Container>
     </div>
   );

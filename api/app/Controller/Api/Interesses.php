@@ -19,12 +19,20 @@ class Interesses
 	public static function getInteresses($request)
 	{
 		Api::setHeaders();
-	  $token = $request['request']->getHeaders()['Authorization'];
-	  $token = str_replace('Bearer ', '', $token);
+		
+	    $token = $request['request']->getBody();
+        
+	  	if (!$token) {
+	  		echo json_encode(false);
+	    	http_response_code(401);
+	    	exit;
+	  	}
+
+	  	$token = json_decode($token);
 
     	try {
 
-	        $decoded = JWT::decode($token, new Key(KEY, 'HS256'));
+	        $decoded = JWT::decode($token->token, new Key($_ENV['KEY'], 'HS256'));
 
 	        $user = EntityUser::getUserByEmail($decoded->email); // busca o usuario
 
@@ -69,9 +77,12 @@ class Interesses
 		return $obInteresse;
 	}
 
+
+
+
 	public static function filtraInteresses($user)
 	{
-		if(!$user instanceof EntityUser){ // verifica o usuário
+		if(!$user){ // verifica o usuário
     	echo json_encode(false);
     	http_response_code(401);
     	exit;
@@ -94,6 +105,28 @@ class Interesses
     ];
 
     return $data;
+	}
+
+	public static function removeInteresses($user)
+	{
+	    // fazer uma lista com o id dos interesses;
+
+	  $allInteresses = EntityInteresses::getInteresses(null, null, null); //array
+	  $interesses = [];
+
+		foreach ($allInteresses as $key => $value) {
+			if ($allInteresses[$key]->id_usuario == $user->id_usuario) {
+				$interesses[] = $allInteresses[$key]->id_interesse;
+			}
+		}
+
+		foreach ($interesses as $key => $value) {
+			$obInteresse = new EntityInteresses();
+			$obInteresse->id_interesse = $value;
+			$obInteresse->deleteInteresse();
+		}
+
+		return true;
 	}
 
 }

@@ -9,7 +9,7 @@ use \PDO;
  * 
  */
 class User
-{	
+{
 
 	public $id_usuario;
 
@@ -21,6 +21,8 @@ class User
 
 	public $password;
 
+	public $custom;
+
 	public $data_nascimento;
 
 	public $genero;
@@ -29,22 +31,19 @@ class User
 
 	public $pontos;
 
-	public $posicao;
-
-
 
 	public function updateUser()
 	{
-		return (new Database('usuarios'))->update('id_usuario= '.$this->$id_usuario,[
+		return (new Database('usuarios'))->update('id_usuario= "'.$this->id_usuario.'"',[
 			'name' 	  		  => $this->name,
 			'nickname' 		  => $this->nickname,
 			'email'   		  => $this->email,
 			'password' 		  => $this->password,
+			'custom'		  => $this->custom,
 			'data_nascimento' => $this->data_nascimento,
 			'genero'   		  => $this->genero,
 			'escolaridade'	  => $this->escolaridade,
-			'pontos'   		  => $this->pontos,
-			'posicao'  		  => $this->posicao
+			'pontos'   		  => $this->pontos
 		]);
 	}
 
@@ -53,6 +52,13 @@ class User
 
 		return (new Database('usuarios'))->update('email = "'.$email.'"',[
 			'password' 		  => $this->password
+		]);
+	}
+
+	public function updateUserPontuacao()
+	{
+		return (new Database('usuarios'))->update('email = "'.$this->email.'"',[
+			'pontos' 		  => $this->pontos
 		]);
 	}
 
@@ -65,11 +71,11 @@ class User
 			'nickname' 		  => $this->nickname,
 			'email'   		  => $this->email,
 			'password' 		  => $this->password,
+			'custom'		  => $this->custom,
 			'data_nascimento' => $this->data_nascimento,
 			'genero'   		  => $this->genero,
 			'escolaridade'	  => $this->escolaridade,
 			'pontos'   		  => $this->pontos,
-			'posicao'  		  => $this->posicao
 		]);
 
 		return true;
@@ -98,9 +104,9 @@ class User
 										->fetchObject(self::class);
 	}
 
-	public function deleteUser($value='')
+	public function deleteUser()
 	{
-		return (new Database('usuarios'))->delete('id_usuario = '.$this->id);
+		return (new Database('usuarios'))->delete('id_usuario = '.$this->id_usuario);
 	}
 
 

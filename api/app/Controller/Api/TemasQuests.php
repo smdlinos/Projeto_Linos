@@ -72,14 +72,15 @@ class TemasQuests
 
 	public static function filtraTags($quest)
 	{
-		if(!$quest){ // verifica o usuário
+		if(!$quest){ // verifica o questionario
     	echo json_encode(false);
     	http_response_code(401);
     	exit;
-    }
+        }
 
     $getTags = EntityTemasQuests::getTags(); // pesquisa todas as Tags
-
+    $tags = [];
+    
     foreach ($getTags as $key => $value) { // filtra os interesses e pega somente os temas do usuário 
       if($getTags[$key]->id_questionario == $quest->id_questionario){
        $tags[] = $value->id_tema;

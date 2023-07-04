@@ -6,6 +6,17 @@ use \Closure;
 use \ReflectionFunction;
 use \App\HTTP\Middleware\Queue;
 
+/**
+ * Esse classe é responsável pelas leitura de url;
+ * 
+ * Seu funcionamento é respectivo aos comandos que estão atrelados as urls que 
+ * devem chamar funções específicas
+ * 
+ * Todas as rotas estão conectadas ao objeto router, que permite a análise destas
+ * para a realização de suas devidas funcionalidades.
+ * 
+ */
+
 class Router
 {
 	private $url = '';

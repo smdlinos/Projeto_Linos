@@ -5,8 +5,13 @@ namespace App\Controller\Api;
 use App\Model\Entity\Interesses as EntityInteresses;
 
 use App\Controller\Api\Interesses;
+use App\Controller\Api\Pesquisas;
 use App\Controller\Api\Tabletop;
 use App\Controller\Api\Api;
+use App\Controller\Api\UsersAwards;
+use App\Controller\Api\Historico;
+use App\Controller\Api\Respostas;
+
 
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
@@ -38,20 +43,21 @@ class User
 	public static function getUser($request)
 	{
 		Api::setHeaders();
-
-	  	@$token = $request['request']->getHeaders()['Authorization'];
-
+    
+        $token = $request['request']->getBody();
+        
 	  	if (!$token) {
 	  		echo json_encode(false);
 	    	http_response_code(401);
 	    	exit;
 	  	}
 
-	  	$token = str_replace('Bearer ', '', $token);
+	  	$token = json_decode($token);
+	  	
 
     	try {
 
-	        $decoded = JWT::decode($token, new Key($_ENV['KEY'], 'HS256'));
+	        $decoded = JWT::decode($token->token, new Key($_ENV['KEY'], 'HS256'));
 
 	        $user = EntityUser::getUserByEmail($decoded->email); // busca o usuario
 
@@ -110,13 +116,13 @@ class User
 	    }
 
 	    $validate = validate([
-			'name' => 'required',
-			'nickname' => 'required|unique:usuarios',
-			'email' => 'email|unique:usuarios',
-			'password' => 'required|maxlen:15',
+			'name' 			  => 'required',
+			'nickname' 		  => 'required|unique:usuarios',
+			'email' 		  => 'email|unique:usuarios',
+			'password' 		  => 'required|maxlen:15',
 			'data_nascimento' => 'required',
-			'genero' => 'required',
-			'escolaridade' => 'required'
+			'genero' 		  => 'required',
+			'escolaridade' 	  => 'required'
 		], $cadastrar);
 
 		if (!$validate) {
@@ -127,20 +133,19 @@ class User
 
 	    $validate['password'] = password_hash($validate['password'], PASSWORD_DEFAULT);
 		$validate['pontos'] = 0;
-		$validate['posicao']= 0;
 
 
 		$user = new EntityUser();
 
-		$user->name = $validate['name'];
-		$user->nickname = $validate['nickname'];
-		$user->email = $validate['email'];
-		$user->password = $validate['password'];
+		$user->name 		   = $validate['name'];
+		$user->nickname 	   = $validate['nickname'];
+		$user->email 		   = $validate['email'];
+		$user->password 	   = $validate['password'];
+		$user->custom 		   = 1;
 		$user->data_nascimento = $validate['data_nascimento'];
-		$user->genero = $validate['genero'];
-		$user->escolaridade = $validate['escolaridade'];
-		$user->pontos = $validate['pontos'];
-		$user->posicao =$validate['posicao'];
+		$user->genero 		   = $validate['genero'];
+		$user->escolaridade    = $validate['escolaridade'];
+		$user->pontos 		   = $validate['pontos'];
 
 		$user->registerUser();
 
@@ -170,7 +175,7 @@ class User
 
 		$dataTabletop = [
 			'id_usuario'  => $user->id_usuario,
-			'posicao' 	  => $user->posicao,
+			'posicao' 	  => 0,
 			'ch' 		  => 0
 		];
 
@@ -206,16 +211,16 @@ class User
 		Api::setHeaders();
 
 	    $post_body = $request['request']->getBody();
-	    $token = $request['request']->getHeaders()['Reset'];
 	    $post_body = json_decode($post_body, true);
-		$token = str_replace('Bearer ', '', $token);
-	    $decoded = JWT::decode($token, new Key($_SERVER['KEY'], 'HS256'));
 
-	    if (!$token) {
+	    if (!$post_body) {
 	    	echo json_encode(false);
 	    	http_response_code(401);
 	    	exit;
 	    }
+
+	    $decoded = JWT::decode($post_body['token'], new Key($_SERVER['KEY'], 'HS256'));
+
 
       	try {
 
@@ -236,8 +241,6 @@ class User
 	      	$user->password = $password;
 		    $user->updateUserPassword($email);
 
-	        var_dump($user);
-			exit;
 	      	if(!$user instanceof EntityUser){
 		        echo json_encode(false);
 		        http_response_code(401);
@@ -289,13 +292,13 @@ class User
 	    }
 
 	    $validate = validate([
-			'name' => 'required',
-			'nickname' => 'required|unique:usuarios',
-			'email' => 'email|unique:usuarios',
-			'password' => 'required|maxlen:15',
+			'name' 			  => 'required',
+			'nickname' 		  => 'required|unique:usuarios',
+			'email' 		  => 'email|unique:usuarios',
+			'password'		  => 'required|maxlen:15',
 			'data_nascimento' => 'required',
-			'genero' => 'required',
-			'escolaridade' => 'required'
+			'genero' 		  => 'required',
+			'escolaridade' 	  => 'required'
 		], $cadastrar);
 
 		if (!$validate) {
@@ -308,8 +311,188 @@ class User
 	    http_response_code(200);
 	    exit;
 	}
+
+	public static function updateUser($request)
+	{
+		Api::setHeaders();
+
+		$post_body = $request['request']->getBody();
+		$post_body = json_decode($post_body, true);
+		$cadastrar = [];
+	    $interesses = $post_body['interesses'];
+
+	    if (!$post_body) {
+	  		echo json_encode(false);
+	    	http_response_code(401);
+	    	exit;
+	    }
+
+	    $decoded = JWT::decode($post_body['token'], new Key($_ENV['KEY'], 'HS256'));
+
+	    $usuario = EntityUser::getUserByEmail($decoded->email); // busca o usuario
+
+		foreach ($post_body as $key => $value) {
+			if($key !== "interesses" && $key !== "token"){
+				$cadastrar[$key] = $value;
+			}
+		}
+
+
+		foreach ($cadastrar as $key => $value) {
+       		$_POST[$key] = $value;
+
+	    }
+
+	    $validate = validate([
+			'name' 			  => 'required',
+			'nickname' 		  => 'required|unique:usuarios',
+			'email'  		  => 'email|unique:usuarios',
+			'password' 		  => 'required|maxlen:15',
+			'data_nascimento' => 'required',
+			'genero' 		  => 'required',
+			'escolaridade' 	  => 'required'
+		], $cadastrar);
+
+		if (!$validate) {
+			echo json_encode(false);
+	    	http_response_code(401);
+	    	exit;
+		}
+
+	    $validate['password'] = password_hash($validate['password'], PASSWORD_DEFAULT);
+		$validate['pontos'] = 0;
+
+		$user = new EntityUser();
+
+		$user->id_usuario	   = $usuario->id_usuario;
+		$user->name 		   = $validate['name'];
+		$user->nickname 	   = $validate['nickname'];
+		$user->email 		   = $validate['email'];
+		$user->password 	   = $validate['password'];
+		$user->custom 		   = $cadastrar['custom'];
+		$user->data_nascimento = $validate['data_nascimento'];
+		$user->genero 		   = $validate['genero'];
+		$user->escolaridade    = $validate['escolaridade'];
+		$user->pontos 		   = $validate['pontos'];
+		$user->updateUser();
+
+		if(!$user->id_usuario){
+			echo json_encode(false);
+			http_response_code(401);
+			exit;
+		}
+
+		$remove = Interesses::removeInteresses($usuario); // remover os interesses do usuário
+
+		if (!$remove) {
+			echo json_encode(false);
+			http_response_code(401);
+			exit;
+		}
+
+		Interesses::setInteresses($usuario->id_usuario, $interesses);
+
+		self::auth($user);
+	}
 	
+	public static function verifyPasswordToDelete($request)
+	{
+	    Api::setHeaders();
+
+	    $post_body = $request['request']->getBody();
+	    $post_body = json_decode($post_body, true);
+
+	    if(!$post_body) {
+	      echo json_encode(false);
+	      http_response_code(401);
+	      exit;
+	    }
+
+	    $password = $post_body['password'];
+
+	    $decoded = JWT::decode($post_body['token'], new Key($_ENV['KEY'], 'HS256'));
+
+	    $usuario = EntityUser::getUserByEmail($decoded->email); // busca o usuario
+
+	    if(empty($password)){
+	      echo json_encode(false);
+	      http_response_code(401);
+	      exit;
+	    }
+
+	    if(!(password_verify($password ,$usuario->password))){
+	      echo json_encode(false);
+	      http_response_code(401);
+	      exit;
+
+	    } else {
+
+	      $removeInteresses  = Interesses::removeInteresses($usuario);
+	      $removeTabletop    = Tabletop::removeTabletop($usuario);
+	      $removePesquisas	 = Pesquisas::removePesquisas($usuario);
+	      $removeRecompensas = UsersAwards::removeAwards($usuario);
+	      $removeHistorico   = Historico::removeHistorico($usuario);
+	      $removeRespostas   = Respostas::removeRespostas($usuario);
+
+	      $user = new EntityUser();
+	      $user->id_usuario = $usuario->id_usuario;
+		  $user->deleteUser();
+
+	      echo json_encode(true);
+	      http_response_code(200);
+	      exit;
+	    }      
+	    
+	}
+
+	public static function verifyPasswordToChange($request)
+	{
+	    Api::setHeaders();
+
+	    $post_body = $request['request']->getBody();
+	    $post_body = json_decode($post_body, true);
+
+	    if(!$post_body) {
+	      echo json_encode(false);
+	      http_response_code(401);
+	      exit;
+	    }
+
+	    $oldPassword = $post_body['password'];
+	    $newPassword = $post_body['newPassword'];
+
+	    $decoded = JWT::decode($post_body['token'], new Key($_ENV['KEY'], 'HS256'));
+
+	    $usuario = EntityUser::getUserByEmail($decoded->email); // busca o usuario
+
+	    if(empty($oldPassword)){
+	      echo json_encode(false);
+	      http_response_code(401);
+	      exit;
+	    }
+
+	    if(!(password_verify($oldPassword ,$usuario->password))){
+	      echo json_encode(false);
+	      http_response_code(401);
+	      exit;
+
+	    } else {
+
+	      $newPassword = password_hash($newPassword, PASSWORD_DEFAULT);
+
+	      $user = new EntityUser();
+	      $user->password = $newPassword;
+		  $user->updateUserPassword($decoded->email);
+
+	      echo json_encode(true);
+	      http_response_code(200);
+	      exit;
+	    }      
+	    
+	}
+
 }
+
 
 #post para a url de teste
 

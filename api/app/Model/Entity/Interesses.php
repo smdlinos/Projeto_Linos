@@ -50,9 +50,9 @@ class Interesses
 										   ->fetchObject(self::class);
 	}
 
-	public function deleteInteresse($value='')
+	public function deleteInteresse()
 	{
-		return (new Database('interesses'))->delete('id_usuario = '.$this->id);
+		return (new Database('interesses'))->delete('id_interesse = '.$this->id_interesse);
 	}
 
 } 

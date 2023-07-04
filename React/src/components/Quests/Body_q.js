@@ -128,10 +128,10 @@ export default function Body_q({quest , auth}) {
         </Row>
         <Row className="pt-2">
           <Col sm={6}>
-          <p className=""><img src={User} alt="user_icon" className="pe-2 pb-1"></img>Pesquisador: {quest.autor}</p>
+          <p className=""><img src={User} alt="user_icon" className="pe-2 pb-1"/>Pesquisador: {quest.autor}</p>
           </Col>
           <Col>
-            <p><img src={House} alt="house_icon" className="pe-2 pb-1"></img>Instituição: {quest.instituicao} </p>
+            <p><img src={House} alt="house_icon" className="pe-2 pb-1"/>Instituição: {quest.instituicao} </p>
           </Col>
           
         </Row>
@@ -187,12 +187,13 @@ export default function Body_q({quest , auth}) {
               </div>
               
               
+
             </Col>
         </Row>
         <Row>
             
         </Row>
-        <a href={'https://'+`${quest.link}`}><Button type="button" className="px-5 mb-3 mt-3 botao">
+        <a href={quest.link}><Button type="button" className="px-5 mb-3 mt-3 botao">
             LINK DO QUESTIONÁRIO
         </Button>
         </a>

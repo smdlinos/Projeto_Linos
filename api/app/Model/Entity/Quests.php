@@ -54,7 +54,7 @@ class Quests
 
 		$obDatabase = new Database('questionarios');
 
-		$this->id = $obDatabase->insert([
+		$this->id_questionario = $obDatabase->insert([
 			'titulo' 	  	  => $this->titulo,
 			'autor' 		  => $this->autor,
 			'instituicao'     => $this->instituicao,
@@ -72,6 +72,11 @@ class Quests
 	public static function getQuestByName($name)
 	{
 		return (new Database('questionarios'))->select('name = "'.$name.'"')->fetchObject(self::class);
+	}
+
+	public static function getQuestByLink($link)
+	{
+		return (new Database('questionarios'))->select('link = "'.$link.'"')->fetchObject(self::class);
 	}
 
 	public static function getQuests($where = null, $order = null, $limit = null)

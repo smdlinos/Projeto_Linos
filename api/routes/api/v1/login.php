@@ -18,7 +18,7 @@ $obRouter->post('/login/reset', [  //Verifica se o usuário existe -> retorna o 
 	}]
 );
 
-$obRouter->post('/reset/code', [  //verifica o codigo enviado pelo email 
+$obRouter->post('/verify/code', [  //verifica o codigo enviado pelo email 
 	function($request)
 	{
 		return new Response(200, Api\Login::vefifyCode($request));

@@ -4,14 +4,30 @@ import "../Tela.css";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal_Senha from "./ModalSenha";
+import etiqueta from "../imagens/etiqueta.svg";
+import Modal_Interesse from "./ModalTag";
+import Modal_Deletar from "./ModalDeletar";
+import Lixo from "../imagens/trash.svg"
+//import Trash from "../imagens/trash.svg"
 
 
 //Dependences
 import { useFetch } from "../../hooks/useFetch"
 import React, { useContext, useEffect, useState } from 'react';
+import { Context } from '../../context/AuthContext';
+
+
+
+
+const urlI = 'https://smdquests.000webhostapp.com/api/user/interesses';
 
 
 const Form_config = (props) => {
+    
+    const [interesses,setInteresses] = useState();
+    const [loading, setLoading] = useState(true);
+    const {user} = useContext(Context);
+    console.log(user)
     const [modalShow, setModalShow] = React.useState(false);
     //const [password1, setPassword1] = useState(1);
 
@@ -19,7 +35,30 @@ const Form_config = (props) => {
         e.preventDefault();
         props.validate();
    }
+   useEffect(() => {
+    async function getInteresses() { // esse teste possivelmente deu certo
 
+        const token = localStorage.getItem('token').replace(/["]/g, '');
+
+        fetch(urlI, {
+          method: 'post',
+          body: JSON.stringify({
+            token
+        })
+        }).then(function(response) {
+            return response.json();
+        }).then(data => {
+            setInteresses(data.interesses);
+          }).catch(error => {
+            // Lidar com erros
+            console.error(error);
+        });
+
+    }
+
+    getInteresses();
+    setLoading(false);
+  }, [])
     return <>
    
                 <div className="fonte_login">
@@ -54,8 +93,8 @@ const Form_config = (props) => {
                     id="passaword" 
                     onChange={props.password}
                     />
-                    
                     </Form.Group>
+                    
                     <div className="senha_config">
 
                     <Button variant="link" className="senha_config" onClick={() => setModalShow(true)}>
@@ -117,14 +156,45 @@ const Form_config = (props) => {
                     type="date" id="date" 
                     name="meeting-time" />
                     </Form.Group>
-
+                    
                     <br/>
+                    <div>
+                    <p>Seus interesses</p>
+                    <div className="tags">
+                    {interesses && loading == false  &&
+                    <>
+                    {interesses.map((e) => (
+                  
+                    <button key={e.id_tema} className="nao-recomendado">
+                    <img src={etiqueta} alt="etiqueta_icon" className="pe-2"></img>{e.tema}
+                    </button>
+                    ))}
+                </>
+              }
+
+              </div>
+              <div className="senha_config">
+
+                <Button variant="link" className="senha_config" onClick={() => setModalShow(true)}>
+                        Redefinir seus interesses
+                    </Button>
+
+                    <Modal_Interesse
+                        show={modalShow}
+                        onHide={() => setModalShow(false)}
+                    />
+                </div>
+                    </div>
+                    
                     <Button variant="primary" type="button" onClick={alteraForm} className="px-5 mb-3 mt-3 botao">
                     SALVAR ALTERAÇÕES
                     </Button>
-                    <Button variant="primary" type="button" className="px-5 mb-3 mt-3 botao">
-                    APAGAR CONTA
+                    <div className="botao_deletar">
+                    <Button variant="link" type="button" className=" mb-3 mt-3 botao_deletar" >
+                    <img src={Lixo} alt="lixo" className="lixeira pb-1"></img>DELETAR CONTA
                     </Button>
+                    </div>
+                    
                     </div>
                     
     </>

@@ -28,7 +28,7 @@ export default function Modal_Senha(props) {
       <Modal.Header closeButton>
       </Modal.Header>
       <Modal.Body>
-        <h4 className="ms-5 ps-5">Redefinir a Senha</h4>
+        <h4 className="alinhamento titulo_login">Redefinir a Senha</h4>
         <Form.Group className="mb-2">
                     <Form.Label htmlFor="password1" className="text-muted pt-2">Senha atual</Form.Label>
                     <Form.Control 

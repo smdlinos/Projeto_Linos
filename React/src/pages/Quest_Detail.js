@@ -53,7 +53,7 @@ function Quest_D (){
     }, [quest])
 
     return(
-        <div className="background">
+        <div className="background_config">
             <Header_q/>
             <main>
             {loading ? (<p>Carregando</p>) :

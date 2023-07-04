@@ -6,6 +6,10 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Carousel from 'react-bootstrap/Carousel';
 import estrela from "../imagens/estrela.svg";
+import User from "../imagens/user2.svg";
+import House from "../imagens/home2.svg";
+import Clock from "../imagens/Clock_q.svg"
+import Star from "../imagens/star_q.svg"
 
 //Dependeces
 import { useNavigate } from "react-router-dom";
@@ -19,7 +23,7 @@ function Forms(props){
         <div>
             <Container>
               <Row >
-               <Col md="auto">  
+               <Col className="mx-3 ">  
                     <Carousel >
                     {props.quests && props.quests.map((quest) => (
                         <Carousel.Item key={quest.id_questionario}>
@@ -27,19 +31,51 @@ function Forms(props){
                                 onClick={(e)=>navigate("/quest_d/"+quest.id_questionario)}
                                 id = {quest.id_questionario}
                                 style={{ width: '23rem' }}
-                                className="mb-2 m-auto card bg-dark"
+                                className="mb-2 card"
                             >
-                            <Card.Body >
-                                <Card.Title >{quest.titulo}</Card.Title>
+                            <Card.Body className="mx-4">
+                                <Card.Title className="font_quests">{quest.titulo}</Card.Title>
                                 <Card.Text>
-                                    <small>{quest.autor}</small><br/>
-                                    <small>{quest.instituicao}</small><br/>
-                                    {quest.descricao}
+                                    <Row>
+                                        <Col xs={1} className="espaco_card">
+                                        <img src={User} alt="icon" className="cor_itens"/>
+                                        </Col>
+                                        <Col>
+                                        <small>{quest.autor}</small>
+                                        </Col>
+                                    </Row>
+                                    <Row className="pb-3">
+                                        <Col xs={1}>
+                                        <img src={House} alt="icon" className="cor_itens"/>
+                                        </Col>
+                                        <Col>
+                                        <small>{quest.instituicao}</small><br/>
+                                        </Col>
+                                    </Row>
+                                    <Row>
+                                        <Col>
+                                        <small>{quest.descricao}</small>
+                                        </Col>
+                                    </Row>
+                                    
                                     <br/>
-                                    <img src={estrela} alt='pontos'className='estrelinha'/>
-                                    {quest.pontuacao} - Postado em {quest.data_inicio}
+                                    <Row className="pb-3">
+                                       
+                                        <Col xs={1}>
+                                        <img src={Clock} alt="relogio"/>
+                                        </Col>
+                                        <Col>
+                                        <small>{quest.data_inicio}</small>
+                                        </Col>
+                                        <Col>
+                                        <img src={Star} alt='pontos'className='estrelinha'/>
+                                        <small>{quest.pontuacao}</small>
+                                        </Col>
+                                    </Row>
+                                   
+                                    
                                 </Card.Text>
-                                <br/>
+                               
                             </Card.Body>
 
                             </Card>

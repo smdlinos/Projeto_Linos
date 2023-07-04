@@ -73,19 +73,19 @@ export default function Home(){
     }
 
     return(
-        <div className="background alinhamento">
+        <div className="background_config">
             <HeaderHome/>
             <main className="fonte_login">
-                <a href="/tabletop"><Tabletop/></a>
+                <a href="/tabletop" className="alinhamento"><Tabletop/></a>
                 {authenticated &&
                 <>
-                <h3 className='pb-3 titulo_login'>
+                <h3 className='pb-3 titulo_login alinhamento'>
                     Questionários Recomendados
                 </h3>
                  <Forms quests={recomendados} />
                 </>
                 }
-                <h3 className='pb-3 pt-5 titulo_login'>
+                <h3 className='pb-3 pt-5 titulo_login alinhamento'>
                 Todos os Questionários
                 </h3>
                  <Forms quests={quests}/>

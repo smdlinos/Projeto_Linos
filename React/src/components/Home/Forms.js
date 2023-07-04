@@ -21,9 +21,9 @@ function Forms(props){
 
     return(
         <div>
-            <Container>
-              <Row >
-               <Col className="mx-3 ">  
+            <Container className="">
+              <Row  className="">
+               <Col className="mx-3 mb-3">  
                     <Carousel >
                     {props.quests && props.quests.map((quest) => (
                         <Carousel.Item key={quest.id_questionario}>

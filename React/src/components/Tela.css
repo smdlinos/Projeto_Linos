@@ -463,3 +463,8 @@ flex-shrink: 0;
 .espaco_card{
     
 }
+
+.botao_pdf{
+    color: #fff;
+    font-size: 20px;
+}

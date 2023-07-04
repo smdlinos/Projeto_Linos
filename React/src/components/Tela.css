@@ -159,8 +159,20 @@ background: #BE2C53;
     background: url(./imagens/fundo_desc.svg);
 }
 
+.sobreposicao_passos{
+    background: url(./imagens/CAMINHO.svg) no-repeat;
+}
+
+
 .itens_nav{
     white-space: nowrap;
+}
+
+passo1_text{
+    display: flex;
+width: 333.333px;
+flex-direction: column;
+flex-shrink: 0;
 }
 
 .login_espacamento{

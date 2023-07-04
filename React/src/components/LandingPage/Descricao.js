@@ -10,7 +10,7 @@ const Descricao = () => {
                 <Col className='pt-5 pb-3' >
                 <img src={lina_desc} className="img-fluid"></img>
                 </Col>
-                <Col>
+                <Col xs ={4}>
                 <img src={fala_lina_desc} className="img-fluid"></img>
                 </Col>
                 <Col xs ={6} className='pt-5 pb-3'>

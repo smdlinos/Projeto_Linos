@@ -22,7 +22,6 @@ import { Routes, Route, Link, useNavigate, Navigate} from "react-router-dom";
 
 
 
-
 export default function App() {
   
   const { authenticated, user } = useContext(Context);

@@ -7,11 +7,11 @@ import Tabuleiro from "../components/imagens/Tab.svg"
 //Components
 import Header_q from "../components/Quests/Header_q"
 import Footer from "../components/Global/Footer";
+import Row from "react-bootstrap/esm/Row";
 
 
 function Tabletop(){
     return(
-        
         <div className="background_gradient" >
             <Header_q/>
             <Container className=" container">

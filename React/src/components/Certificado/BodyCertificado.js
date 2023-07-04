@@ -7,7 +7,7 @@ import horas from "../imagens/horas.svg"
 import Button from "react-bootstrap/esm/Button";
 import Duvida from "../imagens/duvida.svg"
 import Logo from "../imagens/quest_logo.png"
-
+import PdfButton from "./PdfButton";
 
 
 export default function BodyCertificado() {
@@ -41,11 +41,10 @@ export default function BodyCertificado() {
             </h6>
             </Col>
             <Col>
-            <Button type="button" className="px-5 mb-3 mt-3 botao">
-              SOLICITAR CERTIFICADO
-          </Button>
+            <PdfButton/>
             </Col>
         </Row>
+
       </Container>
     </div>
   );

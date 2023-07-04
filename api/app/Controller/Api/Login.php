@@ -11,38 +11,38 @@ use Firebase\JWT\Key;
 
 
 class Login 
-{	
+{ 
 
-	public static function setLogin($request)
-	{
-		Api::setHeaders();
+  public static function setLogin($request)
+  {
+    Api::setHeaders();
 
-		$post_body = $request['request']->getBody();
-		$post_body = json_decode($post_body, true);
+    $post_body = $request['request']->getBody();
+    $post_body = json_decode($post_body, true);
 
-		foreach ($post_body as $key => $value) {
-       		$_POST[$key] = $value;
+    foreach ($post_body as $key => $value) {
+          $_POST[$key] = $value;
     }
 
     if (!$post_body) {
-  		echo json_encode(false);
-    	http_response_code(401);
-    	exit;
+      echo json_encode(false);
+      http_response_code(401);
+      exit;
     }
 
-		$login = filter_var($_POST['login'], FILTER_SANITIZE_STRING);
-  	$password =filter_var($_POST['password'], FILTER_SANITIZE_STRING);
+    $login = filter_var($_POST['login'], FILTER_SANITIZE_STRING);
+    $password =filter_var($_POST['password'], FILTER_SANITIZE_STRING);
 
-  	if(empty($login) || empty($password)){
+    if(empty($login) || empty($password)){
          echo json_encode(false);
          http_response_code(401);
          exit;
       }
 
-		$obUserEmail = User::getUserByEmail($login);
-		$obUserName  = USer::getUserByName($login);
+    $obUserEmail = User::getUserByEmail($login);
+    $obUserName  = USer::getUserByName($login);
 
-		if(!$obUserEmail && !$obUserName ){
+    if(!$obUserEmail && !$obUserName ){
          echo json_encode(false);
          http_response_code(401);
          exit;
@@ -53,7 +53,7 @@ class Login
       $obUser = $obUserName;
 
     } else {
-    	
+      
       $obUser = $obUserEmail;
 
     }
@@ -64,26 +64,26 @@ class Login
       exit;
     } else {
 
-  		$payload = [
-    		"exp" => time()+ ((3600*24)*7),
-    		"iat" => time(),
-    		"email" => $obUser->email
-			]; 
+      $payload = [
+        "exp" => time()+ ((3600*24)*7),
+        "iat" => time(),
+        "email" => $obUser->email
+      ]; 
 
-			$jwt = JWT::encode($payload, $_ENV['KEY'], 'HS256');
+      $jwt = JWT::encode($payload, $_ENV['KEY'], 'HS256');
 
       echo json_encode($jwt);
       http_response_code(200);
       exit;
-   	}      
- 		
-	}
+    }
+    
+  }
 
 
-	public static function getLogin($request)
-	{	
-		return 'Oi, eu não retorno nada :) (não via GET bobão, mas sem autenticação tu não passas)';
-	}
+  public static function getLogin($request)
+  { 
+    return 'Oi, eu não retorno nada :) (não via GET bobão, mas sem autenticação tu não passas)';
+  }
 
 
   public static function verifyUser($request)
@@ -145,11 +145,8 @@ class Login
     
     Api::setHeaders();
 
-
     $post_body = $request['request']->getBody();
     $post_body = json_decode($post_body, true);
-    $token = $request['request']->getHeaders()['Reset'];
-    $token = str_replace('Bearer ', '', $token);
 
     if (!$post_body) {
      echo json_encode(false);
@@ -159,7 +156,7 @@ class Login
 
     try {
 
-      $decoded = JWT::decode($token, new Key($_ENV['KEY'], 'HS256'));
+      $decoded = JWT::decode($post_body['token'], new Key($_ENV['KEY'], 'HS256'));
 
       $code = $post_body['code'];
 
@@ -175,11 +172,9 @@ class Login
          echo json_encode(false);
          http_response_code(401);
          exit;
-      }else{
-        echo json_encode(true);
-        http_response_code(200); 
-        exit;
       }
+
+      return true;
 
     } catch (Throwable $e) {
 

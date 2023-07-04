@@ -26,11 +26,11 @@ class Example
 	public function updateExemple()
 	{
 		return (new Database('example'))->update('id= '.$this->$id, [
-											'atribute1' => $this->atribute1,
-											'atribute2' => $this->atribute2,
-											'atribute3' => $this->atribute3,
-											'data'  	=> $this->data
-										]);
+					'atribute1' => $this->atribute1,
+					'atribute2' => $this->atribute2,
+					'atribute3' => $this->atribute3,
+					'data'  	=> $this->data
+				]);
 	}
 
 
@@ -41,11 +41,11 @@ class Example
 		$obDatabase = new Database('example');
 
 		$this->id = $obDatabase->insert([
-									'atribute1' => $this->atribute1,
-									'atribute2' => $this->atribute2,
-									'atribute3' => $this->atribute3,
-									'data'  	=> $this->data
-								]);
+					'atribute1' => $this->atribute1,
+					'atribute2' => $this->atribute2,
+					'atribute3' => $this->atribute3,
+					'data'  	=> $this->data
+				]);
 
 		return true;
 	}

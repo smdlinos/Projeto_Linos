@@ -28,12 +28,26 @@ class Tabletop
 		]);
 	}
 
+	public function updateCh()
+	{
+		return (new Database('tabletop'))->update('id_tabletop = '.$this->$id_tabletop,[
+			'ch' => $this->ch
+		]);
+	}
+
+	public function updatePosicao()
+	{
+		return (new Database('tabletop'))->update('id_tabletop = '.$this->$id_tabletop,[
+			'posicao' => $this->posicao
+		]);
+	}
+
 	public function createTabletop()
 	{	
 		$obDatabase = new Database('tabletop');
 
 		$this->id_tabletop = $obDatabase->create([
-			'id_usuario'  => $this->id_usuario,
+			'id_usuario' 	  => $this->id_usuario,
 			'posicao' 	  => $this->posicao,
 			'ch' 		  => $this->ch
 		]);
@@ -53,9 +67,15 @@ class Tabletop
 										   ->fetchObject(self::class);
 	}
 
-	public function deleteTabletop($value='')
+	public static function getTabletopByUser($user)
 	{
-		return (new Database('tabletop'))->delete('id_tabletop = '.$this->id);
+		return (new Database('tabletop'))->select('id_usuario = '.$user)
+										   ->fetchObject(self::class);
+	}
+
+	public function deleteTabletop()
+	{
+		return (new Database('tabletop'))->delete('id_tabletop = '.$this->id_tabletop);
 	}
 
 } 

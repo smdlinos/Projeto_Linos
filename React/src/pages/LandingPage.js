@@ -9,6 +9,7 @@ import NavScrollExample from "../components/LandingPage/NavScrollExample";
 import Inicio from "../components/LandingPage/Inicio";
 import Descricao from "../components/LandingPage/Descricao";
 import Passos from "../components/LandingPage/Passos";
+import Cliente from "../components/LandingPage/Cliente";
 
 function LandingPage(){
     return(
@@ -20,6 +21,7 @@ function LandingPage(){
                 <Inicio/>
                 <Descricao/>
                 <Passos/>
+                <Cliente/>
             </Container>
         </div>
     )

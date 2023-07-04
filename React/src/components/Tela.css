@@ -56,12 +56,7 @@ body{
     padding-bottom: 100%;
 }
 .pontos{
-    padding-bottom: 7px;
-    padding-left: 3px;
-    color: #08394D;
-   font-family: "Supreme", sans-serif;
-    font-weight: 700;
-    
+    padding-bottom: 8px;
 }
 .perfil_g{
     
@@ -88,7 +83,7 @@ li{
 }
 
 .quest_logo_q{
-    width: 7rem;
+    height: 50px;
 }
 
 .titulo_login{
@@ -105,7 +100,26 @@ background: #BE2C53;
     font-weight: 700;
     border-radius: 8px;
     border: none;
+    box-shadow: 0px 5.333333492279053px 5.333333492279053px 0px rgba(0, 0, 0, 0.25);
 }
+
+.botao_inicio{
+    background: #BE2C53;
+    width: 100%;
+    color: #FFF;
+    font-size: 34.667px;
+    font-family: Supreme;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.31px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    border: none;
+    border-radius: 10.667px;
+    background: #BE2C53;
+    box-shadow: 0px 5.333333492279053px 5.333333492279053px 0px rgba(0, 0, 0, 0.25);
+    }
 
 .botao :hover{
     transition: 0.5s all;
@@ -161,23 +175,21 @@ background: #BE2C53;
 }
 
 .sobreposicao_desc{
-    background: url(./imagens/fundo_desc.svg);
+    background-image: url(./imagens/background_desc.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 .sobreposicao_passos{
     background: url(./imagens/CAMINHO.svg) no-repeat;
 }
 
+.sobreposicao_cliente{
+    background: url(./imagens/background_cliente.svg) no-repeat;
+}
 
 .itens_nav{
     white-space: nowrap;
-}
-
-.passo1_text{
-    display: flex;
-width: 333.333px;
-flex-direction: column;
-flex-shrink: 0;
 }
 
 .login_espacamento{
@@ -252,17 +264,53 @@ flex-shrink: 0;
 
 .titulo_land{
     color: #08394C;
-    font-size: 42px;
+    font-size: 56px;
     font-family: Chubbo;
     font-style: normal;
     font-weight: 700;
     line-height: 120%;
-    letter-spacing: 0.42px;
+    letter-spacing: 0.56px;
 }
 
 .text_land{
     color: #08394C;
-    font-size: 24px;
+    font-size: 32px;
+    font-family: Supreme;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+}
+
+.titulo_land_desc{
+    color: #08394C;
+    font-size: 56px;
+    font-family: Chubbo;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+}
+
+.text_land_desc{
+    color: #08394C;
+    font-size: 34.667px;
+    font-family: Supreme;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+}
+
+.titulo_land_cliente{
+    color: #FFF;
+    font-size: 56px;
+    font-family: Chubbo;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+}
+
+.text_land_cliente{
+    color: #FFF;
+    font-size: 35px;
     font-family: Supreme;
     font-style: normal;
     font-weight: 400;
@@ -451,7 +499,7 @@ flex-shrink: 0;
 
 .font_quests{
     font-size: 22px;
-    font-family: "Supreme";
+    font-family: Supreme;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -465,24 +513,7 @@ flex-shrink: 0;
     
 }
 
-
 .botao_pdf{
     color: #fff;
     font-size: 20px;
-}
-
-.font_quests{
-    font-family: "chubbo", sans-serif;
-    font-weight: 700;
-    color: #08394C;
-    font-size: 21px;
-}
-
-.form_search{
-    box-shadow: none;
-    
-}
-
-.lupa_todos{
-    width: 24px;
 }

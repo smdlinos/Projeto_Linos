@@ -21,10 +21,3 @@ $obRouter->get('/temas/{id}' , [ //rota funcionando
 		return new Response(200, Temas::getTema($request, $id['id']), 'application/json' );
 	}
 ]);
-
-
-$obRouter->get('/home' , [ //rota funcionando
-	function ($request) {
-		return new Response(200, Home::getHomeContent($request), 'application/json' );
-	}
-]);

@@ -6,17 +6,17 @@ import Button from 'react-bootstrap/Button';
 
 const Inicio = () => {
     return (
-    <div className='ps-5'>
+    <div className='ps-5 pb-3'>
         <Row className='pt-5 pb-3'>
-            <Col className='pt-5 pb-3'>
-                <h1 className='pt-5 pb-3 titulo_land'>A melhor maneira de responder questionários</h1>
+            <Col className='pt-5 '>
+                <h1 className='pt-5 titulo_land'>A melhor maneira de responder questionários</h1>
                 <p className='text_land'>
                     Já pensou se fosse possível receber <strong>horas complementares</strong> ao responder questionários online? Com o <strong>Quests</strong>, isso acaba de se tornar realidade!
                 </p>
-                <Button className="botao" href="/login">CADASTRE-SE JÁ</Button>
+                <Button className="botao_inicio" href="/login">CADASTRE-SE JÁ</Button>
             </Col>
-            <Col className='pb-5'>
-                <img src={adesivoQuests} className="img-fluid"></img>
+            <Col>
+                <img src={adesivoQuests} className="pb-3 img-fluid"></img>
             </Col>
         </Row>
     </div>

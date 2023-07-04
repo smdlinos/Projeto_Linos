@@ -7,7 +7,7 @@ const Passos = () => {
         <div className='px-5'>
             <Row>
                 <h1 className='pt-5 pb-3 alinhamento titulo_land'>Quer ganhar prêmios?</h1>
-                <img src={caminhos_passos} href="/login"></img>
+                <img src={caminhos_passos}/>
             </Row>
         </div>
     )

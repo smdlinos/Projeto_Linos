@@ -21,9 +21,9 @@ export default function HeaderHome() {
   const { authenticated, user} = useContext(Context);
 
   return (
-    <div>
-      <Container className="mb-4 background_header">
-        <Row className="justify-content-center mt-3">
+    <div className="background_header">
+      <Container className="mb-4 ">
+        <Row className="alihamneto mt-3">
           <Col className="mt-4">
             <img src={lupa}
             alt="lupa" className="pt-2 pe-5"/>
@@ -33,7 +33,7 @@ export default function HeaderHome() {
           </Col>
           <Col className="mt-3 itens ">
           {authenticated && 
-            <Stack direction="horizontal" gap={1} className="pt-1">  
+            <Stack direction="horizontal"  className="pt-1">  
               <img src={estrela} alt="estrela" className="estrela"/>
            {user && <p className="pt-1 pontos ">{user.user.pontos}</p> }
               <OverlayPerfil/>

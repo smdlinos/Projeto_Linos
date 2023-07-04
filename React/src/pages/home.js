@@ -73,7 +73,7 @@ export default function Home(){
     }
 
     return(
-        <div className="background_config">
+        <div className="background_land">
             <HeaderHome/>
             <main className="fonte_login">
                 <a href="/tabletop" className="alinhamento"><Tabletop/></a>
@@ -89,6 +89,12 @@ export default function Home(){
                 Todos os Questionários
                 </h3>
                  <Forms quests={quests}/>
+                 <div className="senha_config pe-4">
+                 <Button variant="link" type="button" className=" mb-3 mt-3 senha_config" href="/todos_quests" >
+                    Ver mais
+                 </Button>
+                 </div>
+                 
             </main>
         </div> 
     )

@@ -52,7 +52,7 @@ export default function Header_q() {
           {authenticated && 
             <Stack direction="horizontal" className="pt-5">  
               <img src={estrela} alt="estrela" className="estrela pe-1"/>
-           {user && <p className="pt-1 pontos "><b>{user.user.pontos}</b></p> }
+           {user && <b>{user.user.pontos}</b>}
               <OverlayPerfil/>
             </Stack>
             }

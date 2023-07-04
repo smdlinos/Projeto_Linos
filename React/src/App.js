@@ -14,6 +14,7 @@ import Certificado from "./pages/Certificado";
 import Tabletop from "./pages/Tabletop";
 import LandingPage from "./pages/LandingPage";
 import Search from "./pages/Search";
+import Todos_Quests from "./pages/TodosQuests";
 
 //Hooks
 import React, { useContext, useState, useEffect } from 'react';
@@ -54,6 +55,8 @@ export default function App() {
 
             <Route path = "/search" element = {<Search/>}/> //rota de pesquisa
        
+            <Route path = "/todos_quests" element = {<Todos_Quests/>}/>
+
             <Route path = "/quest_d/:id" element = {<Quest_D/>}/>
 
             <Route path = "/tabletop/:id" element={<Tabletop/>}/> {/*mesmo esquema do quests_d -> as infos só chegam com o header Authenticated*/}

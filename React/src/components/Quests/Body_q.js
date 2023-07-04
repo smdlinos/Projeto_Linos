@@ -17,7 +17,7 @@ import etiqueta from "../imagens/etiqueta.svg";
 
 //Dependences
 import React, { useContext, useEffect, useState } from 'react';
-import Modal_q from "./Modal_q";
+
 
 
 //Endpoints
@@ -114,7 +114,7 @@ export default function Body_q({quest , auth}) {
       <Container className=" ">
         <Row className="">
           <Col className="mt-4 titulo" xs={10}>
-            <h2 className="titulo_login">
+            <h2>
              {quest.titulo}
             </h2>
           </Col>
@@ -128,7 +128,7 @@ export default function Body_q({quest , auth}) {
         </Row>
         <Row className="pt-2">
           <Col sm={6}>
-          <p className=""><img src={User} alt="user_icon" className="pe-2 pb-1"></img>Pesquisador: {quest.autor}</p>
+          <p><img src={User} alt="user_icon" className="pe-2 pb-1"></img>Pesquisador: {quest.autor}</p>
           </Col>
           <Col>
             <p><img src={House} alt="house_icon" className="pe-2 pb-1"></img>Instituição: {quest.instituicao} </p>

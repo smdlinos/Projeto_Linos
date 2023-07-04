@@ -56,7 +56,12 @@ body{
     padding-bottom: 100%;
 }
 .pontos{
-    padding-bottom: 8px;
+    padding-bottom: 7px;
+    padding-left: 3px;
+    color: #08394D;
+   font-family: "Supreme", sans-serif;
+    font-weight: 700;
+    
 }
 .perfil_g{
     
@@ -83,7 +88,7 @@ li{
 }
 
 .quest_logo_q{
-    height: 50px;
+    width: 7rem;
 }
 
 .titulo_login{
@@ -168,7 +173,7 @@ background: #BE2C53;
     white-space: nowrap;
 }
 
-passo1_text{
+.passo1_text{
     display: flex;
 width: 333.333px;
 flex-direction: column;
@@ -446,7 +451,7 @@ flex-shrink: 0;
 
 .font_quests{
     font-size: 22px;
-    font-family: Supreme;
+    font-family: "Supreme";
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -460,11 +465,24 @@ flex-shrink: 0;
     
 }
 
-.espaco_card{
-    
-}
 
 .botao_pdf{
     color: #fff;
     font-size: 20px;
+}
+
+.font_quests{
+    font-family: "chubbo", sans-serif;
+    font-weight: 700;
+    color: #08394C;
+    font-size: 21px;
+}
+
+.form_search{
+    box-shadow: none;
+    
+}
+
+.lupa_todos{
+    width: 24px;
 }

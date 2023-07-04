@@ -13,8 +13,11 @@ function Config (){
     return(
         <div>
             <Header_q />
+            <div className="background_config">
             <BodyConfig/>
-            <Footer />        
+            <Footer />   
+            </div>
+                 
         </div>
     )
 }

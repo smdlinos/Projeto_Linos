@@ -12,7 +12,7 @@ import Logo from "../imagens/quest_logo.png"
 
 export default function BodyCertificado() {
   return (
-    <div className="bg-light">
+    <div className="background_land">
       <Container className="mb-4 px-4">
         <Row>
           <Col className="mt-4 ">
@@ -31,7 +31,7 @@ export default function BodyCertificado() {
         <Row className="div_horas">
           <img src={horas} alt="logo" className="rounded mx-auto d-block horas"/>
             <Col className="texto_horas">
-            <p><b>X Horas Complementares</b></p>
+            <p><b>X HORAS TOTAIS</b></p>
             </Col>
         </Row>
         <Row className="mt-5 pb-3">

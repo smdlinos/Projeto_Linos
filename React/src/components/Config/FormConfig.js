@@ -3,15 +3,16 @@
 import "../Tela.css";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import Modal_Senha from "./ModalSenha";
 
 
 //Dependences
-import { useEffect, useState } from "react";
 import { useFetch } from "../../hooks/useFetch"
+import React, { useContext, useEffect, useState } from 'react';
 
 
-const Form1 = (props) => {
-
+const Form_config = (props) => {
+    const [modalShow, setModalShow] = React.useState(false);
     //const [password1, setPassword1] = useState(1);
 
     const alteraForm = (e) => {
@@ -20,8 +21,9 @@ const Form1 = (props) => {
    }
 
     return <>
+   
                 <div className="fonte_login">
-                    <h2 className="titulo_login mb-4">Realize seu Cadastro</h2>
+                    <p className="titulo_login alinhamento mb-4">Nickname</p>
                     <Form.Group className="mb-2">
                     <Form.Label htmlFor="nickname" className="nickname tamanho">Nickname</Form.Label>
                     <Form.Control 
@@ -52,7 +54,21 @@ const Form1 = (props) => {
                     id="passaword" 
                     onChange={props.password}
                     />
+                    
                     </Form.Group>
+                    <div className="senha_config">
+
+                    <Button variant="link" className="senha_config" onClick={() => setModalShow(true)}>
+                            Redefinir Senha
+                        </Button>
+
+                        <Modal_Senha
+                            show={modalShow}
+                            onHide={() => setModalShow(false)}
+                        />
+                    </div>
+                    
+
 
                     
 
@@ -68,40 +84,17 @@ const Form1 = (props) => {
                     </Form.Group>
 
 
-                    <Form.Group className="mb-2" onChange={props.genero}>
-                    <Form.Label htmlFor="genero" className="nickname pt-2">Gênero:</Form.Label>
-                    {['radio'].map((type) => (
-                    <div key={`inline-${type}`} className="mb-3">
+                
 
-                    <Form.Check
-                    inline
-                    label="Masculino"
-                    name="group1"
-                    value="Masculino"
-                    type={type}
-                    id={`inline-${type}-1`}
-                    />
-                    <Form.Check
-                    inline
-                    label="Feminino"
-                    name="group1"
-                    value="Feminino"
-                    type={type}
-                    id={`inline-${type}-2`}
-                    />
-                    <Form.Check
-                    inline
-                    label="Outro"
-                    name="group1"
-                    value="Outro"
-                    type={type}
-                    id={`inline-${type}-3`}
-                    />
-                    </div>
-                    ))}
+                    <Form.Group>
+                    <Form.Label htmlFor="Escolaridade" className="nickname pt-2">Gênero</Form.Label>
+                    <Form.Select aria-label="Floating label select example" onChange={props.escolaridade}>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Feminino">Feminino</option>
+                        <option value="Outro">Outro</option>
+                    </Form.Select>
                     </Form.Group>
-
-
+                    <br/>
                     <Form.Group>
                     <Form.Label htmlFor="Escolaridade" className="nickname pt-2">Escolaridade</Form.Label>
                     <Form.Select aria-label="Floating label select example" onChange={props.escolaridade}>
@@ -109,7 +102,7 @@ const Form1 = (props) => {
                         <option value="Sem escolaridade">Sem escolaridade</option>
                         <option value="Ensino Fundamental Incompleto">Ensino Fundamental Incompleto</option>
                         <option value="Ensino Fundamental Completo">Ensino Fundamental Completo</option>
-                        <option value="Ensino Médio Icompleto">Ensino Médio Icompleto</option>
+                        <option value="Ensino Médio Incompleto">Ensino Médio Incompleto</option>
                         <option value="Ensino Médio Completo">Ensino Médio Completo</option>
                         <option value="Ensino Superior Incompleto">Ensino Superior Incompleto</option>
                         <option value="Ensino Superior Completo">Ensino Superior Completo</option>
@@ -127,11 +120,14 @@ const Form1 = (props) => {
 
                     <br/>
                     <Button variant="primary" type="button" onClick={alteraForm} className="px-5 mb-3 mt-3 botao">
-                    Próximo
+                    SALVAR ALTERAÇÕES
+                    </Button>
+                    <Button variant="primary" type="button" className="px-5 mb-3 mt-3 botao">
+                    APAGAR CONTA
                     </Button>
                     </div>
                     
     </>
 }
 
-export default Form1;
+export default Form_config;

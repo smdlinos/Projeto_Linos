@@ -166,6 +166,16 @@ background: #BE2C53;
     color: #08394D;
 }
 
+.botao_popover:hover{
+    background-color: #FFF;
+}
+
+.font_popover{
+    font-family: "Supreme", sans-serif;
+    font-weight: 400;
+    color: #08394D;
+    text-align:start;
+}
 .espacamento_nav{
     display: flex;
     justify-content: space-evenly;

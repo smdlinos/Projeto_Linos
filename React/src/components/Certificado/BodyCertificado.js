@@ -5,7 +5,8 @@ import Col from "react-bootstrap/Col";
 import Tela from "../Tela.css"
 import horas from "../imagens/horas.svg"
 import Button from "react-bootstrap/esm/Button";
-import Duvida from "../imagens/duvida.svg"
+import Popover from "./CardCertificado";
+
 import Logo from "../imagens/quest_logo.png"
 import PdfButton from "./PdfButton";
 
@@ -15,9 +16,12 @@ export default function BodyCertificado() {
     <div className="background_land">
       <Container className="mb-4 px-4">
         <Row>
-          <Col className="mt-4 ">
-           <h3 className="titulo_login ">Certficados de horas de <br/> atividades complementares <img src={Duvida} alt="pop_over" className=""/></h3>
+          <Col className="mt-4" xs={10}>
+           <h3 className="titulo_login ">Certficados de horas de atividades complementares</h3>
            
+          </Col>
+          <Col xs={2} className="pt-5 ps-1">
+          <Popover/>
           </Col>
         </Row>
         <Row>
@@ -35,7 +39,7 @@ export default function BodyCertificado() {
             </Col>
         </Row>
         <Row className="mt-5 pb-3">
-            <Col xs={12} className="mt-5">
+            <Col xs={12} className="mt-5 pb-3">
             <h6 className="fonte_login alinhamento mt-5">
             <b>Quer resgatar seu certificado? <br/>Não perca tempo!</b>
             </h6>

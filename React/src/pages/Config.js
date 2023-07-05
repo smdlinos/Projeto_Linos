@@ -11,13 +11,10 @@ import BodyConfig from "../components/Config/BodyConfig";
 function Config (){
     
     return(
-        <div>
+        <div className="background_config">
             <Header_q />
-            <div className="background_config">
             <BodyConfig/>
-            <Footer />   
-            </div>
-                 
+            <Footer />        
         </div>
     )
 }

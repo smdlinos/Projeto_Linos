@@ -46,9 +46,9 @@ export default function Header_q() {
             <a onClick={redirect}><img src={voltar} alt="botao_voltar" className="mt-5 botao_voltar"/></a>
           </Col>
           <Col className="mt-4 titulo me-1" xs={5}>
-            <a href="/"><img src={Logo} alt="logo" className="mt-4 quest_logo_q"/></a>
+            <a href="/"><img src={Logo} alt="logo" className="mt-4 ms-4 quest_logo_q"/></a>
           </Col>
-          <Col xs={1}>
+          <Col xs={3}>
           {authenticated && 
             <Stack direction="horizontal" className="pt-5">  
               <img src={estrela} alt="estrela" className="estrela "/>

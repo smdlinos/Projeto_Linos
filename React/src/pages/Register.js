@@ -130,7 +130,7 @@ export default function Register() {
 
 
   return (
-    <div className="itens_nav">
+    <div className="itens_nav body">
         <Header/>
       <Row className="justify-content-sm-center">
       <Col sm="auto" none="">

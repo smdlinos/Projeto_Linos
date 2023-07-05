@@ -38,7 +38,7 @@ function Forms(props){
                                 <Card.Title > 
                                 <p className="">{quest.titulo}</p>
                                 </Card.Title>
-                                <Card.Text>
+                                <div>
                                     
                                     <Row>
                                         <Col xs={1} className="espaco_card">
@@ -78,7 +78,7 @@ function Forms(props){
                                     </Row>
                                    
                                     
-                                </Card.Text>
+                                </div>
                                
                             </Card.Body>
 

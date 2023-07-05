@@ -18,7 +18,7 @@ export default function Modal_Deletar(props) {
 
     
   return (
-    <div className="font_t">
+    <div className="font_t ">
     <Modal
       {...props}
       size="lg"
@@ -27,10 +27,14 @@ export default function Modal_Deletar(props) {
     >
       <Modal.Header closeButton>
       </Modal.Header>
+
+      <div className="mx-3">
+
       <Modal.Body>
-        <h4 className="alinhamento titulo_login">Redefinir a Senha</h4>
-        <Form.Group className="mb-2">
-                    <Form.Label htmlFor="password1" className="text-muted pt-2">Senha atual</Form.Label>
+        <h2 className=" titulo_login">Quer mesmo excluir sua conta?</h2>
+        <p className="font_popover">Essa ação é irreversível, insira sua senha para confirmar a decisão.</p>
+        <Form.Group className="mb-2 pb-3">
+                    <Form.Label htmlFor="password1" className="text-muted pt-2">Senha</Form.Label>
                     <Form.Control 
                     type="password" 
                     placeholder="" 
@@ -39,30 +43,15 @@ export default function Modal_Deletar(props) {
                     onChange={props.password}
                     />
                     </Form.Group>
-                    <Form.Group className="mb-2">
-                    <Form.Label htmlFor="password1" className="text-muted pt-2">Nova senha</Form.Label>
-                    <Form.Control 
-                    type="password" 
-                    placeholder="......." 
-                    name = "password1"
-                    id="nova_passaword" 
-                    onChange={props.password}
-                    />
-                    </Form.Group>
-                    <Form.Group className="mb-2">
-                    <Form.Label htmlFor="password1" className="text-muted pt-2">Confirme a senha</Form.Label>
-                    <Form.Control 
-                    type="password" 
-                    placeholder="......." 
-                    name = "password1"
-                    id="nova_passaword" 
-                    onChange={props.password}
-                    />
-                    </Form.Group>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide} className="botao">SALVAR ALTERAÇÕES</Button>
-      </Modal.Footer>
+                    
+        
+       
+        <Button onClick={props.onHide} className="botao ">SALVAR ALTERAÇÕES</Button>
+        
+        </Modal.Body>
+      </div>
+
+      
     </Modal>
     </div>
   );

@@ -3,6 +3,7 @@
 import "../Tela.css";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import InputGroup from 'react-bootstrap/InputGroup';
 
 
 //Dependences
@@ -31,11 +32,13 @@ const Form1 = (props) => {
                     name = "nickname"
                     onChange={props.nickname}
                     />
-                    </Form.Group>
 
+                    </Form.Group> 
+
+                    
                     <Form.Group className="mb-2">
                     <Form.Label htmlFor="email" className="login_espacamento pt-2 tamanho">E-mail</Form.Label>
-                    <Form.Control 
+                    <Form.Control        
                     type="email" 
                     placeholder="email@example.com" 
                     className="" 
@@ -43,6 +46,7 @@ const Form1 = (props) => {
                     onChange={props.email}
                     />
                     </Form.Group>
+
                     <Form.Group className="mb-2">
                     <Form.Label htmlFor="password1" className="senha_cadastro pt-2">Senha</Form.Label>
                     <Form.Control 

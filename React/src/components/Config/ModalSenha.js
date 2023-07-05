@@ -49,7 +49,7 @@ export default function Modal_Senha(props) {
                     onChange={props.password}
                     />
                     </Form.Group>
-                    <Form.Group className="mb-2">
+                    <Form.Group className="mb-4">
                     <Form.Label htmlFor="password1" className="text-muted pt-2">Confirme a senha</Form.Label>
                     <Form.Control 
                     type="password" 
@@ -59,10 +59,10 @@ export default function Modal_Senha(props) {
                     onChange={props.password}
                     />
                     </Form.Group>
-      </Modal.Body>
-      <Modal.Footer>
+      
         <Button onClick={props.onHide} className="botao">SALVAR ALTERAÇÕES</Button>
-      </Modal.Footer>
+      
+      </Modal.Body>
     </Modal>
     </div>
   );

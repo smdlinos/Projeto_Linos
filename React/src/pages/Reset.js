@@ -119,7 +119,7 @@ export default function Reset() {
   }
 
   return ( 
-      <div className="">
+      <div className="body">
 
         <Header/>
 

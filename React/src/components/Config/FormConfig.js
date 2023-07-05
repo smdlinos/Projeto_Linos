@@ -30,6 +30,7 @@ const Form_config = (props) => {
     console.log(user)
     const [modalShow, setModalShow] = React.useState(false);
     const [modalShow2, setModalShow2] = React.useState(false);
+    const [modalShow3, setModalShow3] = React.useState(false);
     //const [password1, setPassword1] = useState(1);
 
     const alteraForm = (e) => {
@@ -190,10 +191,18 @@ const Form_config = (props) => {
                     <Button variant="primary" type="button" onClick={alteraForm} className="px-5 mb-3 mt-3 botao">
                     SALVAR ALTERAÇÕES
                     </Button>
+
                     <div className="botao_deletar">
-                    <Button variant="link" type="button" className=" mb-3 mt-3 botao_deletar" >
+
+                        
+                    <Button variant="link" type="button" className=" mb-3 mt-3 botao_deletar" onClick={() => setModalShow3(true)}>
                     <img src={Lixo} alt="lixo" className="lixeira pb-1"></img>DELETAR CONTA
                     </Button>
+
+                    <Modal_Deletar
+                        show={modalShow3}
+                        onHide={() => setModalShow3(false)}
+                    />
                     </div>
                     
                     </div>

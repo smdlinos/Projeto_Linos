@@ -8,6 +8,8 @@ import Tabletop from "../components/Home/Tabletop";
 import SearchForm from "../components/Home/SearchForm";
 import HeaderHome from "../components/Home/HeaderHome";
 
+import Header_q from "../components/Quests/Header_q";
+
 //Dependences
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
@@ -19,6 +21,7 @@ const urlRecomendedQuests = "https://smdquests.000webhostapp.com/api/quests/reco
 const urlAllQuests = "https://smdquests.000webhostapp.com/api/quests";
 
 import { api } from '../services/api';
+import Footer from "../components/Global/Footer";
 
 export default function Home(){
 
@@ -73,7 +76,7 @@ export default function Home(){
     }
 
     return(
-        <div className="background_land">
+        <div className="background_config">
             <HeaderHome/>
             <main className="fonte_login">
                 <a href="/tabletop" className="alinhamento"><Tabletop/></a>
@@ -94,7 +97,7 @@ export default function Home(){
                     Ver mais
                  </Button>
                  </div>
-                 
+                 <Footer/>
             </main>
         </div> 
     )

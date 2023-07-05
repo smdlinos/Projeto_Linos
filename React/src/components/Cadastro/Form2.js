@@ -4,6 +4,9 @@ import ToggleButton from 'react-bootstrap/ToggleButton';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import Row from "react-bootstrap/esm/Row";
+import Col from "react-bootstrap/esm/Col";
+import Etiqueta from "../imagens/etiqueta.svg";
 
 //Dependences
 import {useFetch} from "../../hooks/useFetch";
@@ -12,6 +15,10 @@ import { useState , useEffect } from "react";
 
 
 const Form2 = (props) => {   
+
+    const [value, setValue] = useState([1, 3]);
+
+    const handleChange = (val) => setValue(val);
 
     const [interesse, setInteresse] = useState([]);
 
@@ -22,18 +29,23 @@ const Form2 = (props) => {
     console.log(interesse)
 
     return <>
+    <div className="font_popover">
+
             <h2 className="titulo_login">Quais seus interesses?</h2>
-            <p className="text-align">Essas informações vão nos ajudar a deixar o quest mais sua cara!</p>
+            <p className="">Essas informações vão nos ajudar<br/> a deixar o quest mais sua cara!</p>
+            
+            
             <Form.Group className="mb-2">
                 
-                <div className="form-check">
+
                     {props.temas && props.temas.map((tema) => (
-                        <ToggleButtonGroup type="checkbox" className="mb-2" key={tema.id_tema}>
-                            <ToggleButton     
-                                    className="mb-2"
+                        <ToggleButtonGroup  type="checkbox" className="mb-2 interesses" key={tema.id_tema} orientation="vertical">
+                            
+                            <ToggleButton 
+                                    className="mb-2 etiqueta_int"
                                     id={tema.id_tema}
                                     type="checkbox"
-                                    variant="outline-primary"
+                                    variant=""
                                     checked={interesse.includes(tema.tema)}
                                     name={tema.tema}
                                     value={tema.tema}
@@ -50,22 +62,23 @@ const Form2 = (props) => {
                                         }
                                         }}  
                                 >
-                                    {tema.tema}
+                                    
+                                       <img src={Etiqueta} alt="etiqueta"/> {tema.tema}
+                                        
+                                    
                                 </ToggleButton>
-
+                        
                         </ToggleButtonGroup>
                             
                         
                     ))}
-                
-
-    
-                    </div>
+                  
             </Form.Group>
             <br/>
             <Button variant="primary" type="submit" onClick={submitInteresse} className="px-5 mb-3 mt-3 botao">
             FINALIZAR CADASTRO
             </Button>   
+            </div>
     </>
 }
 

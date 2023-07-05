@@ -188,7 +188,11 @@ background: #BE2C53;
     background-size: 100%;
     background-repeat: no-repeat;
 }
-
+.form_check{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
 .sobreposicao_passos{
     background: url(./imagens/CAMINHO.svg) no-repeat;
 }
@@ -274,7 +278,7 @@ background: #BE2C53;
 .titulo_land{
     color: #08394C;
     font-size: 56px;
-    font-family: Chubbo;
+    font-family: "Chubbo";
     font-style: normal;
     font-weight: 700;
     line-height: 120%;
@@ -543,4 +547,20 @@ background: #BE2C53;
 
 .lupa_todos{
     width: 22px;
+}
+
+.interesses{
+    display: flex;
+    flex-direction: row;
+}
+
+.etiqueta_int{
+    font-family: "Supreme", sans-serif;
+    font-weight: 700;
+    background-color: #fff;
+    border-radius: 200px;
+    width: 22rem;
+    text-align: start;
+    box-shadow: none;
+    outline:none; 
 }

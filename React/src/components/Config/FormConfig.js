@@ -7,7 +7,7 @@ import Modal_Senha from "./ModalSenha";
 import etiqueta from "../imagens/etiqueta.svg";
 import Modal_Interesse from "./ModalTag";
 import Modal_Deletar from "./ModalDeletar";
-import Lixo from "../imagens/trash.svg"
+import Lixo from "../imagens/trash.svg";
 //import Trash from "../imagens/trash.svg"
 
 
@@ -29,6 +29,7 @@ const Form_config = (props) => {
     const {user} = useContext(Context);
     console.log(user)
     const [modalShow, setModalShow] = React.useState(false);
+    const [modalShow2, setModalShow2] = React.useState(false);
     //const [password1, setPassword1] = useState(1);
 
     const alteraForm = (e) => {
@@ -175,13 +176,13 @@ const Form_config = (props) => {
               </div>
               <div className="senha_config">
 
-                <Button variant="link" className="senha_config" onClick={() => setModalShow(true)}>
+                <Button variant="link" className="senha_config" onClick={() => setModalShow2(true)}>
                         Redefinir seus interesses
                     </Button>
 
                     <Modal_Interesse
-                        show={modalShow}
-                        onHide={() => setModalShow(false)}
+                        show={modalShow2}
+                        onHide={() => setModalShow2(false)}
                     />
                 </div>
                     </div>

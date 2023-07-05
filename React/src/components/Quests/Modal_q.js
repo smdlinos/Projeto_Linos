@@ -23,7 +23,7 @@ export default function Modal_q(props) {
       <Modal.Body closeButton>
         <p className="quests_todos alinhamento">Tags Relacionadas!</p>
         <p className="font_t">
-          As tags abaixo representam quais são seus interesses relacionados com este questionário.
+          As tags em amarelo representam quais são seus interesses relacionados com este questionário.
         </p>
       </Modal.Body>
       <Modal.Footer>

@@ -119,8 +119,8 @@ export default function Body_q({quest , auth}) {
             </h2>
           </Col>
           <Col className="pontos_quest mt-3">
-            <img src={Star} alt="star_points" className="estrela_quest"/>
-            <p className="estrela_quest pt-2 ps-1">
+            <img src={Star} alt="star_points" className="estrela_quest pb-2"/>
+            <p className="estrela_quest pt-2 ps-1 ">
                 {quest.pontuacao}
             </p>
             </Col>
@@ -175,7 +175,7 @@ export default function Body_q({quest , auth}) {
               <>
                 {quest.temas.map((e) => (
                   
-                  <button key={e.id_tema} className={verifyMatch(e.id_tema, matches) != "" ? 
+                  <button disabled key={e.id_tema} className={verifyMatch(e.id_tema, matches) != "" ? 
                   verifyMatch(e.id_tema, matches):"nao-recomendado"
                 } >
                     <img src={etiqueta} alt="etiqueta_icon" className="pe-2"></img>{e.tema}

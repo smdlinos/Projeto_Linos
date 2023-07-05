@@ -19,20 +19,15 @@ export default function Modal_q(props) {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          Modal heading
-        </Modal.Title>
       </Modal.Header>
-      <Modal.Body>
-        <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
+      <Modal.Body closeButton>
+        <p className="quests_todos alinhamento">Tags Relacionadas!</p>
+        <p className="font_t">
+          As tags abaixo representam quais são seus interesses relacionados com este questionário.
         </p>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
+        <Button onClick={props.onHide} className="botao">Legal!</Button>
       </Modal.Footer>
     </Modal>
     </div>

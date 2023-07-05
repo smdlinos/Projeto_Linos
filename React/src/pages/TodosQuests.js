@@ -23,26 +23,31 @@ function Todos_Quests(){
 
             <Header_q />
             
-            <Row className="alinhamento font_quests ">
+            <Row className="alinhamento">
                 <Col>
-                <p>Todos os questionários</p>
+                <p className="quests_todos">Todos os questionários</p>
                 </Col>
             </Row>
             <Row className="mx-3 pb-3">
                 <Col>
-                <Form className="d-flex form_search">
+                <Form className="d-flex form_quests">
             <Form.Control
-                variant="light"
               type="search"
               placeholder="Pesquisar"
-              className="me-2"
+              className="me-2 form_search"
               aria-label="Pesquisar"
             />
             <Button variant=""><img src={Lupa} alt="lupa" className="lupa_todos"/></Button>
           </Form>
                 </Col>
             </Row>
-            
+            <Row>
+                <Col xs={6}>
+                
+                    Cards
+                
+                </Col>
+            </Row>
             
 
         </div>

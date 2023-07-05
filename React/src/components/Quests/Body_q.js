@@ -120,9 +120,9 @@ export default function Body_q({quest , auth}) {
           </Col>
           <Col className="pontos_quest mt-3">
             <img src={Star} alt="star_points" className="estrela_quest"/>
-            <h2 className="estrela_quest pt-2 ps-1">
+            <p className="estrela_quest pt-2 ps-1">
                 {quest.pontuacao}
-            </h2>
+            </p>
             </Col>
           
         </Row>

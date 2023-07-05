@@ -35,7 +35,7 @@ export default function HeaderHome() {
           {authenticated && 
             <Stack direction="horizontal"  className="pt-1">  
               <img src={estrela} alt="estrela" className="estrela"/>
-           {user && <p className="pt-1 pontos ">{user.user.pontos}</p> }
+           {user && <p className="pt-2 pontos ps-1 font_t">{user.user.pontos}</p> }
               <OverlayPerfil/>
             </Stack>
             }

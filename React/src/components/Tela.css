@@ -26,9 +26,8 @@ body{
     margin-bottom: 15px;
 }
 .estrela{
-    width: 16px;
-    height: 16px;
-    margin-bottom: 20px;
+    width: 19px;
+    margin-bottom: 17px;
     
 }
 .lupa{
@@ -499,7 +498,7 @@ background: #BE2C53;
 
 .font_quests{
     font-size: 22px;
-    font-family: Supreme;
+    font-family: "Supreme";
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -516,4 +515,22 @@ background: #BE2C53;
 .botao_pdf{
     color: #fff;
     font-size: 20px;
+}
+
+.form_quests{
+    box-shadow: none;
+    background-color: #FFF;
+    font-family: "Supreme", sans-serif;
+}
+
+.quests_todos{
+        font-family: "Chubbo", sans-serif;
+        font-weight: 700;
+        color: #08394D;
+        font-size: 21px;
+    
+}
+
+.lupa_todos{
+    width: 22px;
 }

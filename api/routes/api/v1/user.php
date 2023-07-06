@@ -26,7 +26,7 @@ $obRouter->post('/user/interesses', [ // rota funcionando
 	}
 ]);
 
-$obRouter->get('/user/tabletop', [ // rota funcionando
+$obRouter->post('/user/tabletop', [ // rota funcionando
 	function($request)
 	{
 		return new Response(200, User::getUserTabletop($request));
@@ -36,7 +36,14 @@ $obRouter->get('/user/tabletop', [ // rota funcionando
 $obRouter->post('/update/tabletop', [ // rota funcionando
 	function($request)
 	{
-		return new Response(200, User::getUserTabletop($request));
+		return new Response(200, Tabletop::updateTabletop($request));
+	}
+]);
+
+$obRouter->post('/reset/tabletop', [ // rota funcionando
+	function($request)
+	{
+		return new Response(200, Tabletop::resetCh($request));
 	}
 ]);
 

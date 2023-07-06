@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Tempo de geração: 04/07/2023 às 16:02
+-- Tempo de geração: 06/07/2023 às 02:53
 -- Versão do servidor: 10.1.21-MariaDB
 -- Versão do PHP: 5.6.30
 
@@ -19,6 +19,26 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `quests`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `certificados`
+--
+
+CREATE TABLE `certificados` (
+  `id_certificado` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `ch_resgatada` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Fazendo dump de dados para tabela `certificados`
+--
+
+INSERT INTO `certificados` (`id_certificado`, `id_usuario`, `ch_resgatada`) VALUES
+(1, 17, 2),
+(5, 17, 1);
 
 -- --------------------------------------------------------
 
@@ -183,7 +203,7 @@ INSERT INTO `questionarios` (`id_questionario`, `titulo`, `autor`, `instituicao`
 (2, 'Análise de Necessidades Quests', 'Teste Bittencourt', 'UFC', '2023-05-23', '2023-05-31', 'WWIJIJDJDI', 'aaaaaaaaaa.com.br', 20, 1),
 (3, 'Nível de Satisfação RU', 'Vitorinha do Papoco', 'UFC', '2023-06-09', '2023-06-19', 'KDEMPJEPOJF', 'bbbbbb.com.br', 15, 2),
 (4, 'Teste de Usabilidade', 'Luiz Gonzaga', 'UFC', '2023-06-07', '2023-06-30', 'Testar os negócio lá de uso', 'askdmalskd.com', 20, 1),
-(5, 'Teste 1 quests', 'Júlio Lima', 'SMD', '2023-06-21', '2023-06-28', 'Pesquisa para os primeiros usuários do quests', 'https://www.github.com/smdlinos', 20, 3),
+(5, 'Teste 1 quests', 'Júlio Lima', 'SMD', '2023-06-21', '2023-06-28', 'Pesquisa para os primeiros usuários do quests', 'https://docs.google.com/forms/d/e/1FAIpQLSfxD70VB-KiKdJA7OuyiFvxynUxvu6jll7orJoqgxmnpE4CIQ/viewform', 20, 3),
 (6, 'Usabilidade do Sigaa', 'Mickael Castro', 'SMD', '2023-06-22', '2023-06-30', 'Testando aquela bomba pra ver se rola um redesign', 'http://www.github.com/smdlinos', 40, 3);
 
 -- --------------------------------------------------------
@@ -234,10 +254,11 @@ CREATE TABLE `respostas` (
 
 INSERT INTO `respostas` (`id_resposta`, `data_resposta`, `hora_resposta`, `pontuacao`, `pesquisa`, `questionario`, `usuario`, `code`, `resgatado`) VALUES
 (2, '2023-05-20', '00:00:00', 15, 2, 3, 1, '123456', 0),
-(3, '2023-05-20', '10:25:00', 15, 2, 3, 1, '356469', 0),
-(4, '2023-05-21', '10:30:15', 15, 2, 3, 9, '697766', 0),
-(5, '2023-05-21', '11:59:00', 20, 1, 1, 3, '988765', 0),
-(6, '2023-07-01', '00:00:00', 20, 1, 2, NULL, '031234', 1);
+(3, '2023-05-20', '10:25:00', 15, 2, 3, 1, '356469', 1),
+(4, '2023-05-21', '10:30:15', 15, 2, 3, 9, '697766', 1),
+(5, '2023-05-21', '11:59:00', 20, 1, 1, 3, '988765', 1),
+(6, '2023-07-01', '00:00:00', 20, 1, 2, NULL, '031234', 1),
+(7, '2004-03-30', '07:00:00', 20, 3, 5, NULL, '565678', 0);
 
 -- --------------------------------------------------------
 
@@ -257,7 +278,7 @@ CREATE TABLE `tabletop` (
 --
 
 INSERT INTO `tabletop` (`id_tabletop`, `id_usuario`, `posicao`, `ch`) VALUES
-(1, 17, 0, 0),
+(1, 17, 18, 0),
 (2, 18, 0, 0),
 (3, 19, 0, 0),
 (4, 20, 0, 0),
@@ -364,7 +385,7 @@ INSERT INTO `usuarios` (`id_usuario`, `name`, `nickname`, `email`, `password`, `
 (11, 'Victor', 'Emanuel', 'emanuel@gmail.com', '12345', 1, '2023-05-25', '2', '4', 0),
 (12, 'Maria', 'Clara', 'mariaclara@gmail.com', '12345', 1, '2004-08-04', '2', '3', 0),
 (13, 'Júlia Menezes', 'JulinhaPVP', 'julinha@gmail.com', '$2y$10$I0ldwAUuuz8e.peGG99niuChJHPRiR55pJobGGpRu7frlXrIXbehy', 1, '2023-01-12', '2', '5', 0),
-(14, 'Victor Emanuel Tomaz das Neves', 'Victor', 'victoremanuel.vet8@gmail.com', '$2y$10$U9qAMxWzpcR3GuIj5Ce4FuxmKLOLilBviy8LlJUx6b9EMpDXoNx1W', 1, '2004-05-28', 'Masculino', 'Ensino Superior Incompleto', 40),
+(14, 'Victor Emanuel Tomaz das Neves', 'Victor', 'victoremanuel.vet8@gmail.com', '$2y$10$U9qAMxWzpcR3GuIj5Ce4FuxmKLOLilBviy8LlJUx6b9EMpDXoNx1W', 1, '2004-05-28', 'Masculino', 'Ensino Superior Incompleto', 60),
 (15, 'Luiz Gonzaga Santos Filho', 'Bradock_3105', 'luisgonzaga@alu.ufc.br', '$2y$10$jb3lJP0bLNC1ljW2CLk7OeNLL.l5SFK/hl/6fXCIHCcdBAv2ptSBe', 1, '1995-05-31', 'Masculino', 'Pós-Graduação', 0),
 (16, 'Luiz Gonzaga dos Santos Filho', 'Bradock3105', 'luizgonzaga@alu.ufc.br', '$2y$10$YEmwR9qA7StEVDrrPpxpgOgFUturaJuGt0898LnXYCkbsJuH32tIK', 1, '1995-05-31', 'Masculino', 'Pós-Graduação', 0),
 (17, 'Maria Leticia Barros Nepomuceno', 'Letinepo', 'letinepo@gmail.com', '$2y$10$jGQp3mWadzE.BCapw2vfH.EZclnU8v1BMeD9uZZyC5iLyBJgTo4kS', 1, '2003-12-31', 'Feminino', 'Ensino Superior Incompleto', 0),
@@ -410,6 +431,13 @@ INSERT INTO `usuario_recompensa` (`id_usuario_recompensa`, `id_usuario`, `id_rec
 --
 
 --
+-- Índices de tabela `certificados`
+--
+ALTER TABLE `certificados`
+  ADD PRIMARY KEY (`id_certificado`),
+  ADD KEY `usuario` (`id_usuario`);
+
+--
 -- Índices de tabela `historico`
 --
 ALTER TABLE `historico`
@@ -440,6 +468,7 @@ ALTER TABLE `pesquisas`
 --
 ALTER TABLE `questionarios`
   ADD PRIMARY KEY (`id_questionario`),
+  ADD UNIQUE KEY `link` (`link`),
   ADD KEY `id_pesquisa_idx` (`id_pesquisa`),
   ADD KEY `instituicao` (`instituicao`),
   ADD KEY `pontuacao` (`pontuacao`);
@@ -504,6 +533,11 @@ ALTER TABLE `usuario_recompensa`
 --
 
 --
+-- AUTO_INCREMENT de tabela `certificados`
+--
+ALTER TABLE `certificados`
+  MODIFY `id_certificado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
 -- AUTO_INCREMENT de tabela `historico`
 --
 ALTER TABLE `historico`
@@ -532,7 +566,7 @@ ALTER TABLE `recompensas`
 -- AUTO_INCREMENT de tabela `respostas`
 --
 ALTER TABLE `respostas`
-  MODIFY `id_resposta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_resposta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de tabela `tabletop`
 --
@@ -561,6 +595,12 @@ ALTER TABLE `usuario_recompensa`
 --
 -- Restrições para dumps de tabelas
 --
+
+--
+-- Restrições para tabelas `certificados`
+--
+ALTER TABLE `certificados`
+  ADD CONSTRAINT `usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`);
 
 --
 -- Restrições para tabelas `historico`

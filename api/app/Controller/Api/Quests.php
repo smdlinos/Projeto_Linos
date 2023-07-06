@@ -103,4 +103,26 @@ class Quests
 		// code... Em breve
 	}
 
+
+	public static function searchQuests($request, $termoPesquisa)
+	{
+	    $titulo 			= EntityQuests::getQuests('titulo LIKE "%' . $termoPesquisa . '%"');
+	    $autor 				= EntityQuests::getQuests('autor LIKE "%' . $termoPesquisa . '%"');
+	    $instituicao  = EntityQuests::getQuests('instituicao LIKE "%' . $termoPesquisa . '%"');
+
+	    $resultados = [
+	    	'titulo' => $titulo,
+	    	'autor'  => $autor,
+	    	'instituicao' => $instituicao
+	    ];
+
+	    if (!$resultados) {
+	        echo json_encode(false);
+	        http_response_code(404);
+	        exit;
+	    }
+
+	    return $resultados;
+	}
+
 }

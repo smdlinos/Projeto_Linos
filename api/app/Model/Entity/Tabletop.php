@@ -22,7 +22,7 @@ class Tabletop
 
 	public function updateTabletop()
 	{
-		return (new Database('tabletop'))->update('id_tabletop = '.$this->$id_tabletop,[
+		return (new Database('tabletop'))->update('id_tabletop = '.$this->id_tabletop,[
 			'posicao' => $this->posicao,
 			'ch' => $this->ch
 		]);
@@ -30,14 +30,14 @@ class Tabletop
 
 	public function updateCh()
 	{
-		return (new Database('tabletop'))->update('id_tabletop = '.$this->$id_tabletop,[
+		return (new Database('tabletop'))->update('id_tabletop = '.$this->id_tabletop,[
 			'ch' => $this->ch
 		]);
 	}
 
 	public function updatePosicao()
 	{
-		return (new Database('tabletop'))->update('id_tabletop = '.$this->$id_tabletop,[
+		return (new Database('tabletop'))->update('id_tabletop = '.$this->id_tabletop,[
 			'posicao' => $this->posicao
 		]);
 	}

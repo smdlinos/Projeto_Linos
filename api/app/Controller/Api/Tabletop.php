@@ -4,6 +4,10 @@ namespace App\Controller\Api;
 
 use App\Model\Entity\Tabletop as EntityTabletop;
 use App\Model\Entity\User as EntityUser;
+use App\Controller\Api\Certificados;
+
+use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
 
 /**
  * 
@@ -62,16 +66,32 @@ class Tabletop
 
 	    $decoded = JWT::decode($post_body['token'], new Key($_ENV['KEY'], 'HS256'));
 
-
 	    $usuario = EntityUser::getUserByEmail($decoded->email); // busca o usuario
 
 	    $tabletopU = EntityTabletop::getTabletops('id_usuario = '.$usuario->id_usuario); // busca o tabletop
 
+	    $data = [
+			'id_usuario'   => $usuario->id_usuario,
+			'ch_resgatada' => $tabletopU[0]->ch
+		];
+
+		$posicao = intval($tabletopU[0]->posicao);
+		$tabletop_ch = intval($tabletopU[0]->ch);
+
+		if($tabletop_ch < 1){
+		  echo json_encode('Você não tem horas suficientes para o resgate');
+	      http_response_code(401);
+	      exit;
+		}
+		
+	    Certificados::setCertificado($data);
+
 		$tabletop = new EntityTabletop(); //atualiza o tabuleiro
-		$tabletop->id_tabletop 	= $tabletopU->id_tabletop;
+		$tabletop->id_tabletop 	= $tabletopU[0]->id_tabletop;
 		$tabletop->id_usuario 	= $usuario->id_usuario;
+		$tabletop->posicao 		= $posicao;
 		$tabletop->ch      		= 0;
-		$tabletop->updateTabletop();
+		$tabletop->updateCh();
 
 		if(!$tabletop->id_tabletop){
 			echo json_encode(false);
@@ -79,7 +99,7 @@ class Tabletop
 			exit;
 		}
 		//IDEIA -> Criar um atributo de certificados
-		return $tabletop;
+		return true;
 	}
 
 	public static function updateTabletop($request)
@@ -100,25 +120,31 @@ class Tabletop
 	      exit;
 	    }
 
-	    $decoded = JWT::decode($post_body['token'], new Key($_ENV['KEY'], 'HS256'));
+	    //aplicar a verificação dos pontos futuramente -> ela está sendo feita no front end
 
+	    $decoded = JWT::decode($post_body['token'], new Key($_ENV['KEY'], 'HS256'));
 
 	    $usuario = EntityUser::getUserByEmail($decoded->email); // busca o usuario
 
 	    $tabletopU = EntityTabletop::getTabletops('id_usuario = '.$usuario->id_usuario); // busca o tabletop
 
+	    $ch_resgatada = Certificados::getSomaCh($usuario->id_usuario);
+
 	    $posicao 		= $post_body['posicao']; //pega a nova posição que chegou do front
-		$diferece		= $posicao - $tabletopU->posicao ; // calcula a diferença entre a posição nova e a antiva
-		$diminuiPontos	= $diferece * 20; //perguntar pra avie quantos pontos cada casa vale
-	    $ch 	 		= $posicao / 6;  // calcula a carga horária com base na posição do tabuleiro
+		$diferece		= $posicao - $tabletopU[0]->posicao ; // calcula a diferença entre a posição nova e a antiva
+		$diminuiPontos	= $diferece * 10; //perguntar pra avie quantos pontos cada casa vale
+	    $ch 	 		= ($posicao / 6) - $ch_resgatada;  // calcula a carga horária com base na posição do tabuleiro
+
+
+	    $pontos = intval($usuario->pontos);
 
 	    $user = new EntityUser(); //atualiza a pontuação do usuário
 		$user->email 	= $usuario->email;
-		$user->pontos 	= $usuario->pontos - $diminuiPontos;
+		$user->pontos 	= $pontos - $diminuiPontos;
 		$user->updateUserPontuacao();
 
 		$tabletop = new EntityTabletop(); //atualiza o tabuleiro
-		$tabletop->id_tabletop 	= $tabletopU->id_tabletop;
+		$tabletop->id_tabletop 	= $tabletopU[0]->id_tabletop;
 		$tabletop->id_usuario 	= $usuario->id_usuario;
 		$tabletop->posicao 		= $posicao;
 		$tabletop->ch      		= $ch;
@@ -130,7 +156,7 @@ class Tabletop
 			exit;
 		}
 
-		return $tabletop;
+		return true;
 	}
 
 	public static function removeTabletop($user)

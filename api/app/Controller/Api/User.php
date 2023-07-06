@@ -5,6 +5,7 @@ namespace App\Controller\Api;
 use App\Model\Entity\Interesses as EntityInteresses;
 
 use App\Controller\Api\Interesses;
+use App\Controller\Api\Certificados;
 use App\Controller\Api\Pesquisas;
 use App\Controller\Api\Tabletop;
 use App\Controller\Api\Api;
@@ -125,10 +126,19 @@ class User
 			'escolaridade' 	  => 'required'
 		], $cadastrar);
 
-		if (!$validate) {
-			echo json_encode(false);
-	    	http_response_code(401);
-	    	exit;
+		if(in_array(false, $validate)){
+
+	    	$data= [];
+
+	    	foreach ($validate as $key => $value) {
+	    		if (!$value) {
+	    			$data[] = $key;
+	    		}
+	    	}
+			
+			echo json_encode([false, $data]);
+			http_response_code(401);
+			exit;
 		}
 
 	    $validate['password'] = password_hash($validate['password'], PASSWORD_DEFAULT);
@@ -301,11 +311,22 @@ class User
 			'escolaridade' 	  => 'required'
 		], $cadastrar);
 
-		if (!$validate) {
-			echo json_encode(false);
-	    	http_response_code(401);
-	    	exit;
+
+	    if(in_array(false, $validate)){
+
+	    	$data= [];
+
+	    	foreach ($validate as $key => $value) {
+	    		if (!$value) {
+	    			$data[] = $key;
+	    		}
+	    	}
+			
+			echo json_encode([false, $data]);
+			http_response_code(401);
+			exit;
 		}
+
 
 		echo json_encode(true);
 	    http_response_code(200);
@@ -353,10 +374,19 @@ class User
 			'escolaridade' 	  => 'required'
 		], $cadastrar);
 
-		if (!$validate) {
-			echo json_encode(false);
-	    	http_response_code(401);
-	    	exit;
+		if(in_array(false, $validate)){
+
+	    	$data= [];
+
+	    	foreach ($validate as $key => $value) {
+	    		if (!$value) {
+	    			$data[] = $key;
+	    		}
+	    	}
+			
+			echo json_encode([false, $data]);
+			http_response_code(401);
+			exit;
 		}
 
 	    $validate['password'] = password_hash($validate['password'], PASSWORD_DEFAULT);
@@ -433,6 +463,7 @@ class User
 	      $removeRecompensas = UsersAwards::removeAwards($usuario);
 	      $removeHistorico   = Historico::removeHistorico($usuario);
 	      $removeRespostas   = Respostas::removeRespostas($usuario);
+	      $removeCertificados= Certificados::removeCertificados($usuario);
 
 	      $user = new EntityUser();
 	      $user->id_usuario = $usuario->id_usuario;

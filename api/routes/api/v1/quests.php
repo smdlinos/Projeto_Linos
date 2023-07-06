@@ -24,6 +24,12 @@ $obRouter->get('/quests/{id}' , [ //rota funcionando
 	}
 ]);
 
+$obRouter->get('/search/{id}' , [ //rota teste
+	function ($request, $id) {
+		return new Response(200, Api\Quests::searchQuests($request, $id['id']), 'application/json');
+	}
+]);
+
 
 #HISTORICO-----------------------------------------------------
 $obRouter->post('/historico' , [ //rota funcionando 

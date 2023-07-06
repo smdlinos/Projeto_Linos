@@ -21,10 +21,6 @@ function validate(array $validations, $body)
 			multipleValidations($validate, $field, $param, $content);
 	}
 
-	if(in_array(false, $result)){
-		return false;
-	}
-
 	return $result;
 }
 

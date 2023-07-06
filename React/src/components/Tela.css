@@ -564,3 +564,15 @@ background: #BE2C53;
     box-shadow: none;
     outline:none; 
 }
+
+.img_delete{
+    float: center;
+    position: relative;
+}
+
+.link_home{
+    position: absolute;
+    top: 0rem;
+    left: 15rem;
+    float:center;
+}

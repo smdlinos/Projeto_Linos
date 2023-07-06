@@ -15,6 +15,7 @@ import Tabletop from "./pages/Tabletop";
 import LandingPage from "./pages/LandingPage";
 import Search from "./pages/Search";
 import Todos_Quests from "./pages/TodosQuests";
+import QuestsDelete from "./pages/QuestsDelete";
 
 //Hooks
 import React, { useContext, useState, useEffect } from 'react';
@@ -56,6 +57,8 @@ export default function App() {
             <Route path = "/search" element = {<Search/>}/> //rota de pesquisa
        
             <Route path = "/todos_quests" element = {<Todos_Quests/>}/>
+
+            <Route path = "/questsdelete" element = {<QuestsDelete/>}/>
 
             <Route path = "/quest_d/:id" element = {<Quest_D/>}/>
 

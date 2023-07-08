@@ -1,6 +1,7 @@
 //Styles
 import "../components/Tela.css"
 import Logo from "../components/imagens/quest_logo.png"
+import cor from "../components/imagens/coracao.svg"
 
 //Components
 import SessionLogin from "../components/Login/SessionLogin";
@@ -20,12 +21,14 @@ function QuestsDelete (){
             <div className="img_delete">
             <img src={Delete} alt="deleta" className=""/>
                 <div className="link_home">
-                    <a >aaaaaaaa</a>
+                    <a className="link_home2" href="/">Ir para página inicial</a>
                 </div>
             </div>
-
+                   
             </Container>
-
+            <div className="Footer pt-3 fonte_login alinhamento">
+                        <p>© 2023 Feito com <img src={cor} alt="coracao"/> pela Linos.</p>
+                    </div>
         </div>
     )
 }

@@ -46,7 +46,7 @@ export default function Modal_Deletar(props) {
                     
         
        
-        <Button onClick={props.onHide} className="botao " type="" href="/questsdelete" >SALVAR ALTERAÇÕES</Button>
+        <Button onClick={props.onHide} className="botao " type="" href="/account/delete" >SALVAR ALTERAÇÕES</Button>
         
         </Modal.Body>
       </div>

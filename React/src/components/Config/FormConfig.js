@@ -302,10 +302,9 @@ const Form_config = (props) => {
                 }
                 </div>
 
-            <div className="botao_deletar ">
+    
             <div className="botao_deletar">
 
-            <Button variant="link" type="button" className=" mb-3 botao_deletar" onClick={() => setModalShow3(true)}>
             <Button variant="link" type="button" className=" mb-3 mt-3 botao_deletar" onClick={() => setModalShow3(true)}>
             <img src={Lixo} alt="lixo" className="lixeira pb-1"></img>DELETAR CONTA
             </Button>

@@ -17,8 +17,8 @@ function PlacasMasc({ boneca_id }) {
     let placaUr = { x: 10, y: 40, id: 2, pos: 4, estado: 'Bloq', tipo: 'Urso' }
 
     // Adicionar os objetos ao vetor
-    placasMasc.push(placaM1);
-    placasMasc.push(placaM2);
+    // placasMasc.push(placaM1);
+    // placasMasc.push(placaM2);
 
     const desbloqueiaMasc = (array) => {
         for (let i = 0; i < array.length; i++) {

@@ -46,7 +46,7 @@ export default function App() {
             
             <Route path = "/config/:id" element= {<Config/>}/>
 
-            <Route path = "/certificado" element = {<Certificado/>}/> 
+            <Route path = "/certificado" element = { authenticated ? <Certificado/> : <Navigate to='/home' /> }/> 
 
             <Route path = "/user/historico" element = {<Historico/>}/>
 

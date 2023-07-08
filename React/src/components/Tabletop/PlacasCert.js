@@ -3,39 +3,43 @@ import Button from "react-bootstrap/esm/Button";
 import PlacasMasc from "./PlacasMasc";
 import Casas from "./Casas";
 import Boneca from "./Boneca";
+import { useEffect } from "react";
+import { useState } from "react";
 
 //vem de fora boneca.id
 
-function PlacasCert({ boneca_id }) {
+function PlacasCert({ boneca_id, aumentou, setAumentou}) {
+
+    let [bloqeuada, setBloqueada] = useState(false);
+    let [desbloqeuada, setDesbloqeuada] = useState(false);
 
     // Criar um vetor vazio
     let placasCert = [];
 
     // Criar objetos   
-    let placaC1 = { x: 10, y: 10, id: 1, pos: 6, estado: 'Desbloq' }
+    let placaC1 = { x: 10, y: 10, id: 1, pos: 6, estado: 'Bloq' }
 
     // Adicionar os objetos ao vetor
     placasCert.push(placaC1);
 
-    const exibeCert = (array) => {
+    const clicaCert = (array) => {
         for (let i = 0; i < array.length; i++) {
             let placa = array[i];
             if (placa.estado == 'Bloq') {
-                console.log(`A placa ${placa.id} está bloqueada`)
+                console.log(`A ${placa.id}ª hora complementar está bloqueada`)
             }
             else{
-                console.log(`A placa ${placa.id} está desbloqueada`)
+                console.log(`Você já pode gerar o certificado da sua ${placa.id}ª hora complementar`)
             }
         }
     }
 
-
-    const desbloqueiaCert = (array) => {
+    const  desbloqueiaCert = (array) => {
         for (let i = 0; i < array.length; i++) {
             let placa = array[i];
-            if (placa.estado == 'Bloq' && boneca_id > placa.id) {
+            if (placa.estado == 'Bloq' && boneca_id >= placa.pos) {
                 placa.estado = 'Desbloq'
-                return (true)
+                console.log(`Recolha sua ${placa.id}ª hora complementar`)
             }
         }
     }
@@ -51,11 +55,21 @@ function PlacasCert({ boneca_id }) {
     //clica
     //exibir pop D
 
+    useEffect(() => {
+        if (aumentou) {
+            desbloqueiaCert(placasCert);
+            setAumentou(false);
+        }
+    }, [aumentou]);
 
     return (
         <div>
+            {/* aumentou == true */}
             <p></p>
-            <Button onClick={(e) => exibeCert(placasCert)}> Exibe Cert  </Button>
+            {/* <Button onClick={(e) => desbloqueiaCert(placasCert)}> Desbloqueia Horas Complementares  </Button> */}
+            {/* no clique */}
+            <p></p>
+            <Button onClick={(e) => clicaCert(placasCert)}> Clica Horas Complementares  </Button>
         </div>
     )
 }

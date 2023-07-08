@@ -3,17 +3,15 @@ import Button from "react-bootstrap/esm/Button";
 import PlacasCert from "./PlacasCert";
 import PlacasMasc from "./PlacasMasc";
 import Casas from "./Casas";
+import { useEffect } from "react";
+import { useState } from "react";
 
 //vem de fora pontos
 
-function Boneca({boneca_pontos}){
+function Boneca({boneca_pontos, aumentou}){
     let boneca = { x: 10, y: 10, id: 0, estado: 'Default', pontos: 0}
     return(
         <div>
-            <p></p>
-            <Button > Mudar Koala </Button>
-            <p></p>
-            <Button > Mudar Urso </Button>
         </div>
     )
 }

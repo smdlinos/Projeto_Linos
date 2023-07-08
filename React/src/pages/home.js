@@ -114,13 +114,13 @@ export default function Home(){
                 <h3 className='pb-3 titulo_login alinhamento'>
                     Questionários Recomendados
                 </h3>
-                 <Forms quests={recomendados} classTag={'classe2'} interesses={interesses} />
+                 <Forms quests={recomendados} classTag={'classe2'}/>
                 </>
                 }
                 <h3 className='pb-3 pt-5 titulo_login alinhamento'>
                 Todos os Questionários
                 </h3>
-                 <Forms quests={quests} classTag={'classe1'} interesses={authenticated ? interesses : false }/>
+                 <Forms quests={quests} classTag={'classe1'} />
                  <div className="senha_config pe-4">
                  <Button variant="link" type="button" className=" mb-3 mt-3 senha_config" href="/quests/all" >
                     Ver mais

@@ -51,7 +51,7 @@ function OverlayPerfil() {
                     </div>
                     <img src={perfil_g} alt='perfil_g' className=' mx-5 perfil_g'/>
                     {user && <h3 className='pt-3'><center>@{user.user.nickname}</center></h3>}
-                    <Nav.Link href="/user/historico"><Button className='botao_overlay' size='lg'><img src={Icon_P} alt='icone' className='px-2 icones'></img>HISTÓRICO</Button></Nav.Link>
+                    <Nav.Link href="#action1"><Button className='botao_overlay' size='lg'><img src={Icon_P} alt='icone' className='px-2 icones'></img>HISTÓRICO</Button></Nav.Link>
                     <Nav.Link href="/certificado"><Button className='botao_overlay' size='lg'><img src={Icon_H} alt='icone' className='px-2 icones' ></img>CERTIFICADOS</Button></Nav.Link>
                     <Nav.Link href="/config" className=''><Button className='botao_overlay' size='lg'><img src={Icon_C} alt='icone' className='px-2 icones'></img>CONFIGURAÇÕES</Button></Nav.Link>
                   </Nav>

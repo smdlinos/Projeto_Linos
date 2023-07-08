@@ -150,7 +150,7 @@ const Form_config = (props) => {
 
     return <>
                 <div className="fonte_login">
-                 <Form className="mb-4 rounded p-5 mx-4" onSubmit={handleSubmit}>
+                 <Form  onSubmit={handleSubmit}>
                     <Form.Group className="mb-2">
 
                     <Row className="imagem_perfil">

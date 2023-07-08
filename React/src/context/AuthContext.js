@@ -34,7 +34,6 @@ function AuthProvider({ children }){
 		
 	},[location.key]);
 
-	
 
 	async function handleUser() { // esse teste possivelmente deu certo
 	
@@ -90,6 +89,7 @@ function AuthProvider({ children }){
 	  setAuthenticated(false);
 	  setUser(null);
 	  someFunction('');
+	  setLoading(true);
   }
 
   const someFunction = (key) => {{

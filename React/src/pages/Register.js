@@ -27,31 +27,34 @@ const urlValidate = "https://smdquests.000webhostapp.com/api/register/validate";
 
 export default function Register() {
 
+
+
   const { authenticated, setAuthenticated } = useContext(Context);
   
   const { data:temas} = useFetch(urlGet);
 
 
   const navigate = useNavigate();
-  const [password, setPassword] = useState();
-  const [nickname, setNickname] = useState();
-  const [email, setEmail] = useState();
-  const [name, setName] = useState();
-  const [genero, setGenero] = useState();
-  const [escolaridade, setEscolaridade] = useState();
-  const [data_nascimento, setDataNascimento] = useState();
+
+  const [password, setPassword] = useState('');
+  const [nickname, setNickname] = useState('');
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [genero, setGenero] = useState('');
+  const [escolaridade, setEscolaridade] = useState('');
+  const [data_nascimento, setDataNascimento] = useState('');
   const [interesses, setInteresses] = useState([]);
-  
+  const [feedbacks, setFeedbacks] = useState([]);
 
   const [form, setForm] = useState(1);
-  
-  const handleSubmit = async (e) => { // esse teste possivelmente deu certo
 
+  const handleSubmit = async (e) => { // esse teste possivelmente deu certo
+    e.preventDefault();
     fetch(urlPost, {
       method: 'post',
       body: JSON.stringify({
         name,  
-        nickname, 
+        nickname,
         email, 
         password, 
         data_nascimento, 
@@ -107,8 +110,10 @@ export default function Register() {
     }).then(function(response) {
         return response.json();
     }).then(data => {
-
-          chageForm(data);
+          if(Array.isArray(data)){
+            setFeedbacks(data[1]);
+          }
+          changeForm(data);
 
       }).catch(error => {
         // Lidar com erros
@@ -118,12 +123,26 @@ export default function Register() {
   }
 
 
+   const changeForm = (response) =>{ // verifica a resposta da validação e muda de form
+    if(Array.isArray(response)){
 
-   const chageForm = (response) =>{ // verifica a resposta da validação e muda de form
-    if(response[0]){
-      setForm(2);
-    }else{
-      console.log("Dados Inválidos, tente novamente "+ response[1]);
+      if(response[0]){
+        setForm(2);
+      }else{
+        setFeedbacks(response[1]);
+        console.log("Dados Inválidos, tente novamente "+ response[1]);
+        navigate("/register" , { replace: true });
+        navigate("/register");
+      }
+
+    } else {
+
+      if(response){
+        setForm(2);
+      }else{
+        console.log("Dados Inválidos, tente novamente ");
+      }
+
     }
 
    }
@@ -136,6 +155,7 @@ export default function Register() {
       <Col sm="auto" none="">
           <Form className="mb-4 rounded p-5 mx-4" onSubmit={handleSubmit} method="Post">
           {form === 1 ? <Form1 
+          feedbacks={feedbacks}
           nickname = {(e)=> setNickname(e.target.value)}
           name = {(e)=> setName(e.target.value)}
           email={(e)=> setEmail(e.target.value)}

@@ -8,17 +8,89 @@ import InputGroup from 'react-bootstrap/InputGroup';
 
 //Dependences
 import { useEffect, useState } from "react";
+import { Link, useNavigate, Navigate, useLocation} from "react-router-dom";
 import { useFetch } from "../../hooks/useFetch"
 
 
 const Form1 = (props) => {
 
-    //const [password1, setPassword1] = useState(1);
+    // const [password1, setPassword1] = useState(1);
+    // const  [teste, setTeste] = useState(props.feedbacks);
+
+    const pattern = [
+        {
+            id: "name",
+            value: false
+        },
+        {
+            id: "nickname",
+            value: false
+        },
+        {
+            id: "email",
+            value: false
+        },
+        {
+            id: "password",
+            value: false
+        },
+        {
+            id: "data_nascimento",
+            value: false
+        },
+        {
+            id: "genero",
+            value: false
+        },
+        {
+            id: "escolaridade",
+            value: false
+        }
+    ]
+    const navigate  = useNavigate();
+    const location = useLocation();
+    const [feedback, setFeedback] = useState(pattern)
+
+
+    function ativaFeedbacks(feedback, newFeedbacks){
+
+
+        for (var j = 0; j < newFeedbacks.length; j++) {
+            for (var i = 0; i < feedback.length; i++) {
+                if(feedback[i].id == newFeedbacks[j]){
+                    feedback[i].value = true;
+                    newFeedbacks.splice(j,1);
+                }
+                continue
+            }
+        }
+
+        
+        console.log( feedback )
+        return feedback;
+    }
+
+
+    async function atualizaFeedbakcs(){
+        props.validate();
+        setFeedback(ativaFeedbacks(pattern, props.feedbacks));
+    }
+    
+    useEffect(()=>{
+        atualizaFeedbakcs();
+        props.validate();
+        setFeedback(ativaFeedbacks(pattern, props.feedbacks));
+    },[])
+
 
     const alteraForm = (e) => {
-        e.preventDefault();
         props.validate();
+
+        setFeedback(ativaFeedbacks(pattern, props.feedbacks));
+        navigate("/register" , { replace: true });
+        navigate("/register");
    }
+    //console.log( feedback )
 
     return <>
                 <div className="fonte_login">
@@ -31,11 +103,12 @@ const Form1 = (props) => {
                     className="" 
                     name = "nickname"
                     onChange={props.nickname}
+                    required
                     />
-
                     </Form.Group> 
 
-                    
+                    {feedback[1].value && <p className="alert">Dados inválidos e/ou nickname já cadastrado</p>}
+
                     <Form.Group className="mb-2">
                     <Form.Label htmlFor="email" className="login_espacamento pt-2 tamanho">E-mail</Form.Label>
                     <Form.Control        
@@ -44,8 +117,10 @@ const Form1 = (props) => {
                     className="" 
                     name = "email"
                     onChange={props.email}
+                    required
                     />
                     </Form.Group>
+                    {feedback[2].value && <p className="alert">Dados inválidos e/ou email já cadastrado</p>}
 
                     <Form.Group className="mb-2">
                     <Form.Label htmlFor="password1" className="senha_cadastro pt-2">Senha</Form.Label>
@@ -55,10 +130,10 @@ const Form1 = (props) => {
                     name = "password1"
                     id="passaword" 
                     onChange={props.password}
+                    required
                     />
                     </Form.Group>
-
-                    
+                    {feedback[3].value && <p className="alert">Campo obrigatório</p> }
 
                     <Form.Group className="mb-2">
                     <Form.Label htmlFor="name" className="nome_c pt-2">Nome Completo</Form.Label>
@@ -68,11 +143,12 @@ const Form1 = (props) => {
                     className="" 
                     name = "name"
                     onChange={props.name}
+                    required
                     />
                     </Form.Group>
+                    {feedback[0].value && <p className="alert">Campo obrigatório</p>}
 
-
-                    <Form.Group className="mb-2" onChange={props.genero}>
+                    <Form.Group className="mb-2" onChange={props.genero} required>
                     <Form.Label htmlFor="genero" className="nickname pt-2">Gênero:</Form.Label>
                     {['radio'].map((type) => (
                     <div key={`inline-${type}`} className="mb-3">
@@ -104,11 +180,11 @@ const Form1 = (props) => {
                     </div>
                     ))}
                     </Form.Group>
-
+                    {feedback[5].value && <p className="alert">Campo obrigatório</p>}
 
                     <Form.Group>
                     <Form.Label htmlFor="Escolaridade" className="nickname pt-2">Escolaridade</Form.Label>
-                    <Form.Select aria-label="Floating label select example" onChange={props.escolaridade}>
+                    <Form.Select aria-label="Floating label select example" onChange={props.escolaridade} required>
                         <option value="default">Escolha sua escolaridade</option>
                         <option value="Sem escolaridade">Sem escolaridade</option>
                         <option value="Ensino Fundamental Incompleto">Ensino Fundamental Incompleto</option>
@@ -120,15 +196,16 @@ const Form1 = (props) => {
                         <option value="Pós-Graduação">Pós-Graduação</option>
                     </Form.Select>
                     </Form.Group>
+                    {feedback[6].value && <p className="alert">Campo obrigatório</p>}
                     <br/>
-                    <Form.Group>
+                    <Form.Group required>
                     <Form.Label htmlFor="date" className="data pt-2">Data de Nascimento:</Form.Label>
                     <Form.Control 
                     onChange={props.data_nascimento}
                     type="date" id="date" 
                     name="meeting-time" />
                     </Form.Group>
-
+                    {feedback[4].value && <p className="alert">Campo obrigatório</p>}
                     <br/>
                     <Button variant="primary" type="button" onClick={alteraForm} className="px-5 mb-3 mt-3 botao">
                     Próximo

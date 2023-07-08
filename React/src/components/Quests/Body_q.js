@@ -114,7 +114,7 @@ export default function Body_q({quest , auth}) {
       <Container className=" ">
         <Row className="">
           <Col className="mt-4 titulo" xs={10}>
-            <h2 className="titulo_login">
+            <h2 className="titulo_login_q">
              {quest.titulo}
             </h2>
           </Col>

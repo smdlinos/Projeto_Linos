@@ -120,10 +120,10 @@ export default function Register() {
 
 
    const chageForm = (response) =>{ // verifica a resposta da validação e muda de form
-    if(response){
+    if(response[0]){
       setForm(2);
     }else{
-      console.log("Dados Inválidos, tente novamente")
+      console.log("Dados Inválidos, tente novamente "+ response[1]);
     }
 
    }

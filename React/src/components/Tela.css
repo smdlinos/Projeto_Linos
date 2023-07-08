@@ -572,9 +572,28 @@ background: #BE2C53;
 
 .link_home{
     position: absolute;
-    top: 0rem;
-    left: 15rem;
+    text-align: center;
     float:center;
+    white-space: nowrap;
+    left: 5rem;
+    bottom: 2rem;
+    padding-left: 1rem;
+    color: #08394D;
+    width: 5rem;
+}
+
+.link_home2{
+    left: 4rem;
+    padding-left: 1rem;
+    color: #08394D;
+    width: 5rem;
+}
+
+.link_home2:hover{
+    left: 4rem;
+    padding-left: 1rem;
+    color: #FF668F;
+    width: 5rem;
 }
 
 .background_footer{

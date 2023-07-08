@@ -14,19 +14,13 @@ import { useState , useEffect } from "react";
 
 
 
-const Form2 = (props) => {   
-
-    const [value, setValue] = useState([1, 3]);
-
-    const handleChange = (val) => setValue(val);
+const Form2 = (props) => {
 
     const [interesse, setInteresse] = useState([]);
 
     const submitInteresse = () => {
         props.interesses(interesse);
     }
-
-    console.log(interesse)
 
     return <>
     <div className="font_popover">

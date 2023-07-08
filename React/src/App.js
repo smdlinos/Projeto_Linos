@@ -1,4 +1,3 @@
-
 //styles
 import "./styles.css";
 import "bootstrap/dist/css/bootstrap.css";
@@ -13,15 +12,14 @@ import Config from "./pages/Config";
 import Certificado from "./pages/Certificado";
 import Tabletop from "./pages/Tabletop";
 import LandingPage from "./pages/LandingPage";
-import Search from "./pages/Search";
-import Todos_Quests from "./pages/TodosQuests";
+import Historico from "./pages/Historico";
+import TodosQuests from "./pages/TodosQuests";
 import QuestsDelete from "./pages/QuestsDelete";
 
 //Hooks
 import React, { useContext, useState, useEffect } from 'react';
 import {Context} from './context/AuthContext'
 import { Routes, Route, Link, useNavigate, Navigate} from "react-router-dom";
-
 
 
 export default function App() {
@@ -34,9 +32,9 @@ export default function App() {
           <Routes>
             <Route path = "/" element = {<LandingPage/>}/>  
 
-            <Route path = "/register" element = {<Register/>}/> 
+            <Route path = "/register" element = { authenticated ? <Navigate to={'/home/'+localStorage.getItem('token').replace(/["]/g, '')}/> : <Register/>}/> 
 
-            <Route path = "/reset" element = {<Reset/>}/>
+            <Route path = "/reset" element = { authenticated ? <Navigate to={'/home/'+localStorage.getItem('token').replace(/["]/g, '')}/> : <Reset/>}/>
 
             <Route path = "/login" element = { authenticated ? <Navigate to={'/home/'+localStorage.getItem('token').replace(/["]/g, '')}/> : <Login/>}/> 
 
@@ -48,21 +46,17 @@ export default function App() {
             
             <Route path = "/config/:id" element= {<Config/>}/>
 
-            <Route path = "/certificado" element = {<Certificado/>}/> {/*id do certificado vai ser relacionado ao id do usuário no bd, logo
-            //não precisa do token, só do id do certificado -> no estilo do quests_d */} 
-            <Route path = "/user/:id/historic" element = {<Search/>}/> // o histórico vai puxar um conjunto de infos
+            <Route path = "/certificado" element = {<Certificado/>}/> 
 
-            <Route path = "/responses/:id" element = {<Search/>}/> //mesmo esquema do quests_d // rota provisória
+            <Route path = "/user/historico" element = {<Historico/>}/>
 
-            <Route path = "/search" element = {<Search/>}/> //rota de pesquisa
-       
-            <Route path = "/todos_quests" element = {<Todos_Quests/>}/>
+            <Route path = "/quests/all" element = {<TodosQuests/>}/>
 
-            <Route path = "/questsdelete" element = {<QuestsDelete/>}/>
+            <Route path = "/account/delete" element = {<QuestsDelete/>}/>
 
             <Route path = "/quest_d/:id" element = {<Quest_D/>}/>
 
-            <Route path = "/tabletop/:id" element={<Tabletop/>}/> {/*mesmo esquema do quests_d -> as infos só chegam com o header Authenticated*/}
+            <Route path = "/tabletop/:id" element={<Tabletop/>}/>
 
           </Routes>
           <br/>

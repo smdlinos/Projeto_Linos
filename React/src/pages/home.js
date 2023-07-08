@@ -19,6 +19,7 @@ import { Context } from '../context/AuthContext';
 //Endpoints
 const urlRecomendedQuests = "https://smdquests.000webhostapp.com/api/quests/recomended";
 const urlAllQuests = "https://smdquests.000webhostapp.com/api/quests";
+const urlI = 'https://smdquests.000webhostapp.com/api/user/interesses';
 
 import { api } from '../services/api';
 import Footer from "../components/Global/Footer";
@@ -26,10 +27,12 @@ import Footer from "../components/Global/Footer";
 export default function Home(){
 
 
-    const { authenticated, handleLogout, loading} = useContext(Context);
+    const { user, authenticated, handleLogout} = useContext(Context);
 
+    const [loading, setLoading] = useState(true);
     const [recomendados, setRecomendados] = useState();
     const [quests, setQuests] = useState();
+    const [interesses,setInteresses] = useState();
 
     if(authenticated){
         useEffect(() => {
@@ -53,6 +56,32 @@ export default function Home(){
             handleRecomend();
             
         }, []);
+
+
+        useEffect(() => {
+          async function getInteresses() { // esse teste possivelmente deu certo
+
+              const token = localStorage.getItem('token').replace(/["]/g, '');
+
+              fetch(urlI, {
+                method: 'post',
+                body: JSON.stringify({
+                  token
+              })
+              }).then(function(response) {
+                  return response.json();
+              }).then(data => {
+                  setInteresses(data.interesses);
+                }).catch(error => {
+                  // Lidar com erros
+                  console.error(error);
+              });
+
+          }
+
+          getInteresses();
+          setLoading(false);
+        }, [])
 
     } else  {
         
@@ -85,15 +114,15 @@ export default function Home(){
                 <h3 className='pb-3 titulo_login alinhamento'>
                     Questionários Recomendados
                 </h3>
-                 <Forms quests={recomendados} />
+                 <Forms quests={recomendados} classTag={'classe2'} interesses={interesses} />
                 </>
                 }
                 <h3 className='pb-3 pt-5 titulo_login alinhamento'>
                 Todos os Questionários
                 </h3>
-                 <Forms quests={quests}/>
+                 <Forms quests={quests} classTag={'classe1'} interesses={authenticated ? interesses : false }/>
                  <div className="senha_config pe-4">
-                 <Button variant="link" type="button" className=" mb-3 mt-3 senha_config" href="/todos_quests" >
+                 <Button variant="link" type="button" className=" mb-3 mt-3 senha_config" href="/quests/all" >
                     Ver mais
                  </Button>
                  </div>

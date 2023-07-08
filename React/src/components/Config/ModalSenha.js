@@ -13,8 +13,17 @@ import Logo from "../imagens/quest_logo.png"
 
 export default function Modal_Senha(props) {
     const [modalShow, setModalShow] = React.useState(false);
-    //const [password1, setPassword1] = useState(1);
+    const [password, setPassword] = useState(0);
+    const [password1, setPassword1] = useState(1);
 
+    const change = () => {
+      props.password(password);
+      props.onHide;
+    }
+
+    const invalid = () => {
+      alert('senhas diferentes')
+    }
 
     
   return (
@@ -34,9 +43,8 @@ export default function Modal_Senha(props) {
                     <Form.Control 
                     type="password" 
                     placeholder="" 
-                    name = "password1"
-                    id="passaword" 
-                    onChange={props.password}
+                    name = "password"
+                    id="password" 
                     />
                     </Form.Group>
                     <Form.Group className="mb-2">
@@ -45,8 +53,8 @@ export default function Modal_Senha(props) {
                     type="password" 
                     placeholder="......." 
                     name = "password1"
-                    id="nova_passaword" 
-                    onChange={props.password}
+                    id="nova_passaword1" 
+                    onChange={(e) => setPassword(e.target.value)}
                     />
                     </Form.Group>
                     <Form.Group className="mb-4">
@@ -54,14 +62,15 @@ export default function Modal_Senha(props) {
                     <Form.Control 
                     type="password" 
                     placeholder="......." 
-                    name = "password1"
-                    id="nova_passaword" 
-                    onChange={props.password}
+                    name = "password2"
+                    id="nova_passaword2" 
+                    onChange={(e) => setPassword1(e.target.value)}
                     />
                     </Form.Group>
       
-        <Button onClick={props.onHide} className="botao">SALVAR ALTERAÇÕES</Button>
-      
+        { password == password1 ? <Button onClick={change} className="botao">SALVAR ALTERAÇÕES</Button> : 
+          <Button onClick={invalid} className="botao">SALVAR ALTERAÇÕES</Button>}
+  
       </Modal.Body>
     </Modal>
     </div>

@@ -7,27 +7,37 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from "react-bootstrap/Form";
 import React, { useContext, useEffect, useState } from 'react';
-
-
+import ToggleButton from 'react-bootstrap/ToggleButton';
+import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
+import Etiqueta from "../imagens/etiqueta.svg";
 
 import Logo from "../imagens/quest_logo.png"
 
 
 export default function Modal_Interesse(props) {
-    const [modalShow, setModalShow] = React.useState(false);
-    //const [password1, setPassword1] = useState(1);
-
-    const [value, setValue] = useState([1, 3]);
-
-    const handleChange = (val) => setValue(val);
 
     const [interesse, setInteresse] = useState([]);
 
+
     const submitInteresse = () => {
-        props.interesses(interesse);
+        props.inter(interesse);
+        props.interview(convertToObject(interesse));
+        props.onHide(false);
     }
 
 
+    const convertToObject = (interesse) => {
+        //let interesses = [];
+        for(let i = 0; i < interesse.length; i++){
+            props.temas.map((tema) => {
+                if(interesse[i] == tema.tema){
+                    interesse[i] = tema;
+                }
+            })   
+        }
+
+        return interesse;
+    }
     
   return (
     <div className="font_t">
@@ -88,7 +98,7 @@ export default function Modal_Interesse(props) {
         
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide} className="botao">SALVAR ALTERAÇÕES</Button>
+        <Button onClick={submitInteresse} className="botao">SALVAR ALTERAÇÕES</Button>
       </Modal.Footer>
     </Modal>
     </div>

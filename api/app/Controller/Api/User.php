@@ -358,17 +358,20 @@ class User
 			}
 		}
 
+	    if ($cadastrar['password'] == '' || $cadastrar['password'] == undefined) {
+	    	$cadastrar['password'] = $usuario->password;
+	    }
 
 		foreach ($cadastrar as $key => $value) {
        		$_POST[$key] = $value;
 
 	    }
 
+
 	    $validate = validate([
 			'name' 			  => 'required',
 			'nickname' 		  => 'required|unique:usuarios',
 			'email'  		  => 'email|unique:usuarios',
-			'password' 		  => 'required|maxlen:15',
 			'data_nascimento' => 'required',
 			'genero' 		  => 'required',
 			'escolaridade' 	  => 'required'
@@ -389,7 +392,12 @@ class User
 			exit;
 		}
 
-	    $validate['password'] = password_hash($validate['password'], PASSWORD_DEFAULT);
+		if ($cadastrar['password'] != $usuario->password) {
+		    $validate['password'] = password_hash($cadastrar['password'], PASSWORD_DEFAULT);
+		} else {
+			$validate['password'] =$cadastrar['password'];
+		}
+
 		$validate['pontos'] = 0;
 
 		$user = new EntityUser();
@@ -412,15 +420,19 @@ class User
 			exit;
 		}
 
-		$remove = Interesses::removeInteresses($usuario); // remover os interesses do usuário
+		$verifyInteresses = Interesses::filtraInteresses($usuario);
 
-		if (!$remove) {
-			echo json_encode(false);
-			http_response_code(401);
-			exit;
+		if($interesses != $verifyInteresses['interesses']){
+			$remove = Interesses::removeInteresses($usuario); // remover os interesses do usuário
+
+			if (!$remove) {
+				echo json_encode(false);
+				http_response_code(401);
+				exit;
+			}
+
+			Interesses::setInteresses($usuario->id_usuario, $interesses);
 		}
-
-		Interesses::setInteresses($usuario->id_usuario, $interesses);
 
 		self::auth($user);
 	}
@@ -518,7 +530,7 @@ class User
 	      echo json_encode(true);
 	      http_response_code(200);
 	      exit;
-	    }      
+	    }
 	    
 	}
 

@@ -9,9 +9,13 @@ import Popover from "./CardCertificado";
 
 import Logo from "../imagens/quest_logo.png"
 import PdfButton from "./PdfButton";
-
+import React, { useContext, useEffect, useState } from 'react';
+import {Context} from '../../context/AuthContext';
 
 export default function BodyCertificado() {
+
+  const { authenticated, user } = useContext(Context);
+
   return (
     <div className="background_land">
       <Container className="mb-4 px-4">
@@ -35,18 +39,33 @@ export default function BodyCertificado() {
         <Row className="div_horas">
           <img src={horas} alt="logo" className="rounded mx-auto d-block horas"/>
             <Col className="texto_horas">
-            <p><b>X HORAS TOTAIS</b></p>
+            <p><b>{user && user.tabletop[0].ch} HORAS TOTAIS</b></p>
             </Col>
         </Row>
         <Row className="mt-5 pb-3">
-            <Col xs={12} className="mt-5 pb-3">
+            { user && parseInt(user.tabletop[0].ch) > 0 ?
+            <>
+              <Col xs={12} className="mt-5 pb-3">
+                <h6 className="fonte_login alinhamento mt-5">
+                  <b>Quer resgatar seu certificado? <br/>Não perca tempo!</b>
+                </h6>
+                <h6 className="fonte_login alinhamento mt-5">
+                  <strong>ATENÇÃO:</strong> ao gerar um certificado suas horas serão resetadas no nosso sitema,
+                  portanto guarde bem o(s) seu(s) certificado(s), pois o resgate do(s) mesmo(s) será único. 
+                </h6>
+              </Col>
+              <Col>
+                <PdfButton user={user.user.name} ch={user.tabletop[0].ch} />
+              </Col>
+            </>
+            :
+            <>
             <h6 className="fonte_login alinhamento mt-5">
-            <b>Quer resgatar seu certificado? <br/>Não perca tempo!</b>
+              <b>Você precisa ter mais de 1 hora acumuladas para resgatar um certificado :(</b>
             </h6>
-            </Col>
-            <Col>
-            <PdfButton/>
-            </Col>
+            </>
+            }
+
         </Row>
 
       </Container>

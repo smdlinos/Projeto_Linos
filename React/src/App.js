@@ -12,8 +12,8 @@ import Config from "./pages/Config";
 import Certificado from "./pages/Certificado";
 import Tabletop from "./pages/Tabletop";
 import LandingPage from "./pages/LandingPage";
-import Search from "./pages/Historico";
-import Todos_Quests from "./pages/TodosQuests";
+import Historico from "./pages/Historico";
+import TodosQuests from "./pages/TodosQuests";
 import QuestsDelete from "./pages/QuestsDelete";
 
 //Hooks
@@ -48,11 +48,9 @@ export default function App() {
 
             <Route path = "/certificado" element = {<Certificado/>}/> 
 
-            <Route path = "/user/historico" element = {<Search/>}/> // o histórico vai puxar um conjunto de infos
+            <Route path = "/user/historico" element = {<Historico/>}/>
 
-            <Route path = "/search" element = {<Search/>}/> //rota de pesquisa
-       
-            <Route path = "/quests/all" element = {<Todos_Quests/>}/>
+            <Route path = "/quests/all" element = {<TodosQuests/>}/>
 
             <Route path = "/account/delete" element = {<QuestsDelete/>}/>
 

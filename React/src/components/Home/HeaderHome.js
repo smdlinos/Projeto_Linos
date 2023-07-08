@@ -29,13 +29,8 @@ export default function Header_q() {
 
   const redirect = (e) => {
     e.preventDefault();
+      navigate('/quests/all');
 
-    if (authenticated) {
-      navigate('/home/'+localStorage.getItem('token').replace(/["]/g, ''));
-    } else {
-      navigate('/home');
-    }
-    
   }
 
 

@@ -227,7 +227,8 @@ const Form_config = (props) => {
 
                     <Form.Group>
                     <Form.Label htmlFor="Escolaridade" className="nickname pt-2">Gênero</Form.Label>
-                    <Form.Select aria-label="Floating label select example" onChange={(e)=> setGenero(e.target.value)} defaultValue={user ? user.user.genero : ''}>
+                    <Form.Select aria-label="Floating label select example" onChange={(e)=> setGenero(e.target.value)}>
+                        <option value="default">{user ? user.user.genero : ''}</option>
                         <option value="Masculino">Masculino</option>
                         <option value="Feminino">Feminino</option>
                         <option value="Outro">Outro</option>

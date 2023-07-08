@@ -9,7 +9,7 @@ class PdfButton extends React.Component {
 
   render() {
     return (
-      <button onClick={this.generatePdf} className='botao botao_pdf p-2'>Gerar PDF</button>
+      <button onClick={this.generatePdf} className='botao botao_pdf p-2 pt-3'>Gerar PDF</button>
     );
   }
 }

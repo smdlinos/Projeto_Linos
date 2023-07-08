@@ -27,6 +27,7 @@ const urlAllQuests = "https://smdquests.000webhostapp.com/api/quests";
 const url = "https://smdquests.000webhostapp.com/api/search/";
 
 import { useNavigate, Navigate} from "react-router-dom";
+import Container from "react-bootstrap/esm/Container";
 
 function TodosQuests(){
 
@@ -117,7 +118,8 @@ function TodosQuests(){
                         <a onClick={redirect}><img src={voltar} alt="botao_voltar" className="mt-5 botao_voltar"/></a>
                     </Col>
                 }
-            <Row>
+                <Container className="m-auto">
+                <Row className="m-auto">
                 <Col className=" mb-2">  
                     {quests && quests.map((quest) => (
                             <Card    
@@ -127,13 +129,12 @@ function TodosQuests(){
                                 className="mb-2 card"
                                 key={quest.id_questionario}
                             >
-                            <Card.Body className="mx-4">
+                            <Card.Body className="mx-4 ">
                                 
                                 <Card.Title > 
-                                <p className="">{quest.titulo}</p>
+                                <p className="font_quests">{quest.titulo}</p>
                                 </Card.Title>
-                                <div>
-                                    
+                                <div className="font_tesao">
                                     <Row>
                                         <Col xs={1} className="espaco_card">
                                         <img src={User} alt="icon" className="cor_itens"/>
@@ -157,7 +158,7 @@ function TodosQuests(){
                                     </Row>
                                     
                                     <br/>
-                                    <Row className="pb-3">
+                                    <Row className="pb-2">
                                        
                                         <Col xs={1}>
                                         <img src={Clock} alt="relogio"/>
@@ -184,6 +185,9 @@ function TodosQuests(){
                </Col>      
             </Row>            
 
+                </Container>
+                
+                <Footer/>
         </div>
     )
 }

@@ -15,8 +15,8 @@ import horas from "../imagens/horas.svg"
 import Duvida from "../imagens/duvida.svg"
 import Logo from "../imagens/quest_logo.png"
 import "../Tela.css";
-import Perfil_k from "../imagens/Perfil_k.svg"
-import Editar from "../imagens/editar_perfil.svg"
+import Perfil_k from "../imagens/koala_novo.svg"
+import Editar from "../imagens/edit_novo.svg"
 //import Trash from "../imagens/trash.svg"
 
 
@@ -150,7 +150,7 @@ const Form_config = (props) => {
 
     return <>
                 <div className="fonte_login">
-                 <Form className="mb-4 rounded p-5 mx-4" onSubmit={handleSubmit}>
+                 <Form className="mb-4 rounded p-3 forms" onSubmit={handleSubmit}>
                     <Form.Group className="mb-2">
 
                     <Row className="imagem_perfil">
@@ -186,7 +186,7 @@ const Form_config = (props) => {
                     />
 
                     </Form.Group>
-                    <Form.Group className="mb-2">
+                    <Form.Group className="mb-5">
                     <Form.Label htmlFor="password1" className="senha_cadastro pt-2">Senha</Form.Label>
                     <Form.Control 
                     type="password" 
@@ -199,19 +199,7 @@ const Form_config = (props) => {
 
                     </Form.Group>
                     
-                    <div className="senha_config">
-
-                    <Button variant="link" className="senha_config" onClick={() => setModalShow(true)}>
-                            Redefinir Senha
-                        </Button>
-
-                     {modalShow &&  <Modal_Senha
-                            show={modalShow}
-                            onHide={() => setModalShow(false)}
-                            password= {setPassword}
-                        />
-                      }
-                    </div>
+                    
                     
                     <Form.Group className="mb-2">
                     <Form.Label htmlFor="name" className="nome_c pt-2">Nome Completo</Form.Label>
@@ -296,14 +284,29 @@ const Form_config = (props) => {
 
             </div>
                     
-                    <Button variant="primary" type="submit" className="px-5 mb-3 mt-3 botao">
+                    <Button variant="primary" type="submit" className="px-5 mt-3 botao">
                     SALVAR ALTERAÇÕES
                     </Button>
             </Form>
-            <div className="botao_deletar">
+
+                <div className="senha_config2">
+
+                <Button variant="link" className="senha_config" onClick={() => setModalShow(true)}>
+                        Redefinir Senha
+                    </Button>
+
+                {modalShow &&  <Modal_Senha
+                        show={modalShow}
+                        onHide={() => setModalShow(false)}
+                        password= {setPassword}
+                    />
+                }
+                </div>
+
+            <div className="botao_deletar ">
 
                 
-            <Button variant="link" type="button" className=" mb-3 mt-3 botao_deletar" onClick={() => setModalShow3(true)}>
+            <Button variant="link" type="button" className=" mb-3 botao_deletar" onClick={() => setModalShow3(true)}>
             <img src={Lixo} alt="lixo" className="lixeira pb-1"></img>DELETAR CONTA
             </Button>
 

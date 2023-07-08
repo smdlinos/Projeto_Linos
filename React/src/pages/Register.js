@@ -46,7 +46,7 @@ export default function Register() {
   const [form, setForm] = useState(1);
   
   const handleSubmit = async (e) => { // esse teste possivelmente deu certo
-
+    e.preventDefault()
     fetch(urlPost, {
       method: 'post',
       body: JSON.stringify({
@@ -120,7 +120,7 @@ export default function Register() {
 
 
    const chageForm = (response) =>{ // verifica a resposta da validação e muda de form
-    if(response[0]){
+    if(response){
       setForm(2);
     }else{
       console.log("Dados Inválidos, tente novamente "+ response[1]);

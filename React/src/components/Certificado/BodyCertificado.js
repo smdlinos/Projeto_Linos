@@ -36,7 +36,7 @@ export default function BodyCertificado() {
             </p>
             </Col>
         </Row>
-        <Row className="div_horas">
+        <Row className="div_horas pb-3">
           <img src={horas} alt="logo" className="rounded mx-auto d-block horas"/>
             <Col className="texto_horas">
             <p><b>{user && user.tabletop[0].ch} HORAS TOTAIS</b></p>
@@ -63,6 +63,9 @@ export default function BodyCertificado() {
             <h6 className="fonte_login alinhamento mt-5">
               <b>Você precisa ter mais de 1 hora acumuladas para resgatar um certificado :(</b>
             </h6>
+            <Col className="pt-3">
+              <button disabled className='botao botao_pdf p-2 botao_disable'>Gerar PDF</button>
+            </Col>
             </>
             }
 

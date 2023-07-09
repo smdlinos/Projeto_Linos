@@ -316,14 +316,14 @@ const Form_config = (props) => {
 
             </div>
                     
-                    <Button variant="primary" type="submit" className="px-5 mt-3 botao">
+                    <Button variant="primary" href="/home" type="submit" className="px-5 mt-3 botao">
                     SALVAR ALTERAÇÕES
                     </Button>
             </Form>
                 <div className="senha_config2">
             
 
-                <Button variant="link" className="senha_config" onClick={() => setModalShow(true)}>
+                <Button variant="link" className="senha_config pt-5" onClick={() => setModalShow(true)}>
                         Redefinir Senha
                 </Button>
 

@@ -96,7 +96,7 @@ export default function Modal_Perfil(props) {
               <img src={perfil(valor)} alt="p_koala"/>
               </Col>
           </Row>
-          <p className="alinhamento">Seleione um dos mascostes {valor}</p>
+          <p className="alinhamento">Seleione um dos mascostes</p>
           <Row className="pb-4 ">
               <Col xs={4}>
               <Button variant="link" onClick={() => atualizarEstado("1")}>
@@ -133,7 +133,7 @@ export default function Modal_Perfil(props) {
               < Button variant="link" onClick={() => atualizarEstado("6")}>
               <img src={Pinguin} alr="kaola_pequeno"/>
                 </ Button >
-              <p>{valor}</p>
+
               </Col>
             </Row>
         

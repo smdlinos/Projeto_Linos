@@ -30,8 +30,8 @@ function Forms(props){
                             <Card    
                                 onClick={(e)=>navigate("/quest_d/"+quest.id_questionario)}
                                 id = {quest.id_questionario}
-                                style={{ width: '100%' }}
-                                className="mb-1 card"
+                                style={{ width: '100%' , borderRadius: "2rem"}}
+                                className=" card"
                             >
                             <Card.Body className="mx-4">
                         
@@ -64,7 +64,7 @@ function Forms(props){
                                     </Row>
                                     
                                    
-                                    <Row className="">
+                                    <Row className="pb-2">
                                        
                                         <Col xs={1}>
                                         <img src={Clock} alt="relogio"/>
@@ -73,7 +73,7 @@ function Forms(props){
                                         <p className="texto_data">{quest.data_inicio}</p>
                                         </Col>
                                         <Col className="sla" xs={3}>
-                                        <img src={Star} alt='pontos'className='estrelinha espaco'/>
+                                        <img src={Star} alt='pontos'className='estrelinha espaco2'/>
                                         <p className="texto_data">{quest.pontuacao}</p>
                                         </Col>
                                     </Row>

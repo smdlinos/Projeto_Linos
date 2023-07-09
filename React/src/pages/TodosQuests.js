@@ -125,16 +125,18 @@ function TodosQuests(){
                             <Card    
                                 onClick={(e)=>navigate("/quest_d/"+quest.id_questionario)}
                                 id = {quest.id_questionario}
-                                style={{ width: '100%' }}
+                                style={{ width: '100%' , borderRadius: "2rem"}}
                                 className="mb-2 card"
                                 key={quest.id_questionario}
                             >
                             <Card.Body className="mx-4 ">
                                 
-                                <Card.Title > 
-                                <p className="font_quests">{quest.titulo}</p>
-                                </Card.Title>
-                                <div className="font_tesao">
+                            <Row>
+                                        <Col>
+                                        <p className="titulo_login_q">{quest.titulo}</p>
+                                        </Col>
+                                    </Row>
+                                    
                                     <Row>
                                         <Col xs={1} className="espaco_card">
                                         <img src={User} alt="icon" className="cor_itens"/>
@@ -143,7 +145,7 @@ function TodosQuests(){
                                         <small>{quest.autor}</small>
                                         </Col>
                                     </Row>
-                                    <Row className="pb-3">
+                                    <Row className="pb-1">
                                         <Col xs={1}>
                                         <img src={House} alt="icon" className="cor_itens"/>
                                         </Col>
@@ -151,29 +153,26 @@ function TodosQuests(){
                                         <small>{quest.instituicao}</small><br/>
                                         </Col>
                                     </Row>
-                                    <Row>
+                                    <Row className="pb-2">
                                         <Col>
                                         <small>{quest.descricao}</small>
                                         </Col>
                                     </Row>
                                     
-                                    <br/>
-                                    <Row className="pb-2">
+                                   
+                                    <Row className="">
                                        
                                         <Col xs={1}>
                                         <img src={Clock} alt="relogio"/>
                                         </Col>
-                                        <Col>
-                                        <small>{quest.data_inicio}</small>
+                                        <Col xs={8}>
+                                        <p className="texto_data">{quest.data_inicio}</p>
                                         </Col>
-                                        <Col>
-                                        <img src={Star} alt='pontos'className='estrelinha'/>
-                                        <small>{quest.pontuacao}</small>
+                                        <Col className="sla" xs={1}>
+                                        <img src={Star} alt='pontos'className='estrelinha espaco'/>
+                                        <p className="texto_data pt-2">{quest.pontuacao}</p>
                                         </Col>
                                     </Row>
-                                   
-                                    
-                                </div>
                                
                             </Card.Body>
 
@@ -186,7 +185,7 @@ function TodosQuests(){
             </Row>            
 
                 </Container>
-                
+
                 <Footer/>
         </div>
     )

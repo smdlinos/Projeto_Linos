@@ -52,36 +52,38 @@
   ### Github
 </div>
 <div name='equipe' style='display:flex; flex-diretion:row'>
-  <div name='letinepo' style='display:flex; align-items: center;'>
+
+  <div name='letinepo' style=''>
     <a href="https://github.com/letinepo">
       <img title="Letícia" src="./assets/noto_lion.png" style="width: 50px;" />
     </a>
   </div>
-  <div name='vitorinha' style='display:flex; align-items: center;'>
+  <div name='vitorinha' style=''>
     <a href="https://github.com/vitoriajessicapr">
       <img title="Vitoria" src="./assets/noto-v1_bird.png" style="width: 50px;"/>
     </a>
   </div>
-  <div name='luizao' style='display:flex; align-items: center;'>
+  <div name='luizao' style=''>
     <a href="https://github.com/LUISGSFILHO">
       <img title="Luiz" src="./assets/noto_bear.png" style="width: 50px;"/>
     </a>
   </div>
-  <div name='vitao' style='display:flex; align-items: center;'>
+  <div name='vitao' style=''>
     <a href="https://github.com/victor280504">
       <img title="Victor" src="./assets/noto_penguin.png" style="width: 50px;" />
     </a>
   </div>
-  <div name='macla' style='display:flex; align-items: center;'>
+  <div name='macla' style=''>
     <a href="https://github.com/claraolvrx">
       <img title="MariaClara" src="./assets/noto_tiger-face.png" style="width: 50px;" />
     </a>
   </div>
-  <div name='mickas' style='display:flex; align-items: center;'>
+  <div name='mickas' style=''>
     <a href="https://github.com/mickael-castro">
       <img title="Mickael" src="./assets/twemoji_koala.png" style="width: 50px;" />
     </a>
   </div>
+ 
 </div>
 
 
@@ -174,7 +176,7 @@ Abra o terminal, na pasta do código do seu editor, e digite os seguintes comand
 
 ##### Atenção: Os campos email e password, dizem respeito às configurações da funcionalidade de redefinir senha, no campo *email* deve constar o email do remetente, e no *password* a senha de aplicação correspondente ao email.
 
-Com o .env configurado,  a api está pronta para ser usada, certifique-se apenas de que todos os endpoints em que você deseja fazer uma requisição está correto do lado do cliente.
+Com o .env configurado,  a api está pronta para ser usada, certifique-se apenas de que todos os endpoints em que você deseja fazer requisões que estejam corretos do lado do cliente.
 #### Todas as rotas disponíveis estão distribuídas nos arquivos da pasta *'./api/routes/api/v1'*
 
   Por fim basta colar a pasta do back-end 'api' , dentro do arquivo 'htdocs' no XAMPP e ligar o seu servidor local.

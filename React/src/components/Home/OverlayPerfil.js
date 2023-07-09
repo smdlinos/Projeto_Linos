@@ -39,7 +39,7 @@ function OverlayPerfil() {
           <Navbar key={expand} expand={expand} className="mb-3">
             <Container fluid >
             
-              <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}` } className='ms-auto'>
+              <Navbar.Toggle variant="link" aria-controls={`offcanvasNavbar-expand-${expand}` } className='ms-auto '>
                 {user && <img src={perfil2(user.user.custom)} alt='perfil' ></img>}
               </Navbar.Toggle>
               <Navbar.Offcanvas

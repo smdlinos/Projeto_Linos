@@ -51,37 +51,37 @@
 
   ### Github
 </div>
-<div name='equipe' style='display:flex; flex-direction: row;' >
-   <div name='letinepo'>
-       <a href="https://github.com/letinepo">
-         <img title="Letícia" src="./assets/noto_lion.png" style="width: 50px;" />
-        </a>
+<div name='equipe' style='display:flex; flex-direction: row;'>
+  <div name='letinepo'>
+    <a href="https://github.com/letinepo">
+      <img title="Letícia" src="./assets/noto_lion.png" style="width: 50px; display: inline-block;" />
+    </a>
   </div>
   <div name='vitorinha'>
-        <a href="https://github.com/vitoriajessicapr">
-         <img title="Vitoria" src="./assets/noto-v1_bird.png" style="width: 50px;"/>
-        </a>
-   </div>
-    <div name='luizao'>
-        <a href="https://github.com/LUISGSFILHO"><img title="Luiz" src="./assets/noto_bear.png" style="width: 50px;"/>
-        </a>
-      </div>
-      <div name='vitao'>
-        <a href="https://github.com/victor280504">
-        <img title="Victor" src="./assets/noto_penguin.png" style="width: 50px;" />
-        </a>
-      </div>
-      <div name='macla' >
-        <a href="https://github.com/claraolvrx">
-        <img title="MariaClara" src="./assets/noto_tiger-face.png" style="width: 50px;" />
-         </a>
-      </div>
-      <div name='mickas'>
-        <a href="https://github.com/mickael-castro">
-        <img title="Mickael" src="./assets/twemoji_koala.png" style="width: 50px;" />
-       </a>
-      </div>
-      <br>
+    <a href="https://github.com/vitoriajessicapr">
+      <img title="Vitoria" src="./assets/noto-v1_bird.png" style="width: 50px; display: inline-block;" />
+    </a>
+  </div>
+  <div name='luizao'>
+    <a href="https://github.com/LUISGSFILHO">
+      <img title="Luiz" src="./assets/noto_bear.png" style="width: 50px; display: inline-block;" />
+    </a>
+  </div>
+  <div name='vitao'>
+    <a href="https://github.com/victor280504">
+      <img title="Victor" src="./assets/noto_penguin.png" style="width: 50px; display: inline-block;" />
+    </a>
+  </div>
+  <div name='macla'>
+    <a href="https://github.com/claraolvrx">
+      <img title="MariaClara" src="./assets/noto_tiger-face.png" style="width: 50px; display: inline-block;" />
+    </a>
+  </div>
+  <div name='mickas'>
+    <a href="https://github.com/mickael-castro">
+      <img title="Mickael" src="./assets/twemoji_koala.png" style="width: 50px; display: inline-block;" />
+    </a>
+  </div>
 </div>
 
 <a name="requisitos"></a>

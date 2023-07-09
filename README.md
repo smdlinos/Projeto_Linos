@@ -51,7 +51,7 @@
 
   ### Github
 </div>
-<div name='equipe' style='display:flex;'>
+<div name='equipe' style='display:flex; flex-diretion:row'>
   <div name='letinepo' style='display:flex; align-items: center;'>
     <a href="https://github.com/letinepo">
       <img title="Letícia" src="./assets/noto_lion.png" style="width: 50px;" />

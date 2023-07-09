@@ -28,6 +28,7 @@ import Koala from "../imagens/PerfilKoala.svg"
 
 //Dependences
 import { useFetch } from "../../hooks/useFetch"
+import { setPerfil } from '../../hooks/setPerfil';
 import React, { useContext, useEffect, useState } from 'react';
 import { Context } from '../../context/AuthContext';
 import Modal_Perfil from "./ModalPerfil";
@@ -41,7 +42,9 @@ const urlPost = 'https://smdquests.000webhostapp.com/api/user/update';
 
 const Form_config = (props) => {
 
-    const [perfil, setPerfil] = useState(Koala);
+
+    const {Leao_, Passaro_, Tigre_, Urso_, Pinguin_, Koala_, Leao,
+    Passaro, Tigre, Urso, Pinguin, Koala, config, perfil, perfil2} = setPerfil(custom)
 
     const [interessesToView , setInteressesToView] = useState([]); // mostrados
     const [loading, setLoading] = useState(true);
@@ -80,10 +83,23 @@ const Form_config = (props) => {
       setDataNascimento(user.user.data_nascimento);
       setGenero(user.user.genero);
       setEscolaridade(user.user.escolaridade);
-      setInteresses(user.interesses);
+      setInteresses(interessesToView);
       setCustom(user.user.custom);
      }
     },[user]);
+
+    useEffect(() =>{
+    if (loading1 == false) {
+      setName(user.user.name);
+      setNickname(user.user.nickname);
+      setEmail(user.user.email);
+      setDataNascimento(user.user.data_nascimento);
+      setGenero(user.user.genero);
+      setEscolaridade(user.user.escolaridade);
+      setCustom(user.user.custom);
+      setInteresses(interessesToView);
+     }
+    },[loading1]);
 
     const handleSubmit = async (e) => { // esse teste possivelmente deu certo
         e.preventDefault();
@@ -134,6 +150,7 @@ const Form_config = (props) => {
             return response.json();
         }).then(data => {
             setInteressesToView(data.interesses);
+            setInteresses(data.interesses);
           }).catch(error => {
             // Lidar com erros
             console.error(error);
@@ -145,6 +162,8 @@ const Form_config = (props) => {
     setLoading(false);
   }, [])
 
+   console.log(custom, interesses);
+
     return <>
                 <div className="fonte_login">
                  <Form className="mb-4 rounded p-3 forms" onSubmit={handleSubmit}>
@@ -152,7 +171,7 @@ const Form_config = (props) => {
 
                     <Row className="imagem_perfil">
                         <div className="alinhamento">
-                            <img src={perfil} alt="perfil_koala" className="perfil_koala m-auto pt-3"></img>
+                            <img src={perfil(custom)} alt="perfil_koala" className="perfil_koala m-auto pt-3"></img>
                             <Col className="botao_editar">
 
                             <Button variant="link" className="senha_config" onClick={() => setModalShow4(true)}>
@@ -161,9 +180,10 @@ const Form_config = (props) => {
 
                             {modalShow4 &&  <Modal_Perfil
                                     perfil={setPerfil}
+                                    value={custom}
+                                    custom={setCustom}
                                     show={modalShow4}
                                     onHide={() => setModalShow4(false)}
-                                    password= {setPassword}
                                 />
                             }
                             

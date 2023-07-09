@@ -28,10 +28,11 @@ export default function Modal_Perfil(props) {
     const [modalShow, setModalShow] = React.useState(false);
     //const [password1, setPassword1] = useState(1);
 
-    const [valor, setValor] = useState('');
+    const [valor, setValor] = useState(props.value);
 
     const atualizarEstado = (novoValor) => {
       setValor(novoValor);
+      props.custom(novoValor);
     };
 
     let img;

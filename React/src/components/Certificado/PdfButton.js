@@ -3,7 +3,7 @@ const criaCertificado = "https://smdquests.000webhostapp.com/api/reset/tabletop"
 import Certificado from "../imagens/CertificadoQuests.jpg";
 
 class PdfButton extends React.Component {
-
+//VITAO
   constructor(props) {
     super(props);
     this.state = {
@@ -11,7 +11,9 @@ class PdfButton extends React.Component {
     };
   }
 
+  //EU
   getBase64Image = (imgUrl, callback) => {
+    console.log('rodouB64I')
     fetch(imgUrl)
       .then(res => res.blob())
       .then(blob => {
@@ -22,6 +24,7 @@ class PdfButton extends React.Component {
   }
 
   generatePdf = () => {
+    console.log('rodouGPDF')
     // Acessando as props
     const user = this.props.user;
     const ch = this.props.ch;
@@ -42,9 +45,11 @@ class PdfButton extends React.Component {
       doc.text(`${dateString1}`, 50, 105); // Adiciona a data e hora atuais ao PDF
       doc.text(ch, 175, 115);
       doc.text(`${dateString2}.`, 200, 130); // Adiciona a data e hora atuais ao PDF
+      doc.save('CertificadoQuests.pdf');
     });
   }
 
+  //VITAO
   resetCh = async () => {
     this.generatePdf();
     const token = localStorage.getItem('token').replace(/["]/g, '');

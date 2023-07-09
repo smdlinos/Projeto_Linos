@@ -53,38 +53,35 @@
 </div>
 
 
-<div name='equipe' style=' display:flex; flex-diretion:row '>
-  <div name='letinepo' style='width: 50px;'>
-    <a href="https://github.com/letinepo">
-      <img title="Letícia" src="./assets/noto_lion.png" style="width: 50px;" />
-    </a>
+<div align="center">
+  <div>
+    <a href="https://github.com/letinepo"><img title="Letícia" src="./assets/noto_lion.png" width="50px"/></a>
+    <br>
+    <a href="https://github.com/vitoriajessicapr"><img title="Vitoria" src="./assets/noto-v1_bird.png" width="50px"/></a>
+    <br>
+    <a href="https://github.com/LUISGSFILHO"><img title="Luiz" src="./assets/noto_bear.png" width="50px"/></a>
+    <br>
+    <a href="https://github.com/victor280504"><img title="Victor" src="./assets/noto_penguin.png" width="50px"/></a>
+    <br>
+    <a href="https://github.com/claraolvrx"><img title="MariaClara" src="./assets/noto_tiger-face.png" width="50px"/></a>
+    <br>
+    <a href="https://github.com/mickael-castro"><img title="Mickael" src="./assets/twemoji_koala.png" width="50px"/></a>
   </div>
-  <div name='vitorinha' style=''>
-    <a href="https://github.com/vitoriajessicapr">
-      <img title="Vitoria" src="./assets/noto-v1_bird.png" style="width: 50px;"/>
-    </a>
-  </div>
-  <div name='luizao' style=''>
-    <a href="https://github.com/LUISGSFILHO">
-      <img title="Luiz" src="./assets/noto_bear.png" style="width: 50px;"/>
-    </a>
-  </div>
-  <div name='vitao' style=''>
-    <a href="https://github.com/victor280504">
-      <img title="Victor" src="./assets/noto_penguin.png" style="width: 50px;" />
-    </a>
-  </div>
-  <div name='macla' style=''>
-    <a href="https://github.com/claraolvrx">
-      <img title="MariaClara" src="./assets/noto_tiger-face.png" style="width: 50px;" />
-    </a>
-  </div>
-  <div name='mickas' style=''>
-    <a href="https://github.com/mickael-castro">
-      <img title="Mickael" src="./assets/twemoji_koala.png" style="width: 50px;" />
-    </a>
+  <div>
+    <a href="https://github.com/letinepo">Maria Letícia Barros Nepomuceno</a>
+    <br>
+    <a href="https://github.com/vitoriajessicapr">Vitória Jessica Vasconcelos dos Santos</a>
+    <br>
+    <a href="https://github.com/LUISGSFILHO">Luiz Gonzaga dos Santos Filho</a>
+    <br>
+    <a href="https://github.com/victor280504">Victor Emanuel Tomaz das Neves</a>
+    <br>
+    <a href="https://github.com/claraolvrx">Maria Clara de Oliveira Alexandre</a>
+    <br>
+    <a href="https://github.com/mickael-castro">Mickael Pereira Castro</a>
   </div>
 </div>
+
 
 
 <a name="requisitos"></a>

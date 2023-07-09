@@ -642,10 +642,37 @@ background: #BE2C53;
 }
 
 .titulo_login_q{
-    font-family: "Supreme", sans-serif;
-    font-weight: 700;
-    color: #08394D;
-    font-size: 21px;
+color: #FFF;
+font-size: 21px;
+font-family: "Supreme";
 font-style: normal;
 font-weight: 700;
+line-height: normal;
 }  
+
+.texto_data{
+    padding-top: 5px;
+    color: #FFF;
+font-size: 13px;
+font-family: "Supreme";
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 0.116px;
+}
+
+.sla{
+    display: flex;
+    flex-direction: row;
+}
+
+.espaco{
+    margin-top: 5px;
+    
+}
+
+.formatacao{
+    box-shadow: none;
+    border: none;
+    background-color: white;
+}

@@ -114,9 +114,9 @@ export default function Body_q({quest , auth}) {
       <Container className=" ">
         <Row className="">
           <Col className="mt-4 titulo" xs={10}>
-            <h2 className="titulo_login_q">
+            <p className="titulo_login_q">
              {quest.titulo}
-            </h2>
+            </p>
           </Col>
           <Col className="pontos_quest mt-3">
             <img src={Star} alt="star_points" className="estrela_quest pb-2"/>

@@ -17,6 +17,12 @@ import Logo from "../imagens/quest_logo.png"
 import "../Tela.css";
 import Perfil_k from "../imagens/koala_novo.svg"
 import Editar from "../imagens/edit_novo.svg"
+import Leao_ from "../imagens/PerfilLiaoMax.svg"
+import Passaro_ from "../imagens/PerfilPassarinMax.svg"
+import Tigre_ from "../imagens/PerfilTigreMax.svg"
+import Urso_ from "../imagens/PerfilUrsoMax.svg"
+import Pinguin_ from "../imagens/PerfilPingaoMax.svg"
+import Koala from "../imagens/PerfilKoala.svg"
 //import Trash from "../imagens/trash.svg"
 
 
@@ -24,6 +30,7 @@ import Editar from "../imagens/edit_novo.svg"
 import { useFetch } from "../../hooks/useFetch"
 import React, { useContext, useEffect, useState } from 'react';
 import { Context } from '../../context/AuthContext';
+import Modal_Perfil from "./ModalPerfil";
 
 
 
@@ -33,6 +40,7 @@ const urlPost = 'https://smdquests.000webhostapp.com/api//user/update';
 
 const Form_config = (props) => {
 
+    const [perfil, setPerfil] = useState(Koala);
 
     const [interessesToView , setInteressesToView] = useState([]); // mostrados
     const [loading, setLoading] = useState(true);
@@ -41,6 +49,7 @@ const Form_config = (props) => {
     const [modalShow, setModalShow] = React.useState(false);
     const [modalShow2, setModalShow2] = React.useState(false);
     const [modalShow3, setModalShow3] = React.useState(false);
+    const [modalShow4, setModalShow4] = React.useState(false);
     const { data:temas} = useFetch(urlTemas);
     
 
@@ -155,9 +164,23 @@ const Form_config = (props) => {
 
                     <Row className="imagem_perfil">
                         <div className="alinhamento">
-                            <img src={Perfil_k} alt="perfil_koala" className="perfil_koala m-auto pt-3"></img>
+                            <img src={perfil} alt="perfil_koala" className="perfil_koala m-auto pt-3"></img>
                             <Col className="botao_editar">
+
+                            <Button variant="link" className="senha_config" onClick={() => setModalShow4(true)}>
                                 <img src={Editar} alt="editar" className=" m-auto pt-3 "></img>
+                            </Button>
+
+                            {modalShow4 &&  <Modal_Perfil
+                                    perfil={setPerfil}
+                                    show={modalShow4}
+                                    onHide={() => setModalShow4(false)}
+                                    password= {setPassword}
+                                />
+                            }
+                            
+
+                                
                             </Col>
                         </div>
                     </Row>

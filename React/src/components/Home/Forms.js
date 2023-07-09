@@ -31,14 +31,15 @@ function Forms(props){
                                 onClick={(e)=>navigate("/quest_d/"+quest.id_questionario)}
                                 id = {quest.id_questionario}
                                 style={{ width: '100%' }}
-                                className="mb-2 card"
+                                className="mb-1 card"
                             >
                             <Card.Body className="mx-4">
-                                
-                                <Card.Title > 
-                                <p className="">{quest.titulo}</p>
-                                </Card.Title>
-                                <div>
+                        
+                                    <Row>
+                                        <Col>
+                                        <p className="titulo_login_q">{quest.titulo}</p>
+                                        </Col>
+                                    </Row>
                                     
                                     <Row>
                                         <Col xs={1} className="espaco_card">
@@ -48,7 +49,7 @@ function Forms(props){
                                         <small>{quest.autor}</small>
                                         </Col>
                                     </Row>
-                                    <Row className="pb-3">
+                                    <Row className="pb-1">
                                         <Col xs={1}>
                                         <img src={House} alt="icon" className="cor_itens"/>
                                         </Col>
@@ -56,29 +57,29 @@ function Forms(props){
                                         <small>{quest.instituicao}</small><br/>
                                         </Col>
                                     </Row>
-                                    <Row>
+                                    <Row className="pb-2">
                                         <Col>
                                         <small>{quest.descricao}</small>
                                         </Col>
                                     </Row>
                                     
-                                    <br/>
-                                    <Row className="pb-3">
+                                   
+                                    <Row className="">
                                        
                                         <Col xs={1}>
                                         <img src={Clock} alt="relogio"/>
                                         </Col>
                                         <Col>
-                                        <small>{quest.data_inicio}</small>
+                                        <p className="texto_data">{quest.data_inicio}</p>
                                         </Col>
-                                        <Col>
-                                        <img src={Star} alt='pontos'className='estrelinha'/>
-                                        <small>{quest.pontuacao}</small>
+                                        <Col className="sla" xs={3}>
+                                        <img src={Star} alt='pontos'className='estrelinha espaco'/>
+                                        <p className="texto_data">{quest.pontuacao}</p>
                                         </Col>
                                     </Row>
                                    
                                     
-                                </div>
+                                
                                
                             </Card.Body>
 

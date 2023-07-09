@@ -50,12 +50,12 @@
 
 
   ### Github
-  [](https://github.com/letinepo) ![Letícia](./assets/noto_lion.png) &nbsp;
-  [](https://github.com/vitoriajessicapr) ![Vitoria](./assets/noto-v1_bird.png) &nbsp;
-  [](https://github.com/LUISGSFILHO) ![Luiz](./assets/noto_bear.png) &nbsp;
-  [](https://github.com/victor280504) ![Victor](./assets/noto_penguin.png) &nbsp;
-  [](https://github.com/claraolvrx) ![MariaClara](./assets/noto_tiger-face.png) &nbsp;
-  [](https://github.com/mickael-castro) ![Mickael](./assets/twemoji_koala.png)
+  [./assets/noto_lion.png](https://github.com/letinepo) ![Letícia]() &nbsp;
+  [./assets/noto-v1_bird.png](https://github.com/vitoriajessicapr) ![Vitoria]() &nbsp;
+  [./assets/noto_bear.png](https://github.com/LUISGSFILHO) ![Luiz]() &nbsp;
+  [./assets/noto_penguin.png](https://github.com/victor280504) ![Victor]() &nbsp;
+  [./assets/noto_tiger-face.png](https://github.com/claraolvrx) ![MariaClara]() &nbsp;
+  [./assets/twemoji_koala.png](https://github.com/mickael-castro) ![Mickael]()
 </div>
 
 

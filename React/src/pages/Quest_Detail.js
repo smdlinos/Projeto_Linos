@@ -24,6 +24,7 @@ function Quest_D (){
 
     const [quest, setQuest] = useState();
     const [loading, setLoading] = useState(true);
+    const [page404, setPage404] = useState(false);
 
     const url = 'https://smdquests.000webhostapp.com/api/quests/'+id;
 
@@ -38,6 +39,8 @@ function Quest_D (){
                  setQuest(data)
            }).catch(error => {
                  // Lidar com erros
+                 setPage404(true);
+                 setLoading(false);
                  console.error(error);
            });
  
@@ -56,12 +59,12 @@ function Quest_D (){
         <div className="background_config">
             <Header_q/>
             <main>
-            {loading ? (<p>Carregando</p>) :
+            {loading ? (<p>Carregando....</p>) : page404 ? <p>404 bro, questionário não encontrado</p> :
                 <>
-                <Titulo_q quest={quest}/> 
-                <Body_q quest={quest} auth={authenticated}/>
-                <Footer /> 
-                 </>
+                    <Titulo_q quest={quest}/> 
+                    <Body_q quest={quest} auth={authenticated}/>
+                    <Footer /> 
+                </>
             }
             </main>
            

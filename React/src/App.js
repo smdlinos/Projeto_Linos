@@ -56,6 +56,7 @@ export default function App() {
 
             <Route path = "/quest_d/:id" element = {<Quest_D/>}/>
 
+            <Route path = "/tabletop" element={ authenticated ? <Navigate to={'/tabletop/'+localStorage.getItem('token').replace(/["]/g, '')}/> :<Tabletop/>}/>
             <Route path = "/tabletop/:id" element={<Tabletop/>}/>
 
           </Routes>

@@ -25,6 +25,7 @@ export default function Modal_Interesse(props) {
         props.onHide(false);
     }
 
+    console.log(interesse);
 
     const convertToObject = (interesse) => {
         //let interesses = [];
@@ -38,6 +39,8 @@ export default function Modal_Interesse(props) {
 
         return interesse;
     }
+
+    
     
   return (
     <div className="font_t">

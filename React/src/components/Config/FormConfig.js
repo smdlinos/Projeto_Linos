@@ -24,12 +24,12 @@ import Editar from "../imagens/edit_novo.svg"
 import { useFetch } from "../../hooks/useFetch"
 import React, { useContext, useEffect, useState } from 'react';
 import { Context } from '../../context/AuthContext';
-
+import axios from 'axios';
 
 
 const urlI = 'https://smdquests.000webhostapp.com/api/user/interesses';
 const urlTemas = 'https://smdquests.000webhostapp.com/api/temas';
-const urlPost = 'https://smdquests.000webhostapp.com/api//user/update';
+const urlPost = 'https://smdquests.000webhostapp.com/api/user/update';
 
 const Form_config = (props) => {
 
@@ -52,7 +52,6 @@ const Form_config = (props) => {
     }, [user])
 
 
-    const [password, setPassword] = useState('');
     const [nickname, setNickname] = useState(user ? user.user.nickname : '');
     const [email, setEmail] = useState(user ? user.user.email : '');
     const [name, setName] = useState(user ? user.user.name : '');
@@ -60,39 +59,33 @@ const Form_config = (props) => {
     const [escolaridade, setEscolaridade] = useState(user ? user.user.escolaridade : '');
     const [data_nascimento, setDataNascimento] = useState(user ? user.user.data_nascimento : '');
     const [interesses, setInteresses] = useState([]); // intereses que vao pro bd
+    const [custom, setCustom] = useState('');
+
 
     useEffect(() =>{
     if (loading1 == false) {
       setName(user.user.name);
       setNickname(user.user.nickname);
       setEmail(user.user.email);
-      setPassword(user.user.password);
       setDataNascimento(user.user.data_nascimento);
       setGenero(user.user.genero);
       setEscolaridade(user.user.escolaridade);
       setInteresses(user.interesses);
+      setCustom(user.user.custom);
      }
     },[user]);
 
-    console.log(loading,name,  
-            nickname, 
-            email, 
-            password, 
-            data_nascimento, 
-            genero, 
-            escolaridade,
-            interesses);
-
     const handleSubmit = async (e) => { // esse teste possivelmente deu certo
         e.preventDefault();
-
+         let token = localStorage.getItem('token').replace(/["]/g, '');
         fetch(urlPost, {
           method: 'post',
           body: JSON.stringify({
+            token,
             name,  
-            nickname, 
+            nickname,
+            custom,
             email, 
-            password, 
             data_nascimento, 
             genero, 
             escolaridade,
@@ -102,17 +95,11 @@ const Form_config = (props) => {
             return response.json();
         }).then(data => {
 
-              if (data.register) {
+              if (data) {
                   console.log('Atualizado com sucesso');
-                  const token = data.token;
-                  localStorage.setItem('token', JSON.stringify(token));
-                  axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-                  setAuthenticated(true);
-                  navigate(`/home/${token}`);
 
               } else {
                   console.log("Houve um erro ao aualizar");
-                  navigate(`/home/${token}`);
               }
 
           }).catch(error => {
@@ -183,6 +170,7 @@ const Form_config = (props) => {
                     name = "email"
                     onChange={(e)=> setEmail(e.target.value)}
                     defaultValue={user ? user.user.email : ''}
+                    disabled
                     />
 
                     </Form.Group>
@@ -289,19 +277,18 @@ const Form_config = (props) => {
                     </Button>
             </Form>
                 <div className="senha_config2">
+            
 
                 <Button variant="link" className="senha_config" onClick={() => setModalShow(true)}>
                         Redefinir Senha
-                    </Button>
+                </Button>
 
                 {modalShow &&  <Modal_Senha
                         show={modalShow}
-                        onHide={() => setModalShow(false)}
-                        password= {setPassword}
+                        onHide={setModalShow}
                     />
                 }
                 </div>
-
     
             <div className="botao_deletar">
 

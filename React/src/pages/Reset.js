@@ -18,9 +18,9 @@ import { BrowserRouter as Router, Routes, Route, Link, useNavigate} from "react-
 import axios from 'axios';
 
 //Endpoints
-const ulrVerify = 'http://localhost/api/login/reset';
-const urlConfirm = "http://localhost/api/verify/code";
-const urlChange = "http://localhost/api/user/password";
+const ulrVerify = 'https://smdquests.000webhostapp.com/api/login/reset';
+const urlConfirm = "https://smdquests.000webhostapp.com/api/verify/code";
+const urlChange = "https://smdquests.000webhostapp.com/api/user/password";
 
 
 export default function Reset() {
@@ -119,7 +119,7 @@ export default function Reset() {
   }
 
   return ( 
-      <div className="body">
+      <div className="">
 
         <Header/>
 

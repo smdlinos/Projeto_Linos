@@ -55,7 +55,7 @@ export default function Register() {
       body: JSON.stringify({
         name,  
         nickname,
-        email, 
+        email,
         password, 
         data_nascimento, 
         genero, 

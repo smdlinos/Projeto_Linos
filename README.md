@@ -54,12 +54,15 @@
 
 ## :busts_in_silhouette: Equipe Linos - linosdesingsmd@gmail.com
 
-- [Letinepo](https://github.com/letinepo) ![Letícia](./assets/noto_lion.png)
-- [Avie](https://github.com/vitoriajessicapr) ![Vitoria](./assets/noto-v1_bird.png)
-- [Luiz](https://github.com/LUISGSFILHO) ![Luiz](./assets/noto_bear.png)
-- [Vitao](https://github.com/victor280504) ![Victor](./assets/noto_penguin.png)
-- [Macla](https://github.com/claraolvrx) ![MariaClara](./assets/noto_tiger-face.png)
-- [Mickas](https://github.com/mickael-castro) ![Mickael](./assets/twemoji_koala.png)
+## :busts_in_silhouette: Equipe Linos - linosdesingsmd@gmail.com
+
+[](https://github.com/letinepo) ![Letícia](./assets/noto_lion.png) &nbsp;
+[](https://github.com/vitoriajessicapr) ![Vitoria](./assets/noto-v1_bird.png) &nbsp;
+[](https://github.com/LUISGSFILHO) ![Luiz](./assets/noto_bear.png) &nbsp;
+[](https://github.com/victor280504) ![Victor](./assets/noto_penguin.png) &nbsp;
+[](https://github.com/claraolvrx) ![MariaClara](./assets/noto_tiger-face.png) &nbsp;
+[](https://github.com/mickael-castro) ![Mickael](./assets/twemoji_koala.png)
+
 
 
 

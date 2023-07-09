@@ -13,28 +13,42 @@ function Casas({ boneca_id, boneca_pontos, aumentou, setAumentou, andou, setAndo
     // Criar um vetor vazio
     let casas = [];
 
-    // Criar objetos
-    let casa1 = {
-        x: 10,
-        y: 10,
-        id: 1,
-        estado: 'Trnsp',
-        click: false,
-        pop: false
-    };
-    let casa2 = { x: 10, y: 20, id: 2, estado: 'Trnsp', click: false, pop: false };
-    let casa3 = { x: 10, y: 30, id: 3, estado: 'Trnsp', click: false, pop: false };
-    let casa4 = { x: 10, y: 40, id: 4, estado: 'Trnsp', click: false, pop: false };
-    let casa5 = { x: 10, y: 50, id: 5, estado: 'Trnsp', click: false, pop: false };
-    let casa6 = { x: 10, y: 60, id: 6, estado: 'Trnsp', click: false, pop: false };
+    function Casa(x, y, id, estado, click) {
+        this.x = x;
+        this.y = y;
+        this.id = id;
+        this.estado = estado;
+        this.click = click;
+      }
 
-    // Adicionar os objetos ao vetor
-    casas.push(casa1);
-    casas.push(casa2);
-    casas.push(casa3);
-    casas.push(casa4);
-    casas.push(casa5);
-    casas.push(casa6);
+      for( let i = 0; i<6; i++){
+        casas[i] = new Casa(10, 10*(i+1), i+1, 'Trnsp', false);
+      }
+
+      console.log(casas);
+
+      
+    // // Criar objetos
+    // let casa1 = {
+    //     x: 10,
+    //     y: 10,
+    //     id: 1,
+    //     estado: 'Trnsp',
+    //     click: false,
+    // };
+    // let casa2 = { x: 10, y: 20, id: 2, estado: 'Trnsp', click: false };
+    // let casa3 = { x: 10, y: 30, id: 3, estado: 'Trnsp', click: false };
+    // let casa4 = { x: 10, y: 40, id: 4, estado: 'Trnsp', click: false };
+    // let casa5 = { x: 10, y: 50, id: 5, estado: 'Trnsp', click: false };
+    // let casa6 = { x: 10, y: 60, id: 6, estado: 'Trnsp', click: false };
+
+    // // Adicionar os objetos ao vetor
+    // casas.push(casa1);
+    // casas.push(casa2);
+    // casas.push(casa3);
+    // casas.push(casa4);
+    // casas.push(casa5);
+    // casas.push(casa6);
 
     //botao 1
     const ativaCasas = (array) => {

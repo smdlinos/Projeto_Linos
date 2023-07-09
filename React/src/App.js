@@ -61,14 +61,7 @@ export default function App() {
 
           </Routes>
           <br/>
-          <ul>
-            <li>
-              <Link to="/home">Home</Link>
-              <Link to="/login">Login</Link>
-              <Link to="/register">Cadastro</Link>
-              <Link to="/reset">Redefinir</Link>
-            </li>
-          </ul>
+          
     </div>
   );
 }

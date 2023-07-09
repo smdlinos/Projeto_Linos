@@ -53,7 +53,7 @@
 </div>
 
 
-<div align="center">
+<div style="display: inline" >
   <div>
     <a href="https://github.com/letinepo"><img title="Letícia" src="./assets/noto_lion.png" width="50px"/></a>
     <br>

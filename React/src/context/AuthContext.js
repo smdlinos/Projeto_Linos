@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate, useLocation} from "react-router-dom";
 import React, { createContext, useState, useEffect } from 'react';
 const Context = createContext();
+import Spinner from 'react-bootstrap/Spinner';
 
 //Endpoints
 const urlUser  = 'https://smdquests.000webhostapp.com/api/user/auth';
@@ -98,7 +99,11 @@ function AuthProvider({ children }){
   }}
 
   if (loading) {
-	  return <h1>loading.....</h1>;
+	return (
+		<Spinner animation="border" role="status" variant="success">
+		  <span className="visually-hidden">Loading...</span>
+		</Spinner>
+	  );
   }
 
 

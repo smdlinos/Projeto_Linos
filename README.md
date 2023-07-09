@@ -54,7 +54,7 @@
 
 
 <div name='equipe' style=' display:flex; flex-diretion:row '>
-  <div name='letinepo' style=''>
+  <div name='letinepo' style='width: 50px;'>
     <a href="https://github.com/letinepo">
       <img title="Letícia" src="./assets/noto_lion.png" style="width: 50px;" />
     </a>

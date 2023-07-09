@@ -51,38 +51,39 @@
 
   ### Github
 </div>
-<div name='equipe' style='display:flex; flex-direction: row;'>
-  <div name='letinepo'>
+<div name='equipe' style='display:flex;'>
+  <div name='letinepo' style='display:flex; align-items: center;'>
     <a href="https://github.com/letinepo">
-      <img title="Letícia" src="./assets/noto_lion.png" style="width: 50px; display: inline-block;" />
+      <img title="Letícia" src="./assets/noto_lion.png" style="width: 50px;" />
     </a>
   </div>
-  <div name='vitorinha'>
+  <div name='vitorinha' style='display:flex; align-items: center;'>
     <a href="https://github.com/vitoriajessicapr">
-      <img title="Vitoria" src="./assets/noto-v1_bird.png" style="width: 50px; display: inline-block;" />
+      <img title="Vitoria" src="./assets/noto-v1_bird.png" style="width: 50px;"/>
     </a>
   </div>
-  <div name='luizao'>
+  <div name='luizao' style='display:flex; align-items: center;'>
     <a href="https://github.com/LUISGSFILHO">
-      <img title="Luiz" src="./assets/noto_bear.png" style="width: 50px; display: inline-block;" />
+      <img title="Luiz" src="./assets/noto_bear.png" style="width: 50px;"/>
     </a>
   </div>
-  <div name='vitao'>
+  <div name='vitao' style='display:flex; align-items: center;'>
     <a href="https://github.com/victor280504">
-      <img title="Victor" src="./assets/noto_penguin.png" style="width: 50px; display: inline-block;" />
+      <img title="Victor" src="./assets/noto_penguin.png" style="width: 50px;" />
     </a>
   </div>
-  <div name='macla'>
+  <div name='macla' style='display:flex; align-items: center;'>
     <a href="https://github.com/claraolvrx">
-      <img title="MariaClara" src="./assets/noto_tiger-face.png" style="width: 50px; display: inline-block;" />
+      <img title="MariaClara" src="./assets/noto_tiger-face.png" style="width: 50px;" />
     </a>
   </div>
-  <div name='mickas'>
+  <div name='mickas' style='display:flex; align-items: center;'>
     <a href="https://github.com/mickael-castro">
-      <img title="Mickael" src="./assets/twemoji_koala.png" style="width: 50px; display: inline-block;" />
+      <img title="Mickael" src="./assets/twemoji_koala.png" style="width: 50px;" />
     </a>
   </div>
 </div>
+
 
 <a name="requisitos"></a>
 

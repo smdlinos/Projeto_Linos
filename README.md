@@ -52,41 +52,15 @@
   ### Github
 </div>
 
+## :busts_in_silhouette: Equipe Linos - linosdesingsmd@gmail.com
 
-<div name='equipe' style='display: inline;'>
+- [Letinepo](https://github.com/letinepo) ![Letícia](./assets/noto_lion.png)
+- [Avie](https://github.com/vitoriajessicapr) ![Vitoria](./assets/noto-v1_bird.png)
+- [Luiz](https://github.com/LUISGSFILHO) ![Luiz](./assets/noto_bear.png)
+- [Vitao](https://github.com/victor280504) ![Victor](./assets/noto_penguin.png)
+- [Macla](https://github.com/claraolvrx) ![MariaClara](./assets/noto_tiger-face.png)
+- [Mickas](https://github.com/mickael-castro) ![Mickael](./assets/twemoji_koala.png)
 
-  <div name='letinepo' style=''>
-    <a href="https://github.com/letinepo">
-      <img title="Letícia" src="./assets/noto_lion.png" style="width: 50px;" />
-    </a>
-  </div>
-  <div name='vitorinha' style=''>
-    <a href="https://github.com/vitoriajessicapr">
-      <img title="Vitoria" src="./assets/noto-v1_bird.png" style="width: 50px;"/>
-    </a>
-  </div>
-  <div name='luizao' style=''>
-    <a href="https://github.com/LUISGSFILHO">
-      <img title="Luiz" src="./assets/noto_bear.png" style="width: 50px;"/>
-    </a>
-  </div>
-  <div name='vitao' style=''>
-    <a href="https://github.com/victor280504">
-      <img title="Victor" src="./assets/noto_penguin.png" style="width: 50px;" />
-    </a>
-  </div>
-  <div name='macla' style=''>
-    <a href="https://github.com/claraolvrx">
-      <img title="MariaClara" src="./assets/noto_tiger-face.png" style="width: 50px;" />
-    </a>
-  </div>
-  <div name='mickas' style=''>
-    <a href="https://github.com/mickael-castro">
-      <img title="Mickael" src="./assets/twemoji_koala.png" style="width: 50px;" />
-    </a>
-  </div>
- 
-</div>
 
 
 

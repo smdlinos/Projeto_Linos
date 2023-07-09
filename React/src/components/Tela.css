@@ -352,6 +352,10 @@ background: #BE2C53;
 
 .alert{
     color: rgb(255, 0, 0);
+    padding: 0;
+    margin: 0;
+    white-space: normal;
+    word-break: normal;
 }
 
 .botao_voltar{
@@ -636,3 +640,12 @@ background: #BE2C53;
 .class1{
     background-color: #BE2C53;
 }
+
+.titulo_login_q{
+    font-family: "Supreme", sans-serif;
+    font-weight: 700;
+    color: #08394D;
+    font-size: 21px;
+font-style: normal;
+font-weight: 700;
+}  

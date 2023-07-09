@@ -22,7 +22,8 @@ import Modal_q from "./Modal_q";
 
 //Endpoints
 const urlI = 'https://smdquests.000webhostapp.com/api/user/interesses';
-
+const setHistorico = 'https://smdquests.000webhostapp.com/api/create/historico';
+import { Routes, Route, Link, useNavigate, Navigate} from "react-router-dom";
 
 export default function Body_q({quest , auth}) {
 
@@ -33,6 +34,8 @@ export default function Body_q({quest , auth}) {
 
 
   const [matches, setMatches] = useState([]);
+
+  const navigate = useNavigate();
 
   if(auth){
         
@@ -82,6 +85,30 @@ export default function Body_q({quest , auth}) {
     }, [interesses])
 
 
+  async function handleHitoric(e) { // esse teste possivelmente deu certo
+    const token = localStorage.getItem('token').replace(/["]/g, '');
+
+      fetch(setHistorico, {
+      method: 'post',
+      body: JSON.stringify({
+        id_quest: quest.id_questionario,
+        token
+      })
+      }).then(function(response) {
+        return response.json();
+      }).then(data => {
+          console.log(data);
+          if (data) {
+            window.location.assign(quest.link);
+          }
+      }).catch(error => {
+        // Lidar com erros
+        console.error(error);
+      });
+
+  }
+
+
   const match = (temas, interesses) => {
      let matches = [];
 
@@ -114,7 +141,7 @@ export default function Body_q({quest , auth}) {
       <Container className=" ">
         <Row className="">
           <Col className="mt-4 titulo" xs={10}>
-            <h2 className="titulo_login">
+            <h2 className="titulo_login_q">
              {quest.titulo}
             </h2>
           </Col>
@@ -193,10 +220,16 @@ export default function Body_q({quest , auth}) {
         <Row>
             
         </Row>
-        <a href={quest.link}><Button type="button" className="px-5 mb-3 mt-3 botao">
-            LINK DO QUESTIONÁRIO
-        </Button>
-        </a>
+        { auth ?
+            <Button type="button" className="px-5 mb-3 mt-3 botao" onClick={(e) => handleHitoric(e)}>
+                LINK DO QUESTIONÁRIO
+            </Button> :
+          <a href={quest.link}>
+            <Button type="button" className="px-5 mb-3 mt-3 botao" >
+                LINK DO QUESTIONÁRIO
+            </Button>
+          </a>
+        }
       </Container>
     </div>
   );

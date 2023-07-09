@@ -51,8 +51,7 @@
 
   ### Github
 </div>
-<div name='equipe' style='display:flex; flex-diretion:row'>
-
+<div name='equipe' style=''>
   <div name='letinepo' style=''>
     <a href="https://github.com/letinepo">
       <img title="Letícia" src="./assets/noto_lion.png" style="width: 50px;" />
@@ -83,7 +82,6 @@
       <img title="Mickael" src="./assets/twemoji_koala.png" style="width: 50px;" />
     </a>
   </div>
- 
 </div>
 
 

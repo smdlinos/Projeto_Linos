@@ -1,11 +1,10 @@
+
 # Quests
 <div align="center" name="inicio">
-  <a href="*"><img title="Quests" src="./assets/logoQuestsOficial.svg" style="width: 300px;" /></a>
+  <a href="https://quests-iota.vercel.app"><img title="Quests" src="./assets/logoQuestsOficial.svg" style="width: 300px;" /></a>
 
   ###### Keywords: Projeto Integrado I - Linos - Sistemas e Mídias Digitais - Universidade Federal do Ceará
 </div>
-
-
 
 ## :page_with_curl: Sumário:
 <ul>
@@ -14,6 +13,7 @@
  <a href="#requisitos"><li>Requisitos</li></a> 
  <a href="#tecnologias"><li>Tecnologias</li></a>
  <a href="#como-rodar"><li>Como rodar o código</li></a>
+ <a href="#hospedagem"><li>Hospedagem</li></a>
  <a href="#license"><li>Licença</li></a>
 </ul>
 
@@ -31,49 +31,63 @@
 ## :busts_in_silhouette: Equipe Linos - linosdesingsmd@gmail.com 
 
 <div align="center">
-  <img title="'Linos'" src="./assets/logo.png" style="width: 60px;" />
+  <a href="https://github.com/smdlinos">
+    <img title="Linos" src="./assets/logo.png" style="width: 60px;" />
+    </a>
 </div>
-
+<br>
 <div align="center">
 
-  ### Design
-  <div style="display: flex; flex-direction: column;">
-      <img title="lion" src="./assets/noto_lion.png" style="width: 50px;" />
-      <div name='letinepo' style='display:grid;'>
-        <a href="https://github.com/letinepo">Maria Letícia Barros Nepomuceno</a>
-      </div>
-      <br>
-      <img title="avie" src="./assets/noto-v1_bird.png" style="width: 50px;" />
-      <div name='vitorinha'style='display:grid;'>
-        <a href="https://github.com/vitoriajessicapr"> Vitória Jessica Vasconcelos dos Santos</a>
-      </div>
-      <br>
-      <img title="Linos" src="./assets/noto_bear.png" style="width: 50px;" />
-      <div name='luizao' style='display:grid;'>
-        <a href="https://github.com/LUISGSFILHO">Luiz Gonzaga dos Santos Filho</a>
-      </div>
-      <br>
-  </div>
+| Membro   | Email     |  Função | Icon
+|--       |--         |--      |--      
+| Luiz Gonzaga     | luis.gsantosf@gmail.com     | Lider e UX Research | :bear:    |
+| Maria Clara|    mariaclaraminion@gmail.com     |  Desenvolvedora Fullstack | :tiger: |
+| Vitória Jessica|   ebvitoriajessica@gmail.com     |  Designer e Ilustradora | :bird: |
+| Victor Emanuel   |  victoremanuel.vet8@gmail.com | Desenvolvedor Back-end | :penguin:  |
+| Letícia Nepomuceno |  leticianepomuceno23@gmail.com  |  Designer UX/UI |   :lion:|
+| Mickael Castro |  mickaelcastro15@gmail.com | Desenvolvedor Front-end  | :koala:  |
 
-### Sistemas
- <div style="display: flex; flex-direction: column;">
-      <img title="pinguim" src="./assets/noto_penguin.png" style="width: 50px;" />
-      <div name='vitao' style='display:grid;'>
-        <a href="https://github.com/victor280504">Victor Emanuel Tomaz das Neves</a>
-      </div>
-      <br>
-      <img title="avie" src="./assets/noto_tiger-face.png" style="width: 50px;" />
-      <div name='macla' style='display:grid;' >
-        <a href="https://github.com/claraolvrx"> Maria Clara de Oliveira Alexandre</a>
-      </div>
-      <br>
-      <img title="'Linos'" src="./assets/twemoji_koala.png" style="width: 50px;" />
-      <div name='mickas' style='display:grid;'>
-        <a href="https://github.com/mickael-castro">Mickael Pereira Castro</a>
-      </div>
-      <br>
-   </div>
+
+
+  ### Github
 </div>
+
+
+<div name='equipe' style='display: inline;'>
+
+  <div name='letinepo' style=''>
+    <a href="https://github.com/letinepo">
+      <img title="Letícia" src="./assets/noto_lion.png" style="width: 50px;" />
+    </a>
+  </div>
+  <div name='vitorinha' style=''>
+    <a href="https://github.com/vitoriajessicapr">
+      <img title="Vitoria" src="./assets/noto-v1_bird.png" style="width: 50px;"/>
+    </a>
+  </div>
+  <div name='luizao' style=''>
+    <a href="https://github.com/LUISGSFILHO">
+      <img title="Luiz" src="./assets/noto_bear.png" style="width: 50px;"/>
+    </a>
+  </div>
+  <div name='vitao' style=''>
+    <a href="https://github.com/victor280504">
+      <img title="Victor" src="./assets/noto_penguin.png" style="width: 50px;" />
+    </a>
+  </div>
+  <div name='macla' style=''>
+    <a href="https://github.com/claraolvrx">
+      <img title="MariaClara" src="./assets/noto_tiger-face.png" style="width: 50px;" />
+    </a>
+  </div>
+  <div name='mickas' style=''>
+    <a href="https://github.com/mickael-castro">
+      <img title="Mickael" src="./assets/twemoji_koala.png" style="width: 50px;" />
+    </a>
+  </div>
+ 
+</div>
+
 
 
 <a name="requisitos"></a>
@@ -90,16 +104,21 @@ Projeto em Construção - Funcionalidades atuais da Aplicação
 |  RF0004     |  Recuperar senha            | FEITO     |
 |  RF0005     |  Visualizar tela principal  | FEITO     |
 |  RF0006     |  Acessar perfil do usuário  | FEITO     |
-|  RF0007     |  Cadastrar/Atualizar informações do perfil  | EM DESENVOLVIMENTO  |
+|  RF0007     |  Cadastrar/Atualizar informações do perfil  | FEITO  |
 |  RF0008     |  Visualizar registro de recompensas  |EM DESENVOLVIMENTO  |
-|  RF0009     |  Visualizar progresso no tabuleiro  |FEITO  |
-|  RF0010     |   Gerar certificado de horas complementares  | EM DESENVOLVIMENTO  |
+|  RF0009     |  Visualizar progresso no tabuleiro  |EM DESENVOLVIMENTO  |
+|  RF0010     |   Gerar certificado de horas complementares  | FEITO  |
 |  RF0011     |  Buscar um questionário  | FEITO  |
 |  RF0012     |  Acessar link para responder questionário  | FEITO |
-|  RF0013     |  Receber feedbacks de progresso no tabuleiro  | FEITO  |
+|  RF0013     |  Receber feedbacks de progresso no tabuleiro  | EM DESENVOLVIMENTO  |
 |  RF0014     |  Gerar recomendações de questionário | FEITO  |
-|  RF0015     |  Customização do personagem  | EM DESENVOLVIMENTO  |
-|  RF0016     |  Acessar Landing Page  | EM DESENVOLVIMENTO  |
+|  RF0015     |  Customização do personagem  | EM DESENVOLVIMENTO|
+|  RF0016     |  Acessar Landing Page  | SUSPENSO  |
+|  RF0017     |  Deletar Perfil  | FEITO  |
+|  RF0018     |  Visualizar Histórico de Questionários Respondidos | FEITO  |
+|  RF0019    |  Validar Código de Resposta  | EM DESENVOLVIMENTO|
+|  RF0020    |  Receber feedback de preenchimento do cadastro | FEITO|
+|  RF0021    |  Receber ajuda em atividades específicas na plataforma   | FEITO
 
 <a name="tecnologias"></a>
 
@@ -132,6 +151,7 @@ cd Projeto_Linos
 
 ### Como Rodar o Front-end:
 Abra o terminal, na pasta do código do seu editor, e digite os seguintes comandos:
+##### Atenção : Você precisa ter o Node.js instalado em sua máquina
 ```shell
   npm install react-scripts --save
   cd React
@@ -139,30 +159,40 @@ Abra o terminal, na pasta do código do seu editor, e digite os seguintes comand
 ```
 
 ### Como Rodar o Back-end:
-  Como o backend ainda não foi totalmente hospedado em um servidor, precisa-se utilizar um servidor (Apache) na máquina local para poder rodar o protótipo do backend, ademais um servidor MySQL para o banco de dados. Atualmente utilizamos o XAMPP no ambiente de desenvolvimento, que fornece os dois serviços necessários para que o projeto possa rodar na sua máquina.
-
-  Com o servidor rodando, caso haja a necessidade de configurar o banco de dados, as informações do mesmo devem ser alteradas em '/quests/app/database/connect.php'. No arquivo citado você pode alterar as informações nos argumentos de instanciamento da função connect de acordo com os atributos.
-
+  Para rodar o Back-end, precisa-se utilizar um servidor (Apache) na máquina local para poder rodar o projeto, ademais um servidor MySQL para o banco de dados. Atualmente utilizamos o XAMPP no ambiente de desenvolvimento, que fornece os dois serviços necessários para que o projeto possa rodar na sua máquina.
+  
+ Com o servidor rodando, você deve configurar o seu banco de dados para que ele esteja de acordo com as necessidades do projeto. Para isso, primeiramente você deve entrar no Sistema Gerenciador de Banco de dados fornecido pelo XAMPP, o phpmyadmin , e em seguida importar o arquivo padrão do banco de dados que contempla as funcionalidades do projeto e que está disponível no aquivo '/api/quests.sql'. Após isso você deve fazer as configurações de conexão com o banco de dados no arquivo '/api/.env'. 
+ Caso esse arquivo não exista na sua máquina você deve criar um arquivo .env dentro da raiz da api , './api' e em seguida colar a estrutura de exemplo que está em '/api/.env.example' e configurar de acordo com as suas informações.
+ 
   ```shell
-   return new \PDO("mysql:host=localhost;dbname=quests;charset=utf8",'root', '',[
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_OBJ,
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES UTF8'
-    ]);
-  ```
-  É possível encontrar o código do banco de dados e com suas respectivas tabelas no arquivo "quests.sql" dentro da pasta quests.
-  Por fim basta colar a pasta do back-end 'quests' , dentro do arquivo 'htdocs' no XAMPP.
+  URL = http://localhost/api
+  DB_HOST=localhost
+  DB_NAME=database
+  DB_USER=root
+  DB_PASS=your_password_database
+  DB_PORT=3306
+  MAINTENANCE=false
+  EMAIL=email@eexample.com
+  PASSWORD=your_password_to_application
+  KEY = escolhaasuachavedecriptografia
+```
 
-  #### Atenção
-  Você deve configurar os caminhos que ainda não foram armazenados em variáveis locais de acordo com a sua máquina, o caminho padrão tende a ser:
-  'C:/xampp/htdocs/quests'. Porém na sua máquina pode estar em um diretório diferente.<br><br>
-  Ex:
-  ```shell
-    $dotenv = Dotenv\Dotenv::createImmutable('C:/xampp/htdocs/quests');
-    $dotenv->load();
-  ```
-  (Para gerenciar o banco de dados com mais eficiência o xampp permite utilizar o phpmyadmin que fornece uma interface de SGBD para a manipulação)
+##### Atenção: Os campos email e password, dizem respeito às configurações da funcionalidade de redefinir senha, no campo *email* deve constar o email do remetente, e no *password* a senha de aplicação correspondente ao email.
 
+Com o .env configurado,  a api está pronta para ser usada, certifique-se apenas de que todos os endpoints em que você deseja fazer requisões que estejam corretos do lado do cliente.
+#### Todas as rotas disponíveis estão distribuídas nos arquivos da pasta *'./api/routes/api/v1'*
+
+  Por fim basta colar a pasta do back-end 'api' , dentro do arquivo 'htdocs' no XAMPP e ligar o seu servidor local.
+ 
+
+<a name="hospedagem"></a>
+## :construction_worker: Hospedagem
+
+O projeto atualmente se encontra hospedado em duas plataformas, a <a href='https://000webhost.com'>000webhost</a> para a api e o vercel para o front-end. O <a href='https://vercel.com'>vercel </a>é uma plataforma voltada para a hospedagem de aplicações de uma forma bem simples e rápida e possui suporte para o React, já o 000webhost é um serviço que oferece hospedagem de site de custo zero com PHP, MySQL, cPanel sem anúncios.
+
+Os respectivos links de cada projeto:
+Api: https://smdquests.000webhostapp.com/api/v1
+React: https://quests-iota.vercel.app
 
 <a name="license"></a>
 ## :memo: Licença

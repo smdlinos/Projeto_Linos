@@ -19,8 +19,39 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useBeforeUnload } from "react-router-dom";
 
+
+import {useNavigate} from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Context } from '../context/AuthContext';
+
 function Tabletop() {
     const [modalShow, setModalShow] = useState(false);
+
+    const navigate = useNavigate();
+    const {setAuthenticated, setLoading, setUser} = useContext(Context);
+    const [code, setCode] = useState('');
+
+
+    const sendPosicao = async (e) => { 
+        e.preventDefault();
+        const token = localStorage.getItem('token').replace(/["]/g, '');
+        fetch(urlPosicao, {
+        method: 'post',
+        body: JSON.stringify({
+          token,
+          code
+        })
+        }).then(function(response) {
+          return response.json();
+        }).then(data => {
+            props.onHide();
+            navigate('/tabletop');
+        }).catch(error => {
+          // Lidar com erros
+          console.error(error);
+        });
+    }
+
 
     //INICIO DADOS ================================================================================================================
     let casa_atual = 6;

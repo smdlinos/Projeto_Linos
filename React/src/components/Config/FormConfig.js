@@ -24,7 +24,7 @@ import Urso_ from "../imagens/PerfilUrsoMax.svg"
 import Pinguin_ from "../imagens/PerfilPingaoMax.svg"
 import Koala from "../imagens/PerfilKoala.svg"
 //import Trash from "../imagens/trash.svg"
-
+import {useNavigate} from 'react-router-dom';
 
 //Dependences
 import { useFetch } from "../../hooks/useFetch"
@@ -45,7 +45,7 @@ const Form_config = (props) => {
 
     const {Leao_, Passaro_, Tigre_, Urso_, Pinguin_, Koala_, Leao,
     Passaro, Tigre, Urso, Pinguin, Koala, config, perfil, perfil2} = setPerfil(custom)
-
+    const navigate = useNavigate();
     const [interessesToView , setInteressesToView] = useState([]); // mostrados
     const [loading, setLoading] = useState(true);
     const [loading1, setLoading1] = useState(true);
@@ -123,6 +123,7 @@ const Form_config = (props) => {
 
               if (data) {
                   console.log('Atualizado com sucesso');
+                  navigate('/home');
 
               } else {
                   console.log("Houve um erro ao aualizar");
@@ -316,7 +317,7 @@ const Form_config = (props) => {
 
             </div>
                     
-                    <Button variant="primary" href="/home" type="submit" className="px-5 mt-3 botao">
+                    <Button variant="primary" type="submit" className="px-5 mt-3 botao">
                     SALVAR ALTERAÇÕES
                     </Button>
             </Form>

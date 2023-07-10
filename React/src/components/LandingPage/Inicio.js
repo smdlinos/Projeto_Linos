@@ -8,7 +8,7 @@ const Inicio = () => {
     return (
     <div className='ps-5 pb-3'>
         <Row className='pt-5 pb-3'>
-            <Col className='pt-5 '>
+            <Col className='pt-5'>
                 <h1 className='pt-5 titulo_land'>A melhor maneira de responder questionários</h1>
                 <p className='text_land'>
                     Já pensou se fosse possível receber <strong>horas complementares</strong> ao responder questionários online? Com o <strong>Quests</strong>, isso acaba de se tornar realidade!

@@ -681,3 +681,13 @@ letter-spacing: 0.116px;
     border: none;
     background-color: white;
 }
+
+.modal_titulo{
+    color: #1B9019;
+    text-align: center;
+    font-family: "Chubbo" ;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}

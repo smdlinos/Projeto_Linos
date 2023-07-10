@@ -2,7 +2,9 @@
 import "../components/Tela.css"
 import Container from "react-bootstrap/esm/Container";
 import FundoTabletop from "../components/imagens/FundoTabletop.png"
+import Pontos_Modal from "../components/Tabletop/PontoModal";
 import Tabuleiro from "../components/imagens/background_tab_mobile.svg"
+import Botao_Estrela from "../components/imagens/Botao_estrela.svg"
 
 //Components
 import Header_q from "../components/Quests/Header_q"
@@ -15,8 +17,11 @@ import PlacasMasc from "../components/Tabletop/PlacasMasc";
 import Button from "react-bootstrap/esm/Button";
 import { useState } from "react";
 import { useEffect } from "react";
+import { useBeforeUnload } from "react-router-dom";
 
 function Tabletop() {
+    const [modalShow, setModalShow] = useState(false);
+
     //INICIO DADOS ================================================================================================================
     let casa_atual = 6;
     let pontos_atual = 0;
@@ -285,6 +290,12 @@ function Tabletop() {
             <Header_q />
             <Container className=" container">
                 <img src={Tabuleiro} alt="tabuleiro" className="ms-5 ps-4" />
+                <Button variant="link" onClick={() => setModalShow(true)}>
+                    <img src={Botao_Estrela} alt="botao_resgata"/>
+                </Button>
+
+                <Pontos_Modal show={modalShow} onHide={() => setModalShow(false)} />
+
                 <p></p>
                 <Button onClick={(e) => aumenta_Pontos()}>Aumentar Pontos</Button>
                 <p></p>

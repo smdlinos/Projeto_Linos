@@ -39,7 +39,7 @@ export default function Pontos_Modal(props) {
 
       <Modal.Body>
         <p className=" modal_titulo">Ganhe Pontos!</p>
-        <p className="font_popover">Essa ação é irreversível, insira sua senha para confirmar a decisão.</p>
+        
         
         <Form className="forms font_t">
       <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">

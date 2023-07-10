@@ -90,7 +90,7 @@ Projeto em Construção - Funcionalidades atuais da Aplicação
 |  RF0013     |  Receber feedbacks de progresso no tabuleiro  | EM DESENVOLVIMENTO  |
 |  RF0014     |  Gerar recomendações de questionário | FEITO  |
 |  RF0015     |  Customização do personagem  | EM DESENVOLVIMENTO|
-|  RF0016     |  Acessar Landing Page  | SUSPENSO  |
+|  RF0016     |  Acessar Landing Page  | FEITO  |
 |  RF0017     |  Deletar Perfil  | FEITO  |
 |  RF0018     |  Visualizar Histórico de Questionários Respondidos | FEITO  |
 |  RF0019    |  Validar Código de Resposta  | FEITO|

@@ -76,7 +76,7 @@ const Inicio2 = () => {
             
                 
             <Col className="pt-5 px-4">
-                <Button className="botao_inicio" href="/">CADASTRE-SE JÁ</Button>
+                <Button className="botao_inicio" href="/home">CADASTRE-SE JÁ</Button>
             </Col>
             
         </div>

@@ -93,7 +93,7 @@ Projeto em Construção - Funcionalidades atuais da Aplicação
 |  RF0016     |  Acessar Landing Page  | SUSPENSO  |
 |  RF0017     |  Deletar Perfil  | FEITO  |
 |  RF0018     |  Visualizar Histórico de Questionários Respondidos | FEITO  |
-|  RF0019    |  Validar Código de Resposta  | EM DESENVOLVIMENTO|
+|  RF0019    |  Validar Código de Resposta  | FEITO|
 |  RF0020    |  Receber feedback de preenchimento do cadastro | FEITO|
 |  RF0021    |  Receber ajuda em atividades específicas na plataforma   | FEITO
 

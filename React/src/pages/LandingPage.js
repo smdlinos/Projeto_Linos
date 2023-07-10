@@ -1,5 +1,6 @@
 //Styles
 import "../components/Tela.css";
+import Responsive from "../components/Responsive.css"
 import Container from "react-bootstrap/esm/Container";
 
 //Components

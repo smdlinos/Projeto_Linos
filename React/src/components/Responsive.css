@@ -1,0 +1,8 @@
+@media (min-width: 576px) { 
+    .logo_landing{
+        justify-content: center;
+        padding: 10rem;
+        width: 10rem;
+    
+    }
+}

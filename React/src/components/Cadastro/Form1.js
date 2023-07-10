@@ -148,41 +148,20 @@ const Form1 = (props) => {
                     </Form.Group>
                     {feedback[0].value && <p className="alert">Campo obrigatório</p>}
 
-                    <Form.Group className="mb-2" onChange={props.genero} required>
-                    <Form.Label htmlFor="genero" className="nickname pt-2">Gênero:</Form.Label>
-                    {['radio'].map((type) => (
-                    <div key={`inline-${type}`} className="mb-3">
-
-                    <Form.Check
-                    inline
-                    label="Masculino"
-                    name="group1"
-                    value="Masculino"
-                    type={type}
-                    id={`inline-${type}-1`}
-                    />
-                    <Form.Check
-                    inline
-                    label="Feminino"
-                    name="group1"
-                    value="Feminino"
-                    type={type}
-                    id={`inline-${type}-2`}
-                    />
-                    <Form.Check
-                    inline
-                    label="Outro"
-                    name="group1"
-                    value="Outro"
-                    type={type}
-                    id={`inline-${type}-3`}
-                    />
-                    </div>
-                    ))}
+                    <Form.Group className="mb-2">
+                    <Form.Label htmlFor="Escolaridade" className="nickname pt-2">Escolha seu gênero:</Form.Label>
+                    <Form.Select aria-label="Floating label select example" onChange={props.genero} required>
+                        <option value="Masculino">Masculino</option>
+                        
+                        <option value="Feminino">Feminino</option>
+                        
+                        <option value="Outro">Outro</option>
+                    </Form.Select>
                     </Form.Group>
+
                     {feedback[5].value && <p className="alert">Campo obrigatório</p>}
 
-                    <Form.Group>
+                    <Form.Group className="mb-2">
                     <Form.Label htmlFor="Escolaridade" className="nickname pt-2">Escolaridade</Form.Label>
                     <Form.Select aria-label="Floating label select example" onChange={props.escolaridade} required>
                         <option value="default">Escolha sua escolaridade</option>
@@ -196,9 +175,11 @@ const Form1 = (props) => {
                         <option value="Pós-Graduação">Pós-Graduação</option>
                     </Form.Select>
                     </Form.Group>
+
+                    
                     {feedback[6].value && <p className="alert">Campo obrigatório</p>}
-                    <br/>
-                    <Form.Group required>
+                   
+                    <Form.Group required >
                     <Form.Label htmlFor="date" className="data pt-2">Data de Nascimento:</Form.Label>
                     <Form.Control 
                     onChange={props.data_nascimento}

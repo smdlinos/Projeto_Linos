@@ -1,6 +1,8 @@
 //Styles
 import "../components/Tela.css";
+import Responsive from "../components/Responsive.css"
 import Container from "react-bootstrap/esm/Container";
+import Inicio2 from "../components/LandingPage/inicio2";
 
 //Components
 import Header_q from "../components/Quests/Header_q";
@@ -18,10 +20,7 @@ function LandingPage(){
             <NavScrollExample/>
 
             <Container fluid>
-                <Inicio/>
-                <Descricao/>
-                <Passos/>
-                <Cliente/>
+                <Inicio2/>
             </Container>
         </div>
     )

@@ -19,8 +19,39 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useBeforeUnload } from "react-router-dom";
 
+
+import {useNavigate} from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Context } from '../context/AuthContext';
+
 function Tabletop() {
     const [modalShow, setModalShow] = useState(false);
+
+    const navigate = useNavigate();
+    const {setAuthenticated, setLoading, setUser} = useContext(Context);
+    const [code, setCode] = useState('');
+
+
+    const sendPosicao = async (e) => { 
+        e.preventDefault();
+        const token = localStorage.getItem('token').replace(/["]/g, '');
+        fetch(urlPosicao, {
+        method: 'post',
+        body: JSON.stringify({
+          token,
+          code
+        })
+        }).then(function(response) {
+          return response.json();
+        }).then(data => {
+            props.onHide();
+            navigate('/tabletop');
+        }).catch(error => {
+          // Lidar com erros
+          console.error(error);
+        });
+    }
+
 
     //INICIO DADOS ================================================================================================================
     let casa_atual = 6;
@@ -289,18 +320,18 @@ function Tabletop() {
         <div className="background_gradient" >
             <Header_q />
             <Container className=" container">
-                <img src={Tabuleiro} alt="tabuleiro" className="ms-5 ps-4" />
+                <img src={Tabuleiro} alt="tabuleiro" />
                 <Button variant="link" onClick={() => setModalShow(true)}>
                     <img src={Botao_Estrela} alt="botao_resgata"/>
                 </Button>
 
                 <Pontos_Modal show={modalShow} onHide={() => setModalShow(false)} />
 
+                {/* <p></p>
+                <Button onClick={(e) => aumenta_Pontos()}>Aumentar Pontos</Button> */}
                 <p></p>
-                <Button onClick={(e) => aumenta_Pontos()}>Aumentar Pontos</Button>
-                <p></p>
-                <Button onClick={(e) => verifica_Pop(casa_clicada)}>Avançar Boneca</Button>
-                <p></p>
+                <Button onClick={(e) => verifica_Pop(casa_clicada)}>Trocar Pontos por HC (60 pts) </Button>
+                {/* <p></p>
                 <Button onClick={(e) => confirma(casa_clicada)}>Confirmar Avanço</Button>
                 <p></p>
                 <p></p>
@@ -310,7 +341,7 @@ function Tabletop() {
                 <p></p>
                 <Button onClick={(e) => exibeMasc(placasMasc)}> Exibe Mascote </Button>
                 <p></p>
-                <Button onClick={(e) => clicaCert(placasCert)}> Clica Horas Complementares  </Button>
+                <Button onClick={(e) => clicaCert(placasCert)}> Clica Horas Complementares  </Button> */}
                 {/* <Casas boneca_id={casa_atual} boneca_pontos={pontos_atual} aumentou={aumentou} setAumentou={setAumentou} andou={andou} setAndou={setAndou} /> */}
                 {/* <Boneca boneca_pontos={pontos_atual} aumentou={aumentou} />
                 <PlacasCert boneca_id={casa_atual} aumentou={aumentou} setAumentou={setAumentou} /> */}

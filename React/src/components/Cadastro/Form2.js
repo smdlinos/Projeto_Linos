@@ -26,7 +26,7 @@ const Form2 = (props) => {
     <div className="font_popover">
 
             <h2 className="titulo_login">Quais seus interesses?</h2>
-            <p className="">Essas informações vão nos ajudar<br/> a deixar o quest mais sua cara!</p>
+            <p className="">Essas informações vão nos ajudar<br/> a deixar o quests mais sua cara!</p>
             
             
             <Form.Group className="mb-2">

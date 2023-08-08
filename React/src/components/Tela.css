@@ -287,10 +287,41 @@ background: #BE2C53;
     line-height: 120%;
     letter-spacing: 0.56px;
 }
+.caminho{
+    width: 30rem;
+}
+.titulo_land2{
+    color: #08394C;
+    font-size: 35px;
+    font-family: "Chubbo";
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: 0.56px;
+}
+
+.titulo_land3{
+    color: #08394C;
+    font-size: 40px;
+    font-family: "Chubbo";
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: 0.56px;
+}
 
 .text_land{
     color: #08394C;
     font-size: 32px;
+    font-family: "Supreme";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+}
+
+.text_land2{
+    color: #08394C;
+    font-size: 20px;
     font-family: "Supreme";
     font-style: normal;
     font-weight: 400;
@@ -306,6 +337,15 @@ background: #BE2C53;
     line-height: 150%;
 }
 
+.titulo_land_desc2{
+    color: #08394C;
+    font-size: 30px;
+    font-family: "Chubbo";
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+}
+
 .text_land_desc{
     color: #08394C;
     font-size: 34.667px;
@@ -313,6 +353,19 @@ background: #BE2C53;
     font-style: normal;
     font-weight: 400;
     line-height: 160%;
+}
+
+.text_land_desc2{
+    color: #08394C;
+    font-size: 25px;
+    font-family: "Supreme";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+}
+
+.titulo_land2{
+
 }
 
 .titulo_land_cliente{
@@ -349,10 +402,6 @@ background: #BE2C53;
     font-weight: 700;
     color: #08394D;
     font-size: 16px;
-}
-
-.tirar{
-    
 }
 
 .alert{

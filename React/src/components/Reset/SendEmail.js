@@ -10,7 +10,7 @@ export default function SendEmail (props){
 
     return  <>           
             <h1 className="titulo_login">Esqueceu sua senha?</h1>
-            <p>Insira seu email para defeinir sua senha.</p>
+            <p>Insira seu email para redefinir sua senha.</p>
           
 
             <Form.Group className="mb-2 pt-2">

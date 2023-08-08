@@ -119,12 +119,12 @@ export default function Reset() {
   }
 
   return ( 
-      <div className="">
+      <div className="body">
 
         <Header/>
 
-        <Row className="justify-content-sm-center pt-3">
-          <Col sm="auto" none="">
+        <Row className="justify-content-sm-center pt-3 pb-5 mb-5">
+          <Col sm="auto" none="" className="pb-5 mb-5">
 
             <Form className="mb-5 rounded p-5 mx-3 fonte_login" onSubmit ={handleReset}>
 
@@ -134,11 +134,11 @@ export default function Reset() {
 
             </Form>
             
-            <Footer/>
+            
 
           </Col>
         </Row>
-        
+        <Footer/>
       </div>
     )
 

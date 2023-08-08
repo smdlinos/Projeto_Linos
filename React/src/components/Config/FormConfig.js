@@ -316,7 +316,7 @@ const Form_config = (props) => {
 
             </div>
                     
-                    <Button variant="primary" href="/home" type="submit" className="px-5 mt-3 botao">
+                    <Button variant="primary" type="submit" className="px-5 mt-3 botao">
                     SALVAR ALTERAÇÕES
                     </Button>
             </Form>

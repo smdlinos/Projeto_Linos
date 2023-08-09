@@ -364,9 +364,6 @@ background: #BE2C53;
     line-height: 160%;
 }
 
-.titulo_land2{
-
-}
 
 .titulo_land_cliente{
     color: #FFF;
@@ -449,9 +446,8 @@ background: #BE2C53;
 .botao_overlay{
     background: #FFFF;
     text-align: start;
-    width: 240px;
+    width: 320px;
     color: #08394C;
-    width: 100%;
     font-family: "Supreme", sans-serif;
     font-weight: 700;
     border-radius: 8px;
@@ -740,3 +736,23 @@ letter-spacing: 0.116px;
     font-weight: 700;
     line-height: normal;
 }
+
+.off-canvas-modal {
+    width: 300px;
+    position: fixed;
+    top: 0;
+    right: -300px; /* Inicialmente, o modal está fora da tela */
+    z-index: 1050;
+    transition: right 0.3s ease-in-out;
+  }
+  
+  .off-canvas-modal.show {
+    right: 0; /* Quando o modal está aberto, é posicionado na tela */
+  }
+  
+  .texto_off{
+    font-size: 22px;
+  }
+  
+  
+  

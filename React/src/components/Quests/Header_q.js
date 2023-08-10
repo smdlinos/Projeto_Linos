@@ -9,7 +9,8 @@ import Logo from "../imagens/quest_logo.png"
 import estrela from "../imagens/estrela2.svg";
 import OverlayPerfil from "../Home/OverlayPerfil";
 import Stack from 'react-bootstrap/Stack';
-import Star from "../imagens/estrela_quest.svg"
+import Star from "../imagens/estrela_quest.svg";
+import Overlay2 from "../Home/Overlay2";
 
 
 //Dependences
@@ -50,10 +51,10 @@ export default function Header_q() {
           </Col>
           <Col xs={3}>
           {authenticated && 
-            <Stack direction="horizontal" className="pt-5">  
+            <Stack direction="horizontal" className="pt-5 ps-3">  
               <img src={estrela} alt="estrela" className="estrela "/>
            {user && <b><p className="font_t">{user.user.pontos}</p></b>}
-              <OverlayPerfil/>
+              <Overlay2 name={"end"}/>
             </Stack>
             }
           </Col>

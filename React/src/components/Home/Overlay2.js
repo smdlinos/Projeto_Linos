@@ -31,9 +31,12 @@ function OffCanvasExample({ name }) {
 
   return (
     <>
-      <Button variant="link" onClick={handleShow} className="me-2 mb-3 ps-2">
-      {user && <img src={perfil2(user.user.custom)} alt='perfil' ></img>}
+      <div className='pb-2'>
+      <Button variant="link" onClick={handleShow} className="me-2 mb-2 ps-2 pb-2">
+      {user && <img src={perfil2(user.user.custom)} alt='perfil' className=''></img>}
       </Button>
+      </div>
+      
       <Offcanvas show={show} onHide={handleClose} placement={name} className="background_header">
         <Offcanvas.Header closeButton>
           

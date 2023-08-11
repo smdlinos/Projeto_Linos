@@ -109,18 +109,25 @@ function TodosQuests(){
               aria-label="Pesquisar"
               onChange={(e) => setBusca(e.target.value)}
             />
-            <Button type='submit'><img src={Lupa} alt="lupa" className="lupa_todos"/></Button>
-            </Form>
+            <Button type='submit' variant="link"><img src={Lupa} alt="lupa" className="lupa_todos"/></Button>
+            </Form>    
+            </Col>
+            </Row>
+            <Row className="my-2"> 
+                <Col>
+                { semResultados &&
+                    <div >
+                        <center>
+                        <p className="font_t">Sem resultados para sua pesquisa :(</p>
+                        </center>
+                    </div>
+                        
+                    }
                 </Col>
             </Row>
-                { volta &&
-                    <Col xs={3}>
-                        <a onClick={redirect}><img src={voltar} alt="botao_voltar" className="mt-5 botao_voltar"/></a>
-                    </Col>
-                }
                 <Container className="m-auto">
                 <Row className="m-auto">
-                <Col className=" mb-2">  
+                <Col className="mb-2">  
                     {quests && quests.map((quest) => (
                             <Card    
                                 onClick={(e)=>navigate("/quest_d/"+quest.id_questionario)}
@@ -178,12 +185,12 @@ function TodosQuests(){
 
                             </Card>
                         ))}
-                    { semResultados &&
-                        <p>Não encotrei resultados para a sua pesquisa</p>
-                    }
+                    { volta &&     
+                    <center><a onClick={redirect}><img src={voltar} alt="botao_voltar" className="ps-3 pb-3"/></a></center>
+                }
                </Col>      
             </Row>            
-
+           
                 </Container>
 
                 <Footer/>

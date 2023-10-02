@@ -68,7 +68,7 @@ class Login
         "exp" => time()+ ((3600*24)*7),
         "iat" => time(),
         "email" => $obUser->email
-      ]; 
+      ];
 
       $jwt = JWT::encode($payload, $_ENV['KEY'], 'HS256');
 

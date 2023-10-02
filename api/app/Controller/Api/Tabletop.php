@@ -98,7 +98,8 @@ class Tabletop
 			http_response_code(401);
 			exit;
 		}
-		//IDEIA -> Criar um atributo de certificados
+
+
 		return true;
 	}
 

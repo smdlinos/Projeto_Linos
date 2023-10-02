@@ -63,7 +63,10 @@ class Quests
 		}	
 
 		$temas_questionario = EntityTemasQuests::getTags(null,null,null);
-
+        $questionarios =[];
+        $recomendacao = [];
+        $recomendado = [];
+        
 		foreach ($temas_questionario as $key => $value) { // filtra os questionários com o tema que o usuário tem interesse
 
           foreach ($temas as $tema) {
@@ -84,11 +87,13 @@ class Quests
             }
           }
         }
-
+        
+        
+        
         foreach ($recomendacao as $key => $value) {
           $recomendado[]= $value;
         }
-
+        
         $data = [
            'recomendacoes' => $recomendado,
            'allquests' 		 => $allQuests,

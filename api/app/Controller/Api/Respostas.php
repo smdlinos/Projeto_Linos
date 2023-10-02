@@ -123,9 +123,7 @@ class Respostas
     	exit;
   	}
 
-
   	$token = json_decode($token);
-
     if ($token->aceite != 'Sim') {
       echo json_encode(false);
       http_response_code(401);
@@ -133,14 +131,16 @@ class Respostas
     }
 
 	  $quest = EntityQuests::getQuestByLink($token->link); //busca o questionario
-    $data_formatada = date('Y-m-d', strtotime($token->data_resposta)); 
 
-	  $resposta = new EntityRespostas();
+
+	$data_formatada = date('Y-m-d', strtotime($token->data_resposta)); 
+
+	$resposta = new EntityRespostas();
     $resposta->data_resposta   = $data_formatada;
     $resposta->hora_resposta   = $token->hora_resposta;
     $resposta->pontuacao       = $quest->pontuacao;
     $resposta->pesquisa        = $quest->id_pesquisa;
-	  $resposta->questionario    = $quest->id_questionario;
+	$resposta->questionario    = $quest->id_questionario;
     $resposta->usuario         = null;
     $resposta->code            = $token->code;
     $resposta->resgatado       = 0;

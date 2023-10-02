@@ -59,6 +59,16 @@ class User
     	try {
 
 	        $decoded = JWT::decode($token->token, new Key($_ENV['KEY'], 'HS256'));
+	        if(!$decoded){
+	        	http_response_code(200); // Código de erro 400 Bad Request
+				$response = [
+				    "error" => true,
+				    "message" => "EXPIRED",
+				    "error_code" => "INVALID_DATA"
+				];
+				echo json_encode($response);
+				exit;
+	        }
 
 	        $user = EntityUser::getUserByEmail($decoded->email); // busca o usuario
 
@@ -80,7 +90,6 @@ class User
 	        return $data;
 
       	} catch (Throwable $e) {
-
 	        if($e->getMessage() === 'Expired token'){
 	          http_response_code(401);
 	          die('EXPIRED');
@@ -275,25 +284,17 @@ class User
 		$post_body = $request['request']->getBody();
 		$post_body = json_decode($post_body, true);
 		$cadastrar = [];
-
-	    if (!$post_body) {
-	  		echo json_encode(false);
-	    	http_response_code(401);
-	    	exit;
-	    }
-
+        
+        if(!$post_body){
+            echo json_encode(false);
+            http_response_code(401);
+            exit;
+        }
+        
 		foreach ($post_body as $key => $value) {
 			if($key !== "interesses"){
 				$cadastrar[$key] = $value;
 			}
-		}
-
-		if(sizeof($cadastrar)<7){
-
-			echo json_encode(false);
-			http_response_code(401);
-			die();
-
 		}
 
 		foreach ($cadastrar as $key => $value) {
@@ -351,16 +352,12 @@ class User
 	    $decoded = JWT::decode($post_body['token'], new Key($_ENV['KEY'], 'HS256'));
 
 	    $usuario = EntityUser::getUserByEmail($decoded->email); // busca o usuario
-
+        
 		foreach ($post_body as $key => $value) {
 			if($key !== "interesses" && $key !== "token"){
 				$cadastrar[$key] = $value;
 			}
 		}
-
-	    if ($cadastrar['password'] == '' || $cadastrar['password'] == undefined) {
-	    	$cadastrar['password'] = $usuario->password;
-	    }
 
 		foreach ($cadastrar as $key => $value) {
        		$_POST[$key] = $value;
@@ -371,7 +368,6 @@ class User
 	    $validate = validate([
 			'name' 			  => 'required',
 			'nickname' 		  => 'required|unique:usuarios',
-			'email'  		  => 'email|unique:usuarios',
 			'data_nascimento' => 'required',
 			'genero' 		  => 'required',
 			'escolaridade' 	  => 'required'
@@ -392,26 +388,15 @@ class User
 			exit;
 		}
 
-		if ($cadastrar['password'] != $usuario->password) {
-		    $validate['password'] = password_hash($cadastrar['password'], PASSWORD_DEFAULT);
-		} else {
-			$validate['password'] =$cadastrar['password'];
-		}
-
-		$validate['pontos'] = 0;
-
 		$user = new EntityUser();
 
 		$user->id_usuario	   = $usuario->id_usuario;
 		$user->name 		   = $validate['name'];
 		$user->nickname 	   = $validate['nickname'];
-		$user->email 		   = $validate['email'];
-		$user->password 	   = $validate['password'];
 		$user->custom 		   = $cadastrar['custom'];
 		$user->data_nascimento = $validate['data_nascimento'];
 		$user->genero 		   = $validate['genero'];
 		$user->escolaridade    = $validate['escolaridade'];
-		$user->pontos 		   = $validate['pontos'];
 		$user->updateUser();
 
 		if(!$user->id_usuario){
@@ -420,21 +405,23 @@ class User
 			exit;
 		}
 
-		$verifyInteresses = Interesses::filtraInteresses($usuario);
+		//$verifyInteresses = Interesses::filtraInteresses($usuario);
+		    
+		$remove = Interesses::removeInteresses($usuario); // remover os interesses do usuário
 
-		if($interesses != $verifyInteresses['interesses']){
-			$remove = Interesses::removeInteresses($usuario); // remover os interesses do usuário
-
-			if (!$remove) {
-				echo json_encode(false);
-				http_response_code(401);
-				exit;
-			}
-
-			Interesses::setInteresses($usuario->id_usuario, $interesses);
+		if (!$remove) {
+			echo json_encode(false);
+			http_response_code(401);
+			exit;
 		}
+		
+        foreach ($interesses as $key => $value) {
+	    		$interesses[$key] = $value['tema'];
+	    }
+	    
+		Interesses::setInteresses($usuario->id_usuario, $interesses);
 
-		self::auth($user);
+		return true;
 	}
 	
 	public static function verifyPasswordToDelete($request)
@@ -530,7 +517,7 @@ class User
 	      echo json_encode(true);
 	      http_response_code(200);
 	      exit;
-	    }
+	    }      
 	    
 	}
 

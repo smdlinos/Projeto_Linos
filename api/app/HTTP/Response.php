@@ -49,7 +49,6 @@ class Response
 			case 'application/json':
 				echo json_encode($this->content);
 				exit;
-			
 		}
 	}
 

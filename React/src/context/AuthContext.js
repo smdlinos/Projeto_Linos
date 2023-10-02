@@ -6,8 +6,8 @@ const Context = createContext();
 import Spinner from 'react-bootstrap/Spinner';
 
 //Endpoints
-const urlUser  = 'https://smdquests.000webhostapp.com/api/user/auth';
-const urlLogin = 'https://smdquests.000webhostapp.com/api/login';
+const urlUser  = 'http://localhost/api/user/auth';
+const urlLogin = 'http://localhost/api/login';
 
 function AuthProvider({ children }){
 
@@ -48,9 +48,12 @@ function AuthProvider({ children }){
 		}).then(function(response) {
 			return response.json();
 		}).then(data => {
-				setUser(data);
+				if(data.message == 'EXPIRED'){
+					logout();
+				} else {
+					setUser(data);
+				}
 		}).catch(error => {
-			// Lidar com erros
 			console.error(error);
 		});
 
@@ -85,7 +88,11 @@ function AuthProvider({ children }){
 
   function handleLogout(e){
 	  e.preventDefault();
-	  localStorage.removeItem('token');
+	  logout()
+  }
+
+  function logout(){
+  	localStorage.removeItem('token');
 	  axios.defaults.headers.common['Authorization'] = undefined;
 	  setAuthenticated(false);
 	  setUser(null);

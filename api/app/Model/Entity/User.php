@@ -37,13 +37,10 @@ class User
 		return (new Database('usuarios'))->update('id_usuario= "'.$this->id_usuario.'"',[
 			'name' 	  		  => $this->name,
 			'nickname' 		  => $this->nickname,
-			'email'   		  => $this->email,
-			'password' 		  => $this->password,
 			'custom'		  => $this->custom,
 			'data_nascimento' => $this->data_nascimento,
 			'genero'   		  => $this->genero,
 			'escolaridade'	  => $this->escolaridade,
-			'pontos'   		  => $this->pontos
 		]);
 	}
 
@@ -69,13 +66,13 @@ class User
 		$this->id_usuario = $obDatabase->insert([
 			'name' 	  		  => $this->name,
 			'nickname' 		  => $this->nickname,
-			'email'   		  => $this->email,
+			'email' 		  => $this->email,
 			'password' 		  => $this->password,
 			'custom'		  => $this->custom,
 			'data_nascimento' => $this->data_nascimento,
 			'genero'   		  => $this->genero,
 			'escolaridade'	  => $this->escolaridade,
-			'pontos'   		  => $this->pontos,
+			'pontos' 		  => $this->pontos
 		]);
 
 		return true;

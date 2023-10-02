@@ -58,7 +58,6 @@ class Interesses
 	{
 	    // array interesses
 	    // id  user
-
 	  $allThemes = Temas::getTemas(null, null, null); //array
 		foreach ($allThemes as $key => $value) {
 
@@ -74,7 +73,7 @@ class Interesses
 		
 		}
 
-		return $obInteresse;
+		return true;
 	}
 
 
@@ -89,7 +88,8 @@ class Interesses
     }
 
     $getInteresses = EntityInteresses::getInteresses(); // pesquisa todos os interesses
-
+    $interesses = [];
+    
     foreach ($getInteresses as $key => $value) { // filtra os interesses e pega somente os temas do usuário 
       if($getInteresses[$key]->id_usuario == $user->id_usuario){
        $interesses[] = $value->id_tema;

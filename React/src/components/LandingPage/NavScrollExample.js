@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import logo from "../imagens/logo_oficial.svg";
+import Logo from "../imagens/quest_logo.png"
 import Row from 'react-bootstrap/esm/Row';
 import Col from 'react-bootstrap/esm/Col';
 import Stack from 'react-bootstrap/Stack';
@@ -21,9 +22,10 @@ function NavScrollExample() {
           <Container fluid>
             <Navbar.Brand href="#" className='m-auto py-3'>    
                 <img
-                  src={logo}
-                  className="ps-5"
+                  src={Logo}
+                  className="ps-5 logo-canvas"
                   alt="React Bootstrap logo "
+
                 />
               
               </Navbar.Brand>
@@ -32,31 +34,35 @@ function NavScrollExample() {
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
               placement="end"
+              className="background-Off-Canvas"
             >
-              <Offcanvas.Header closeButton>
-                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
+              <Offcanvas.Header className='' closeButton>
+                <Offcanvas.Title  className= "m-auto ps-3"
+                id={`offcanvasNavbarLabel-expand-${expand}`}>
                 <img
-                  src={logo}
-                  className="d-inline-block align-top"
+                  src={Logo}
+                  className="d-inline-block align-top logo-off-canvas"
                   alt="React Bootstrap logo"
                 />
                 </Offcanvas.Title>
               </Offcanvas.Header>
-              <Offcanvas.Body>
-                <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link href="#action1">Início</Nav.Link>
+              <Offcanvas.Body className=''>
                 
-                <Nav.Link href="#action2">Aventure-se</Nav.Link>
-                
-                <Nav.Link href="#action3">Origem</Nav.Link>
-                
-                <Nav.Link href="#action4">Sobre nós</Nav.Link>
-                
-                <Nav.Link href="#action5">Contato</Nav.Link>    
-              
-              <Button className="" variant="danger"href="/login">FAZER LOGIN</Button>  
-      
-              
+                <Nav className=" flex-grow-1 pe-3 ">
+                  <center>
+                  <Nav.Link href="#inicio" className='links'>Início</Nav.Link>
+                <div className='linha-off-canvas'></div>
+                <Nav.Link href="#aventure-se" className='links'>Aventure-se</Nav.Link>
+                <div className='linha-off-canvas'></div>
+                <Nav.Link href="#origem" className='links'>Origem</Nav.Link>
+                <div className='linha-off-canvas'></div>
+                <Nav.Link href="#sobre-nos" className='links'>Sobre nós</Nav.Link>
+                <div className='linha-off-canvas'></div>
+                <Nav.Link href="#Contato" className='links'>Contato</Nav.Link>  
+                <Row className='pt-3'>
+                <Button className="" variant="danger"href="/login">CADASTRE-SE</Button>
+                </Row> 
+                  </center>
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>

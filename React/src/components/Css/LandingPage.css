@@ -1,0 +1,106 @@
+.background-Off-Canvas{
+    background-color: #56B6DC;
+}
+
+.links{
+    color: #fff;
+}
+
+.links:active{
+    color: #56B6DC;
+}
+
+.linha-off-canvas{
+    color: #fff;
+    width: 50%;
+    border-bottom-style: solid;
+    border-width: 2px;
+    justify-self: center;
+}
+
+.logo-off-canvas{
+    width: 10rem;
+}
+
+.logo-canvas{
+    width: 12rem;
+}
+
+.Foto_Ticiane{
+   width: 24rem;
+}
+
+.background-ticiane{
+    background-image: url("../imagens/Tici.png");
+    background-size: 27rem;
+    background-repeat: no-repeat
+}
+
+.Titulo_Land{
+    color: #fff;
+    font-size: 40px;
+    font-family: "Chubbo";
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: 0.56px;
+    
+}
+
+.background-sobrepor{
+    height: 500px;
+    background-image: url("../imagens/Sobrepor.png");
+    background-size: 50rem;
+    background-repeat: no-repeat
+}
+
+.background-land-tici{
+    background-color:  #7ACB65;;
+}
+
+.celula_logo{
+    width: 15rem;
+}
+
+.titulo_lina{
+    color: #08394C;
+    font-size: 25px;
+    font-family: "Chubbo";
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    
+   
+}
+
+.time{
+    width: 23rem;
+    
+    
+}
+
+.background-azul{
+    height: 500px;
+    background-image: url("../imagens/background_azul.png");
+    background-size: 110rem;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.background-azul2{
+    background-color: #08394C;
+    
+}
+
+.titulo_land_contato{
+    color: #E7F1F5;
+    font-size: 35px;
+    font-family: "Chubbo";
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: 0.56px;
+}
+
+.img_quests{
+    width: 18rem;
+}

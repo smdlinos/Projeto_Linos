@@ -1,5 +1,6 @@
 //Styles
 import "../components/Tela.css";
+import "../components/Css/LandingPage.css"
 import Responsive from "../components/Responsive.css"
 import Container from "react-bootstrap/esm/Container";
 import Inicio2 from "../components/LandingPage/inicio2";
@@ -22,6 +23,7 @@ function LandingPage(){
             <Container fluid>
                 <Inicio2/>
             </Container>
+            <Footer/>
         </div>
     )
 

@@ -5,6 +5,17 @@ import Stack from 'react-bootstrap/Stack';
 import Button from 'react-bootstrap/Button';
 import caminhos_passos from "../imagens/Novo_Caminho2.svg"; 
 import Container from "react-bootstrap/esm/Container";
+import Ticiane from "../imagens/Ticiane.png";
+import Sobrepor from "../imagens/background_azul.png";
+import Celula from "../imagens/celula.png";
+import Luis from "../imagens/luis.png";
+import Mickael from "../imagens/mickael.png";
+import Letinepo from "../imagens/letinepo.png";
+import Vitoria from "../imagens/vitoria.png";
+import Macla from "../imagens/maria_clara.png";
+import Vitao from "../imagens/vitao.png";
+import Background from "../imagens/background_cliente.svg"
+import Footer from "../Global/Footer"
 
 const Inicio2 = () => {
     return (
@@ -16,10 +27,10 @@ const Inicio2 = () => {
             </Row>
             <Row>
             <Col className=''>
-                <h1 className='pb-2 titulo_land2 alinhamento'>A melhor maneira de responder questionários</h1>
+                <h1 className='pb-2 titulo_land2 alinhamento'>A melhor maneira de responder questionários!</h1>
                 </Col>
                 <Col className="pb-3" xs={12}>
-                <p className='text_land2'>
+                <p className='text_land_desc2 alinhamento pt-4 pb-3'>
                     Já pensou se fosse possível receber <strong>horas complementares</strong> ao responder questionários online? Com o <strong>Quests</strong>, isso acaba de se tornar realidade!
                 </p>
                 </Col>
@@ -38,8 +49,8 @@ const Inicio2 = () => {
             {/* <p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p> 
              ajeitar isso */}
                 <Col xs ={5}></Col>
-                <Col xs ={7} className='pt-4 pb-5'>
-                <h1 className=' pb-3 titulo_land_desc2'>Entre nessa aventura!</h1>
+                <Col xs ={7} className='pt-4 '>
+                <h1 className='  titulo_lina'>Entre nessa aventura!</h1>
                 </Col>
                 <div className="alinhamento">         
                 <Col className="m-auto"> 
@@ -50,10 +61,10 @@ const Inicio2 = () => {
                 </Col>
                 <Col>
                 <p className='text_land_desc2 '>
-                Embarque com a Lina e agarre o mapa de uma misteriosa floresta onde 
+                Embarque com a <b>Lina</b> e agarre o mapa de uma misteriosa floresta onde 
                 você vai superar obstáculos e contar com a companhia de corajosos aliados 
-                que estarão ao seu lado a cada passo. Não perca tempo, vá em busca dos cobiçados
-                prêmios que te aguardam!
+                que estarão ao seu lado a cada passo. Não perca tempo, <b>vá em busca dos cobiçados
+                prêmios que te aguardam!</b>
                 </p>
                 </Col>
                 </div>
@@ -63,24 +74,87 @@ const Inicio2 = () => {
 
 
 
-        <div >
+        <div>
             
             <Row>
-            <h1 className='pt-5 pb-5 alinhamento titulo_land3 px-5'>Quer ganhar prêmios?</h1>
+                <h1 className=' pb-5 alinhamento titulo_land3 '>Quer ganhar prêmios?</h1>
             </Row>
             
             <Row className="sobreposicao_cliente">
-            <img src={caminhos_passos} className="caminho"/>
-
+                <img src={caminhos_passos} className="caminho"/>
             </Row>
-            
-                
-            <Col className="pt-5 px-4">
-                <Button className="botao_inicio" href="/login">CADASTRE-SE JÁ</Button>
-            </Col>
+             
+            <div className="pt-5 mt-5 pb-5">
+                <Button className="botao_inicio " href="/login">CADASTRE-SE JÁ</Button>
+            </div>
             
         </div>
         
+        <div>
+            <Row className="">
+            <h1 className='pt-5 pb-3 mt-5 alinhamento titulo_land3 px-5'>Idealizadora do Projeto:</h1>
+            </Row>
+            
+            
+
+            
+            <Row className="background-ticiane ">
+           
+                <p className='pt-3 mt-5 alinhamento Titulo_Land'> 
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                
+                Ticiane Darin
+                </p>
+             </Row>
+                <Row className="background-land-tici alinhamento">
+                    <Row className="m-auto">
+                        <Col>
+                            <p className='text_land_desc2 alinhamento pt-2'>
+                                Ticianne Darin é a professora que encabeçou conosco a ideia do projeto e ajudou 
+                                no desenvolvimento para o sistema servir de apoio para o grupo de pesquisas <b>Célula Multimídia.</b>
+
+                            </p>
+                        </Col>
+                    </Row>
+                    <Row>
+                         <Col className="pb-5" >
+                            <img src={Celula} className="pt-3 ps-3 celula_logo"/>
+                        </Col>
+                        
+                    </Row>
+
+                </Row>
+                
+                <Row className="pb-5 mb-3">
+                
+                    <h1 className='pt-5 pb-3 alinhamento titulo_land3 px-5'>Nosso time:</h1>
+                    <Col>
+                    <img src={Luis} className="pt-3 ps-3 time"/>
+                    </Col>
+                    <Col>
+                    <img src={Vitoria} className="pt-3 ps-3 time"/>
+                    </Col>
+                    <Col>
+                    <img src={Letinepo} className="pt-3 ps-3 time"/>
+                    </Col>
+                    <Col>
+                    <img src={Macla} className="pt-3 ps-3 time"/>
+                    </Col>
+                    <Col>
+                    <img src={Mickael} className="pt-3 ps-3 time"/>
+                    </Col>
+                    <Col>
+                    <img src={Vitao} className="pt-3 ps-3 time"/>
+                    </Col>
+                </Row>
+            
+        </div>
+
+        
+
     </div>
     )
 }

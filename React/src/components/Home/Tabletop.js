@@ -2,7 +2,7 @@
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Tabuleiro from '../imagens/tabuleiro2.svg';
+import Tabuleiro from '../imagens/tabuleiro_1.png';
 import "../Tela.css"
 
 

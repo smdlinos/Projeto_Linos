@@ -1,6 +1,6 @@
 import Row from 'react-bootstrap/esm/Row';
 import Col from 'react-bootstrap/esm/Col';
-import tici from '../imagens/tici.png';
+
 import logo_celula from '../imagens/logo_celula.svg'
 
 const Cliente = () => {

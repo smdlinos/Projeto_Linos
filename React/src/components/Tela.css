@@ -36,6 +36,7 @@
 }
 .tabuleiro{
     border-radius: 10px;
+    width: 23rem;
 }
 .estrelinha{
     padding-right: 5px;
@@ -78,6 +79,8 @@
 li{
     list-style-type: none;
 }
+
+
 
 .quest_logo{
     height: 70px;
@@ -154,6 +157,7 @@ background: #BE2C53;
     --bs-navbar-hover-color: #BE2C53;
     --bs-navbar-active-color: #BE2C53;
     --bs-navbar-active-font-weight: 700;
+    
 
 }
 
@@ -173,6 +177,16 @@ background: #BE2C53;
     background-color: #FFF;
 }
 
+.img_quest{
+    width: 869.333px;
+    height: 817.333px;
+    flex-shrink: 0;
+
+}
+.adesivo-quest{
+    width: 80%;
+}
+
 .font_popover{
     font-family: "Supreme", sans-serif;
     font-weight: 400;
@@ -190,6 +204,7 @@ background: #BE2C53;
     background-image: url(./imagens/background_desc.svg);
     background-size: 100%;
     background-repeat: no-repeat;
+    height: 932px;
 }
 .form_check{
     display: flex;
@@ -256,6 +271,10 @@ background: #BE2C53;
     padding-right: 46%;
 }
 
+.txt_descricao{
+    padding-top: 5rem;
+}
+
 .nome_c{
     padding-right: 58%;
 }
@@ -275,18 +294,14 @@ background: #BE2C53;
 }
 
 .background_land{
-    background-color: #FFFF;
+    background-color: #E7F1F5;
 }
 
-.titulo_land{
-    color: #08394C;
-    font-size: 56px;
-    font-family: "Chubbo";
-    font-style: normal;
-    font-weight: 700;
-    line-height: 120%;
-    letter-spacing: 0.56px;
+.tamanho_txt{
+   padding-left: 5rem;
 }
+
+
 .caminho{
     width: 30rem;
 }
@@ -310,44 +325,18 @@ background: #BE2C53;
     letter-spacing: 0.56px;
 }
 
-.text_land{
-    color: #08394C;
-    font-size: 32px;
-    font-family: "Supreme";
-    font-style: normal;
-    font-weight: 400;
-    line-height: 160%;
-}
-
-.text_land2{
-    color: #08394C;
-    font-size: 20px;
-    font-family: "Supreme";
-    font-style: normal;
-    font-weight: 400;
-    line-height: 160%;
-}
-
-.titulo_land_desc{
-    color: #08394C;
-    font-size: 56px;
-    font-family: "Chubbo";
-    font-style: normal;
-    font-weight: 700;
-    line-height: 150%;
-}
-
-.titulo_land_desc2{
-    color: #08394C;
-    font-size: 30px;
-    font-family: "Chubbo";
-    font-style: normal;
-    font-weight: 700;
-    line-height: 150%;
-}
-
-.text_land_desc{
-    color: #08394C;
+.botao_inicio2{
+    display: flex;
+    width: 660px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 10.667px;
+    background: var(--ROSA-NORMAL, #BE2C53);
+    box-shadow: 0px 5.33333px 5.33333px 0px rgba(0, 0, 0, 0.25);
+    color: #FFF;
+    font-family: Supreme;
     font-size: 34.667px;
     font-family: "Supreme";
     font-style: normal;
@@ -371,16 +360,9 @@ background: #BE2C53;
     font-family: "Chubbo";
     font-style: normal;
     font-weight: 700;
-    line-height: 150%;
-}
-
-.text_land_cliente{
-    color: #FFF;
-    font-size: 35px;
-    font-family: "Supreme";
-    font-style: normal;
-    font-weight: 400;
-    line-height: 160%;
+    line-height: normal;
+    letter-spacing: 0.31px;
+    text-transform: uppercase;
 }
 
 .bg-body-tertiary{

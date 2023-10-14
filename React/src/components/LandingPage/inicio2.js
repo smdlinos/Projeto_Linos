@@ -84,9 +84,7 @@ const Inicio2 = () => {
                 <img src={caminhos_passos} className="caminho"/>
             </Row>
              
-            <div className="pt-5 mt-5 pb-5">
-                <Button className="botao_inicio " href="/login">CADASTRE-SE JÁ</Button>
-            </div>
+           
             
         </div>
         
@@ -152,6 +150,9 @@ const Inicio2 = () => {
                 </Row>
             
         </div>
+        <div className=" pb-5">
+                <Button className="botao_inicio " href="/login">CADASTRE-SE JÁ</Button>
+            </div>
 
         
 

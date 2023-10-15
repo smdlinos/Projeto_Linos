@@ -31,7 +31,7 @@
 }
 
 .background-ticiane{
-    background-image: url("../imagens/Tici.png");
+    background-image: url("../imagens/ticiane4.png");
     background-size: 27rem;
     background-repeat: no-repeat
 }
@@ -104,3 +104,9 @@
 .img_quests{
     width: 18rem;
 }
+
+@media screen and (min-width: 800px) {
+    .background_land{
+        background-color: #00b7ff;
+    }
+  }

@@ -19,7 +19,7 @@ import Footer from "../Global/Footer"
 
 const Inicio2 = () => {
     return (
-    <div className=' pb-3'>
+    <div className='landing_page pb-3'>
         <Row className='pt-4 pb-3'>
             <Col className="m-auto">
                 <img src={adesivoQuests} className="pb-3 img-fluid"></img>

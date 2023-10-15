@@ -103,7 +103,6 @@ const Inicio2 = () => {
                 <br/>
                 <br/>
                 <br/>
-                
                 Ticiane Darin
                 </p>
              </Row>

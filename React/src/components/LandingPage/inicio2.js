@@ -162,8 +162,8 @@ const Inicio2 = () => {
                     <Col className="espacamento_contato">
                     <img src={Insta} className="pb-4 icone_contato"></img><p className="txt_contato ps-1">@quests.linos</p>
                     </Col>
-                    <Col className="m-auto alinhamento">
-                    <img src={Logo} className="lupa_contato pb-3 pt-5"></img>
+                    <Col className="m-auto alinhamento" xs={12}>
+                    <img src={Logo} className="lupa_contato pb-3 pt-2"></img>
                     </Col>
                     <div className="pb-5">
                         <Button className="botao_inicio " href="/login">CADASTRE-SE JÁ</Button>

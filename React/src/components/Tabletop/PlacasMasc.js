@@ -1,6 +1,6 @@
 import React from "react"
 import Button from "react-bootstrap/esm/Button";
-import Casas from "./Casas";
+import Casas from "./Casa";
 import Boneca from "./Boneca";
 import PlacasCert from "./PlacasCert";
 import { useEffect } from "react";

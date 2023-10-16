@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import Casas from '../components/Tabletop/Casas.js';
 import '../components/Tabletop/Tabletop.css';
+import Footer from '../components/Global/Footer.js'
+import Header_q from "../components/Quests/Header_q";
 // import Mascotes from './components/Mascotes';
 
 function Tabletop() {
@@ -93,6 +95,7 @@ function Tabletop() {
 
   return (
     <div className="Tabletop">
+      <Header_q></Header_q>
       <p>QTde de PONTOS {pontos} </p>
       <p>POSIÇÃO da BONECA {posicao_boneca} </p>
       <button onClick={add}> ADICIONAR 10 PTS </button>
@@ -109,7 +112,7 @@ function Tabletop() {
           onClick={handleCasaClick}
         />
       ))}
-      <p> </p>
+      <Footer></Footer>
     </div>
   );
 }

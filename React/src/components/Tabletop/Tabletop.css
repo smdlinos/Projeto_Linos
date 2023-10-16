@@ -1,0 +1,14 @@
+.Tabletop {
+    text-align: center;
+    background-image: url('../imagens/BACKGROUND_tabletop.svg'); /* Substitua 'caminho/para/sua/imagem.jpg' pelo caminho real da sua imagem */
+    background-size: cover;/* Ajuste para redimensionar a imagem para cobrir todo o elemento
+    /* background-repeat: no-repeat; Impede a repetição da imagem */
+    background-position: center center; /* Centraliza a imagem no elemento */
+  }
+  
+  
+  .casa-ativada {
+    cursor: pointer;
+  }
+
+  

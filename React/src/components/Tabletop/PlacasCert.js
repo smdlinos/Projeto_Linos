@@ -1,7 +1,7 @@
 import React from "react"
 import Button from "react-bootstrap/esm/Button";
 import PlacasMasc from "./PlacasMasc";
-import Casas from "./Casas";
+import Casas from "./Casa";
 import Boneca from "./Boneca";
 import { useEffect } from "react";
 import { useState } from "react";

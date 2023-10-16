@@ -56,7 +56,7 @@ function Quest_D (){
     }, [quest])
 
     return(
-        <div className="background_config">
+        <div className="">
             <Header_q/>
             <main>
             {loading ? (<p>Carregando....</p>) : page404 ? <p>404 bro, questionário não encontrado</p> :

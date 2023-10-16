@@ -55,7 +55,7 @@ function Historico (){
 
     
     return(
-        <div className="background_land">
+        <div className="">
 
             <Header_q />
             
@@ -65,8 +65,8 @@ function Historico (){
                 </Col>
             </Row>
             {quests == '' && <p className="font_t alinhamento pt-2">Nada por enquanto... <br/> Seus questionários aparecerão aqui</p>}
-            <Row>
-                <Container className="m-auto">
+            <Row className="mb-5 pb-5">
+                <Container className="m-auto pb-5">
                 <Row className="m-auto">
                 <Col className=" mb-2">  
                     {quests && quests.map((quest, id) => (
@@ -130,6 +130,8 @@ function Historico (){
             </Row>            
                 </Container>
             </Row>
+            
+            <Footer/>
         </div>
     )
 }

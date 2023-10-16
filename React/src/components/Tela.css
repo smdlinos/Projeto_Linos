@@ -635,6 +635,8 @@ background: #BE2C53;
 
 .background_footer{
     background-color: #7ACB65;
+    bottom: 0;
+    
 }
 
 .tela_deletar{

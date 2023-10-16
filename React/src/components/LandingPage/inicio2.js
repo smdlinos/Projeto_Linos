@@ -3,8 +3,9 @@ import Row from 'react-bootstrap/esm/Row';
 import Col from 'react-bootstrap/esm/Col';
 import Stack from 'react-bootstrap/Stack';
 import Button from 'react-bootstrap/Button';
-import caminhos_passos from "../imagens/Novo_Caminho2.svg"; 
+import caminhos_passos from "../imagens/Passos.png"; 
 import Container from "react-bootstrap/esm/Container";
+import Logo from "../imagens/quest_logo.png"
 import Ticiane from "../imagens/Ticiane.png";
 import Sobrepor from "../imagens/background_azul.png";
 import Celula from "../imagens/celula.png";
@@ -14,6 +15,9 @@ import Letinepo from "../imagens/letinepo.png";
 import Vitoria from "../imagens/vitoria.png";
 import Macla from "../imagens/maria_clara.png";
 import Vitao from "../imagens/vitao.png";
+import Insta from "../imagens/insta.svg";
+import Email from "../imagens/email.svg";
+import Lupa from "../imagens/lupa_quest.png";
 import Background from "../imagens/background_cliente.svg"
 import Footer from "../Global/Footer"
 
@@ -147,12 +151,28 @@ const Inicio2 = () => {
                     <img src={Vitao} className="pt-3 ps-3 time"/>
                     </Col>
                 </Row>
+
+                <Row className="background-azul2">
+                
+                    <h1 className='pt-5  titulo_land_contato px-3 pb-3'>Quer falar com a gente? </h1>
+                    <Col className="espacamento_contato">
+                    <img src={Email} className="icone_contato pb-4"></img>
+                    <p className="txt_contato ps-1">linosdesignsmd@gmail.com</p>           
+                    </Col>
+                    <Col className="espacamento_contato">
+                    <img src={Insta} className="pb-4 icone_contato"></img><p className="txt_contato ps-1">@quests.linos</p>
+                    </Col>
+                    <Col className="m-auto alinhamento">
+                    <img src={Logo} className="lupa_contato pb-3 pt-5"></img>
+                    </Col>
+                    <div className="pb-5">
+                        <Button className="botao_inicio " href="/login">CADASTRE-SE JÁ</Button>
+                    </div>
+                </Row>
             
         </div>
-        <div className=" pb-5">
-                <Button className="botao_inicio " href="/login">CADASTRE-SE JÁ</Button>
-            </div>
-
+        
+        
         
 
     </div>

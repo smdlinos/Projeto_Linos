@@ -28,7 +28,7 @@ export default function App() {
 
   return (
     
-    <div className="App">   
+    <div className="App background_land">   
           <Routes>
             <Route path = "/" element = {<LandingPage/>}/>  
 

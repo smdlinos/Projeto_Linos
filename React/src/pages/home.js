@@ -105,7 +105,7 @@ export default function Home(){
     }
 
     return(
-        <div className="background_config">
+        <div className="background_land">
             <HeaderHome/>
             <main className="fonte_login">
                 <a href="/tabletop" className="alinhamento"><Tabletop/></a>

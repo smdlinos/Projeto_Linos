@@ -24,6 +24,8 @@ import Footer from "../Global/Footer"
 const Inicio2 = () => {
     return (
     <div className='landing_page pb-3'>
+
+        <a id="inicio"></a>
         <Row className='pt-4 pb-3'>
             <Col className="m-auto">
                 <img src={adesivoQuests} className="pb-3 img-fluid"></img>
@@ -48,6 +50,8 @@ const Inicio2 = () => {
             </Col>
         </Row>
 
+
+        <a id="aventure-se"></a>
         <div>
             <Row className='pt-5 pb-3 sobreposicao_desc'>
             {/* <p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p> 
@@ -79,7 +83,7 @@ const Inicio2 = () => {
 
 
         <div>
-            
+        <a id=""></a>
             <Row>
                 <h1 className=' pb-5 alinhamento titulo_land3 '>Quer ganhar prêmios?</h1>
             </Row>
@@ -92,6 +96,8 @@ const Inicio2 = () => {
             
         </div>
         
+
+        <a id="origem"></a>
         <div>
             <Row className="">
             <h1 className='pt-5 pb-3 mt-5 alinhamento titulo_land3 px-5'>Idealizadora do Projeto:</h1>
@@ -114,7 +120,7 @@ const Inicio2 = () => {
                     <Row className="m-auto">
                         <Col>
                             <p className='text_land_desc2 alinhamento pt-2'>
-                                Ticianne Darin é a professora que encabeçou conosco a ideia do projeto e ajudou 
+                                Ticiane Darin é a professora que encabeçou conosco a ideia do projeto e ajudou 
                                 no desenvolvimento para o sistema servir de apoio para o grupo de pesquisas <b>Célula Multimídia.</b>
 
                             </p>
@@ -129,6 +135,7 @@ const Inicio2 = () => {
 
                 </Row>
                 
+                <a id="sobre-nos"></a>
                 <Row className="pb-5 mb-3">
                 
                     <h1 className='pt-5 pb-3 alinhamento titulo_land3 px-5'>Nosso time:</h1>
@@ -152,6 +159,8 @@ const Inicio2 = () => {
                     </Col>
                 </Row>
 
+
+                <a id="Contato"></a>
                 <Row className="background-azul2">
                 
                     <h1 className='pt-5  titulo_land_contato px-3 pb-3'>Quer falar com a gente? </h1>
@@ -165,9 +174,9 @@ const Inicio2 = () => {
                     <Col className="m-auto alinhamento" xs={12}>
                     <img src={Logo} className="lupa_contato pb-3 pt-2"></img>
                     </Col>
-                    <div className="pb-5">
-                        <Button className="botao_inicio " href="/login">CADASTRE-SE JÁ</Button>
-                    </div>
+                    <Col className="pb-5">
+                        <Button className="botao_inicio" href="/login">Fazer Login</Button>
+                    </Col>
                 </Row>
             
         </div>

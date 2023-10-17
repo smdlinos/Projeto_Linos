@@ -20,16 +20,16 @@ function NavScrollExample() {
           {['sm'].map((expand) => (
         <Navbar key={expand} expand={expand} className="bg-body-tertiary mb-3">
           <Container fluid>
-            <Navbar.Brand href="#" className='m-auto py-3'>    
+            <Navbar.Brand href="#inicio" className='m-auto py-3'>    
                 <img
                   src={Logo}
-                  className="ps-5 logo-canvas"
+                  className=" logo-canvas"
                   alt="React Bootstrap logo "
 
                 />
               
               </Navbar.Brand>
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+            
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
@@ -50,7 +50,7 @@ function NavScrollExample() {
                 
                 <Nav className=" flex-grow-1 pe-3 ">
                   <center>
-                  <Nav.Link href="#inicio" className='links'>Início</Nav.Link>
+                  <Nav.Link href="#inicio" className='links' closeButton>Início</Nav.Link>
                 <div className='linha-off-canvas'></div>
                 <Nav.Link href="#aventure-se" className='links'>Aventure-se</Nav.Link>
                 <div className='linha-off-canvas'></div>
@@ -60,7 +60,7 @@ function NavScrollExample() {
                 <div className='linha-off-canvas'></div>
                 <Nav.Link href="#Contato" className='links'>Contato</Nav.Link>  
                 <Row className='pt-3'>
-                <Button className="" variant="danger"href="/login">CADASTRE-SE</Button>
+                <Button className="" variant="danger"href="/login">Entrar</Button>
                 </Row> 
                   </center>
                 </Nav>

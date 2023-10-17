@@ -131,17 +131,33 @@
 .lupa_contato{
     width: 13rem;
 }
-.background_desktop{
-    display: none
-}
+
+
 
 
 @media screen and (min-width: 800px) {
-    .background_desktop{
-        display: block;
+    .background_land_{
+        display: none;
+        
         
     }
-    .background_land{
-        background-image: url("../imagens/tela_desktop.svg");
+    .background_desktop_{
+        display: block;
+        background-color: #56B6DC;
+        
     }
+    
+  }
+
+  @media screen and (max-width: 799px) {
+    .background_land_{
+        display: block;
+    }
+    
+    .background_desktop_{
+        display: none;
+        
+        
+    }
+    
   }

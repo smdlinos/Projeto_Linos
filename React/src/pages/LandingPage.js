@@ -13,13 +13,14 @@ import Inicio from "../components/LandingPage/Inicio";
 import Descricao from "../components/LandingPage/Descricao";
 import Passos from "../components/LandingPage/Passos";
 import Cliente from "../components/LandingPage/Cliente";
+import ImagemDesktop from "../components/LandingPage/ImagemDesktop";
 
 function LandingPage(){
     return(
         <div className="background_land">
 
             <NavScrollExample/>
-
+            
             <Container fluid>
                 <Inicio2/>
             </Container>

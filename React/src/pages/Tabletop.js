@@ -3,6 +3,7 @@ import Casas from '../components/Tabletop/Casas.js';
 import '../components/Tabletop/Tabletop.css';
 import Footer from '../components/Global/Footer.js'
 import Header_q from "../components/Quests/Header_q";
+import "../components/Tela.css";
 // import Mascotes from './components/Mascotes';
 
 function Tabletop() {
@@ -96,9 +97,9 @@ function Tabletop() {
   return (
     <div className="Tabletop">
       <Header_q></Header_q>
-      <p>QTde de PONTOS {pontos} </p>
-      <p>POSIÇÃO da BONECA {posicao_boneca} </p>
-      <button onClick={add}> ADICIONAR 10 PTS </button>
+      <p className='titulo_login alinhamento'>Quantidade de Pontos: {pontos} </p>
+      <p className='titulo_login alinhamento'>Posição da Boneca: {posicao_boneca} </p>
+      <button className="titulo_login alinhamento " onClick={add}> Adicionar Pontos </button>
       {casas.map(casa => (
         <Casas
           key={casa.numero}

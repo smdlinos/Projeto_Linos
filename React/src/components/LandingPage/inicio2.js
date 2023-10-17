@@ -20,18 +20,21 @@ import Email from "../imagens/email.svg";
 import Lupa from "../imagens/lupa_quest.png";
 import Background from "../imagens/background_cliente.svg"
 import Footer from "../Global/Footer"
+import Background_Desk from "../imagens/tela_desktop.svg"
 
 const Inicio2 = () => {
     return (
-    <div className='landing_page pb-3'>
+    <div className='landing_page pb-3 background_land_'>
+
 
         <a id="inicio"></a>
-        <Row className='pt-4 pb-3'>
+        
+        <Row className='pt-4 pb-3 '>
             <Col className="m-auto">
                 <img src={adesivoQuests} className="pb-3 img-fluid"></img>
             </Col>
-            </Row>
-            <Row>
+        </Row>
+        <Row className="">
             <Col className=''>
                 <h1 className='pb-2 titulo_land2 alinhamento'>A melhor maneira de responder questionários!</h1>
                 </Col>
@@ -40,8 +43,6 @@ const Inicio2 = () => {
                     Já pensou se fosse possível receber <strong>horas complementares</strong> ao responder questionários online? Com o <strong>Quests</strong>, isso acaba de se tornar realidade!
                 </p>
                 </Col>
-                
-            
         </Row>
 
         <Row>

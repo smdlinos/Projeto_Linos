@@ -12,6 +12,7 @@ import Form from 'react-bootstrap/Form';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Responsive from "../Responsive.css"
+import ImagemDesktop from './ImagemDesktop';
 
 function NavScrollExample() {
   return (
@@ -20,21 +21,22 @@ function NavScrollExample() {
           {['sm'].map((expand) => (
         <Navbar key={expand} expand={expand} className="bg-body-tertiary mb-3">
           <Container fluid>
-            <Navbar.Brand href="#inicio" className='m-auto py-3'>    
+            <Navbar.Brand href="#inicio" className='m-auto py-3 alinhamento'>    
                 <img
                   src={Logo}
-                  className=" logo-canvas"
+                  className="ps-2 logo-canvas "
                   alt="React Bootstrap logo "
 
                 />
+                <ImagemDesktop/>
               
               </Navbar.Brand>
-            
+            {/*<Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />*/}
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
               placement="end"
-              className="background-Off-Canvas"
+              className="background-Off-Canvas background_land_"
             >
               <Offcanvas.Header className='' closeButton>
                 <Offcanvas.Title  className= "m-auto ps-3"

@@ -2,7 +2,7 @@ import React from "react"
 import Button from "react-bootstrap/esm/Button";
 import PlacasCert from "./PlacasCert";
 import PlacasMasc from "./PlacasMasc";
-import Casas from "./Casas";
+import Casas from "./Casa";
 import { useEffect } from "react";
 import { useState } from "react";
 
